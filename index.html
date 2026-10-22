@@ -53,7 +53,19 @@ button{font:inherit}
 .util .wrap{display:flex;justify-content:flex-end;gap:22px;align-items:center;padding-block:6px;font-family:var(--f-ui);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
 .util a{text-decoration:none;background:#f4f1f5;padding:0 4px}
 .util .cart{display:inline-flex;align-items:center;gap:6px}
-.navrow{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.navrow{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;padding-block:10px}
+.navrow .nav{justify-self:center}
+.head-cta{display:flex;align-items:center;gap:16px}
+.head-link{font-family:var(--f-ui);font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;font-weight:600}
+.cart{display:inline-flex}
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:12px 22px;font-family:var(--f-ui);font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,background .2s}
+.pill:hover{transform:translateY(-2px)}
+.pill span{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.18);font-size:13px;letter-spacing:0}
+.pill-dark{background:var(--ink);color:#fff}
+.pill-lime{background:var(--lime);color:var(--ink)}.pill-lime span{background:rgba(13,4,16,.12)}
+.pill-light{background:#fff;color:var(--ink)}.pill-light span{background:rgba(13,4,16,.08)}
+.fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:45;opacity:0;pointer-events:none;transform:translateY(16px);transition:opacity .3s,transform .3s;box-shadow:0 10px 30px rgba(20,3,26,.35)}
+.fab.on{opacity:1;pointer-events:auto;transform:none}
 .brand img{height:62px;width:auto}
 .nav{display:flex;gap:30px;font-family:var(--f-ui);font-weight:600;font-size:16px;letter-spacing:.1em;text-transform:uppercase}
 .nav a{text-decoration:none;position:relative;padding-block:6px}
@@ -65,7 +77,7 @@ button{font:inherit}
 .mnav a{font-family:var(--f-cure);font-size:56px;line-height:1;text-decoration:none;color:#fff}
 .mnav a:nth-child(even){color:var(--lime)}
 .mnav .x{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));background:none;border:2px solid #fff;color:#fff;width:46px;height:46px;font-size:22px;cursor:pointer}
-@media (max-width:900px){.nav{display:none}.burger{display:block}.brand img{height:46px}}
+@media (max-width:900px){.nav,.head-link,.cart{display:none}.burger{display:block}.brand img{height:46px}.navrow{grid-template-columns:auto 1fr auto auto;gap:10px}.head-cta{grid-column:3}.head-cta .pill{padding:9px 14px;font-size:12px}.head-cta .pill span{display:none}}
 
 /* ---------- 3D stage ---------- */
 #stage{position:fixed;left:0;right:0;bottom:0;top:var(--headH,110px);width:100%;height:calc(100% - var(--headH,110px));z-index:3;pointer-events:none;transition:opacity .4s}
@@ -156,16 +168,24 @@ button{font:inherit}
   .scrollcue{display:none}
 }
 
+/* ---------- giant background words + liquid waves ---------- */
+.giant{position:absolute;left:0;top:50%;transform:translateY(-50%);white-space:nowrap;font-family:var(--f-crave);font-size:clamp(150px,24vw,380px);line-height:1;color:rgba(255,255,255,.055);pointer-events:none;z-index:0;will-change:transform}
+.giant.dark{color:rgba(13,4,16,.06)}
+.wave{position:absolute;left:0;right:0;top:0;height:90px;transform:translateY(-99%);overflow:hidden;pointer-events:none;z-index:6}
+.wave svg{position:absolute;left:0;bottom:-1px;width:200%;height:100%;animation:wave 9s linear infinite}
+.wave.slow svg{animation-duration:14s}
+@keyframes wave{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.wave svg{animation:none}}
 /* ---------- shared HUD bits ---------- */
 .sec{position:relative;z-index:4}
 .eyebrow{display:flex;align-items:center;gap:12px;font-family:var(--f-ui);font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)}
 .eyebrow b{color:var(--lime);font-weight:500}
-.eyebrow::after{content:"";flex:0 0 60px;height:1px;background:currentColor;opacity:.6}
+.eyebrow{gap:8px;font-size:13px;letter-spacing:.22em}
 .h2{font-family:var(--f-cure);font-weight:400;font-size:clamp(64px,9vw,140px);line-height:.86;margin:10px 0 0;text-wrap:balance}
 .h2 em{font-style:normal;color:var(--lime)}
 .lede{color:var(--fog);max-width:52ch;font-size:17px}
 .hud{position:relative}
-.hud::before,.hud::after{content:"";position:absolute;width:22px;height:22px;border:2px solid var(--lime);pointer-events:none}
+.hud::before,.hud::after{content:none}
 .hud::before{left:-1px;top:-1px;border-right:0;border-bottom:0}
 .hud::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
 .readout{font-family:var(--f-ui);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5)}
@@ -177,7 +197,7 @@ button{font:inherit}
 .bridge .big{font-family:var(--f-crave);color:var(--ink);font-size:clamp(46px,7.5vw,120px);line-height:.9;margin:0}
 .bridge .eyebrow{color:var(--ink)}
 .bridge .eyebrow b{color:var(--magenta)}
-.lineup{position:relative;z-index:2;height:calc(100vh - var(--headH,110px));min-height:560px;background:radial-gradient(ellipse at 70% 60%,#3b0b47 0%,var(--plum) 60%)}
+.lineup{position:relative;z-index:2;overflow-x:clip;height:calc(100vh - var(--headH,110px));min-height:560px;background:radial-gradient(ellipse at 70% 60%,#3b0b47 0%,var(--plum) 60%)}
 .lineup .grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--hair) 1px,transparent 1px),linear-gradient(90deg,var(--hair) 1px,transparent 1px);background-size:80px 80px;opacity:.35;-webkit-mask:radial-gradient(ellipse at 70% 60%,#000 0,transparent 70%);mask:radial-gradient(ellipse at 70% 60%,#000 0,transparent 70%)}
 .lu-ui{position:relative;z-index:5;height:100%;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center}
 .lu-panel{padding-block:40px}
@@ -186,7 +206,7 @@ button{font:inherit}
 .lu-name{font-family:var(--f-crave);font-size:clamp(46px,5.8vw,92px);line-height:.92;margin:0;min-height:1.9em;display:flex;align-items:flex-end;text-wrap:balance}
 .lu-name span{display:block}
 .lu-desc{color:var(--fog);max-width:40ch;min-height:3.4em;margin:14px 0 22px}
-.gauge{display:flex;align-items:center;gap:18px;padding:16px 18px;border:1px solid var(--hair);background:rgba(13,4,16,.55);width:max-content;max-width:100%}
+.gauge{display:flex;align-items:center;gap:18px;padding:16px 20px;border-radius:20px;background:rgba(255,255,255,.06);width:max-content;max-width:100%}
 .gauge svg{width:140px;height:80px;flex:0 0 auto}
 .gauge .lbl{font-family:var(--f-ui);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--fog)}
 .gauge .val{font-family:var(--f-cure);font-size:44px;line-height:1;color:var(--lime)}
@@ -211,32 +231,36 @@ button{font:inherit}
 }
 
 /* ---------- award ---------- */
-.award{position:relative;z-index:2;height:calc(100vh - var(--headH,110px));min-height:560px;background:radial-gradient(circle at 50% 46%,#5a0f63 0%,#260630 38%,var(--plum) 72%);overflow:hidden}
-.award .beam{position:absolute;left:50%;top:-10%;width:60vw;max-width:100%;height:120%;transform:translateX(-50%);background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(255,102,196,.22) 172deg,rgba(255,102,196,.32) 180deg,rgba(255,102,196,.22) 188deg,transparent 200deg);pointer-events:none}
+.award{position:relative;z-index:2;overflow-x:clip;height:calc(100vh - var(--headH,110px));min-height:560px;background:radial-gradient(circle at 50% 50%,#fff 0%,#fdeef7 55%,#f9d8ec 100%);color:var(--ink)}
+.award .lede{color:#5a4660}
+.award .eyebrow{color:var(--magenta)}.award .eyebrow b{color:var(--ink)}
+.award .readout{color:#7a6680}
+.award .beam{position:absolute;left:50%;top:0;width:60vw;max-width:100%;height:100%;overflow:hidden;opacity:.6;transform:translateX(-50%);background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(255,102,196,.22) 172deg,rgba(255,102,196,.32) 180deg,rgba(255,102,196,.22) 188deg,transparent 200deg);pointer-events:none}
 .aw-ui{position:relative;z-index:5;height:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);align-items:center;gap:24px}
 .aw-title{font-family:var(--f-cure);font-size:clamp(70px,9vw,150px);line-height:.84;margin:12px 0 0}
-.aw-title em{display:block;font-style:normal;color:var(--lime)}
+.aw-title em{display:block;font-style:normal;color:var(--magenta)}
 .aw-right{grid-column:3;display:flex;flex-direction:column;gap:16px}
-.aw-card{border:1px solid var(--hair);background:rgba(13,4,16,.6);padding:14px}
+.aw-card{background:#fff;padding:12px;border-radius:18px;box-shadow:0 18px 40px rgba(120,20,110,.18)}
+.aw-card img{border-radius:10px}
 .aw-card img{width:100%;height:auto;aspect-ratio:454/313;object-fit:cover}
-.aw-card p{margin:10px 0 0;font-size:14px;color:var(--fog)}
+.aw-card p{margin:10px 4px 2px;font-size:14px;color:#5a4660}
 .medal{display:flex;gap:12px;align-items:center;font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.12em;font-size:14px}
-.medal i{flex:0 0 auto;width:36px;height:36px;display:grid;place-items:center;border:2px solid var(--lime);color:var(--lime);font-style:normal;font-weight:600}
+.medal i{flex:0 0 auto;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--lime);font-style:normal;font-weight:600}
 @media (max-width:900px){.aw-ui{grid-template-columns:1fr;align-content:space-between;padding-block:28px}.aw-right{grid-column:auto}.aw-card,.aw-ui .lede{display:none}}
 
 /* ---------- menu grid ---------- */
-.menu{position:relative;z-index:4;background:var(--plum);padding-block:110px 100px;overflow:hidden}
+.menu{position:relative;z-index:4;overflow-x:clip;background:var(--plum);padding-block:110px 100px}
 .menu-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;margin-bottom:34px}
 .over20{width:180px;height:auto;transform:rotate(8deg)}
 .price-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:22px}
-.price-tag{display:flex;align-items:baseline;gap:10px;padding:10px 18px;background:var(--pink);color:var(--ink);font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.1em;font-weight:600;transform:rotate(-1.5deg)}
+.price-tag{display:flex;align-items:baseline;gap:10px;padding:10px 20px;border-radius:999px;background:var(--pink);color:var(--ink);font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.1em;font-weight:600;transform:rotate(-1.5deg)}
 .price-tag b{font-family:var(--f-cure);font-size:40px;font-weight:400;line-height:1}
 .price-tag.l{background:var(--lime)}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
-.chip{font-family:var(--f-ui);font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;border:1px solid var(--hair);background:transparent;color:var(--fog);cursor:pointer}
+.chip{font-family:var(--f-ui);font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:9px 18px;border-radius:999px;border:1px solid var(--hair);background:transparent;color:var(--fog);cursor:pointer}
 .chip[aria-pressed="true"]{background:#fff;color:var(--ink);border-color:#fff}
-.flav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair)}
-.fcard{position:relative;background:var(--plum);padding:18px 18px 16px;display:flex;flex-direction:column;gap:10px;min-height:150px;transition:background .2s}
+.flav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.fcard{position:relative;background:#1e0626;border-radius:18px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:10px;min-height:150px;transition:background .2s}
 .fcard:hover{background:#2a0834}
 .fcard .no{font-family:var(--f-ui);font-size:13px;letter-spacing:.16em;color:var(--pink);font-variant-numeric:tabular-nums}
 .fcard h3{margin:0;font-family:var(--f-crave);font-weight:400;font-size:24px;line-height:1.05;text-transform:uppercase}
@@ -247,6 +271,18 @@ button{font:inherit}
 .note{margin-top:16px;font-size:13px;color:rgba(255,255,255,.45)}
 @media (max-width:700px){.menu-head{grid-template-columns:1fr}.over20{position:absolute;right:12px;top:40px;width:110px}}
 
+/* ---------- roadrunner reveal ---------- */
+.rr{position:relative;z-index:4;height:calc(100vh - var(--headH,110px));min-height:520px;background:#fff;color:var(--ink);overflow:hidden}
+.rr-frame{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}
+.rr-stage{position:relative;aspect-ratio:16/9;width:max(100%,calc((100vh - var(--headH,110px)) * 1.7778));max-width:none;flex:0 0 auto}
+.rr-canvas{position:absolute;inset:0;width:100%;height:100%}
+.rr-logo,.rr-vid{position:absolute;left:0;top:0;width:2px;height:2px;opacity:0;pointer-events:none}
+
+.rr-copy{position:absolute;left:0;right:0;top:28px;z-index:2}
+.rr .eyebrow{color:var(--magenta)}.rr .eyebrow b{color:var(--ink)}
+.rr-line{position:absolute;left:var(--gut);right:var(--gutR);top:calc(100vh - var(--headH,110px) - 140px);margin:0;font-family:var(--f-crave);font-size:clamp(28px,3.4vw,52px);line-height:1;opacity:0;transform:translateY(20px);text-align:center}
+.rr-line em{font-style:normal;color:var(--magenta)}
+@media (max-width:820px){.rr-stage{width:165%}.rr-line{top:auto;bottom:90px;font-size:26px}}
 /* ---------- family ---------- */
 .family{position:relative;z-index:4;background:#fff;color:var(--ink);padding-block:110px;overflow:hidden}
 .family .eyebrow{color:var(--magenta)}
@@ -270,9 +306,10 @@ button{font:inherit}
 @media (max-width:900px){.fam-grid{grid-template-columns:1fr}.collage{height:420px}}
 
 /* ---------- lab ---------- */
-.lab{position:relative;z-index:4;background:#0a020d;padding-block:110px;overflow:hidden}
-.lab-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:center}
-.screen{position:relative;border:1px solid var(--hair);background:#000;padding:12px}
+.lab{position:relative;z-index:4;background:#0a020d;padding-block:110px;overflow-x:clip}
+.lab-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:center}
+.screen{position:relative;border-radius:28px;background:#000;padding:10px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.screen video{border-radius:20px}
 .screen video{width:100%;height:auto;aspect-ratio:9/16;max-height:78vh;object-fit:cover;display:block;background:#000}
 .screen .rec{position:absolute;top:24px;left:24px;display:flex;align-items:center;gap:8px;font-family:var(--f-ui);font-size:12px;letter-spacing:.2em;color:#fff;text-transform:uppercase}
 .screen .rec::before{content:"";width:9px;height:9px;border-radius:50%;background:#ff2d55;animation:blink 1.2s infinite}
@@ -291,16 +328,16 @@ button{font:inherit}
 @media (max-width:900px){.lab-grid{grid-template-columns:1fr}}
 
 /* ---------- dealer ---------- */
-.dealer{position:relative;z-index:4;background:var(--plum-2);padding-block:110px}
-.dl-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px;margin-top:36px}
-.map{position:relative;border:1px solid var(--hair);background:#120318;overflow:hidden}
+.dealer{position:relative;z-index:4;background:var(--plum-2);padding-block:110px;overflow-x:clip}
+.dl-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px;margin-top:36px}
+.map{position:relative;border-radius:22px;background:#120318;overflow:hidden}
 .map svg{display:block;width:100%;height:auto}
 .map .legend{position:absolute;left:14px;bottom:12px;display:flex;gap:14px;flex-wrap:wrap}
 .pin{cursor:pointer}
 .pin circle.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2s infinite}
 @keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.4);opacity:0}}
 .pin.on .core{fill:var(--lime)}
-.sched{display:flex;flex-direction:column;border:1px solid var(--hair)}
+.sched{display:flex;flex-direction:column;border-radius:22px;background:#1a0521;overflow:hidden}
 .sched-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--hair);flex-wrap:wrap}
 .badge{font-family:var(--f-ui);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:3px 8px;background:var(--pink);color:var(--ink)}
 .ev{display:grid;grid-template-columns:62px minmax(0,1fr);gap:14px;padding:14px 16px;border:0;border-bottom:1px solid var(--hair);background:none;color:#fff;text-align:left;cursor:pointer;font:inherit}
@@ -316,13 +353,13 @@ button{font:inherit}
 @media (max-width:900px){.dl-grid{grid-template-columns:1fr}}
 
 /* ---------- reviews ---------- */
-.reviews{position:relative;z-index:4;background:var(--magenta) url("img/bg-gradient.webp") center/cover;padding-block:100px;overflow:hidden}
+.reviews{position:relative;z-index:4;overflow-x:clip;background:#d81fc9 url("img/bg-gradient.webp") center/cover;padding-block:100px}
 .rev-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
 .reviews .eyebrow{color:#fff}
 .reviews .h2 em{color:var(--lime)}
 .sample-note{font-size:13px;background:rgba(13,4,16,.55);padding:8px 12px;border-left:3px solid var(--lime);max-width:40ch}
 .rev-row{display:grid;grid-template-columns:repeat(5,minmax(260px,1fr));gap:16px;margin-top:36px;overflow-x:auto;padding:4px var(--gutR) 18px var(--gut);scroll-snap-type:x mandatory}
-.rev{scroll-snap-align:start;background:#fff;color:var(--ink);padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:8px 8px 0 var(--ink)}
+.rev{scroll-snap-align:start;background:#fff;color:var(--ink);padding:24px;border-radius:22px;display:flex;flex-direction:column;gap:12px;box-shadow:0 18px 40px rgba(60,0,70,.25)}
 .rev:nth-child(even){transform:rotate(1deg)}
 .rev:nth-child(odd){transform:rotate(-1deg)}
 .stars{color:#ff9f00;letter-spacing:3px;font-size:18px}
@@ -330,21 +367,21 @@ button{font:inherit}
 .rev .who{margin-top:auto;font-family:var(--f-ui);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6b5a70}
 
 /* ---------- contact ---------- */
-.contact{position:relative;z-index:4;background:var(--plum);padding-block:110px 80px}
-.ct-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;margin-top:30px}
+.contact{position:relative;z-index:4;background:var(--plum);padding-block:110px 80px;overflow-x:clip}
+.ct-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;margin-top:30px}
 .lines{display:flex;flex-direction:column;gap:14px;margin-top:26px}
-.line{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--hair);min-width:0}
+.line{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;background:#1e0626;border-radius:16px;min-width:0}
 .line .k{font-family:var(--f-ui);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--pink)}
 .line .v{font-family:var(--f-ui);font-size:20px;letter-spacing:.04em;user-select:all;overflow-wrap:anywhere}
-.copy{background:none;border:1px solid var(--hair);color:#fff;font-family:var(--f-ui);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;cursor:pointer;flex:0 0 auto}
+.copy{background:none;border:1px solid var(--hair);border-radius:999px;color:#fff;font-family:var(--f-ui);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;cursor:pointer;flex:0 0 auto}
 .pay{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .pay span{font-family:var(--f-ui);font-size:14px;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;background:#fff;color:var(--ink)}
 .socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.02);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+form.hud{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .field{display:flex;flex-direction:column;gap:6px;min-width:0}
 .field.full{grid-column:1/-1}
 .field label{font-family:var(--f-ui);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fog)}
-.field input,.field select,.field textarea{background:#0a020d;border:1px solid rgba(255,255,255,.22);color:#fff;font:inherit;padding:12px 14px;border-radius:0;width:100%}
+.field input,.field select,.field textarea{background:#0a020d;border:1px solid rgba(255,255,255,.16);color:#fff;font:inherit;padding:13px 16px;border-radius:14px;width:100%}
 .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--lime);outline-offset:0;border-color:transparent}
 .field textarea{min-height:120px;resize:vertical}
 .form-foot{grid-column:1/-1;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
@@ -365,7 +402,6 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
 </head>
 <body>
 <header class="site-head" id="top">
-  <div class="util"><div class="wrap"><a href="#contact">Register</a><a href="#contact">Login</a><a class="cart" href="#menu" aria-label="Cart"><svg width="20" height="18" viewBox="0 0 20 18" aria-hidden="true"><path d="M0 1h3.2l2.6 10.2h10.6L19 4H5.2" fill="none" stroke="#0d0410" stroke-width="2"/><circle cx="7.5" cy="15.5" r="1.6" fill="#0d0410"/><circle cx="15" cy="15.5" r="1.6" fill="#0d0410"/></svg></a></div></div>
   <div class="wrap navrow">
     <a class="brand" href="#top" aria-label="Jerky Fixx home"><img src="img/logo-lockup.webp" alt="Jerky Fixx" width="350" height="150"></a>
     <nav class="nav" aria-label="Main">
@@ -376,6 +412,7 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
       <a href="#dealer">Dealer Locator</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="head-cta"><a class="head-link" href="#contact">Login</a><a class="cart" href="#menu" aria-label="Cart"><svg width="20" height="18" viewBox="0 0 20 18" aria-hidden="true"><path d="M0 1h3.2l2.6 10.2h10.6L19 4H5.2" fill="none" stroke="#0d0410" stroke-width="2"/><circle cx="7.5" cy="15.5" r="1.6" fill="#0d0410"/><circle cx="15" cy="15.5" r="1.6" fill="#0d0410"/></svg></a><a class="pill pill-dark" href="#contact">Order now <span aria-hidden="true">↗</span></a></div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -385,6 +422,7 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
 </nav>
 
 <canvas id="stage" aria-hidden="true"></canvas>
+<a class="pill pill-lime fab" id="fab" href="#contact">Get your fixx <span aria-hidden="true">↗</span></a>
 <div id="heroFx">
   <div class="tapes" aria-label="Warning! Flavors may cause addiction">
     <div class="tape t1"><div class="whole"><div class="track"></div></div><div class="half l"><div class="track"></div></div><div class="half r"><div class="track"></div></div></div>
@@ -437,15 +475,15 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
 <!-- BRIDGE + LINE-UP -->
 <section class="bridge" id="lineup" aria-labelledby="lu-title">
   <div class="wrap">
-    <div class="eyebrow ui"><b>// 01.</b> The line-up</div>
+    <div class="eyebrow ui"><b>Section 01</b> · The line-up</div>
     <h2 class="big" id="lu-title">Top sellers. Get your fixx!</h2>
   </div>
 </section>
 <section class="lineup sec" id="lineupStage">
-  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="giant" data-x="-28" aria-hidden="true">carne seca</div>
   <div class="wrap lu-ui">
     <div class="lu-panel">
-      <div class="eyebrow ui"><b>// 01.</b> Best sellers</div>
+      <div class="eyebrow ui"><b>Section 01</b> · Best sellers</div>
       <div class="lu-count"><b id="luNum">01</b> / 08</div>
       <h3 class="lu-name" id="luName"><span>X-Hot Green</span></h3>
       <p class="lu-desc" id="luDesc"></p>
@@ -461,7 +499,7 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
         </svg>
         <div><div class="lbl">Heat level</div><div class="val" id="gVal">5/5</div><div class="pods" id="gPods"></div></div>
       </div>
-      <div class="lu-buy"><a class="btn btn-lime" href="#contact">Get this fixx</a><span class="price">Small <b>$7</b> · Large <b>$20</b></span></div>
+      <div class="lu-buy"><a class="pill pill-lime" href="#contact">Get this fixx <span aria-hidden="true">↗</span></a><span class="price">Small <b>$7</b> · Large <b>$20</b></span></div>
     </div>
     <div aria-hidden="true"></div>
   </div>
@@ -470,10 +508,12 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
 
 <!-- AWARD -->
 <section class="award sec" id="award">
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#fdeef7"/></svg></div>
+  <div class="giant dark" data-x="-30" aria-hidden="true">winner</div>
   <div class="beam" aria-hidden="true"></div>
   <div class="wrap aw-ui">
     <div>
-      <div class="eyebrow ui"><b>// 02.</b> The hardware</div>
+      <div class="eyebrow ui"><b>Section 02</b> · The hardware</div>
       <h2 class="aw-title">Award<em>winning</em>jerky</h2>
       <p class="lede">The judges at New Mexico Jerky Fest took one bite and got hooked like everybody else.</p>
     </div>
@@ -488,10 +528,11 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
 
 <!-- FULL MENU -->
 <section class="menu" id="menu">
+  <div class="wave slow" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#14031a"/></svg></div>
   <div class="wrap">
     <div class="menu-head">
       <div>
-        <div class="eyebrow ui"><b>// 03.</b> The full menu</div>
+        <div class="eyebrow ui"><b>Section 03</b> · The full menu</div>
         <h2 class="h2">Every flavor<br>we're <em>pushing</em></h2>
       </div>
       <img class="over20" src="img/over20.webp" alt="Over 20 flavors!" width="390" height="520" loading="lazy">
@@ -513,6 +554,21 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
   </div>
 </section>
 
+<!-- ROADRUNNER REVEAL -->
+<section class="rr" id="legend" aria-label="The Jerky Fixx roadrunner">
+  <div class="rr-frame">
+    <div class="rr-stage" id="rrStage">
+      <canvas class="rr-canvas" id="rrCanvas" role="img" aria-label="A roadrunner carrying jerky walks past and reveals the Jerky Fixx logo"></canvas>
+      <img class="rr-logo" id="rrLogo" src="img/logo-pink-lg.webp" alt="" width="1196" height="894">
+      <video class="rr-vid" id="rrVid" muted playsinline preload="auto"><source src="vid/roadrunner.webm" type="video/webm"><source src="vid/roadrunner.mp4" type="video/mp4"></video>
+    </div>
+  </div>
+  <div class="wrap rr-copy">
+    <div class="eyebrow ui"><b>Section 04</b> · The legend</div>
+    <p class="rr-line" id="rrLine">Fast as a roadrunner. <em>Hooked like a fixx.</em></p>
+  </div>
+</section>
+
 <!-- FAMILY -->
 <section class="family" id="family">
   <div class="wrap fam-grid">
@@ -522,7 +578,7 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
       <figure class="ph3"><img src="img/fb_neon_cover.webp" alt="Neon Jerky Fixx roadrunner logo over a city skyline" loading="lazy"><figcaption>505 till we die</figcaption></figure>
     </div>
     <div class="fam-copy">
-      <div class="eyebrow ui"><b>// 04.</b> Our story</div>
+      <div class="eyebrow ui"><b>Section 05</b> · Our story</div>
       <h2 class="h2">The Fixx<br><em>Family</em></h2>
       <span class="script-love">made with love, faith x family</span>
       <p>Jerky Fixx is a family operation out of Albuquerque. Every batch gets cut, seasoned and dried by the same crew you'll find behind the table at pop ups, festivals and a whole lot of softball games.</p>
@@ -538,17 +594,19 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
 
 <!-- LAB -->
 <section class="lab" id="lab">
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#0a020d"/></svg></div>
+  <div class="giant" data-x="-35" aria-hidden="true">the lab</div>
   <div class="wrap lab-grid">
     <div class="lab-wrap">
       <div class="screen hud">
-        <video id="labVid" src="vid/lab.mp4" poster="vid/lab-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+        <video id="labVid" poster="vid/lab-poster.jpg" muted loop playsinline autoplay preload="metadata"><source src="vid/lab.webm" type="video/webm"><source src="vid/lab.mp4" type="video/mp4"></video>
         <div class="rec">Lab cam 01</div>
         <div class="temp" id="labTemp">RAW</div>
         <div class="ph-note">Sample process footage for the mockup. Swap in Jerky Fixx's own lab video before launch.</div>
       </div>
     </div>
     <div>
-      <div class="eyebrow ui"><b>// 05.</b> In the lab</div>
+      <div class="eyebrow ui"><b>Section 06</b> · In the lab</div>
       <h2 class="h2">How the<br><em>product</em> gets made</h2>
       <p class="lede">The carne seca method, start to finish. Thin cut beef, a heavy hand with seasoning and a long, slow dry. No shortcuts and no filler.</p>
       <ol class="steps" id="steps"></ol>
@@ -558,8 +616,10 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
 
 <!-- DEALER -->
 <section class="dealer" id="dealer">
+  <div class="wave slow" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#22062c"/></svg></div>
+  <div class="giant" data-x="-25" aria-hidden="true">the 505</div>
   <div class="wrap">
-    <div class="eyebrow ui"><b>// 06.</b> Dealer locator</div>
+    <div class="eyebrow ui"><b>Section 07</b> · Dealer locator</div>
     <h2 class="h2">Find your<br><em>dealer</em></h2>
     <p class="lede">Most of the dealing happens at our kids' softball games. Find the next field we'll be posted up at, bring cash or your phone, and get your fixx.</p>
     <div class="dl-grid">
@@ -592,9 +652,10 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
 
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#d81fc9"/></svg></div>
   <div class="wrap rev-head">
     <div>
-      <div class="eyebrow ui"><b>// 07.</b> Side effects</div>
+      <div class="eyebrow ui"><b>Section 08</b> · Side effects</div>
       <h2 class="h2">Hooked<br><em>customers</em></h2>
     </div>
     <p class="sample-note">Placeholder reviews for layout only. Swap in real Google or Facebook reviews before launch.</p>
@@ -604,8 +665,10 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
+  <div class="wave slow" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#14031a"/></svg></div>
+  <div class="giant" data-x="-30" aria-hidden="true">re-up</div>
   <div class="wrap">
-    <div class="eyebrow ui"><b>// 08.</b> Contact</div>
+    <div class="eyebrow ui"><b>Section 09</b> · Contact</div>
     <h2 class="h2">Need a<br><em>re-up?</em></h2>
     <div class="ct-grid">
       <div>
@@ -617,7 +680,7 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
         </div>
         <div class="readout" style="margin-top:22px">We accept</div>
         <div class="pay"><span>Apple Pay</span><span>Cash App</span><span>Venmo</span><span>Cash</span></div>
-        <div class="socials"><a class="btn btn-ghost" style="min-width:0" href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener">Instagram @jerky_fixx</a><a class="btn btn-ghost" style="min-width:0" href="https://www.facebook.com/jerky.fixx" target="_blank" rel="noopener">Facebook</a></div>
+        <div class="socials"><a class="pill pill-light" href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a><a class="pill pill-light" href="https://www.facebook.com/jerky.fixx" target="_blank" rel="noopener">Facebook <span aria-hidden="true">↗</span></a></div>
       </div>
       <form class="hud" id="cform" novalidate>
         <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" autocomplete="name" required></div>
@@ -625,7 +688,7 @@ form.hud{border:1px solid var(--hair);padding:28px;background:rgba(255,255,255,.
         <div class="field full"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
         <div class="field full"><label for="c-topic">What do you need?</label><select id="c-topic" name="topic"><option>Place an order</option><option>Book us for an event</option><option>Wholesale or retail</option><option>Custom flavor</option><option>Something else</option></select></div>
         <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="message" placeholder="Two large X-Hot Green and a small Garlic Parm, pick up at Saturday's game"></textarea></div>
-        <div class="form-foot"><button class="btn btn-lime" type="submit">Send it</button><span class="form-msg" id="formMsg" role="status"></span></div>
+        <div class="form-foot"><button class="pill pill-lime" type="submit">Send it <span aria-hidden="true">↗</span></button><span class="form-msg" id="formMsg" role="status"></span></div>
       </form>
     </div>
   </div>
@@ -797,7 +860,7 @@ const loadFrac=()=>{let a=0,b=0;for(const n in SIZES){a+=(GOT[n]||0)*SIZES[n];b+
 const ready=Promise.all(NAMES.map(n=>loadModel(n).then(g=>{BASE[n]=norm(g);loaded++;}).catch(e=>{GOT[n]=1;console.warn("model",n,e)})));
 
 /* ---------- state from scroll ---------- */
-const S={hero:0,bridge:0,lu:0,aw:0,awIn:0,after:0,intro:0};
+const S={rr:0,hero:0,bridge:0,lu:0,aw:0,awIn:0,after:0,intro:0};
 const smooth=(a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t);};
 const clamp01=x=>Math.min(1,Math.max(0,x));
 const easeOutBack=x=>{const c1=1.5,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);};
@@ -813,6 +876,37 @@ ST.create({trigger:"#lineupStage",start:()=>"top "+headH(),end:()=>"+="+innerHei
 ST.create({trigger:"#award",start:"top bottom",end:()=>"top "+headH(),onUpdate:s=>S.awIn=s.progress});
 ST.create({trigger:"#award",start:()=>"top "+headH(),end:()=>"+="+innerHeight*1.3,pin:true,scrub:true,onUpdate:s=>S.aw=s.progress});
 ST.create({trigger:"#menu",start:"top bottom",end:"top 40%",onUpdate:s=>S.after=s.progress});
+/* roadrunner: scrub the clip with scroll; composite in a canvas so the bird always sits in front of the logo it reveals */
+const RV=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.012, 0.012, 0.026, 0.041, 0.053, 0.068, 0.068, 0.085, 0.101, 0.118, 0.135, 0.135, 0.149, 0.164, 0.176, 0.191, 0.191, 0.205, 0.222, 0.239, 0.253, 0.253, 0.27, 0.285, 0.297, 0.312, 0.312, 0.326, 0.341, 0.357, 0.372, 0.372, 0.387, 0.403, 0.416, 0.43, 0.43, 0.443, 0.458, 0.474, 0.491, 0.491, 0.505, 0.522, 0.535, 0.549, 0.549, 0.564, 0.578, 0.593, 0.61, 0.61, 0.626, 0.643, 0.657, 0.674, 0.674, 0.687, 0.701, 0.716, 0.733, 0.733, 0.749, 0.764, 0.778, 0.793, 0.793, 0.807, 0.824, 0.841, 0.858, 0.858, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2];
+const rrVid=$("#rrVid"),rrLogo=$("#rrLogo"),rrLine=$("#rrLine"),rrCv=$("#rrCanvas"),rrCx=rrCv.getContext("2d"),rrOff=document.createElement("canvas"),rrOx=rrOff.getContext("2d");
+let rrDur=8.0,rrT=0,rrEdge=0,rrDirty=true;
+rrVid.addEventListener("loadedmetadata",()=>{rrDur=rrVid.duration||8});
+["seeked","loadeddata"].forEach(e=>rrVid.addEventListener(e,()=>rrDirty=true));
+rrLogo.addEventListener("load",()=>rrDirty=true);
+function rrSize(){const r=rrCv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,1.5);rrCv.width=rrOff.width=Math.max(2,Math.round(r.width*d));rrCv.height=rrOff.height=Math.max(2,Math.round(r.height*d));rrDirty=true;}
+rrSize();addEventListener("resize",rrSize);
+function rrDraw(){
+  const W=rrCv.width,H=rrCv.height;
+  rrCx.globalCompositeOperation="source-over";rrCx.fillStyle="#fff";rrCx.fillRect(0,0,W,H);
+  if(rrLogo.complete&&rrLogo.naturalWidth&&rrEdge>0){
+    const lw=W*.38,lh=lw*rrLogo.naturalHeight/rrLogo.naturalWidth,lx=W*.31,ly=H*.2,ex=rrEdge*W,fe=W*.035;
+    rrOx.globalCompositeOperation="source-over";rrOx.clearRect(0,0,W,H);rrOx.drawImage(rrLogo,lx,ly,lw,lh);
+    const g=rrOx.createLinearGradient(ex-fe,0,ex,0);g.addColorStop(0,"#000");g.addColorStop(1,"rgba(0,0,0,0)");
+    rrOx.globalCompositeOperation="destination-in";rrOx.fillStyle=g;rrOx.fillRect(0,0,W,H);
+    rrCx.drawImage(rrOff,0,0);
+  }
+  if(rrVid.readyState>=2){rrCx.globalCompositeOperation="multiply";rrCx.drawImage(rrVid,0,0,W,H);rrCx.globalCompositeOperation="source-over";}
+}
+ST.create({trigger:"#legend",start:()=>"top "+headH(),end:()=>"+="+innerHeight*2.2,pin:true,scrub:true,onRefresh:rrSize,onUpdate:s=>{
+  rrT=s.progress*(rrDur-.05);
+  const f=Math.min(RV.length-1,Math.max(0,Math.round(rrT*30)));rrEdge=RV[f];rrDirty=true;
+  const lp=smooth(.86,.97,s.progress);rrLine.style.opacity=lp;rrLine.style.transform=`translateY(${(1-lp)*20}px)`;
+}});
+(function rrLoop(){if(!rrVid.seeking&&rrVid.readyState>=1&&Math.abs(rrVid.currentTime-rrT)>.03){try{rrVid.currentTime=rrT}catch(e){}}if(rrDirty&&!rrVid.seeking){rrDirty=false;rrDraw();}requestAnimationFrame(rrLoop)})();
+/* giant words drift sideways as their section scrolls past */
+document.querySelectorAll(".giant").forEach(g=>{const host=g.parentElement;gsap.fromTo(g,{xPercent:8},{xPercent:+g.dataset.x||-30,ease:"none",scrollTrigger:{trigger:host,start:"top bottom",end:"bottom top",scrub:true}});});
+/* floating order pill after the hero */
+const fab=$("#fab");ST.create({trigger:"#lineup",start:"top 60%",endTrigger:"#contact",end:"top 80%",onToggle:s=>fab.classList.toggle("on",s.isActive)});
 
 /* hero DOM choreography */
 const heroCopy=$("#heroCopy"),wash=$("#limewash"),cue=$("#cue"),tapesEl=$("#heroFx .tapes"),heroFx=$("#heroFx"),herolime=$("#herolime"),fxCtas=$("#fxCtas");
@@ -857,27 +951,18 @@ ready.then(()=>{
   TOP.forEach((f,fi)=>{luSets.push(f.m.map((n,k)=>({o:inst(n),n,k,cnt:f.m.length,spin:new THREE.Vector3(.5+Math.random()*.5,.7+Math.random()*.6,.3).multiplyScalar(k%2?-1:1)})));});
   /* turntable */
   table=new THREE.Group();
-  /* New Mexico Zia sun as the turntable: center ring plus four groups of four rays, the middle two longer */
-  const ziaM=new THREE.MeshStandardMaterial({color:0xff66c4,emissive:0xe21bd6,emissiveIntensity:.45,metalness:.35,roughness:.3});
-  const edgeM=new THREE.MeshBasicMaterial({color:0xc9fb05});
-  const core=new THREE.Mesh(new THREE.CylinderGeometry(.27,.27,.04,64),new THREE.MeshStandardMaterial({color:0x1a0620,metalness:.7,roughness:.25}));
-  const ring=new THREE.Mesh(new THREE.TorusGeometry(.34,.06,20,96),ziaM);ring.rotation.x=Math.PI/2;
-  const ringIn=new THREE.Mesh(new THREE.TorusGeometry(.275,.008,8,96),edgeM);ringIn.rotation.x=Math.PI/2;ringIn.position.y=.03;
-  const rays=new THREE.Group();
-  for(let d=0;d<4;d++){const g=new THREE.Group();g.rotation.y=d*Math.PI/2;
-    for(let r=0;r<4;r++){const off=(r-1.5)*.115,long=(r===1||r===2),len=long?.66:.5,st=.44;
-      const b=new THREE.Mesh(new THREE.BoxGeometry(len,.07,.068),ziaM);b.position.set(st+len/2,0,off);g.add(b);
-      const tip=new THREE.Mesh(new THREE.BoxGeometry(.03,.075,.07),edgeM);tip.position.set(st+len-.015,0,off);g.add(tip);}
-    rays.add(g);}
-  const halo=new THREE.Mesh(new THREE.TorusGeometry(1.22,.006,8,160),edgeM);halo.rotation.x=Math.PI/2;
-  const glow=new THREE.Mesh(new THREE.CircleGeometry(1.45,64),new THREE.MeshBasicMaterial({color:0xff66c4,transparent:true,opacity:.16,depthWrite:false}));glow.rotation.x=-Math.PI/2;glow.position.y=-.05;
-  table.add(core,ring,ringIn,rays,halo,glow);table.userData.spin=new THREE.Group();table.visible=false;scene.add(table);
+  const disc=new THREE.Mesh(new THREE.CylinderGeometry(1,1,.07,96),new THREE.MeshStandardMaterial({color:0x1a0620,metalness:.7,roughness:.25}));
+  const ring1=new THREE.Mesh(new THREE.TorusGeometry(1.0,.018,12,160),new THREE.MeshBasicMaterial({color:0xff66c4}));ring1.rotation.x=Math.PI/2;ring1.position.y=.04;
+  const ring2=new THREE.Mesh(new THREE.TorusGeometry(.78,.008,12,160),new THREE.MeshBasicMaterial({color:0xc9fb05}));ring2.rotation.x=Math.PI/2;ring2.position.y=.045;
+  const ticks=new THREE.Group();for(let i=0;i<48;i++){const t=new THREE.Mesh(new THREE.BoxGeometry(.012,.01,i%4?.05:.1),new THREE.MeshBasicMaterial({color:i%4?0x9a5aa6:0xffffff}));const a=i/48*Math.PI*2;t.position.set(Math.cos(a)*.9,.045,Math.sin(a)*.9);t.rotation.y=-a;ticks.add(t);}
+  const glow=new THREE.Mesh(new THREE.CircleGeometry(1.6,64),new THREE.MeshBasicMaterial({color:0xff66c4,transparent:true,opacity:.18,depthWrite:false}));glow.rotation.x=-Math.PI/2;glow.position.y=-.05;
+  table.add(disc,ring1,ring2,ticks,glow);table.userData.spin=new THREE.Group();table.visible=false;scene.add(table);
   /* sparkles for trophy */
-  const N=220,pos=new Float32Array(N*3),col=new Float32Array(N*3);const cA=new THREE.Color(0xff66c4),cB=new THREE.Color(0xc9fb05),cW=new THREE.Color(0xffffff);
+  const N=220,pos=new Float32Array(N*3),col=new Float32Array(N*3);const cA=new THREE.Color(0xff66c4),cB=new THREE.Color(0xb7e000),cW=new THREE.Color(0xe21bd6);
   for(let i=0;i<N;i++){pos[i*3]=(Math.random()-.5)*12;pos[i*3+1]=(Math.random()-.5)*7;pos[i*3+2]=(Math.random()-.5)*4-1;const c=[cA,cB,cW][i%3];col.set([c.r,c.g,c.b],i*3);}
   const sg=new THREE.BufferGeometry();sg.setAttribute("position",new THREE.BufferAttribute(pos,3));sg.setAttribute("color",new THREE.BufferAttribute(col,3));
   const dot=document.createElement("canvas");dot.width=dot.height=64;const dx=dot.getContext("2d");const gr=dx.createRadialGradient(32,32,0,32,32,32);gr.addColorStop(0,"rgba(255,255,255,1)");gr.addColorStop(.3,"rgba(255,255,255,.6)");gr.addColorStop(1,"rgba(255,255,255,0)");dx.fillStyle=gr;dx.fillRect(0,0,64,64);
-  sparks=new THREE.Points(sg,new THREE.PointsMaterial({size:.12,map:new THREE.CanvasTexture(dot),vertexColors:true,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending}));sparks.visible=false;scene.add(sparks);
+  sparks=new THREE.Points(sg,new THREE.PointsMaterial({size:.14,map:new THREE.CanvasTexture(dot),vertexColors:true,transparent:true,depthWrite:false}));sparks.visible=false;scene.add(sparks);
   ST.refresh();
 });
 
@@ -919,6 +1004,22 @@ function finishBoot(){
 /* ---------- per-frame placement ---------- */
 const clock=new THREE.Clock();
 const tmp=new THREE.Vector3();
+/* keep orbiting meshes from intersecting: spheres push apart, and out of the jerky slab */
+function resolve(L,box,floorY,iters=5){
+  for(let k=0;k<iters;k++){
+    for(let i=0;i<L.length;i++){const a=L[i];if(a.free||a.r<=0)continue;
+      for(let j=i+1;j<L.length;j++){const b=L[j];if(b.free||b.r<=0)continue;
+        let dx=b.x-a.x,dy=b.y-a.y,dz=b.z-a.z,d=Math.hypot(dx,dy,dz);const m=a.r+b.r;
+        if(d<m){if(d<1e-4){dx=1;dy=0;dz=0;d=1;}const q=(m-d)/2/d;a.x-=dx*q;a.y-=dy*q;a.z-=dz*q;b.x+=dx*q;b.y+=dy*q;b.z+=dz*q;}}
+      if(box){const cx=Math.min(box.x+box.hx,Math.max(box.x-box.hx,a.x)),cy=Math.min(box.y+box.hy,Math.max(box.y-box.hy,a.y)),cz=Math.min(box.z+box.hz,Math.max(box.z-box.hz,a.z));
+        let dx=a.x-cx,dy=a.y-cy,dz=a.z-cz,d=Math.hypot(dx,dy,dz);
+        if(d<1e-4){a.z=box.z+(a.z>=box.z?1:-1)*(box.hz+a.r);}
+        else if(d<a.r){const q=(a.r-d)/d;a.x+=dx*q;a.y+=dy*q;a.z+=dz*q;}}
+      if(floorY!=null&&a.y<floorY+a.r*.8)a.y=floorY+a.r*.8;
+    }
+  }
+}
+const HL=[],LL=[];
 function place(o,x,y,z,s){o.position.set(x,y,z);o.scale.setScalar(Math.max(s,1e-4));o.visible=s>0.002;}
 function frame(){
   const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;
@@ -948,6 +1049,7 @@ function frame(){
       jerky.rotation.set(0,Math.sin(t*.5)*.12,(1-I)*-Math.PI*2-.04);
       if(h>.965)jerky.visible=false;
       const erupt=h, spread=smooth(.3,.6,h), fly=smooth(.62,.92,h);
+      HL.length=0;
       heroItems.forEach(it=>{
         const e=easeOutBack(clamp01((erupt-it.delay-.01)/.2));
         /* orbit around the jerky's vertical (Y) axis: items swing in front of and behind it */
@@ -965,9 +1067,10 @@ function frame(){
         } else {
           x+= (x-jx)*fly*1.1; y+=(y-jy)*fly*.9; z-=fly*1.5; sc*= (1-fly*.35);
         }
-        place(it.o,x,y,z,sc);
-        spinObj(it.o,it.spin,dt,t,1+fly*3);
+        HL.push({it,x,y,z,sc,r:sc*.47,free:it.n===HERO_FLY&&fly>0});
       });
+      resolve(HL,{x:jx,y:jerky.position.y,z:jerky.position.z,hx:jerky.scale.x*.27,hy:jerky.scale.x*.49,hz:jerky.scale.x*.07},null);
+      for(const q of HL){place(q.it.o,q.x,q.y,q.z,q.sc);spinObj(q.it.o,q.it.spin,dt,t,1+fly*3);}
     } else heroItems.forEach(it=>it.o.visible=false);
 
     /* ---- LINE-UP / TURNTABLE ---- */
@@ -984,6 +1087,7 @@ function frame(){
       jerky.rotation.set(0,Math.sin(S.lu*Math.PI*8+t*.4)*.55,0);
       const n=TOP.length, p=S.lu*n, idx=Math.min(n-1,Math.floor(p));
       setFlavor(idx);
+      LL.length=0;
       luSets.forEach((set,fi)=>{
         const u=p-fi; /* 0..1 within slot */
         const inA=fi===0?1:smooth(-.05,.3,u), outA=fi===n-1?0:smooth(.72,1.02,u);
@@ -995,10 +1099,12 @@ function frame(){
           x+= (1-inA)*VW*.6; y+=(1-inA)*VH*.5; /* enter from upper right */
           x-= outA*VW*.7; y+=outA*VH*.6;       /* exit to upper left */
           const sc=(mob?VH*.165:VH*.3)*(SZ[m.n]||1)*vis*(fi===0?luIn:1)*(1-outA*.3)*Math.min(1,inA*1.4);
-          place(m.o,x,y,z,sc);
-          spinObj(m.o,m.spin,dt,t);
+          if(sc<.002){m.o.visible=false;return;}
+          LL.push({m,x,y,z,sc,r:sc*.47});
         });
       });
+      resolve(LL,{x:tx,y:tY+jS*.44,z:0,hx:jS*.27,hy:jS*.49,hz:jS*.16},tY+ts*.05);
+      for(const q of LL){place(q.m.o,q.x,q.y,q.z,q.sc);spinObj(q.m.o,q.m.spin,dt,t);}
     } else {table.visible=false;luSets.forEach(s=>s.forEach(m=>m.o&&(m.o.visible=false)));}
     if(!heroActive && !luActive) jerky.visible=false;
 
