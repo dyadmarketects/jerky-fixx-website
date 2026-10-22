@@ -27,7 +27,7 @@ python3 -m http.server 8000
 
 0. **Loading screen:** live percentage from the model downloads, warning tape progress bar, then a lime curtain wipe
 1. **Hero:** the jerky rises with a 360° twist, ingredients erupt and orbit its vertical axis, then the lime breaks the warning tape and fills the screen
-2. **Top sellers:** 8 flavors on a scroll-driven turntable with a heat gauge
+2. **Top sellers:** 8 flavors on a spinning New Mexico Zia platter with a heat gauge
 3. **Award:** the New Mexico Jerky Fest trophy (Most Exotic Flavor, Best Booth)
 4. **Full menu:** all 25 flavors with heat filters, $7 small or $20 large
 5. **The Fixx Family**
