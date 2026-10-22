@@ -560,7 +560,7 @@ form.hud{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-te
     <div class="rr-stage" id="rrStage">
       <canvas class="rr-canvas" id="rrCanvas" role="img" aria-label="A roadrunner carrying jerky walks past and reveals the Jerky Fixx logo"></canvas>
       <img class="rr-logo" id="rrLogo" src="img/logo-pink-lg.webp" alt="" width="1196" height="894">
-      <video class="rr-vid" id="rrVid" muted playsinline preload="auto"><source src="vid/roadrunner.webm" type="video/webm"><source src="vid/roadrunner.mp4" type="video/mp4"></video>
+      <video class="rr-vid" id="rrVid" muted loop playsinline preload="auto"><source src="vid/roadrunner.webm" type="video/webm"><source src="vid/roadrunner.mp4" type="video/mp4"></video>
     </div>
   </div>
   <div class="wrap rr-copy">
@@ -884,7 +884,7 @@ rrVid.addEventListener("loadedmetadata",()=>{rrDur=rrVid.duration||8});
 ["seeked","loadeddata"].forEach(e=>rrVid.addEventListener(e,()=>rrDirty=true));
 rrLogo.addEventListener("load",()=>rrDirty=true);
 function rrSize(){const r=rrCv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,1.5);rrCv.width=rrOff.width=Math.max(2,Math.round(r.width*d));rrCv.height=rrOff.height=Math.max(2,Math.round(r.height*d));rrDirty=true;}
-rrSize();addEventListener("resize",rrSize);
+rrSize();addEventListener("resize",rrSize);ST.addEventListener("refresh",rrSize);
 function rrDraw(){
   const W=rrCv.width,H=rrCv.height;
   rrCx.globalCompositeOperation="source-over";rrCx.fillStyle="#fff";rrCx.fillRect(0,0,W,H);
@@ -897,17 +897,20 @@ function rrDraw(){
   }
   if(rrVid.readyState>=2){rrCx.globalCompositeOperation="multiply";rrCx.drawImage(rrVid,0,0,W,H);rrCx.globalCompositeOperation="source-over";}
 }
-ST.create({trigger:"#legend",start:()=>"top "+headH(),end:()=>"+="+innerHeight*2.2,pin:true,scrub:true,onRefresh:rrSize,onUpdate:s=>{
-  rrT=s.progress*(rrDur-.05);
-  const f=Math.min(RV.length-1,Math.max(0,Math.round(rrT*30)));rrEdge=RV[f];rrDirty=true;
-  const lp=smooth(.86,.97,s.progress);rrLine.style.opacity=lp;rrLine.style.transform=`translateY(${(1-lp)*20}px)`;
-}});
-/* phones often ignore preload: start loading and decode a frame as the section approaches */
-let rrPrimed=false;
-function rrPrime(){if(rrPrimed)return;rrPrimed=true;try{if(rrVid.readyState===0)rrVid.load();const pr=rrVid.play();if(pr&&pr.then)pr.then(()=>{rrVid.pause();rrDirty=true}).catch(()=>{});else rrVid.pause();}catch(e){}}
-ST.create({trigger:"#legend",start:"top bottom+=150%",onEnter:rrPrime,onEnterBack:rrPrime});
-addEventListener("touchstart",rrPrime,{once:true,passive:true});
-(function rrLoop(){if(!rrVid.seeking&&rrVid.readyState>=1&&Math.abs(rrVid.currentTime-rrT)>.03){try{rrVid.currentTime=rrT}catch(e){}}if(rrDirty&&!rrVid.seeking){rrDirty=false;rrDraw();}requestAnimationFrame(rrLoop)})();
+/* plays on a loop while the section is on screen; the logo reveal follows the bird every loop */
+let rrSeen=false;
+function rrPlay(){const pr=rrVid.play();if(pr&&pr.catch)pr.catch(()=>{});}
+ST.create({trigger:"#legend",start:"top 75%",end:"bottom 25%",onToggle:s=>{if(s.isActive)rrPlay();else rrVid.pause();}});
+ST.create({trigger:"#legend",start:"top bottom+=150%",onEnter:()=>{if(rrVid.readyState===0)rrVid.load();}});
+(function rrLoop(){
+  if(rrVid.readyState>=2&&(!rrVid.paused||rrDirty)){
+    const f=Math.min(RV.length-1,Math.max(0,Math.round(rrVid.currentTime*30)));rrEdge=RV[f];
+    if(rrEdge>=1)rrSeen=true;
+    if(rrSeen){rrLine.style.opacity=1;rrLine.style.transform="none";}
+    rrDirty=false;rrDraw();
+  }
+  requestAnimationFrame(rrLoop);
+})();
 /* giant words drift sideways as their section scrolls past */
 document.querySelectorAll(".giant").forEach(g=>{const host=g.parentElement;gsap.fromTo(g,{xPercent:8},{xPercent:+g.dataset.x||-30,ease:"none",scrollTrigger:{trigger:host,start:"top bottom",end:"bottom top",scrub:true}});});
 /* floating order pill after the hero */

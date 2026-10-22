@@ -34,7 +34,7 @@ python3 -m http.server 8000
 2. **Top sellers:** 8 flavors on a scroll-driven turntable with a heat gauge; orbiting ingredients never intersect
 3. **Award:** the New Mexico Jerky Fest trophy (Most Exotic Flavor, Best Booth)
 4. **Full menu:** all 25 flavors with heat filters, $7 small or $20 large
-5. **The legend:** scroll-scrubbed roadrunner clip that reveals the logo as it walks past
+5. **The legend:** looping roadrunner clip that plays on arrival and reveals the logo as it walks past
 6. **The Fixx Family**
 7. **In the Lab:** the carne seca process video with synced steps
 8. **Dealer Locator:** map plus pop-up schedule (softball games)
