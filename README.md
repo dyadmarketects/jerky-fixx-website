@@ -29,17 +29,29 @@ python3 -m http.server 8000
 
 ## Page sections
 
-0. **Loading screen:** live percentage from the model downloads, warning tape progress bar, then a lime curtain wipe
-1. **Hero:** the jerky rises with a 360° twist, ingredients erupt and orbit its vertical axis, then the lime breaks the warning tape and fills the screen
-2. **Top sellers:** 8 flavors on a scroll-driven turntable with a heat gauge; orbiting ingredients never intersect
-3. **Award:** the New Mexico Jerky Fest trophy (Most Exotic Flavor, Best Booth)
-4. **Full menu:** all 25 flavors with heat filters, $7 small or $20 large
-5. **The legend:** looping roadrunner clip that plays on arrival and reveals the logo as it walks past
-6. **The Fixx Family**
-7. **In the Lab:** the carne seca process video with synced steps
-8. **Dealer Locator:** map plus pop-up schedule (softball games)
-9. **Reviews**
-10. **Contact form**
+1. **Hero:** jerky rises, ingredients erupt and orbit on load; scrolling widens the orbit until the lime breaks the tape and fills the screen
+2. **FIXX Fiend Favs (top sellers):** turntable carousel with arrows, tabs, swipe and autoplay, size toggle and add to cart
+3. **Award winning jerky:** pink bull trophy (Most Exotic Flavor, Best Booth)
+4. **Full menu:** 25 flavor icons with heat filters; tap one for the big detail card and add to cart
+5. **The legend:** looping roadrunner clip that reveals the logo behind it
+6. **The Fixx Family:** big family photo plus an auto-scrolling, swipeable photo carousel
+7. **In the Lab:** Jerky Fixx batch video
+8. **Dealer locator:** Google Map + Jerky Fest (Oct 31, 2026, Isleta Resort & Casino) + dealer alert signup
+9. **FIXX Fiends VIP Club:** coming soon waitlist
+10. **Follow the fixx:** Hot Cheeto promo video + social links + review link
+11. **FAQ** and **Contact** (order or question form)
+12. Cart drawer with checkout, cookie consent banner, how-to hints, social side tab
+
+## Forms and orders
+
+All forms (checkout, contact, VIP, dealer alerts) post to a Google Apps Script web app that emails jerkyfixx@gmail.com and dyadmarketects@gmail.com and logs every submission in a shared Google Sheet. Setup: `backend/SETUP.md`, then paste the web app URL into `FORM_ENDPOINT` near the top of the main `<script>` in `index.html`. Until then, forms open a pre-filled email to both addresses.
+
+## Updating content (safe edits)
+
+- Flavors, descriptions, heat levels: `FLAVORS` array in `index.html`
+- Top sellers: `TOPN` (names) and `TOPM` (3D ingredients) arrays
+- Next event: the `#dealer` section markup and the `icsBtn` calendar code
+- FAQ: the `#faq` section
 
 ## Before launch
 

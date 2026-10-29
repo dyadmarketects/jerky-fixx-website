@@ -3,16 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Jerky Fixx | Cure the Craving</title>
-<meta name="description" content="Jerky Fixx is Albuquerque's small batch carne seca dealer. Over 20 flavors, made with love, faith and family.">
+<title>Small Batch Beef Jerky Albuquerque NM | Jerky Fixx</title>
+<meta name="description" content="Small batch beef jerky and carne seca in 25 flavors, from green chile to Hot Cheeto. Albuquerque and Rio Rancho. Small $7, large $20. Order direct.">
 <meta name="theme-color" content="#14031a">
-<link rel="icon" href="img/logo-pink.webp">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/img/favicon-180.png">
 <link rel="canonical" href="https://jerkyfixx.com/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Jerky Fixx">
 <meta property="og:url" content="https://jerkyfixx.com/">
 <meta property="og:title" content="Jerky Fixx | Cure the Craving">
-<meta property="og:description" content="Albuquerque's small batch carne seca dealer. Over 20 flavors, made with love, faith and family.">
-<meta property="og:image" content="https://jerkyfixx.com/img/jerkypile.webp">
+<meta property="og:description" content="Small batch beef jerky and carne seca from Albuquerque, NM. 25 flavors from green chile to Hot Cheeto. Small $7, large $20.">
+<meta property="og:image" content="https://jerkyfixx.com/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jerky Fixx: Cure the Craving. A giant piece of jerky with green chile, lime and garlic on a magenta background.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jerky Fixx | Cure the Craving">
+<meta name="twitter:description" content="Small batch beef jerky and carne seca from Albuquerque, NM. 25 flavors.">
+<meta name="twitter:image" content="https://jerkyfixx.com/img/og-image.jpg">
+<link rel="preload" as="image" href="img/bg-gradient.webp">
+<script type="application/ld+json" id="ldjson"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap">
 <style>
@@ -403,29 +416,352 @@ form.hud{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-te
 .foot-row img{height:70px;width:auto}
 
 @media (prefers-reduced-motion:reduce){.track{animation:none!important}.scrollcue::after,.pin circle.pulse,.screen .rec::before{animation:none}}
+
+/* =================== v3 additions =================== */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.eyebrow{font-size:13px;letter-spacing:.2em;color:var(--pink)}
+.brand img{height:54px;width:auto}
+.nav{gap:24px;font-size:15px}
+.cart-btn{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:0;background:#f4eef6;cursor:pointer}
+.cart-btn:hover{background:#ffe1f4}
+.cart-count{position:absolute;top:-2px;right:-2px;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--magenta);color:#fff;font:600 12px/20px var(--f-ui);text-align:center}
+.cart-count.bump{animation:bump .5s}
+@keyframes bump{40%{transform:scale(1.5)}}
+@media (max-width:1180px){.nav{display:none}.burger{display:block}.navrow{grid-template-columns:auto 1fr auto auto;gap:10px}.head-cta{grid-column:3}}
+@media (max-width:600px){.brand img{height:42px}.head-cta .pill{padding:9px 13px;font-size:12px}.head-cta .pill span{display:none}}
+
+/* hero fit + always-wrapping craving box */
+.headline{width:auto;max-width:none;display:flex;flex-direction:column;align-items:flex-start}
+.h-cure{font-size:clamp(96px,min(16vw,25vh),280px)}
+.h-the{font-size:clamp(38px,min(4.8vw,7vh),80px);margin:-4px 0 0 26%}
+.h-crave{display:inline-block;width:auto;max-width:none;white-space:nowrap;font-size:clamp(50px,min(7.4vw,11.5vh),132px);padding:.1em .16em .02em}
+.h1-sub{display:block;margin-top:18px;font-family:var(--f-ui);font-weight:500;font-size:clamp(12px,1.05vw,16px);letter-spacing:.24em;text-transform:uppercase;color:#fff;line-height:1.3}
+.hero-copy{padding-block:16px 21vh;justify-content:center}
+.hero-sub{margin:14px 0 0;max-width:46ch;font-size:clamp(14px,1.05vw,17px)}
+.hero .ctas{margin-top:18px;position:relative;z-index:6}
+.ic-cross{right:-14%;top:0}.ic-bacon{left:-11%;top:34%}.ic-flame{right:-12%;top:40%}
+@media (max-width:820px){
+  .headline{align-items:center;width:100%}
+  .h-cure{font-size:clamp(100px,33vw,190px)}
+  .h-crave{font-size:clamp(46px,13.5vw,86px)}
+  .h-the{margin:0}
+  .h1-sub{font-size:11px;letter-spacing:.18em;text-align:center;margin-top:12px}
+  .hero-sub,.hero .ctas{display:none}
+  .hero-copy{padding-block:22px 0}
+}
+@media (max-height:700px) and (min-width:821px){.hero-sub{display:none}}
+
+/* contextual hints: always above the 3D layer */
+.hint{position:fixed;z-index:48;top:calc(var(--headH,80px) + 14px);right:calc(20px + env(safe-area-inset-right,0px));display:flex;align-items:center;gap:10px;padding:9px 16px 9px 12px;border-radius:999px;background:rgba(13,4,16,.82);backdrop-filter:blur(8px);color:#fff;font:500 13px/1.2 var(--f-ui);letter-spacing:.1em;text-transform:uppercase;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:opacity .35s,transform .35s;pointer-events:none;max-width:min(420px,calc(100vw - 32px))}
+.hint.off{opacity:0;transform:translateY(-8px)}
+.hint-ico{width:22px;height:22px;flex:0 0 auto;color:var(--lime)}
+.hint-ico svg{width:100%;height:100%}
+.hint-ico .mv-down{animation:hdown 1.4s infinite}
+.hint-ico .mv-side{animation:hside 1.6s infinite}
+.hint-ico .mv-tap{animation:htap 1.2s infinite;transform-origin:50% 80%}
+@keyframes hdown{50%{transform:translateY(4px)}}
+@keyframes hside{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@keyframes htap{50%{transform:scale(.85)}}
+@media (max-width:820px){.hint{left:50%;right:auto;transform:translateX(-50%);font-size:11px;top:calc(var(--headH,64px) + 10px)}.hint.off{transform:translate(-50%,-8px)}}
+
+/* social side tab */
+.social-tab{position:fixed;z-index:46;left:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px 10px;background:var(--ink);border-radius:0 16px 16px 0;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.social-tab .st-lbl{writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px var(--f-ui);letter-spacing:.2em;text-transform:uppercase;color:var(--lime);margin-bottom:6px}
+.social-tab a{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;color:#fff;transition:background .2s,color .2s,transform .2s}
+.social-tab a:hover{background:var(--pink);color:var(--ink);transform:scale(1.08)}
+.social-tab svg{width:18px;height:18px}
+@media (max-width:820px){.social-tab{top:auto;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:none;padding:8px 5px}.social-tab .st-lbl{display:none}.social-tab a{width:30px;height:30px}}
+
+/* decorative brand icons + lightning */
+.deco{position:absolute;width:auto;height:clamp(40px,5vw,72px);opacity:.16;pointer-events:none;z-index:1;animation:float 7s ease-in-out infinite}
+.family .deco,.award .deco{filter:invert(1)}
+@keyframes float{50%{transform:translateY(-14px) rotate(8deg)}}
+.d1{left:4%;top:12%}.d2{right:6%;top:8%;animation-delay:-2s}.d3{left:46%;top:60px}.d4{right:3%;bottom:8%;animation-delay:-3s}.d5{right:4%;top:6%}.d6{left:2%;bottom:6%;animation-delay:-4s}.d7{right:6%;top:12%}.d8{left:44%;bottom:6%;animation-delay:-2s}.d9{left:8%;top:30px}.d10{right:10%;top:20px;animation-delay:-3s}
+.bolt{position:absolute;width:clamp(26px,3vw,46px);height:auto;fill:var(--lime);filter:drop-shadow(0 0 10px rgba(201,251,5,.9)) drop-shadow(0 0 22px rgba(255,102,196,.7));opacity:0;pointer-events:none;z-index:1;animation:zap 5.5s infinite}
+@keyframes zap{0%,86%,100%{opacity:0}87%{opacity:1}88%{opacity:.2}90%{opacity:1}93%{opacity:0}}
+.b1{left:30%;top:16%;transform:rotate(-14deg)}.b2{right:30%;top:58%;animation-delay:-2.7s;transform:rotate(12deg)}.b5{right:8%;top:40%;animation-delay:-1.5s;fill:var(--magenta)}.b6{left:6%;top:20%;animation-delay:-3.3s}
+@media (prefers-reduced-motion:reduce){.deco,.bolt{animation:none}.bolt{opacity:.5}}
+
+/* line-up: click/swipe, fits one screen */
+.bridge{height:auto;min-height:0;padding-block:12vh 16vh}
+.bridge .wrap{padding-block:0}
+.bridge .big{font-size:clamp(48px,7vw,116px)}
+.bridge .big span{display:block;color:var(--magenta)}
+.bridge .eyebrow{color:var(--ink)}
+.lineup{height:calc(100svh - var(--headH,80px));min-height:560px;touch-action:pan-y}
+.lu-ui{align-items:center;padding-bottom:84px}
+.lu-panel{padding-block:24px;max-width:480px}
+.lu-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lu-count{font-family:var(--f-ui);font-size:15px;letter-spacing:.2em;color:var(--fog);font-variant-numeric:tabular-nums}
+.lu-count b{color:var(--lime);font-size:30px;font-weight:500}
+.arrow{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);color:#fff;font:400 30px/1 var(--f-ui);cursor:pointer;transition:background .2s,transform .2s,border-color .2s}
+.arrow:hover{background:var(--lime);color:var(--ink);border-color:var(--lime);transform:scale(1.06)}
+.lu-arrows{display:flex;gap:10px}
+.lu-arrows .arrow:last-child{animation:nudge 2.4s infinite}
+@keyframes nudge{0%,70%,100%{transform:none}80%{transform:translateX(5px)}90%{transform:translateX(-2px)}}
+.lu-name{font-size:clamp(40px,min(5vw,8.5vh),84px);min-height:auto;margin:12px 0 0}
+.lu-desc{min-height:0;margin:10px 0 16px;max-width:42ch}
+.lu-buy{display:flex;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap}
+.seg{display:inline-flex;padding:4px;border-radius:999px;background:rgba(255,255,255,.08)}
+.seg button{border:0;background:none;color:var(--fog);font:600 13px var(--f-ui);letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;border-radius:999px;cursor:pointer}
+.seg button[aria-checked="true"]{background:#fff;color:var(--ink)}
+.lu-all{margin-top:14px}
+.lu-rail{bottom:16px;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
+.lu-rail button{display:flex;align-items:center;gap:8px;border:1px solid var(--hair);border-radius:999px;padding:5px 12px 5px 5px;color:rgba(255,255,255,.7);background:rgba(13,4,16,.6);font-size:12px;transition:all .2s}
+.lu-rail button img{width:30px;height:30px;border-radius:50%;flex:0 0 auto}
+.lu-rail button:hover{border-color:var(--pink);color:#fff}
+.lu-rail button.on{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+@media (max-width:1100px){.lu-rail{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:820px){
+  .lu-ui{padding-bottom:0}
+  .lu-panel{padding-block:14px 0}
+  .lu-name{font-size:clamp(34px,10vw,56px)}
+  .lu-desc{display:none}
+  .lu-buy{position:absolute;left:var(--gut);right:var(--gutR);bottom:70px;justify-content:center;z-index:6;margin:0}
+  .lu-all{position:absolute;left:50%;transform:translateX(-50%);bottom:122px;z-index:6;white-space:nowrap;font-size:12px;padding:9px 16px}
+  .lu-rail{grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;bottom:20px}
+  .lu-rail button{padding:2px;justify-content:center;font-size:0;gap:0}
+  .lu-rail button img{width:34px;height:34px}
+  .arrow{width:42px;height:42px}
+}
+
+/* award: unpinned, trophy pops between columns */
+.award{height:auto;min-height:calc(100svh - var(--headH,80px))}
+.aw-ui{min-height:calc(100svh - var(--headH,80px));grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);padding-block:40px;position:relative;z-index:5}
+.aw-title{font-size:clamp(64px,min(7.5vw,13vh),136px)}
+.aw-left .eyebrow{color:var(--magenta)}
+@media (max-width:900px){.aw-ui{grid-template-columns:1fr;align-content:space-between;gap:0}.aw-ui>div:nth-child(2){height:38vh}.aw-ui .lede{display:block}}
+
+/* menu: icon grid + big detail */
+.menu-head{grid-template-columns:minmax(0,1fr) auto;align-items:center}
+.price-bar{margin:22px 0 0}
+.over20-wrap{position:relative;width:clamp(220px,24vw,340px);aspect-ratio:3/4}
+.over20{position:relative;z-index:2;width:100%;height:auto;transform:rotate(8deg);filter:drop-shadow(0 12px 30px rgba(255,102,196,.45))}
+.over20.live{animation:wob 3.2s ease-in-out infinite}
+@keyframes wob{0%,100%{transform:rotate(8deg) scale(1)}25%{transform:rotate(3deg) scale(1.06)}50%{transform:rotate(10deg) scale(1)}75%{transform:rotate(6deg) scale(1.04)}}
+.burst{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,rgba(201,251,5,.35),rgba(255,102,196,.18) 45%,transparent 70%);animation:pulse2 2.4s ease-in-out infinite}
+@keyframes pulse2{50%{transform:scale(1.15);opacity:.6}}
+.b3{left:-6%;top:12%;transform:rotate(-20deg)}.b4{right:-4%;bottom:14%;transform:rotate(16deg);animation-delay:-2.2s}
+.menu-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px;margin-top:30px;align-items:start}
+.flav-detail{position:sticky;top:calc(var(--headH,80px) + 20px);background:linear-gradient(160deg,#2a0834,#14031a);border-radius:28px;padding:26px;box-shadow:0 30px 70px rgba(0,0,0,.4);min-height:420px}
+.fd-img{width:min(300px,70%);aspect-ratio:1;margin:0 auto 6px;display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.5));animation:popin .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes popin{from{transform:scale(.6) rotate(-10deg);opacity:0}}
+.fd-tag{display:inline-block;font:600 11px var(--f-ui);letter-spacing:.16em;text-transform:uppercase;background:var(--lime);color:var(--ink);padding:3px 9px;border-radius:999px}
+.flav-detail h3{font-family:var(--f-crave);font-weight:400;font-size:clamp(30px,3vw,44px);line-height:1;margin:10px 0 8px;text-transform:uppercase}
+.flav-detail p{color:var(--fog);margin:0 0 12px}
+.fd-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:10px}
+.qty{display:inline-flex;align-items:center;border-radius:999px;background:rgba(255,255,255,.08)}
+.qty button{width:38px;height:38px;border:0;background:none;color:#fff;font-size:20px;cursor:pointer}
+.qty output{min-width:26px;text-align:center;font:600 16px var(--f-ui)}
+.flav-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.ficon{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 6px 10px;border-radius:18px;border:2px solid transparent;background:#1e0626;color:#fff;cursor:pointer;text-align:center;transition:transform .2s,border-color .2s,background .2s}
+.ficon:hover{transform:translateY(-3px);background:#2a0834}
+.ficon[aria-pressed="true"]{border-color:var(--lime);background:#2a0834}
+.ficon img{width:76%;aspect-ratio:1;height:auto}
+.ficon .nm{font:600 12px/1.15 var(--f-ui);letter-spacing:.06em;text-transform:uppercase;min-height:2.3em;display:flex;align-items:center}
+.ficon .pods{gap:2px;margin:0}.ficon .pod{width:7px;height:12px}
+.ficon .top{position:absolute;top:6px;right:6px;width:10px;height:10px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px rgba(201,251,5,.25)}
+.note a{color:var(--lime)}
+@media (max-width:1000px){.menu-body{grid-template-columns:1fr}.flav-detail{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:62;border-radius:24px 24px 0 0;min-height:0;max-height:82vh;overflow:auto;transform:translateY(105%);transition:transform .35s;padding:22px var(--gutR) calc(22px + env(safe-area-inset-bottom,0px)) var(--gut)}.flav-detail.open{transform:none}.fd-img{width:180px}.flav-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:520px){.flav-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.menu-head{grid-template-columns:1fr}.over20-wrap{position:absolute;right:8px;top:24px;width:130px}}
+.fd-close{display:none}
+@media (max-width:1000px){.fd-close{display:grid;position:absolute;top:12px;right:12px}}
+
+/* roadrunner + family */
+.rr-line{top:auto;bottom:6%;font-size:clamp(24px,3vw,46px)}
+.fam-grid{grid-template-columns:minmax(0,6fr) minmax(0,5fr);align-items:center}
+.fam-hero{margin:0;background:#fff;padding:12px 12px 40px;box-shadow:0 24px 60px rgba(20,3,26,.25);transform:rotate(-1.5deg);position:relative}
+.fam-hero img{width:100%;height:auto;aspect-ratio:664/784;object-fit:cover}
+.fam-hero figcaption{position:absolute;left:16px;bottom:12px;font:600 12px var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:#6b5a70}
+.carousel{position:relative;margin-top:56px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px}
+.car-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 4px 18px;scrollbar-width:none}
+.car-track::-webkit-scrollbar{display:none}
+.car-track figure{flex:0 0 clamp(200px,24vw,300px);margin:0;scroll-snap-align:start;background:#fff;padding:10px 10px 34px;border-radius:6px;box-shadow:0 14px 34px rgba(20,3,26,.2);position:relative}
+.car-track figure:nth-child(odd){transform:rotate(-1.5deg)}.car-track figure:nth-child(even){transform:rotate(1.5deg)}
+.car-track img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.car-track figcaption{position:absolute;left:12px;bottom:9px;font:600 11px var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:#6b5a70}
+.family .arrow{border-color:rgba(13,4,16,.25);color:var(--ink);background:#fff}
+.family .arrow:hover{background:var(--lime)}
+@media (max-width:900px){.fam-grid{grid-template-columns:1fr}.carousel{grid-template-columns:1fr}.carousel .arrow{display:none}}
+
+/* lab */
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.step{cursor:default;border-left:2px solid var(--lime);color:#fff;background:linear-gradient(90deg,rgba(201,251,5,.1),transparent);border-radius:0 14px 14px 0;grid-template-columns:44px minmax(0,1fr)}
+.step small{grid-column:2}
+
+/* dealer */
+.map{min-height:360px}
+.map iframe{display:block;width:100%;height:100%;min-height:360px;border:0;filter:saturate(.9)}
+.event{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:0;border-radius:22px;background:#1a0521;overflow:hidden}
+.event img{width:100%;height:100%;object-fit:cover}
+.ev-body{padding:22px}
+.ev-date{display:flex;align-items:baseline;gap:8px;margin:12px 0 4px;font-family:var(--f-ui);text-transform:uppercase}
+.ev-date b{font-family:var(--f-cure);font-size:48px;font-weight:400;color:var(--lime);line-height:1}
+.ev-date small{letter-spacing:.16em;color:var(--fog)}
+.event h3{margin:6px 0 8px;font:500 22px/1.2 var(--f-ui);text-transform:uppercase;letter-spacing:.04em}
+.event p{color:var(--fog);margin:0 0 16px;font-size:15px}
+.ev-btns{display:flex;gap:10px;flex-wrap:wrap}
+.dl-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:900px){.dl-grid{grid-template-columns:1fr}.event{grid-template-columns:1fr}.event img{max-height:360px}}
+.alerts{margin-top:28px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr) auto auto;gap:14px;align-items:end;background:#1a0521;border-radius:22px;padding:22px}
+.alerts h3{margin:0;font:500 22px var(--f-ui);text-transform:uppercase}
+.alerts p{margin:4px 0 0;color:var(--fog);font-size:14px}
+.alerts .form-msg{grid-column:1/-1}
+@media (max-width:1000px){.alerts{grid-template-columns:1fr}}
+
+/* shared form bits */
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.robot{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);font:500 14px var(--f-body);cursor:pointer;user-select:none}
+.robot input{position:absolute;opacity:0;width:1px;height:1px}
+.robot .box{width:22px;height:22px;border-radius:6px;border:2px solid currentColor;display:grid;place-items:center;transition:all .2s}
+.robot input:checked+.box{background:var(--lime);border-color:var(--lime)}
+.robot input:checked+.box::after{content:"";width:6px;height:11px;border:solid var(--ink);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.robot input:focus-visible+.box{outline:3px solid var(--lime);outline-offset:2px}
+.form-msg{margin:6px 0 0;font-size:14px;color:var(--lime);min-height:1.2em}
+.form-msg.err{color:#ff9dc9}
+.kind{border:0;padding:0;margin:0;display:flex;gap:18px;flex-wrap:wrap}
+.kind legend{font-family:var(--f-ui);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fog);margin-bottom:8px;padding:0}
+.kind label{display:inline-flex;align-items:center;gap:8px;font-size:15px;cursor:pointer}
+.order-fields{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.3fr) 90px;gap:12px}
+.order-fields[hidden]{display:none}
+@media (max-width:600px){.order-fields{grid-template-columns:1fr 1fr}.order-fields .field:first-child{grid-column:1/-1}}
+
+/* VIP */
+.vip{position:relative;z-index:4;background:var(--lime);color:var(--ink);padding-block:110px;overflow-x:clip}
+.vip .eyebrow{color:var(--magenta)}
+.vip .h2 em{color:var(--magenta)}
+.vip .lede{color:#2b2b2b}
+.vip-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center;position:relative;z-index:2}
+.soon{display:inline-block;transform:rotate(-3deg);background:var(--ink);color:var(--lime);font:600 13px var(--f-ui);letter-spacing:.22em;text-transform:uppercase;padding:7px 14px;border-radius:999px;animation:wiggle 3s ease-in-out infinite}
+@keyframes wiggle{50%{transform:rotate(3deg) scale(1.05)}}
+.perks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.perks li{display:flex;gap:12px;align-items:baseline;font-size:16px;padding:12px 16px;border-radius:14px;background:rgba(13,4,16,.06)}
+.perks b{font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.08em;min-width:140px}
+.vip-form{background:var(--ink);color:#fff;border-radius:26px;padding:28px;display:grid;gap:14px;box-shadow:12px 12px 0 var(--magenta)}
+.vip-form h3{margin:0;font-family:var(--f-crave);font-weight:400;font-size:30px;text-transform:uppercase}
+.vip-form p{margin:0;color:var(--fog)}
+@media (max-width:900px){.vip-grid{grid-template-columns:1fr}.perks b{min-width:110px}}
+
+/* social */
+.social{position:relative;z-index:4;background:#d81fc9 url("img/bg-gradient.webp") center/cover;padding-block:100px;overflow-x:clip}
+.social .eyebrow{color:#fff}.social .h2 em{color:var(--lime)}.social .lede{color:#fff}
+.so-grid{display:grid;grid-template-columns:auto minmax(0,1fr);gap:56px;align-items:center;position:relative;z-index:2}
+.phone{position:relative;width:min(300px,70vw);aspect-ratio:9/16;border-radius:34px;background:#000;padding:10px;box-shadow:0 30px 70px rgba(40,0,50,.45);transform:rotate(-3deg)}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:26px;display:block}
+.sound{position:absolute;right:20px;bottom:20px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:18px;cursor:pointer}
+.so-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+@media (max-width:820px){.so-grid{grid-template-columns:1fr;justify-items:center;text-align:center}.so-btns{justify-content:center}}
+
+/* FAQ */
+.faq{position:relative;z-index:4;background:#fff;color:var(--ink);padding-block:100px}
+.faq .eyebrow{color:var(--magenta)}.faq .h2 em{color:var(--magenta)}
+.faq-list{margin-top:30px;display:grid;gap:12px;max-width:900px}
+.faq details{border-radius:18px;background:#f8f1f8;padding:4px 22px}
+.faq summary{cursor:pointer;list-style:none;padding:16px 30px 16px 0;font:600 18px/1.3 var(--f-body);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:12px;font:400 28px var(--f-ui);color:var(--magenta);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 18px;color:#4a3a50}
+
+/* cart drawer */
+.cart-scrim{position:fixed;inset:0;z-index:70;background:rgba(13,4,16,.55)}
+.cart{position:fixed;top:0;right:0;bottom:0;z-index:71;width:min(440px,100vw);background:#14031a;color:#fff;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .35s cubic-bezier(.2,.8,.2,1);padding:max(18px,env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 20px 20px;overflow-y:auto}
+.cart.open{transform:none}
+.cart-head{display:flex;justify-content:space-between;align-items:center}
+.cart-head h2{margin:0;font-family:var(--f-crave);font-weight:400;font-size:34px;text-transform:uppercase}
+.x{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:none;color:#fff;cursor:pointer;font-size:16px}
+.cart-items{display:grid;gap:10px;margin:16px 0}
+.ci{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px;border-radius:16px;background:#1e0626}
+.ci img{width:56px;height:56px}
+.ci b{display:block;font:600 14px var(--f-ui);text-transform:uppercase;letter-spacing:.06em}
+.ci small{color:var(--fog)}
+.ci .qty button{width:30px;height:30px;font-size:16px}
+.ci .rm{background:none;border:0;color:var(--pink);font-size:12px;cursor:pointer;text-decoration:underline;padding:0;margin-top:2px}
+.cart-empty{color:var(--fog);text-align:center;padding:30px 0}
+.cart-sum{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-top:1px solid var(--hair);font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.1em}
+.cart-sum b{font-family:var(--f-cure);font-size:40px;font-weight:400;color:var(--lime)}
+.checkout{display:grid;gap:12px;margin-top:8px}
+.checkout h3{margin:4px 0 0;font:500 20px var(--f-ui);text-transform:uppercase}
+.small{font-size:13px;color:var(--fog);margin:0}
+.wide{width:100%;justify-content:center}
+
+/* cookie consent */
+.consent{position:fixed;z-index:80;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));width:min(440px,calc(100vw - 32px));background:#fff;color:var(--ink);border-radius:22px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.consent h2{margin:0 0 6px;font:600 18px var(--f-ui);text-transform:uppercase;letter-spacing:.06em}
+.consent p{margin:0 0 12px;font-size:14px;color:#4a3a50}
+.consent a{color:var(--magenta)}
+.cc-prefs{display:grid;gap:6px;margin-bottom:12px;font-size:14px}
+.cc-btns{display:flex;gap:8px;flex-wrap:wrap}
+.consent .pill{padding:10px 16px;font-size:12px}
+.consent .pill-light{background:#f2eaf3}
+
+/* footer */
+.foot{position:relative;z-index:4;background:#000;color:rgba(255,255,255,.7)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px;padding-block:20px 30px;position:relative;z-index:2}
+.f-brand img{width:150px;height:auto;filter:brightness(1.05)}
+.f-brand p{font-size:14px;max-width:34ch}
+.f-social{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+.f-col{display:flex;flex-direction:column;gap:8px;font-size:14px}
+.f-col h3{margin:0 0 6px;color:var(--lime);font:600 13px var(--f-ui);letter-spacing:.2em;text-transform:uppercase}
+.foot a{color:#fff;text-decoration:none}
+.foot a:hover{color:var(--pink)}
+.linkish{background:none;border:0;padding:0;color:#fff;font:inherit;text-align:left;cursor:pointer}
+.linkish:hover{color:var(--pink)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:18px 26px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px}
+.allergen{max-width:60ch;color:rgba(255,255,255,.5)}
+.dyad{display:inline-flex;align-items:center;gap:10px}
+.dyad img{height:22px;width:auto}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}.f-brand{grid-column:1/-1}}
+.fab{bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+
+.ct-form{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ct-form .full{grid-column:1/-1}
+.kind label{font:500 15px var(--f-body);letter-spacing:0;text-transform:none;color:#fff}
+.kind input{accent-color:#c9fb05;width:18px;height:18px}
+.ct-form .form-foot{grid-column:1/-1;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+@media (max-width:900px){.ct-form{grid-template-columns:1fr;padding:20px}}
+.line a.v{color:#fff;text-decoration:none}
+.copy{text-decoration:none;display:inline-flex;align-items:center}
+
+.social-tab{transition:opacity .3s,transform .3s}.social-tab.gone{opacity:0;pointer-events:none;transform:translate(-100%,-50%)}
+@media (max-width:820px){.social-tab.gone{transform:translateX(-100%)}.aw-ui>div:nth-child(2){height:34vh}}
+@media (max-width:820px){.hero-copy{justify-content:flex-start;padding-block:26px 0}.lineup .gauge{display:none}.lu-name{margin-top:6px}}
+@media (max-width:820px){.lu-ui{align-items:start}.lu-panel{padding-top:56px}}
+@media (max-width:820px){.lu-buy{flex-wrap:nowrap;gap:8px}.lu-buy .seg button{padding:8px 10px;font-size:11px}.lu-buy .pill{padding:10px 14px;font-size:12px;white-space:nowrap}.lu-buy .pill span{display:none}body.in-lu .fab{opacity:0;pointer-events:none}}
 </style>
 
 </head>
 <body>
 <header class="site-head" id="top">
   <div class="wrap navrow">
-    <a class="brand" href="#top" aria-label="Jerky Fixx home"><img src="img/logo-lockup.webp" alt="Jerky Fixx" width="350" height="150"></a>
+    <a class="brand" href="#top" aria-label="Jerky Fixx home"><img src="img/logo-long.webp" alt="Jerky Fixx" width="900" height="375"></a>
     <nav class="nav" aria-label="Main">
       <a href="#top" aria-current="true">Home</a>
-      <a href="#lineup">Jerky</a>
+      <a href="#menu">Jerky</a>
       <a href="#family">Our Story</a>
       <a href="#lab">The Lab</a>
       <a href="#dealer">Dealer Locator</a>
+      <a href="#vip">VIP Club</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="head-cta"><a class="head-link" href="#contact">Login</a><a class="cart" href="#menu" aria-label="Cart"><svg width="20" height="18" viewBox="0 0 20 18" aria-hidden="true"><path d="M0 1h3.2l2.6 10.2h10.6L19 4H5.2" fill="none" stroke="#0d0410" stroke-width="2"/><circle cx="7.5" cy="15.5" r="1.6" fill="#0d0410"/><circle cx="15" cy="15.5" r="1.6" fill="#0d0410"/></svg></a><a class="pill pill-dark" href="#contact">Order now <span aria-hidden="true">↗</span></a></div>
+    <div class="head-cta">
+      <button class="cart-btn" id="cartBtn" type="button" aria-label="View cart"><svg width="22" height="20" viewBox="0 0 20 18" aria-hidden="true"><path d="M0 1h3.2l2.6 10.2h10.6L19 4H5.2" fill="none" stroke="#0d0410" stroke-width="2"/><circle cx="7.5" cy="15.5" r="1.6" fill="#0d0410"/><circle cx="15" cy="15.5" r="1.6" fill="#0d0410"/></svg><span class="cart-count" id="cartCount" hidden>0</span></button>
+      <a class="pill pill-dark" id="orderNow" href="#menu">Order now <span aria-hidden="true">↗</span></a>
+    </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 <nav class="mnav" id="mnav" hidden aria-label="Mobile">
   <button class="x" id="mclose" aria-label="Close menu">✕</button>
-  <a href="#top">Home</a><a href="#lineup">Jerky</a><a href="#family">Our Story</a><a href="#lab">The Lab</a><a href="#dealer">Dealer Locator</a><a href="#contact">Contact</a>
+  <a href="#top">Home</a><a href="#menu">Jerky</a><a href="#family">Our Story</a><a href="#lab">The Lab</a><a href="#dealer">Dealer Locator</a><a href="#vip">VIP Club</a><a href="#contact">Contact</a>
 </nav>
+<div class="hint" id="hint" aria-live="polite" hidden><span class="hint-ico" id="hintIco"></span><span id="hintTxt"></span></div>
+<aside class="social-tab" aria-label="Follow Jerky Fixx">
+  <span class="st-lbl">Follow the fixx</span>
+  <a href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg></a>
+  <a href="https://www.facebook.com/jerky.fixx/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z" fill="currentColor"/></svg></a>
+  <a href="https://www.threads.com/@jerky_fixx" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.9 11.1c-.1 0-.2-.1-.3-.1-.2-3-1.8-4.7-4.6-4.7-1.6 0-3 .7-3.9 2l1.5 1c.7-1 1.7-1.2 2.4-1.2 1.6 0 2.5.8 2.8 2.3-.7-.1-1.5-.2-2.3-.1-2.3.1-3.8 1.5-3.7 3.4.1 1.9 1.8 3.1 3.9 3 1.6-.1 3.4-1 3.9-3.6.9.5 1.4 1.3 1.5 2.4.3 2.5-2.2 4.5-5.9 4.5-4.1 0-6.5-2.9-6.5-8s2.4-8 6.5-8c4 0 6.3 2.4 6.7 5.6l1.8-.4C19.8 4.7 16.8 2 12.1 2 6.8 2 3.6 5.7 3.6 12s3.2 10 8.5 10c4.9 0 8.3-2.8 7.8-6.6-.2-1.8-1.3-3.4-3-4.3zm-4.7 4.6c-1 .1-1.9-.4-2-1.2 0-.8.6-1.5 2-1.6.7 0 1.4 0 2 .2-.2 1.7-1 2.5-2 2.6z" fill="currentColor"/></svg></a>
+</aside>
 
 <canvas id="stage" aria-hidden="true"></canvas>
 <a class="pill pill-lime fab" id="fab" href="#contact">Get your fixx <span aria-hidden="true">↗</span></a>
@@ -435,17 +771,13 @@ form.hud{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-te
     <div class="tape t2"><div class="whole"><div class="track"></div></div><div class="half l"><div class="track"></div></div><div class="half r"><div class="track"></div></div></div>
     <div class="tape t3"><div class="whole"><div class="track"></div></div><div class="half l"><div class="track"></div></div><div class="half r"><div class="track"></div></div></div>
   </div>
-  <div class="wrap fx-ctas" id="fxCtas"><div class="ctas">
-    <a class="btn btn-lime" href="#lineup">Learn More</a>
-    <a class="btn btn-pink" href="#dealer">Dealer Locator</a>
-  </div></div>
   <div class="limewash" id="limewash"></div>
 </div>
 <div class="boot" id="boot" role="status" aria-live="polite" aria-label="Loading Jerky Fixx">
   <div class="boot-neb" aria-hidden="true"></div>
   <div class="boot-pat" aria-hidden="true"></div>
   <div class="boot-in">
-    <img class="boot-logo" src="img/logo-pink.webp" alt="Jerky Fixx" width="598" height="447">
+    <img class="boot-logo" src="img/logo-stack.webp" alt="Jerky Fixx" width="684" height="557">
     <div class="boot-icons" aria-hidden="true"><img src="img/icon-flame.webp" alt=""><img src="img/icon-bacon.webp" alt=""><img src="img/icon-cross.webp" alt=""></div>
     <div class="boot-pct"><span id="bootPct">0</span><small>%</small></div>
     <div class="boot-bar" aria-hidden="true"><div class="boot-fill" id="bootFill"><div class="track"></div></div></div>
@@ -458,39 +790,47 @@ form.hud{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-te
 
 <main>
 <!-- HERO -->
-<section class="hero" id="hero">
+<section class="hero" id="hero" data-hint="scroll" data-hint-text="Keep scrolling to stir the pot">
   <div class="nebula" aria-hidden="true"></div>
   <div class="pattern" aria-hidden="true"></div>
   <div class="shade" aria-hidden="true"></div>
   <div class="herolime" id="herolime" aria-hidden="true"></div>
-  <img class="no3d-jerky" src="img/jerkypile.webp" alt="A pile of Jerky Fixx carne seca">
+  <img class="no3d-jerky" src="img/jerky-fixx-carne-seca-pile.webp" alt="A pile of Jerky Fixx carne seca">
   <div class="wrap hero-copy" id="heroCopy">
     <h1 class="headline">
       <span class="h-cure">CURE</span>
       <span class="h-the">THE</span>
-      <span class="h-crave">CRAVING</span>
+      <span class="h-crave"><span>CRAVING</span></span>
+      <span class="h1-sub">Small batch beef jerky from Albuquerque</span>
       <img class="icon ic-cross" src="img/icon-cross.webp" alt="">
       <img class="icon ic-bacon" src="img/icon-bacon.webp" alt="">
       <img class="icon ic-flame" src="img/icon-flame.webp" alt="">
     </h1>
-    <p class="hero-sub"><b>Jerky Fixx</b> is your local carne seca dealer out of Albuquerque. Over 20 flavors, cut thin, seasoned loud, and made with love, faith and family.</p>
+    <p class="hero-sub"><b>Jerky Fixx</b> is small batch beef jerky and carne seca from our family in Albuquerque, New Mexico. Green chile heat, Hot Cheeto crunch flavor and Tajin Limon zing, 25 flavors in all.</p>
+    <div class="ctas">
+      <a class="btn btn-lime" href="#lineup">Learn More</a>
+      <a class="btn btn-pink" href="#dealer">Dealer Locator</a>
+    </div>
   </div>
   <div class="scrollcue" id="cue">Scroll for your fixx</div>
 </section>
 
 <!-- BRIDGE + LINE-UP -->
-<section class="bridge" id="lineup" aria-labelledby="lu-title">
+<section class="bridge" id="lineup" aria-labelledby="lu-title" data-hint="scroll" data-hint-text="Keep scrolling, the favs are next">
   <div class="wrap">
-    <div class="eyebrow ui"><b>Section 01</b> · The line-up</div>
-    <h2 class="big" id="lu-title">Top sellers. Get your fixx!</h2>
+    <p class="eyebrow ui">Our most ordered jerky flavors</p>
+    <h2 class="big" id="lu-title">FIXX Fiend Favs!<span>Top Sellers!</span></h2>
   </div>
 </section>
-<section class="lineup sec" id="lineupStage">
+<section class="lineup sec" id="lineupStage" aria-label="Top selling jerky flavors" data-hint="swipe" data-hint-text="Swipe or tap the arrows to flip through the favs">
   <div class="giant" data-x="-28" aria-hidden="true">carne seca</div>
+  <img class="deco d1" src="img/icon-flame.webp" alt=""><img class="deco d2" src="img/icon-cross.webp" alt="">
   <div class="wrap lu-ui">
     <div class="lu-panel">
-      <div class="eyebrow ui"><b>Section 01</b> · Best sellers</div>
-      <div class="lu-count"><b id="luNum">01</b> / 08</div>
+      <div class="lu-top">
+        <span class="lu-count"><b id="luNum">01</b> / 08</span>
+        <div class="lu-arrows"><button class="arrow" id="luPrev" type="button" aria-label="Previous flavor">‹</button><button class="arrow" id="luNext" type="button" aria-label="Next flavor">›</button></div>
+      </div>
       <h3 class="lu-name" id="luName"><span>X-Hot Green</span></h3>
       <p class="lu-desc" id="luDesc"></p>
       <div class="gauge" role="img" id="gauge" aria-label="Heat level">
@@ -505,208 +845,342 @@ form.hud{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-te
         </svg>
         <div><div class="lbl">Heat level</div><div class="val" id="gVal">5/5</div><div class="pods" id="gPods"></div></div>
       </div>
-      <div class="lu-buy"><a class="pill pill-lime" href="#contact">Get this fixx <span aria-hidden="true">↗</span></a><span class="price">Small <b>$7</b> · Large <b>$20</b></span></div>
+      <div class="lu-buy">
+        <div class="seg" role="radiogroup" aria-label="Bag size"><button type="button" role="radio" aria-checked="true" data-size="Small">Small $7</button><button type="button" role="radio" aria-checked="false" data-size="Large">Large $20</button></div>
+        <button class="pill pill-lime" id="luAdd" type="button">Add to cart <span aria-hidden="true">+</span></button>
+      </div>
+      <a class="pill pill-light lu-all" href="#menu">20+ exotic flavors! View all <span aria-hidden="true">↓</span></a>
     </div>
-    <div aria-hidden="true"></div>
   </div>
-  <div class="lu-rail" id="luRail"></div>
+  <div class="lu-rail" id="luRail" role="tablist" aria-label="Choose a top seller"></div>
 </section>
 
 <!-- AWARD -->
-<section class="award sec" id="award">
+<section class="award sec" id="award" aria-labelledby="aw-title" data-hint="scroll" data-hint-text="Keep scrolling, the hardware is real">
   <div class="wave" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#fdeef7"/></svg></div>
   <div class="giant dark" data-x="-30" aria-hidden="true">winner</div>
   <div class="beam" aria-hidden="true"></div>
+  <svg class="bolt b1" viewBox="0 0 40 90" aria-hidden="true"><path d="M24 0 L4 50 H18 L10 90 L36 34 H22 L30 0Z"/></svg>
+  <svg class="bolt b2" viewBox="0 0 40 90" aria-hidden="true"><path d="M24 0 L4 50 H18 L10 90 L36 34 H22 L30 0Z"/></svg>
   <div class="wrap aw-ui">
-    <div>
-      <div class="eyebrow ui"><b>Section 02</b> · The hardware</div>
-      <h2 class="aw-title">Award<em>winning</em>jerky</h2>
+    <div class="aw-left">
+      <p class="eyebrow ui">Most Exotic Flavor and Best Booth at NM Jerky Fest</p>
+      <h2 class="aw-title" id="aw-title">Award<em>winning</em>jerky</h2>
       <p class="lede">The judges at New Mexico Jerky Fest took one bite and got hooked like everybody else.</p>
     </div>
     <div aria-hidden="true"></div>
     <div class="aw-right">
       <div class="medal"><i>01</i><span>Most Exotic Flavor<br><span class="readout">New Mexico Jerky Fest</span></span></div>
       <div class="medal"><i>02</i><span>Best Booth<br><span class="readout">New Mexico Jerky Fest</span></span></div>
-      <figure class="aw-card hud"><img src="img/awards.webp" alt="Two New Mexico Jerky Fest bull skull trophies won by Jerky Fixx" width="454" height="313" loading="lazy"><p>The bull skulls live on the booth table now. Come see them in person.</p></figure>
+      <figure class="aw-card"><img src="img/jerky-fixx-jerky-fest-trophies.webp" alt="Two New Mexico Jerky Fest bull skull trophies won by Jerky Fixx" width="454" height="313" loading="lazy"><p>The bull skulls ride along to the booth. Come see them in person.</p></figure>
     </div>
   </div>
 </section>
 
 <!-- FULL MENU -->
-<section class="menu" id="menu">
+<section class="menu" id="menu" aria-labelledby="menu-title" data-hint="tap" data-hint-text="Tap any flavor to see it big and add it to your cart">
   <div class="wave slow" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#14031a"/></svg></div>
+  <img class="deco d3" src="img/icon-bacon.webp" alt=""><img class="deco d4" src="img/icon-cross.webp" alt="">
   <div class="wrap">
     <div class="menu-head">
       <div>
-        <div class="eyebrow ui"><b>Section 03</b> · The full menu</div>
-        <h2 class="h2">Every flavor<br>we're <em>pushing</em></h2>
+        <p class="eyebrow ui">All 25 jerky and carne seca flavors</p>
+        <h2 class="h2" id="menu-title">Every flavor<br>we're <em>pushing</em></h2>
+        <div class="price-bar">
+          <div class="price-tag">Small bag <b>$7</b></div>
+          <div class="price-tag l">Large bag <b>$20</b></div>
+          <button class="pill pill-light" type="button" data-open-cart>View cart <span aria-hidden="true">↗</span></button>
+        </div>
       </div>
-      <img class="over20" src="img/over20.webp" alt="Over 20 flavors!" width="390" height="520" loading="lazy">
+      <div class="over20-wrap" aria-hidden="true">
+        <svg class="bolt b3" viewBox="0 0 40 90"><path d="M24 0 L4 50 H18 L10 90 L36 34 H22 L30 0Z"/></svg>
+        <svg class="bolt b4" viewBox="0 0 40 90"><path d="M24 0 L4 50 H18 L10 90 L36 34 H22 L30 0Z"/></svg>
+        <span class="burst"></span>
+        <img class="over20" id="over20" src="img/over20.webp" alt="" width="390" height="520">
+      </div>
     </div>
-    <div class="price-bar">
-      <div class="price-tag">Small bag <b>$7</b></div>
-      <div class="price-tag l">Large bag <b>$20</b></div>
-      <span class="readout">Every flavor, <b>same price</b></span>
+    <div class="menu-body">
+      <div class="flav-detail" id="flavDetail" aria-live="polite"></div>
+      <div>
+        <div class="filters" role="group" aria-label="Filter by heat">
+          <button class="chip" id="fl-all" data-f="all" aria-pressed="true">All 25</button>
+          <button class="chip" id="fl-mild" data-f="mild" aria-pressed="false">Mild</button>
+          <button class="chip" id="fl-med" data-f="med" aria-pressed="false">Medium</button>
+          <button class="chip" id="fl-hot" data-f="hot" aria-pressed="false">Hot</button>
+          <button class="chip" id="fl-xhot" data-f="xhot" aria-pressed="false">X-Hot</button>
+        </div>
+        <div class="flav-grid" id="flavGrid"></div>
+        <p class="note">Don't see your fix? <a href="#contact">Ask for a custom batch.</a></p>
+      </div>
     </div>
-    <div class="filters" role="group" aria-label="Filter by heat">
-      <button class="chip" id="fl-all" data-f="all" aria-pressed="true">All 25</button>
-      <button class="chip" id="fl-mild" data-f="mild" aria-pressed="false">Mild</button>
-      <button class="chip" id="fl-med" data-f="med" aria-pressed="false">Medium</button>
-      <button class="chip" id="fl-hot" data-f="hot" aria-pressed="false">Hot</button>
-      <button class="chip" id="fl-xhot" data-f="xhot" aria-pressed="false">X-Hot</button>
-    </div>
-    <div class="flav-grid" id="flavGrid"></div>
-    <p class="note">Don't see your fix? Ask for a custom batch.</p>
   </div>
 </section>
 
 <!-- ROADRUNNER REVEAL -->
-<section class="rr" id="legend" aria-label="The Jerky Fixx roadrunner">
+<section class="rr" id="legend" aria-label="The Jerky Fixx roadrunner" data-hint="who" data-hint-text="Who's that!?">
   <div class="rr-frame">
     <div class="rr-stage" id="rrStage">
       <canvas class="rr-canvas" id="rrCanvas" role="img" aria-label="A roadrunner carrying jerky walks past and reveals the Jerky Fixx logo"></canvas>
-      <img class="rr-logo" id="rrLogo" src="img/logo-pink-lg.webp" alt="" width="1196" height="894">
+      <img class="rr-logo" id="rrLogo" src="img/logo-stack.webp" alt="" width="684" height="557">
       <video class="rr-vid" id="rrVid" muted loop playsinline preload="auto"><source src="vid/roadrunner.webm" type="video/webm"><source src="vid/roadrunner.mp4" type="video/mp4"></video>
     </div>
   </div>
-  <div class="wrap rr-copy">
-    <div class="eyebrow ui"><b>Section 04</b> · The legend</div>
-    <p class="rr-line" id="rrLine">Fast as a roadrunner. <em>Hooked like a fixx.</em></p>
-  </div>
+  <div class="wrap rr-copy"><p class="eyebrow ui">The legend of the Jerky Fixx roadrunner</p></div>
+  <p class="rr-line" id="rrLine">We can't fixx the fiending, <em>but we can cure the craving.</em></p>
 </section>
 
 <!-- FAMILY -->
-<section class="family" id="family">
-  <div class="wrap fam-grid">
-    <div class="collage">
-      <figure class="ph1"><img src="img/fb_booth.webp" alt="Jerky Fixx owner at the booth holding a Jerky Fest trophy" loading="lazy"><figcaption>Jerky Fest booth</figcaption></figure>
-      <figure class="ph2"><img src="img/family.webp" alt="The Jerky Fixx family behind their booth table" loading="lazy"><figcaption>The Fixx Family</figcaption></figure>
-      <figure class="ph3"><img src="img/fb_neon_cover.webp" alt="Neon Jerky Fixx roadrunner logo over a city skyline" loading="lazy"><figcaption>505 till we die</figcaption></figure>
-    </div>
-    <div class="fam-copy">
-      <div class="eyebrow ui"><b>Section 05</b> · Our story</div>
-      <h2 class="h2">The Fixx<br><em>Family</em></h2>
-      <span class="script-love">made with love, faith x family</span>
-      <p>Jerky Fixx is a family operation out of Albuquerque. Every batch gets cut, seasoned and dried by the same crew you'll find behind the table at pop ups, festivals and a whole lot of softball games.</p>
-      <p>We started making carne seca for the people we love, and the people we love kept asking for more. Now there are over 20 flavors and a lot of folks around the 505 who can't quit.</p>
-      <div class="values">
-        <div class="value"><b>Love</b><span>Hand cut, every batch</span></div>
-        <div class="value"><b>Faith</b><span>Grateful for every bag</span></div>
-        <div class="value"><b>Family</b><span>Run by the whole crew</span></div>
+<section class="family" id="family" aria-labelledby="fam-title" data-hint="photos" data-hint-text="Swipe through the Fixx Family photos">
+  <img class="deco d5" src="img/icon-cross.webp" alt=""><img class="deco d6" src="img/icon-flame.webp" alt="">
+  <div class="wrap">
+    <div class="fam-grid">
+      <figure class="fam-hero"><img src="img/jerky-fixx-family-booth.webp" alt="The Jerky Fixx family behind their booth table at a New Mexico event" width="664" height="784" loading="lazy"><figcaption>The Fixx Family, posted up at the booth</figcaption></figure>
+      <div class="fam-copy">
+        <p class="eyebrow ui">Family made jerky in Albuquerque</p>
+        <h2 class="h2" id="fam-title">The Fixx<br><em>Family</em></h2>
+        <span class="script-love">made with love, faith x family</span>
+        <p>Jerky Fixx is a family operation out of Albuquerque. Every batch gets cut, seasoned and dried by the same crew you'll find behind the table at pop ups, festivals and a whole lot of softball games.</p>
+        <p>We started making carne seca for the people we love, and the people we love kept asking for more. Now there are 25 flavors and a lot of folks around the 505 who can't quit.</p>
+        <div class="values">
+          <div class="value"><b>Love</b><span>Hand cut, every batch</span></div>
+          <div class="value"><b>Faith</b><span>Grateful for every bag</span></div>
+          <div class="value"><b>Family</b><span>Run by the whole crew</span></div>
+        </div>
       </div>
+    </div>
+    <div class="carousel" id="carousel" aria-roledescription="carousel" aria-label="Jerky Fixx photos">
+      <button class="arrow car-prev" type="button" aria-label="Previous photo">‹</button>
+      <div class="car-track" id="carTrack" tabindex="0">
+        <figure><img src="img/jerky-fixx-booth-jerky-fest.webp" alt="Jerky Fixx owner holding a Jerky Fest trophy at the booth" loading="lazy"><figcaption>Jerky Fest booth</figcaption></figure>
+        <figure><img src="img/jerky-fixx-family-booth.webp" alt="The Jerky Fixx family at their booth" loading="lazy"><figcaption>The whole crew</figcaption></figure>
+        <figure><img src="vid/batch-poster.jpg" alt="Fresh batch of Jerky Fixx beef jerky cooling on racks" loading="lazy"><figcaption>Fresh off the racks</figcaption></figure>
+        <figure><img src="img/jerky-fixx-jerky-fest-trophies.webp" alt="Jerky Fixx Most Exotic Flavor and Best Booth trophies" loading="lazy"><figcaption>The hardware</figcaption></figure>
+        <figure><img src="vid/hot-cheeto-poster.jpg" alt="Hot Cheeto jerky by Jerky Fixx" loading="lazy"><figcaption>Hot Cheeto jerky</figcaption></figure>
+        <figure><img src="img/jerky-fixx-carne-seca-pile.webp" alt="A pile of Jerky Fixx carne seca" loading="lazy"><figcaption>Carne seca, stacked</figcaption></figure>
+        <figure><img src="img/jerky-fixx-neon-roadrunner.webp" alt="Neon Jerky Fixx roadrunner logo over a city skyline" loading="lazy"><figcaption>505 till we die</figcaption></figure>
+        <figure><img src="img/jerkyfest-flyer.webp" alt="New Mexico Jerky Fest Halloween Edition flyer: Jerky Fixx is a vendor, October 31 2026 at Isleta Resort and Casino" loading="lazy"><figcaption>Jerky Fest, Halloween Edition</figcaption></figure>
+      </div>
+      <button class="arrow car-next" type="button" aria-label="Next photo">›</button>
     </div>
   </div>
 </section>
 
 <!-- LAB -->
-<section class="lab" id="lab">
+<section class="lab" id="lab" aria-labelledby="lab-title" data-hint="play" data-hint-text="Peek inside the lab">
   <div class="wave" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#0a020d"/></svg></div>
   <div class="giant" data-x="-35" aria-hidden="true">the lab</div>
   <div class="wrap lab-grid">
     <div class="lab-wrap">
-      <div class="screen hud">
-        <video id="labVid" poster="vid/lab-poster.jpg" muted loop playsinline autoplay preload="metadata"><source src="vid/lab.webm" type="video/webm"><source src="vid/lab.mp4" type="video/mp4"></video>
+      <div class="screen">
+        <video id="labVid" poster="vid/batch-poster.jpg" muted loop playsinline autoplay preload="metadata"><source src="vid/batch.mp4" type="video/mp4"></video>
         <div class="rec">Lab cam 01</div>
-        <div class="temp" id="labTemp">RAW</div>
-        <div class="ph-note">Sample process footage for the mockup. Swap in Jerky Fixx's own lab video before launch.</div>
       </div>
     </div>
     <div>
-      <div class="eyebrow ui"><b>Section 06</b> · In the lab</div>
-      <h2 class="h2">How the<br><em>product</em> gets made</h2>
-      <p class="lede">The carne seca method, start to finish. Thin cut beef, a heavy hand with seasoning and a long, slow dry. No shortcuts and no filler.</p>
-      <ol class="steps" id="steps"></ol>
+      <p class="eyebrow ui">How we make small batch jerky</p>
+      <h2 class="h2" id="lab-title">How the<br><em>product</em> gets made</h2>
+      <p class="lede">Every batch is cut, seasoned and dried in small runs, then bagged fresh for the next pop up. No shortcuts and no filler.</p>
+      <ol class="steps">
+        <li class="step on"><span class="t">01</span><b>Slice</b><small>Thin cut beef</small></li>
+        <li class="step on"><span class="t">02</span><b>Season</b><small>Loud, every strip</small></li>
+        <li class="step on"><span class="t">03</span><b>Dry</b><small>Low and slow</small></li>
+        <li class="step on"><span class="t">04</span><b>Bag</b><small>Fresh for your fixx</small></li>
+      </ol>
     </div>
   </div>
 </section>
 
 <!-- DEALER -->
-<section class="dealer" id="dealer">
+<section class="dealer" id="dealer" aria-labelledby="dl-title" data-hint="map" data-hint-text="Find your dealer, then sign up for drop alerts">
   <div class="wave slow" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#22062c"/></svg></div>
   <div class="giant" data-x="-25" aria-hidden="true">the 505</div>
   <div class="wrap">
-    <div class="eyebrow ui"><b>Section 07</b> · Dealer locator</div>
-    <h2 class="h2">Find your<br><em>dealer</em></h2>
-    <p class="lede">Most of the dealing happens at our kids' softball games. Find the next field we'll be posted up at, bring cash or your phone, and get your fixx.</p>
+    <p class="eyebrow ui">Where to buy jerky in Albuquerque and Rio Rancho</p>
+    <h2 class="h2" id="dl-title">Find your<br><em>dealer</em></h2>
+    <p class="lede">Catch us at pop ups, festivals and plenty of ball games around Albuquerque and Rio Rancho. Next stop below.</p>
     <div class="dl-grid">
-      <div class="map hud">
-        <svg viewBox="0 0 640 460" role="img" aria-label="Map of Albuquerque with upcoming Jerky Fixx pop up locations">
-          <defs>
-            <pattern id="mg" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(255,255,255,.06)"/></pattern>
-          </defs>
-          <rect width="640" height="460" fill="url(#mg)"/>
-          <path d="M520 0 L640 0 L640 460 L560 460 L548 380 L575 300 L540 230 L570 150 L530 70 Z" fill="#2a0a33" stroke="rgba(255,102,196,.35)"/>
-          <text x="585" y="250" fill="rgba(255,255,255,.35)" font-family="Oswald,sans-serif" font-size="12" letter-spacing="3" transform="rotate(-90 585 250)">SANDIA MOUNTAINS</text>
-          <path d="M238 0 C250 60 220 110 236 160 C252 210 214 250 226 300 C238 350 206 400 214 460" fill="none" stroke="#3aa6ff" stroke-opacity=".55" stroke-width="7" stroke-linecap="round"/>
-          <text x="150" y="380" fill="rgba(58,166,255,.75)" font-family="Oswald,sans-serif" font-size="12" letter-spacing="2">RIO GRANDE</text>
-          <path d="M318 0 L322 120 L312 230 L330 340 L320 460" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
-          <path d="M0 252 L160 246 L312 230 L470 238 L640 226" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
-          <g font-family="Oswald,sans-serif" font-size="11" fill="#fff"><rect x="326" y="18" width="34" height="18" fill="#0d0410" stroke="rgba(255,255,255,.4)"/><text x="333" y="31">I-25</text><rect x="40" y="226" width="34" height="18" fill="#0d0410" stroke="rgba(255,255,255,.4)"/><text x="47" y="239">I-40</text></g>
-          <g font-family="Oswald,sans-serif" font-size="13" letter-spacing="3" fill="rgba(255,255,255,.4)"><text x="110" y="70">RIO RANCHO</text><text x="70" y="200">WESTSIDE</text><text x="360" y="200">NE HEIGHTS</text><text x="250" y="300">DOWNTOWN</text><text x="350" y="420">MESA DEL SOL</text></g>
-          <g id="pins"></g>
-        </svg>
-        <div class="legend readout"><span><b>●</b> Pop up stop</span><span>Tap a pin or a date</span></div>
-      </div>
-      <div class="sched">
-        <div class="sched-head"><span class="ui" style="font-size:15px">Upcoming stops</span><span class="badge">Sample schedule</span></div>
-        <div id="events"></div>
-      </div>
+      <div class="map"><iframe title="Map to Isleta Resort and Casino" src="https://www.google.com/maps?q=Isleta+Resort+%26+Casino,+Albuquerque,+NM&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <article class="event">
+        <img src="img/jerkyfest-flyer.webp" alt="New Mexico Jerky Fest Halloween Edition flyer with the Jerky Fixx logo" width="900" height="1350" loading="lazy">
+        <div class="ev-body">
+          <span class="badge">Next stop</span>
+          <div class="ev-date"><small>Sat</small><b>Oct 31</b><small>2026</small></div>
+          <h3>New Mexico Jerky Fest, Halloween Edition</h3>
+          <p>Isleta Resort &amp; Casino, Albuquerque, NM. Concert, cars and vendors. Come find the Jerky Fixx booth and try a sample.</p>
+          <div class="ev-btns"><a class="pill pill-lime" href="https://www.google.com/maps/dir/?api=1&amp;destination=Isleta+Resort+%26+Casino,+Albuquerque,+NM" target="_blank" rel="noopener">Directions <span aria-hidden="true">↗</span></a><button class="pill pill-light" type="button" id="icsBtn">Add to calendar <span aria-hidden="true">+</span></button></div>
+        </div>
+      </article>
     </div>
-    <p class="note">Sample dates for the mockup. Once the Fixx crew sends over the softball schedule, this list and the pins will sync to it.</p>
+    <form class="jf-form alerts" id="alertForm" data-form="events" novalidate>
+      <div class="alerts-copy"><h3>Get dealer alerts</h3><p>Be first to know where we're posting up next: pop ups, games and festivals.</p></div>
+      <div class="field"><label for="al-email">Email</label><input id="al-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"></div>
+      <div class="field"><label for="al-phone">Phone (optional, for texts)</label><input id="al-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="robot"><input type="checkbox" name="consent" value="yes"><span class="box" aria-hidden="true"></span>I'm not a robot</label>
+      <button class="pill pill-lime" type="submit">Alert me <span aria-hidden="true">↗</span></button>
+      <p class="form-msg" role="status"></p>
+    </form>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="reviews" id="reviews">
-  <div class="wave" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#d81fc9"/></svg></div>
-  <div class="wrap rev-head">
+<!-- VIP -->
+<section class="vip" id="vip" aria-labelledby="vip-title" data-hint="vip" data-hint-text="Want in? Join the VIP waitlist">
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#c9fb05"/></svg></div>
+  <svg class="bolt b5" viewBox="0 0 40 90" aria-hidden="true"><path d="M24 0 L4 50 H18 L10 90 L36 34 H22 L30 0Z"/></svg>
+  <img class="deco d7" src="img/icon-flame.webp" alt=""><img class="deco d8" src="img/icon-bacon.webp" alt="">
+  <div class="wrap vip-grid">
     <div>
-      <div class="eyebrow ui"><b>Section 08</b> · Side effects</div>
-      <h2 class="h2">Hooked<br><em>customers</em></h2>
+      <span class="soon">Coming soon</span>
+      <p class="eyebrow ui">Jerky subscription club</p>
+      <h2 class="h2" id="vip-title">FIXX Fiends<br><em>VIP Club</em></h2>
+      <p class="lede">A jerky subscription for the true fiends. Your fixx mailed to you on a regular schedule, plus perks you can't get at the booth.</p>
+      <ul class="perks">
+        <li><b>Regular drops</b> Jerky mailed on your schedule</li>
+        <li><b>Member pricing</b> Subscription savings on every bag</li>
+        <li><b>Exclusives</b> Members-only promos and flavors</li>
+        <li><b>Samples + swag</b> Extras in the box</li>
+        <li><b>Your say</b> Vote on the next new flavor</li>
+      </ul>
     </div>
-    <p class="sample-note">Placeholder reviews for layout only. Swap in real Google or Facebook reviews before launch.</p>
+    <form class="jf-form vip-form" id="vipForm" data-form="vip" novalidate>
+      <h3>Want it? Get on the list.</h3>
+      <p>Drop your email and we'll let you know when the club opens. More sign ups means it happens sooner.</p>
+      <div class="field"><label for="vip-name">First name</label><input id="vip-name" name="name" autocomplete="given-name"></div>
+      <div class="field"><label for="vip-email">Email</label><input id="vip-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="vip-msg">Flavor you'd want in the box (optional)</label><input id="vip-msg" name="message"></div>
+      <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="robot"><input type="checkbox" name="consent" value="yes"><span class="box" aria-hidden="true"></span>I'm not a robot</label>
+      <button class="pill pill-lime" type="submit">Count me in <span aria-hidden="true">↗</span></button>
+      <p class="form-msg" role="status"></p>
+    </form>
   </div>
-  <div class="rev-row" id="revRow"></div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social" id="social" aria-labelledby="so-title" data-hint="play" data-hint-text="Tap play, then follow the fixx">
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#d81fc9"/></svg></div>
+  <svg class="bolt b6" viewBox="0 0 40 90" aria-hidden="true"><path d="M24 0 L4 50 H18 L10 90 L36 34 H22 L30 0Z"/></svg>
+  <div class="wrap so-grid">
+    <div class="phone"><video id="promoVid" poster="vid/hot-cheeto-poster.jpg" playsinline loop muted preload="metadata"><source src="vid/hot-cheeto-promo.mp4" type="video/mp4"></video><button class="sound" id="promoSound" type="button" aria-label="Turn sound on">🔇</button></div>
+    <div>
+      <p class="eyebrow ui">Side effects</p>
+      <h2 class="h2" id="so-title">Follow<br>the <em>fixx</em></h2>
+      <p class="lede">Fresh drops, new flavors and where we're posting up next all hit our socials first. Hooked already? Tell the world.</p>
+      <div class="so-btns">
+        <a class="pill pill-light" href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a>
+        <a class="pill pill-light" href="https://www.facebook.com/jerky.fixx/" target="_blank" rel="noopener">Facebook <span aria-hidden="true">↗</span></a>
+        <a class="pill pill-light" href="https://www.threads.com/@jerky_fixx" target="_blank" rel="noopener">Threads <span aria-hidden="true">↗</span></a>
+        <a class="pill pill-dark" href="https://www.facebook.com/jerky.fixx/reviews" target="_blank" rel="noopener">Leave a review <span aria-hidden="true">★</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" aria-labelledby="faq-title" data-hint="tap" data-hint-text="Tap a question to open it">
+  <div class="wrap">
+    <p class="eyebrow ui">Jerky questions</p>
+    <h2 class="h2" id="faq-title">Got <em>questions?</em></h2>
+    <div class="faq-list">
+      <details><summary>Where can I buy jerky in Albuquerque?</summary><p>Find Jerky Fixx at pop ups, festivals like New Mexico Jerky Fest at Isleta Resort &amp; Casino, and local ball games. Check the dealer locator, or text us to order and arrange pickup.</p></details>
+      <details><summary>Do you sell beef jerky in Rio Rancho?</summary><p>Yes. We show up at Rio Rancho and Albuquerque ball games and pop ups all season. Message us for the next stop or to order ahead.</p></details>
+      <details><summary>What is your spiciest jerky?</summary><p>X-Hot Green is our hottest green chile, and Hot Mamma Cheeto and X-Hot Green Chili Lime Salt bring serious heat too. Hot Cheetos, Takis and Mango Habanero bring snack style heat.</p></details>
+      <details><summary>Do you have Hot Cheeto jerky?</summary><p>We do. Hot Cheetos and Hot Cheeto Pickle are crowd favorites, along with Takis and Tajin Limon.</p></details>
+      <details><summary>Is carne seca the same as jerky?</summary><p>Both are dried, seasoned beef. Carne seca is the traditional New Mexico name. Ours is small batch and chile forward, with fun snack inspired flavors.</p></details>
+      <details><summary>How much is a bag, and how do I pay?</summary><p>Small bags are $7 and large bags are $20. Pay with Cash App, Venmo, Apple Pay or cash. Jerky makes a great New Mexico gift.</p></details>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
+<section class="contact" id="contact" aria-labelledby="ct-title" data-hint="chat" data-hint-text="Order or ask us anything">
   <div class="wave slow" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#14031a"/></svg></div>
   <div class="giant" data-x="-30" aria-hidden="true">re-up</div>
   <div class="wrap">
-    <div class="eyebrow ui"><b>Section 09</b> · Contact</div>
-    <h2 class="h2">Need a<br><em>re-up?</em></h2>
+    <p class="eyebrow ui">Order jerky in Albuquerque by text, call or email</p>
+    <h2 class="h2" id="ct-title">Need a<br><em>re-up?</em></h2>
     <div class="ct-grid">
       <div>
-        <p class="lede">Orders, events, wholesale or a custom flavor idea. Hit up the dealer directly.</p>
+        <p class="lede">Place an order, book us for an event or ask a question. Hit up the dealer directly.</p>
         <div class="lines">
-          <div class="line"><div style="min-width:0"><div class="k">Email</div><div class="v">jerkyfixx@gmail.com</div></div><button class="copy" data-copy="jerkyfixx@gmail.com">Copy</button></div>
-          <div class="line"><div style="min-width:0"><div class="k">Call or text</div><div class="v">505-922-5683</div></div><button class="copy" data-copy="505-922-5683">Copy</button></div>
-          <div class="line"><div style="min-width:0"><div class="k">Call or text</div><div class="v">505-364-0678</div></div><button class="copy" data-copy="505-364-0678">Copy</button></div>
+          <div class="line"><div style="min-width:0"><div class="k">Email</div><a class="v" href="mailto:jerkyfixx@gmail.com">jerkyfixx@gmail.com</a></div><button class="copy" type="button" data-copy="jerkyfixx@gmail.com">Copy</button></div>
+          <div class="line"><div style="min-width:0"><div class="k">Call or text</div><a class="v" href="tel:+15059225683">505-922-5683</a></div><a class="copy" href="sms:+15059225683">Text</a></div>
+          <div class="line"><div style="min-width:0"><div class="k">Call or text</div><a class="v" href="tel:+15053640678">505-364-0678</a></div><a class="copy" href="sms:+15053640678">Text</a></div>
         </div>
         <div class="readout" style="margin-top:22px">We accept</div>
         <div class="pay"><span>Apple Pay</span><span>Cash App</span><span>Venmo</span><span>Cash</span></div>
-        <div class="socials"><a class="pill pill-light" href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a><a class="pill pill-light" href="https://www.facebook.com/jerky.fixx" target="_blank" rel="noopener">Facebook <span aria-hidden="true">↗</span></a></div>
       </div>
-      <form class="hud" id="cform" novalidate>
+      <form class="jf-form ct-form" id="contactForm" data-form="contact" novalidate>
+        <fieldset class="field full kind"><legend>What do you need?</legend>
+          <label><input type="radio" name="kind" value="order" checked> Place an order</label>
+          <label><input type="radio" name="kind" value="question"> Ask a question</label>
+        </fieldset>
+        <div class="order-fields full" id="orderFields">
+          <div class="field"><label for="c-flavor">Flavor</label><select id="c-flavor" name="flavor"></select></div>
+          <div class="field"><label for="c-size">Size</label><select id="c-size" name="size"><option value="Small">Small bag, $7</option><option value="Large">Large bag, $20</option></select></div>
+          <div class="field"><label for="c-qty">Qty</label><input id="c-qty" name="qty" type="number" min="1" max="50" value="1"></div>
+        </div>
         <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
         <div class="field full"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field full"><label for="c-topic">What do you need?</label><select id="c-topic" name="topic"><option>Place an order</option><option>Book us for an event</option><option>Wholesale or retail</option><option>Custom flavor</option><option>Something else</option></select></div>
-        <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="message" placeholder="Two large X-Hot Green and a small Garlic Parm, pick up at Saturday's game"></textarea></div>
-        <div class="form-foot"><button class="pill pill-lime" type="submit">Send it <span aria-hidden="true">↗</span></button><span class="form-msg" id="formMsg" role="status"></span></div>
+        <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="message" placeholder="Pickup at Saturday's game? Event booking? Tell us."></textarea></div>
+        <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form-foot"><label class="robot"><input type="checkbox" name="consent" value="yes"><span class="box" aria-hidden="true"></span>I'm not a robot</label><button class="pill pill-lime" type="submit">Send it <span aria-hidden="true">↗</span></button></div>
+        <p class="form-msg full" role="status"></p>
       </form>
     </div>
   </div>
 </section>
 </main>
 
+<!-- CART -->
+<div class="cart-scrim" id="cartScrim" hidden></div>
+<aside class="cart" id="cart" aria-label="Your cart" aria-hidden="true" tabindex="-1">
+  <div class="cart-head"><h2>Your fixx</h2><button class="x" type="button" id="cartClose" aria-label="Close cart">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-sum"><span>Total</span><b id="cartTotal">$0</b></div>
+  <form class="jf-form checkout" id="checkoutForm" data-form="order" novalidate>
+    <h3>Checkout</h3>
+    <p class="small">No payment online. We'll text or email you to confirm pickup and payment (Cash App, Venmo, Apple Pay or cash).</p>
+    <div class="field"><label for="co-name">Name</label><input id="co-name" name="name" autocomplete="name" required></div>
+    <div class="field"><label for="co-phone">Phone</label><input id="co-phone" name="phone" type="tel" autocomplete="tel" required></div>
+    <div class="field"><label for="co-email">Email</label><input id="co-email" name="email" type="email" autocomplete="email" required></div>
+    <div class="field"><label for="co-msg">Notes (pickup spot, game, timing)</label><textarea id="co-msg" name="message" rows="2"></textarea></div>
+    <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label class="robot"><input type="checkbox" name="consent" value="yes"><span class="box" aria-hidden="true"></span>I'm not a robot</label>
+    <button class="pill pill-lime wide" type="submit">Place order <span aria-hidden="true">↗</span></button>
+    <p class="form-msg" role="status"></p>
+  </form>
+</aside>
+
+<!-- COOKIES -->
+<div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="cc-title" hidden>
+  <h2 id="cc-title">Cookies, but not the snack kind</h2>
+  <p>We use essential browser storage to keep your cart working. With your OK we may also use analytics to see what flavors people look at. <a href="/cookies.html">Cookie policy</a></p>
+  <div class="cc-prefs" id="ccPrefs" hidden>
+    <label><input type="checkbox" checked disabled> Essential (cart, preferences)</label>
+    <label><input type="checkbox" id="ccAnalytics"> Analytics</label>
+  </div>
+  <div class="cc-btns"><button class="pill pill-light" type="button" id="ccReject">Essential only</button><button class="pill pill-light" type="button" id="ccCustom">Customize</button><button class="pill pill-lime" type="button" id="ccAccept">Accept all</button></div>
+</div>
+
 <footer class="foot">
   <div class="tape"><div class="half l"><div class="track"></div></div></div>
-  <div class="wrap foot-row">
-    <img src="img/logo.webp" alt="Jerky Fixx" width="598" height="447" loading="lazy">
-    <span>© 2026 Jerky Fixx · Albuquerque, New Mexico</span>
-    <span>Warning: flavors may cause addiction</span>
+  <img class="deco d9" src="img/icon-cross.webp" alt=""><img class="deco d10" src="img/icon-flame.webp" alt="">
+  <div class="wrap foot-grid">
+    <div class="f-brand">
+      <img src="img/logo-stack.webp" alt="Jerky Fixx" width="684" height="557" loading="lazy">
+      <p>Small batch beef jerky and carne seca made with love, faith and family in Albuquerque, New Mexico.</p>
+      <div class="f-social"><a href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/jerky.fixx/" target="_blank" rel="noopener">Facebook</a><a href="https://www.threads.com/@jerky_fixx" target="_blank" rel="noopener">Threads</a></div>
+    </div>
+    <nav class="f-col" aria-label="Footer"><h3>Explore</h3><a href="#lineup">Top sellers</a><a href="#menu">Full menu</a><a href="#family">Our story</a><a href="#lab">The lab</a><a href="#dealer">Dealer locator</a><a href="#vip">VIP Club</a><a href="#faq">FAQ</a></nav>
+    <div class="f-col"><h3>Get your fixx</h3><a href="mailto:jerkyfixx@gmail.com">jerkyfixx@gmail.com</a><a href="tel:+15059225683">505-922-5683</a><a href="tel:+15053640678">505-364-0678</a><span>Albuquerque &amp; Rio Rancho, NM</span><span>Apple Pay · Cash App · Venmo · Cash</span></div>
+    <div class="f-col"><h3>Legal</h3><a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of use</a><a href="/cookies.html">Cookie policy</a><a href="/accessibility.html">Accessibility</a><button type="button" class="linkish" id="cookiePrefs">Cookie preferences</button></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Jerky Fixx. All rights reserved.</span>
+    <span class="allergen">Contains beef; some flavors contain dairy, soy, wheat or corn. X-Hot flavors are very hot. "Addiction" talk is about snack cravings only.</span>
+    <a class="dyad" href="https://dyadgrow.com" target="_blank" rel="noopener">Website designed by <img src="img/dyad-logo.webp" alt="DYAD Marketects" width="420" height="131" loading="lazy"></a>
   </div>
 </footer>
 
@@ -716,77 +1190,185 @@ form.hud{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-te
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.min.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
 
 <script>
-/* ---------- content + DOM (no 3D) ---------- */
-const TOP=[
- {n:"X-Hot Green",heat:5,d:"Green chile stacked on more green chile, cranked all the way up. The one people come back shaking for.",m:["chile","lime","chile","chile","lime","chile","lime","chile"]},
- {n:"Hot Cheetos",heat:4,d:"Red hot cheeto dust packed into every strip. Your fingers will be red and you won't care.",m:["cheeto","cheeto","cheeto","cheeto","cheeto","cheeto","cheeto","cheeto"]},
- {n:"Garlic Parm",heat:1,d:"Roasted garlic and nutty parmesan. Mellow on the heat, loud on the flavor.",m:["garlic","parmesan","garlic","parmesan","garlic","parmesan","garlic"]},
- {n:"Takis",heat:4,d:"Rolled chile lime crunch on thin cut carne seca. Sour, spicy and gone way too fast.",m:["taki","taki","lime","taki","taki","taki","lime","taki"]},
- {n:"Honey Teriyaki",heat:1,d:"Sweet, sticky and savory. The gateway flavor for the kids and the grandmas.",m:["teriyaki","teriyaki","teriyaki","teriyaki","teriyaki"]},
- {n:"Mango Habanero",heat:4,d:"Sweet mango up front, slow habanero burn on the way out.",m:["mango","chile","mango","chile","mango","chile","mango","chile"]},
- {n:"Hot Cheeto Pickle",heat:3,d:"Dill pickle tang meets hot cheeto heat. It sounds wild. It sells out anyway.",m:["cheeto","pickles","cheeto","cheeto","pickles","cheeto","cheeto","pickles"]},
- {n:"Lemon Pepper",heat:1,d:"Bright lemon and cracked black pepper. A classic that never gets old.",m:["lemonpepper","lemon","lemon","lemonpepper","lemon","lemon","lemonpepper"]}
-];
-const MENU=[["X-Hot Green",5],["Green",3],["Red",3],["X-Mas",3],["Lemon Pepper Green",3],["Garlic Parm Green",3],["Green Chili Ranch",2],["Honey Teriyaki Green",2],["Mango Habanero",4],["Asian Zing",2],["Takis",4],["Hot Cheetos",4],["Hot Mamma",4],["Hot Mamma Cheeto",5],["Hot Cheeto Pickle",3],["Salt",0],["Salt x Pepper",1],["X-Hot Green Chili Lime Salt",5],["Lemon Pepper",1],["Garlic",0],["Garlic Parm",0],["Teriyaki",0],["Honey Teriyaki",0],["Pickle",1],["Tajin Limon",2]];
-const TOPSET=new Set(TOP.map(t=>t.n));
-const bucket=h=>h<=1?"mild":h<=3?"med":h===4?"hot":"xhot";
-const podHTML=h=>Array.from({length:5},(_,i)=>`<span class="pod${i<h?" on":""}"></span>`).join("");
-function renderMenu(f){
-  const g=document.getElementById("flavGrid");
-  g.innerHTML=MENU.map(([n,h],i)=>({n,h,i})).filter(x=>f==="all"||bucket(x.h)===f).map(x=>`
-   <article class="fcard"><span class="no">${String(x.i+1).padStart(2,"0")}</span>${TOPSET.has(x.n)?'<span class="tag">Top seller</span>':""}
-   <h3>${x.n}</h3><div class="row"><div class="pods" aria-label="Heat ${x.h} of 5">${podHTML(x.h)}</div><span class="readout">$7 · <b>$20</b></span></div></article>`).join("")
-   +(f==="all"?`<article class="fcard custom"><span class="no">26+</span><h3>Your custom flavor</h3><div class="row"><span class="readout">Ask the dealer</span><a class="readout" href="#contact" style="color:var(--lime)">Request →</a></div></article>`:"");
-}
-renderMenu("all");
-document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{document.querySelectorAll(".chip").forEach(o=>o.setAttribute("aria-pressed",String(o===c)));renderMenu(c.dataset.f);if(window.ScrollTrigger)ScrollTrigger.refresh();}));
+/* ======== config ======== */
+/* Paste the Google Apps Script web app URL here (see backend/SETUP.md). Until then forms fall back to an email draft. */
+const FORM_ENDPOINT = "";
+const GA_ID = ""; /* optional Google Analytics 4 ID, only loads after cookie consent */
+const RECIPIENTS = "jerkyfixx@gmail.com,dyadmarketects@gmail.com";
 
-/* tapes */
+/* ======== flavors ======== */
+const slug=s=>s.toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const FLAVORS=[
+ ["X-Hot Green",5,"Our hottest green chile jerky. Green chile heat stacked on more green chile for the fiends who like it loud.",1],
+ ["Green",3,"Classic New Mexico green chile carne seca. Earthy, bright and just the right burn."],
+ ["Red",3,"Red chile beef jerky with deep, smoky New Mexico red chile flavor."],
+ ["X-Mas",3,"Can't choose? Red and green chile together, Christmas style, the way New Mexico does it."],
+ ["Lemon Pepper Green",3,"Zesty lemon pepper meets green chile heat. Bright, peppery and hard to put down."],
+ ["Garlic Parm Green",3,"Savory garlic and parmesan with a green chile kick."],
+ ["Green Chili Ranch",2,"Cool ranch seasoning with a mellow green chile warmth."],
+ ["Honey Teriyaki Green",2,"Sweet honey teriyaki with a little green chile bite on the finish."],
+ ["Mango Habanero",4,"Sweet mango up front, slow habanero burn on the way out.",1],
+ ["Asian Zing",2,"Savory, tangy and a little sweet with an Asian inspired zing."],
+ ["Takis",4,"Rolled chile lime crunch flavor on thin cut carne seca. Sour, spicy and gone way too fast.",1],
+ ["Hot Cheetos",4,"Red hot cheeto dust packed into every strip. Your fingers will be red and you won't care.",1],
+ ["Hot Mamma",4,"A hot one for the heat chasers. Bold red chile spice with a serious kick."],
+ ["Hot Mamma Cheeto",5,"Hot Mamma heat plus hot cheeto dust. Double trouble for spice fiends."],
+ ["Hot Cheeto Pickle",3,"Dill pickle tang meets hot cheeto heat. It sounds wild. It sells out anyway.",1],
+ ["Salt",0,"Simple, beefy and clean. Just meat and salt for the purists."],
+ ["Salt x Pepper",1,"The classic pair. Salt and cracked black pepper on thin cut beef."],
+ ["X-Hot Green Chili Lime Salt",5,"X-Hot green chile with lime and a hit of salt. Tangy, salty, very hot."],
+ ["Lemon Pepper",1,"Bright lemon and cracked black pepper. A classic that never gets old.",1],
+ ["Garlic",0,"Garlic lovers only. Big savory garlic flavor with zero heat."],
+ ["Garlic Parm",0,"Roasted garlic and nutty parmesan. Mellow on the heat, loud on the flavor.",1],
+ ["Teriyaki",0,"Savory teriyaki glaze on tender, thin cut beef."],
+ ["Honey Teriyaki",0,"Sweet, sticky and savory. The gateway flavor for the kids and the grandmas.",1],
+ ["Pickle",1,"Tangy dill pickle jerky. Sour, salty and weirdly addictive."],
+ ["Tajin Limon",2,"Chile lime Tajin style seasoning with a bright limon finish."]
+].map(([n,h,d,top],i)=>({n,h,d,top:!!top,i,s:slug(n),img:"img/flavors/"+slug(n)+".webp"}));
+const BYSLUG=Object.fromEntries(FLAVORS.map(f=>[f.s,f]));
+const PRICE={Small:7,Large:20};
+const TOPN=["X-Hot Green","Hot Cheetos","Garlic Parm","Takis","Honey Teriyaki","Mango Habanero","Hot Cheeto Pickle","Lemon Pepper"];
+const TOPM={"X-Hot Green":["chile","lime","chile","chile","lime","chile","lime","chile"],"Hot Cheetos":["cheeto","cheeto","cheeto","cheeto","cheeto","cheeto","cheeto","cheeto"],"Garlic Parm":["garlic","parmesan","garlic","parmesan","garlic","parmesan","garlic"],"Takis":["taki","taki","lime","taki","taki","taki","lime","taki"],"Honey Teriyaki":["teriyaki","teriyaki","teriyaki","teriyaki","teriyaki"],"Mango Habanero":["mango","chile","mango","chile","mango","chile","mango","chile"],"Hot Cheeto Pickle":["cheeto","pickles","cheeto","cheeto","pickles","cheeto","cheeto","pickles"],"Lemon Pepper":["lemonpepper","lemon","lemon","lemonpepper","lemon","lemon","lemonpepper"]};
+const TOP=TOPN.map(n=>{const f=FLAVORS.find(x=>x.n===n);return {n,heat:f.h,d:f.d,s:f.s,img:f.img,m:TOPM[n]};});
+const podHTML=h=>Array.from({length:5},(_,i)=>`<span class="pod${i<h?" on":""}"></span>`).join("");
+const bucket=h=>h<=1?"mild":h<=3?"med":h===4?"hot":"xhot";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+/* ======== cart ======== */
+const Cart={items:store.get("jf_cart",[]),
+  save(){store.set("jf_cart",this.items);renderCart();},
+  add(s,size,qty){qty=Math.max(1,qty|0);const it=this.items.find(x=>x.s===s&&x.size===size);if(it)it.qty+=qty;else this.items.push({s,size,qty});this.save();const c=document.getElementById("cartCount");c.classList.remove("bump");void c.offsetWidth;c.classList.add("bump");toast(`${qty} × ${BYSLUG[s].n} (${size}) added`);},
+  set(i,q){if(q<=0)this.items.splice(i,1);else this.items[i].qty=q;this.save();},
+  total(){return this.items.reduce((a,x)=>a+PRICE[x.size]*x.qty,0)},
+  count(){return this.items.reduce((a,x)=>a+x.qty,0)}};
+function renderCart(){
+  const box=document.getElementById("cartItems"),cnt=document.getElementById("cartCount");
+  const n=Cart.count();cnt.hidden=!n;cnt.textContent=n;
+  document.getElementById("cartTotal").textContent="$"+Cart.total();
+  box.innerHTML=Cart.items.length?Cart.items.map((x,i)=>{const f=BYSLUG[x.s];return `<div class="ci"><img src="${f.img}" alt="" width="56" height="56"><div><b>${esc(f.n)}</b><small>${x.size} bag · $${PRICE[x.size]} each</small><br><button class="rm" type="button" data-rm="${i}">Remove</button></div><div class="qty"><button type="button" data-q="${i}" data-d="-1" aria-label="Fewer">−</button><output>${x.qty}</output><button type="button" data-q="${i}" data-d="1" aria-label="More">+</button></div></div>`}).join(""):`<p class="cart-empty">Your cart is empty. Time to get your fixx.</p>`;
+  document.getElementById("checkoutForm").hidden=!Cart.items.length;
+}
+function openCart(){const c=document.getElementById("cart");c.classList.add("open");c.setAttribute("aria-hidden","false");document.getElementById("cartScrim").hidden=false;setTimeout(()=>c.focus(),50);}
+function closeCart(){const c=document.getElementById("cart");c.classList.remove("open");c.setAttribute("aria-hidden","true");document.getElementById("cartScrim").hidden=true;}
+document.getElementById("cartItems").addEventListener("click",e=>{const q=e.target.closest("[data-q]"),r=e.target.closest("[data-rm]");if(q){const i=+q.dataset.q;Cart.set(i,Cart.items[i].qty+(+q.dataset.d));}if(r)Cart.set(+r.dataset.rm,0);});
+document.getElementById("cartBtn").addEventListener("click",openCart);
+document.querySelectorAll("[data-open-cart]").forEach(b=>b.addEventListener("click",openCart));
+document.getElementById("cartClose").addEventListener("click",closeCart);
+document.getElementById("cartScrim").addEventListener("click",closeCart);
+addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();closeDetail();}});
+document.getElementById("orderNow").addEventListener("click",e=>{if(Cart.count()){e.preventDefault();openCart();}});
+let toastT;function toast(msg){let t=document.getElementById("toast");if(!t){t=document.createElement("div");t.id="toast";t.setAttribute("role","status");t.style.cssText="position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:90;background:#0d0410;color:#c9fb05;font:600 13px Oswald,sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:12px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:opacity .3s";document.body.appendChild(t);}t.textContent=msg;t.style.opacity=1;clearTimeout(toastT);toastT=setTimeout(()=>t.style.opacity=0,2200);}
+
+/* ======== menu: icon grid + big detail ======== */
+let curSel=FLAVORS[0].s,curSize="Small",curQty=1;
+function renderMenu(f){
+  document.getElementById("flavGrid").innerHTML=FLAVORS.filter(x=>f==="all"||bucket(x.h)===f).map(x=>`<button class="ficon" type="button" data-s="${x.s}" aria-pressed="${x.s===curSel}">${x.top?'<span class="top" title="Top seller"></span>':""}<img src="${x.img}" alt="${esc(x.n)} jerky, Jerky Fixx small batch beef jerky" width="360" height="360" loading="lazy"><span class="nm">${esc(x.n)}</span><span class="pods" aria-label="Heat ${x.h} of 5">${podHTML(x.h)}</span><span class="sr-only">${esc(x.d)}</span></button>`).join("");
+}
+function renderDetail(){
+  const f=BYSLUG[curSel];
+  document.getElementById("flavDetail").innerHTML=`<button class="x fd-close" type="button" aria-label="Close" onclick="closeDetail()">✕</button>${f.top?'<span class="fd-tag">Top seller</span>':'<span class="fd-tag" style="background:#ff66c4">Flavor '+String(f.i+1).padStart(2,"0")+'</span>'}<img class="fd-img" src="${f.img}" alt="${esc(f.n)} jerky by Jerky Fixx" width="360" height="360"><h3>${esc(f.n)}</h3><p>${esc(f.d)}</p><div class="fd-row"><span class="readout">Heat</span><span class="pods">${podHTML(f.h)}</span><span class="readout"><b>${f.h}/5</b></span></div><div class="fd-row"><div class="seg" role="radiogroup" aria-label="Bag size"><button type="button" role="radio" data-sz="Small" aria-checked="${curSize==="Small"}">Small $7</button><button type="button" role="radio" data-sz="Large" aria-checked="${curSize==="Large"}">Large $20</button></div><div class="qty"><button type="button" data-dq="-1" aria-label="Fewer">−</button><output id="fdQty">${curQty}</output><button type="button" data-dq="1" aria-label="More">+</button></div></div><div class="fd-row"><button class="pill pill-lime" type="button" id="fdAdd">Add to cart · $${PRICE[curSize]*curQty}</button><button class="pill pill-light" type="button" data-open-cart onclick="openCart()">View cart</button></div>`;
+}
+function closeDetail(){document.getElementById("flavDetail").classList.remove("open");}
+document.getElementById("flavGrid").addEventListener("click",e=>{const b=e.target.closest(".ficon");if(!b)return;curSel=b.dataset.s;curQty=1;document.querySelectorAll(".ficon").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));renderDetail();document.getElementById("flavDetail").classList.add("open");});
+document.getElementById("flavDetail").addEventListener("click",e=>{const sz=e.target.closest("[data-sz]"),dq=e.target.closest("[data-dq]");if(sz){curSize=sz.dataset.sz;renderDetail();}if(dq){curQty=Math.min(50,Math.max(1,curQty+(+dq.dataset.dq)));renderDetail();}if(e.target.closest("#fdAdd")){Cart.add(curSel,curSize,curQty);}});
+renderMenu("all");renderDetail();
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{document.querySelectorAll(".chip").forEach(o=>o.setAttribute("aria-pressed",String(o===c)));renderMenu(c.dataset.f);}));
+function showFlavor(s){curSel=s;curQty=1;renderMenu(document.querySelector('.chip[aria-pressed="true"]').dataset.f);renderDetail();}
+
+/* ======== tapes + rail ======== */
 const TAPE="WARNING! FLAVORS MAY CAUSE ADDICTION";
 document.querySelectorAll(".track").forEach(t=>{t.innerHTML=Array(10).fill(`<span>${TAPE}</span>`).join("")});
-
-/* rail */
 const rail=document.getElementById("luRail");
-rail.innerHTML=TOP.map((t,i)=>`<button data-i="${i}" aria-label="Jump to ${t.n}">${String(i+1).padStart(2,"0")} ${t.n}</button>`).join("");
+rail.innerHTML=TOP.map((t,i)=>`<button type="button" role="tab" data-i="${i}" aria-label="${esc(t.n)}"><img src="${t.img}" alt="" width="30" height="30">${esc(t.n)}</button>`).join("");
 
-/* lab steps */
-const STEPS=[[0,"Slice","Cut to 1/8 inch"],[2,"Lay out","Strips on the racks"],[8,"Season","Lemon pepper, heavy"],[11,"Chile","Green chile on top"],[13,"Dry","Into the dehydrator"],[15,"Low + slow","Held at 150°F"],[18.4,"Done","Carne seca"]];
-document.getElementById("steps").innerHTML=STEPS.map((s,i)=>`<li><button class="step" data-t="${s[0]}"><span class="t">00:${String(Math.floor(s[0])).padStart(2,"0")}</span><b>${s[1]}</b><small>${s[2]}</small></button></li>`).join("");
-const vid=document.getElementById("labVid"),stepEls=[...document.querySelectorAll(".step")],temp=document.getElementById("labTemp");
-vid.addEventListener("timeupdate",()=>{const t=vid.currentTime;let k=0;STEPS.forEach((s,i)=>{if(t>=s[0])k=i});stepEls.forEach((e,i)=>e.classList.toggle("on",i===k));temp.textContent=(t<13?"RAW":"150°F")});
-stepEls.forEach(e=>e.addEventListener("click",()=>{vid.currentTime=+e.dataset.t;vid.play().catch(()=>{})}));
-new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)vid.play().catch(()=>{});else vid.pause()}),{threshold:.25}).observe(vid);
+/* ======== forms → Apps Script (emails both inboxes + Google Sheet) ======== */
+const loadedAt=Date.now();
+const flavorSelect=document.getElementById("c-flavor");
+flavorSelect.innerHTML=FLAVORS.map(f=>`<option value="${f.s}">${esc(f.n)}</option>`).join("");
+document.querySelectorAll('#contactForm input[name="kind"]').forEach(r=>r.addEventListener("change",()=>{document.getElementById("orderFields").hidden=document.querySelector('#contactForm input[name="kind"]:checked').value!=="order";}));
+function itemsText(items){return items.map(x=>`${x.qty} × ${x.name} (${x.size}) $${x.price}`).join("\n");}
+async function sendForm(data){
+  data.page=location.href;data.t=String(Date.now()-loadedAt);
+  if(!FORM_ENDPOINT){
+    const subj={order:"New order",contact:"Question",vip:"VIP Club signup",events:"Event alerts signup"}[data.form]||"Website message";
+    let body=`Name: ${data.name||""}\nEmail: ${data.email||""}\nPhone: ${data.phone||""}\n`;
+    if(data.items){body+=`\nItems:\n${itemsText(JSON.parse(data.items))}\nTotal: $${data.total}\n`;}
+    if(data.message)body+=`\nMessage:\n${data.message}\n`;
+    location.href=`mailto:${RECIPIENTS}?subject=${encodeURIComponent(subj+(data.name?": "+data.name:""))}&body=${encodeURIComponent(body)}`;
+    return {ok:true,fallback:true};
+  }
+  const body=new URLSearchParams(data);
+  try{const r=await fetch(FORM_ENDPOINT,{method:"POST",body});return await r.json().catch(()=>({ok:true}));}
+  catch(e){try{await fetch(FORM_ENDPOINT,{method:"POST",mode:"no-cors",body});return {ok:true};}catch(_){return {ok:false};}}
+}
+function bindForm(id,build,done){
+  const f=document.getElementById(id),msg=f.querySelector(".form-msg");
+  f.addEventListener("submit",async e=>{e.preventDefault();msg.classList.remove("err");
+    const fd=Object.fromEntries(new FormData(f).entries());
+    const fail=t=>{msg.classList.add("err");msg.textContent=t;};
+    if(fd.hp)return;
+    if(f.querySelector('[name="name"][required]')&&!String(fd.name||"").trim())return fail("Add your name so we know who to holler at.");
+    if(!/^\S+@\S+\.\S+$/.test(fd.email||""))return fail("Add a valid email so we can get back to you.");
+    if(f.querySelector('[name="phone"][required]')&&String(fd.phone||"").replace(/\D/g,"").length<7)return fail("Add a phone number so we can text you to confirm.");
+    if(fd.consent!=="yes")return fail("Tick “I'm not a robot” first.");
+    const data=build(fd);if(!data)return;
+    const btn=f.querySelector('[type="submit"]');btn.disabled=true;msg.textContent="Sending…";
+    const r=await sendForm(data);btn.disabled=false;
+    if(r.ok){msg.textContent=r.fallback?"Your email app opened with everything filled in. Hit send and you're set.":"Got it! Check your email, the dealer will reach out soon.";f.reset();done&&done();}
+    else fail("That didn't go through. Text 505-922-5683 or email jerkyfixx@gmail.com and we'll sort it out.");
+  });
+}
+bindForm("checkoutForm",fd=>{if(!Cart.items.length)return null;const items=Cart.items.map(x=>({name:BYSLUG[x.s].n,size:x.size,qty:x.qty,price:PRICE[x.size]*x.qty}));return {form:"order",name:fd.name,email:fd.email,phone:fd.phone,message:fd.message||"",items:JSON.stringify(items),total:String(Cart.total()),consent:fd.consent,hp:""};},()=>{Cart.items=[];Cart.save();});
+bindForm("contactForm",fd=>{if(fd.kind==="order"){const f=BYSLUG[fd.flavor],q=Math.max(1,+fd.qty||1);return {form:"order",name:fd.name,email:fd.email,phone:fd.phone||"",message:fd.message||"",items:JSON.stringify([{name:f.n,size:fd.size,qty:q,price:PRICE[fd.size]*q}]),total:String(PRICE[fd.size]*q),consent:fd.consent,hp:""};}return {form:"contact",topic:"Question",name:fd.name,email:fd.email,phone:fd.phone||"",message:fd.message||"",consent:fd.consent,hp:""};},()=>{document.getElementById("orderFields").hidden=false;});
+bindForm("vipForm",fd=>({form:"vip",name:fd.name||"",email:fd.email,message:fd.message||"",topic:"FIXX Fiends VIP Club waitlist",consent:fd.consent,hp:""}));
+bindForm("alertForm",fd=>({form:"events",email:fd.email,phone:fd.phone||"",topic:"Dealer alerts",consent:fd.consent,hp:""}));
+renderCart();
 
-/* dealer */
-const SPOTS={rr:{x:150,y:95,n:"Rio Rancho Sports Complex"},bf:{x:340,y:120,n:"Balloon Fiesta Park"},la:{x:440,y:240,n:"Los Altos Park"},ws:{x:120,y:265,n:"Westside softball fields"},md:{x:380,y:390,n:"Mesa del Sol fields"}};
-const EVENTS=[
- {m:"Oct",d:"24",dow:"Sat",time:"9:00 AM to 3:00 PM",s:"rr",k:"Fall ball tournament"},
- {m:"Oct",d:"25",dow:"Sun",time:"10:00 AM to 2:00 PM",s:"la",k:"Softball doubleheader"},
- {m:"Oct",d:"31",dow:"Sat",time:"11:00 AM to 4:00 PM",s:"bf",k:"Halloween pop up"},
- {m:"Nov",d:"07",dow:"Sat",time:"8:30 AM to 2:00 PM",s:"md",k:"Softball tournament"},
- {m:"Nov",d:"08",dow:"Sun",time:"9:00 AM to 1:00 PM",s:"ws",k:"Softball doubleheader"}
-];
-const pinsG=document.getElementById("pins");
-pinsG.innerHTML=Object.entries(SPOTS).map(([k,p])=>`<g class="pin" data-s="${k}" tabindex="0" role="button" aria-label="${p.n}"><circle class="pulse" cx="${p.x}" cy="${p.y}" r="10" fill="#ff66c4" opacity=".6"/><circle class="core" cx="${p.x}" cy="${p.y}" r="8" fill="#ff66c4" stroke="#fff" stroke-width="2"/><text x="${p.x+14}" y="${p.y+4}" fill="#fff" font-family="Oswald,sans-serif" font-size="12">${p.n.toUpperCase()}</text></g>`).join("");
-document.getElementById("events").innerHTML=EVENTS.map((e,i)=>`<button class="ev" data-s="${e.s}" data-i="${i}"><span class="d"><small>${e.m}</small><b>${e.d}</b></span><span><h4>${SPOTS[e.s].n}</h4><p>${e.dow} · ${e.time}</p><span class="kind">${e.k}</span></span></button>`).join("");
-function selectSpot(s,i){document.querySelectorAll(".pin").forEach(p=>p.classList.toggle("on",p.dataset.s===s));document.querySelectorAll(".ev").forEach(e=>e.classList.toggle("on",i!=null?+e.dataset.i===i:e.dataset.s===s));}
-document.querySelectorAll(".ev").forEach(e=>e.addEventListener("click",()=>selectSpot(e.dataset.s,+e.dataset.i)));
-document.querySelectorAll(".pin").forEach(p=>{const f=()=>selectSpot(p.dataset.s);p.addEventListener("click",f);p.addEventListener("keydown",ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();f()}})});
-selectSpot("rr",0);
+/* ======== calendar file for Jerky Fest ======== */
+document.getElementById("icsBtn").addEventListener("click",()=>{const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Jerky Fixx//EN","BEGIN:VEVENT","UID:jerkyfest-2026@jerkyfixx.com","DTSTAMP:20261029T000000Z","DTSTART;VALUE=DATE:20261031","DTEND;VALUE=DATE:20261101","SUMMARY:New Mexico Jerky Fest (Jerky Fixx booth)","LOCATION:Isleta Resort & Casino, Albuquerque, NM","DESCRIPTION:Find the Jerky Fixx booth at New Mexico Jerky Fest, Halloween Edition. https://jerkyfixx.com","END:VEVENT","END:VCALENDAR"].join("\r\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));a.download="jerky-fest-2026.ics";document.body.appendChild(a);a.click();a.remove();});
 
-/* reviews (placeholder copy) */
-const REVS=[["The X-Hot Green had me sweating through the whole third inning and I still went back for another bag.","Softball parent · sample"],["Hot Cheeto Pickle sounds like a dare. It's now the only thing my kids ask for at games.","Rio Rancho · sample"],["Thin, crunchy, real carne seca. Tastes like the stuff my grandpa used to make.","Westside · sample"],["Bought one small bag to try. Came back twenty minutes later for two large.","Jerky Fest visitor · sample"],["Garlic Parm is dangerous. I don't share it anymore.","NE Heights · sample"]];
-document.getElementById("revRow").innerHTML=REVS.map(r=>`<article class="rev"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><q>${r[0]}</q><span class="who">${r[1]}</span></article>`).join("");
-
-/* contact */
-document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.copy;const done=()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1500)};try{navigator.clipboard.writeText(v).then(done).catch(sel)}catch(_){sel()}function sel(){const r=document.createRange();r.selectNodeContents(b.previousElementSibling.querySelector(".v"));const s=getSelection();s.removeAllRanges();s.addRange(r)}}));
-document.getElementById("cform").addEventListener("submit",e=>{e.preventDefault();const f=e.target,m=document.getElementById("formMsg");if(!f["c-name"].value.trim()||!/\S+@\S+\.\S+/.test(f["c-email"].value)){m.style.color="var(--pink)";m.textContent="Add your name and a valid email so the dealer can get back to you.";return}m.style.color="var(--lime)";m.textContent="Got it. This mockup doesn't send messages yet, so nothing went out.";});
-
-/* mobile nav */
+/* ======== copy buttons, promo sound, mobile nav ======== */
+document.querySelectorAll("button.copy").forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.copy;try{navigator.clipboard.writeText(v).then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1500)})}catch(_){}}));
+const promo=document.getElementById("promoVid"),snd=document.getElementById("promoSound");
+snd.addEventListener("click",()=>{promo.muted=!promo.muted;snd.textContent=promo.muted?"🔇":"🔊";snd.setAttribute("aria-label",promo.muted?"Turn sound on":"Turn sound off");promo.play().catch(()=>{});});
+new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting)v.play().catch(()=>{});else v.pause();}),{threshold:.3}).observe(promo);
+new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting)v.play().catch(()=>{});else v.pause();}),{threshold:.25}).observe(document.getElementById("labVid"));
 const mnav=document.getElementById("mnav"),burger=document.getElementById("burger");
 burger.addEventListener("click",()=>{mnav.hidden=false;burger.setAttribute("aria-expanded","true")});
 document.getElementById("mclose").addEventListener("click",()=>{mnav.hidden=true;burger.setAttribute("aria-expanded","false")});
 mnav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mnav.hidden=true}));
+
+/* ======== family carousel: autoscroll, arrows, swipe ======== */
+(function(){const tr=document.getElementById("carTrack");const step=()=>tr.querySelector("figure").getBoundingClientRect().width+16;let hold=0;
+ const go=d=>{hold=Date.now()+8000;const max=tr.scrollWidth-tr.clientWidth-4;if(d>0&&tr.scrollLeft>=max)tr.scrollLeft=0;else if(d<0&&tr.scrollLeft<=0)tr.scrollLeft=max;else tr.scrollBy({left:d*step()})};
+ document.querySelector(".car-prev").addEventListener("click",()=>go(-1));document.querySelector(".car-next").addEventListener("click",()=>go(1));
+ ["pointerdown","wheel","touchstart"].forEach(ev=>tr.addEventListener(ev,()=>hold=Date.now()+8000,{passive:true}));
+ tr.addEventListener("keydown",e=>{if(e.key==="ArrowRight")go(1);if(e.key==="ArrowLeft")go(-1);});
+ setInterval(()=>{if(Date.now()<hold||document.hidden)return;const r=tr.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const max=tr.scrollWidth-tr.clientWidth-4;if(tr.scrollLeft>=max)tr.scrollTo({left:0});else tr.scrollBy({left:step()});},3200);})();
+
+/* ======== cookie consent (essential always on; analytics opt-in) ======== */
+const JFConsent={el:document.getElementById("consent"),
+  get(){return store.get("jf_consent",null)},
+  save(analytics){store.set("jf_consent",{v:1,necessary:true,analytics:!!analytics,ts:new Date().toISOString()});this.el.hidden=true;this.apply();},
+  open(){this.el.hidden=false;document.getElementById("ccPrefs").hidden=false;const c=this.get();document.getElementById("ccAnalytics").checked=!!(c&&c.analytics);document.getElementById("ccAccept").focus();},
+  apply(){const c=this.get();window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("consent","update",{analytics_storage:c&&c.analytics?"granted":"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"});
+    if(GA_ID&&c&&c.analytics&&!window.__ga){window.__ga=1;const s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+GA_ID;document.head.appendChild(s);gtag("js",new Date());gtag("config",GA_ID,{anonymize_ip:true});}}};
+window.JFConsent=JFConsent;
+(function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("consent","default",{analytics_storage:"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",wait_for_update:500});})();
+document.getElementById("ccAccept").addEventListener("click",()=>JFConsent.save(document.getElementById("ccPrefs").hidden?true:document.getElementById("ccAnalytics").checked||document.getElementById("ccPrefs").hidden));
+document.getElementById("ccReject").addEventListener("click",()=>JFConsent.save(false));
+document.getElementById("ccCustom").addEventListener("click",()=>{const p=document.getElementById("ccPrefs");p.hidden=false;document.getElementById("ccAccept").textContent="Save choices";});
+document.getElementById("cookiePrefs").addEventListener("click",()=>JFConsent.open());
+if(JFConsent.get())JFConsent.apply();else setTimeout(()=>{JFConsent.el.hidden=false;},2600);
+
+/* ======== structured data ======== */
+document.getElementById("ldjson").textContent=JSON.stringify({"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://jerkyfixx.com/#org","name":"Jerky Fixx","url":"https://jerkyfixx.com/","logo":{"@type":"ImageObject","url":"https://jerkyfixx.com/img/favicon-512.png","width":512,"height":512},"email":"jerkyfixx@gmail.com","telephone":"+1-505-922-5683","sameAs":["https://www.instagram.com/jerky_fixx/","https://www.facebook.com/jerky.fixx/","https://www.threads.com/@jerky_fixx"]},
+ {"@type":"WebSite","@id":"https://jerkyfixx.com/#site","name":"Jerky Fixx","url":"https://jerkyfixx.com/","publisher":{"@id":"https://jerkyfixx.com/#org"}},
+ {"@type":"LocalBusiness","@id":"https://jerkyfixx.com/#biz","name":"Jerky Fixx","description":"Small batch beef jerky and carne seca in 25 flavors from Albuquerque, New Mexico.","url":"https://jerkyfixx.com/","image":"https://jerkyfixx.com/img/og-image.jpg","logo":"https://jerkyfixx.com/img/favicon-512.png","telephone":"+1-505-922-5683","email":"jerkyfixx@gmail.com","priceRange":"$","paymentAccepted":"Cash, Cash App, Venmo, Apple Pay","address":{"@type":"PostalAddress","addressLocality":"Albuquerque","addressRegion":"NM","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Albuquerque"},{"@type":"City","name":"Rio Rancho"},{"@type":"State","name":"New Mexico"}],"parentOrganization":{"@id":"https://jerkyfixx.com/#org"},
+  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Jerky flavors","itemListElement":FLAVORS.map(f=>({"@type":"Product","name":f.n+" Jerky","description":f.d,"image":"https://jerkyfixx.com/"+f.img,"brand":{"@type":"Brand","name":"Jerky Fixx"},"offers":[{"@type":"Offer","name":"Small bag","price":"7.00","priceCurrency":"USD","availability":"https://schema.org/InStock"},{"@type":"Offer","name":"Large bag","price":"20.00","priceCurrency":"USD","availability":"https://schema.org/InStock"}]}))}}
+]});
 </script>
 
 <script type="module">
@@ -852,9 +1434,11 @@ function inst(name){const b=BASE[name];if(!b)return null;const c=b.clone(true);c
   /* mango: tip the flat base to face away from the viewer and only ever spin around the view axis */
   if(name==="mango"){c.children[0].rotation.x=Math.PI/2;c.userData.lockFace=true;}
   /* honey pot + seasoning bowl always stay upright: they only turn around their vertical axis */
-  if(name==="teriyaki"||name==="lemonpepper"){c.userData.upright=true;}
+  if(name==="lemonpepper"){c.userData.upright=true;}
+  /* honey pot: only its labeled front is textured, so keep it facing the viewer */
+  if(name==="teriyaki"){c.userData.front=true;}
   scene.add(c);return c;}
-function spinObj(o,sp,dt,t,boost=1){if(o.userData.upright){o.rotation.x=.18;o.rotation.z=0;o.rotation.y+=Math.abs(sp.y)*dt*boost;return;}if(o.userData.lockFace){o.rotation.x=0;o.rotation.y=Math.sin(t*.8+sp.y)*.22;o.rotation.z+=sp.z*dt*2.2*boost;}else{o.rotation.x+=sp.x*dt;o.rotation.y+=sp.y*dt;o.rotation.z+=sp.z*dt*boost;}}
+function spinObj(o,sp,dt,t,boost=1){if(o.userData.front){o.rotation.x=.1;o.rotation.z=0;o.rotation.y=-.38+Math.sin(t*.7+sp.x*4)*.32;return;}if(o.userData.upright){o.rotation.x=.18;o.rotation.z=0;o.rotation.y+=Math.abs(sp.y)*dt*boost;return;}if(o.userData.lockFace){o.rotation.x=0;o.rotation.y=Math.sin(t*.8+sp.y)*.22;o.rotation.z+=sp.z*dt*2.2*boost;}else{o.rotation.x+=sp.x*dt;o.rotation.y+=sp.y*dt;o.rotation.z+=sp.z*dt*boost;}}
 const lb=$("#loadbar");
 const MODEL_EXT=".glb";
 const SIZES={"lemon": 535892, "lime": 325476, "parmesan": 494668, "pickles": 541128, "teriyaki": 456180, "trophy": 1594372, "lemonpepper": 687200, "garlic": 649756, "cheeto": 487044, "taki": 685672, "mango": 567788, "jerky": 2178468, "chile": 592140};
@@ -866,7 +1450,7 @@ const loadFrac=()=>{let a=0,b=0;for(const n in SIZES){a+=(GOT[n]||0)*SIZES[n];b+
 const ready=Promise.all(NAMES.map(n=>loadModel(n).then(g=>{BASE[n]=norm(g);loaded++;}).catch(e=>{GOT[n]=1;console.warn("model",n,e)})));
 
 /* ---------- state from scroll ---------- */
-const S={rr:0,hero:0,bridge:0,lu:0,aw:0,awIn:0,after:0,intro:0};
+const S={erupt:0,luIn:0,hero:0,bridge:0,lu:0,aw:0,awIn:0,after:0,intro:0};
 const smooth=(a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t);};
 const clamp01=x=>Math.min(1,Math.max(0,x));
 const easeOutBack=x=>{const c1=1.5,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);};
@@ -874,14 +1458,12 @@ const lerp=THREE.MathUtils.lerp;
 
 /* hero pin */
 const headH=()=>document.querySelector(".site-head").offsetHeight;
-function setHead(){document.documentElement.style.setProperty("--headH",headH()+"px")}setHead();addEventListener("resize",setHead);
-ST.create({trigger:"#hero",start:()=>"top "+headH(),end:()=>"+="+innerHeight*3.2,pin:true,scrub:true,onUpdate:s=>{S.hero=s.progress;tapeV=s.getVelocity()/1800;}});
+let HH=headH();
+function setHead(){HH=headH();document.documentElement.style.setProperty("--headH",HH+"px")}setHead();addEventListener("resize",setHead);
+ST.create({trigger:"#hero",start:()=>"top "+HH,end:()=>"+="+innerHeight*2.6,pin:true,scrub:true,onUpdate:s=>{S.hero=s.progress;tapeV=s.getVelocity()/1800;}});
 ST.create({trigger:"#lineup",start:"top bottom",end:"bottom top",onUpdate:s=>S.bridge=s.progress});
-ST.create({trigger:"#lineupStage",start:()=>"top "+headH(),end:()=>"+="+innerHeight*TOP.length*0.85,pin:true,scrub:true,onUpdate:s=>S.lu=s.progress,
-  snap:reduce?false:{snapTo:v=>{const n=TOP.length;const k=Math.round(v*n-0.5);return clamp01((Math.max(0,Math.min(n-1,k))+0.5)/n)},duration:{min:.2,max:.6},delay:.08,ease:"power2.inOut"}});
-ST.create({trigger:"#award",start:"top bottom",end:()=>"top "+headH(),onUpdate:s=>S.awIn=s.progress});
-ST.create({trigger:"#award",start:()=>"top "+headH(),end:()=>"+="+innerHeight*1.3,pin:true,scrub:true,onUpdate:s=>S.aw=s.progress});
 ST.create({trigger:"#menu",start:"top bottom",end:"top 40%",onUpdate:s=>S.after=s.progress});
+const luEl=$("#lineupStage"),awEl=$("#award");
 /* roadrunner: scrub the clip with scroll; composite in a canvas so the bird always sits in front of the logo it reveals */
 const RV=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.012, 0.012, 0.026, 0.041, 0.053, 0.068, 0.068, 0.085, 0.101, 0.118, 0.135, 0.135, 0.149, 0.164, 0.176, 0.191, 0.191, 0.205, 0.222, 0.239, 0.253, 0.253, 0.27, 0.285, 0.297, 0.312, 0.312, 0.326, 0.341, 0.357, 0.372, 0.372, 0.387, 0.403, 0.416, 0.43, 0.43, 0.443, 0.458, 0.474, 0.491, 0.491, 0.505, 0.522, 0.535, 0.549, 0.549, 0.564, 0.578, 0.593, 0.61, 0.61, 0.626, 0.643, 0.657, 0.674, 0.674, 0.687, 0.701, 0.716, 0.733, 0.733, 0.749, 0.764, 0.778, 0.793, 0.793, 0.807, 0.824, 0.841, 0.858, 0.858, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2];
 const rrVid=$("#rrVid"),rrLogo=$("#rrLogo"),rrLine=$("#rrLine"),rrCv=$("#rrCanvas"),rrCx=rrCv.getContext("2d"),rrOff=document.createElement("canvas"),rrOx=rrOff.getContext("2d");
@@ -919,11 +1501,20 @@ ST.create({trigger:"#legend",start:"top bottom+=150%",onEnter:()=>{if(rrVid.read
 })();
 /* giant words drift sideways as their section scrolls past */
 document.querySelectorAll(".giant").forEach(g=>{const host=g.parentElement;gsap.fromTo(g,{xPercent:8},{xPercent:+g.dataset.x||-30,ease:"none",scrollTrigger:{trigger:host,start:"top bottom",end:"bottom top",scrub:true}});});
+/* over 20 flavors: stamp in, then keep wobbling */
+const o20=$("#over20");gsap.fromTo(o20,{scale:2.4,rotation:-30,autoAlpha:0},{scale:1,rotation:8,autoAlpha:1,duration:.7,ease:"back.out(2.2)",scrollTrigger:{trigger:o20,start:"top 85%",toggleActions:"play none none reverse"},onComplete:()=>o20.classList.add("live")});
+/* gentle how-to hints that sit above the 3D layer */
+const hintEl=$("#hint"),hintTxt=$("#hintTxt"),hintIco=$("#hintIco");
+const ICO={scroll:'<svg viewBox="0 0 24 24" class="mv-down"><rect x="7" y="2" width="10" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 20l4 3 4-3" fill="none" stroke="currentColor" stroke-width="2"/></svg>',swipe:'<svg viewBox="0 0 24 24" class="mv-side"><path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',photos:'<svg viewBox="0 0 24 24" class="mv-side"><path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',tap:'<svg viewBox="0 0 24 24" class="mv-tap"><path d="M9 11V5a2 2 0 014 0v6m0-2a2 2 0 014 0v2m0 0a2 2 0 014 0v3a7 7 0 01-7 7h-1a7 7 0 01-6-3l-3-5a2 2 0 013-2l2 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',who:'<svg viewBox="0 0 24 24" class="mv-side"><circle cx="8" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="12" r="1.6" fill="currentColor"/><circle cx="17" cy="12" r="1.6" fill="currentColor"/></svg>',play:'<svg viewBox="0 0 24 24" class="mv-tap"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>',map:'<svg viewBox="0 0 24 24" class="mv-down"><path d="M12 22s7-7 7-12a7 7 0 10-14 0c0 5 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>',vip:'<svg viewBox="0 0 24 24" class="mv-tap"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="currentColor"/></svg>',chat:'<svg viewBox="0 0 24 24" class="mv-tap"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'};
+let hintCur=null,hintT;
+function setHint(sec){if(!sec||sec===hintCur)return;hintCur=sec;hintEl.classList.add("off");clearTimeout(hintT);hintT=setTimeout(()=>{hintIco.innerHTML=ICO[sec.dataset.hint]||ICO.scroll;hintTxt.textContent=sec.dataset.hintText;hintEl.hidden=false;requestAnimationFrame(()=>hintEl.classList.remove("off"));hintT=setTimeout(()=>hintEl.classList.add("off"),mobile?4500:7000);},250);}
+document.querySelectorAll("[data-hint]").forEach(sec=>ST.create({trigger:sec,start:"top 55%",end:"bottom 55%",onEnter:()=>setHint(sec),onEnterBack:()=>setHint(sec)}));
+ST.create({trigger:".foot",start:"top 90%",onToggle:s=>document.querySelector(".social-tab").classList.toggle("gone",s.isActive)});
 /* floating order pill after the hero */
-const fab=$("#fab");ST.create({trigger:"#lineup",start:"top 60%",endTrigger:"#contact",end:"top 80%",onToggle:s=>fab.classList.toggle("on",s.isActive)});
+const fab=$("#fab");fab.setAttribute("href","#menu");fab.addEventListener("click",e=>{if(Cart.count()){e.preventDefault();openCart();}});ST.create({trigger:"#lineup",start:"top 60%",endTrigger:"#contact",end:"top 80%",onToggle:s=>fab.classList.toggle("on",s.isActive)});
 
 /* hero DOM choreography */
-const heroCopy=$("#heroCopy"),wash=$("#limewash"),cue=$("#cue"),tapesEl=$("#heroFx .tapes"),heroFx=$("#heroFx"),herolime=$("#herolime"),fxCtas=$("#fxCtas");
+const heroCopy=$("#heroCopy"),wash=$("#limewash"),cue=$("#cue"),tapesEl=$("#heroFx .tapes"),heroFx=$("#heroFx"),herolime=$("#herolime");
 const halves=[...document.querySelectorAll("#heroFx .half")];
 let broken=false;
 const tapeEls=[...document.querySelectorAll('#heroFx .tape')];
@@ -933,9 +1524,22 @@ function breakTape(on){
     gsap.to(h,{duration:on?.7:.5,ease:on?"power3.out":"power2.inOut",x:on?(left?-220:220):0,y:on?(t1?-40:90):0,rotation:on?(left?-16:14)*(t1?1:-1):0,opacity:on?0:1,onComplete:()=>{if(!on)tapeEls.forEach(e=>e.classList.remove('split'))}});});
 }
 
-/* rail + line-up panel */
+/* line-up: arrows, tabs, swipe and autoplay (no scroll-jacking) */
+const LU={p:.5,t:0};let luHold=0,luVis=false,luSize="Small";
 const rbtns=[...rail.querySelectorAll("button")];
-rbtns.forEach(b=>b.addEventListener("click",()=>{const st=ST.getAll().find(x=>x.trigger===$("#lineupStage")&&x.pin);if(!st)return;const i=+b.dataset.i;const y=st.start+(st.end-st.start)*((i+0.5)/TOP.length);lenis?lenis.scrollTo(y,{duration:1}):scrollTo({top:y,behavior:"smooth"});}));
+const mod=(a,n)=>((a%n)+n)%n;
+function luGo(d){LU.t+=d;gsap.to(LU,{p:LU.t+.5,duration:reduce?0:1.05,ease:"power2.inOut",overwrite:true});setFlavor(mod(LU.t,TOP.length));}
+function luTo(i){const n=TOP.length,cur=mod(LU.t,n);let d=mod(i-cur,n);if(d>n/2)d-=n;if(d)luGo(d);}
+const hold=()=>{luHold=Date.now()+15000};
+rbtns.forEach(b=>b.addEventListener("click",()=>{hold();luTo(+b.dataset.i);}));
+$("#luNext").addEventListener("click",()=>{hold();luGo(1)});$("#luPrev").addEventListener("click",()=>{hold();luGo(-1)});
+luEl.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){hold();luGo(1)}if(e.key==="ArrowLeft"){hold();luGo(-1)}});
+let sx=null,sy=null;luEl.addEventListener("pointerdown",e=>{if(e.target.closest("button,a"))return;sx=e.clientX;sy=e.clientY;});
+luEl.addEventListener("pointerup",e=>{if(sx==null)return;const dx=e.clientX-sx,dy=e.clientY-sy;sx=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){hold();luGo(dx<0?1:-1);}});
+ST.create({trigger:luEl,start:"top 70%",end:"bottom 30%",onToggle:s=>{luVis=s.isActive;document.body.classList.toggle("in-lu",s.isActive);}});
+setInterval(()=>{if(luVis&&!reduce&&Date.now()>luHold&&!document.hidden)luGo(1);},6500);
+document.querySelectorAll(".lu-buy .seg button").forEach(b=>b.addEventListener("click",()=>{luSize=b.dataset.size;document.querySelectorAll(".lu-buy .seg button").forEach(x=>x.setAttribute("aria-checked",String(x===b)));}));
+$("#luAdd").addEventListener("click",()=>{hold();const f=TOP[mod(LU.t,TOP.length)];Cart.add(f.s,luSize,1);showFlavor(f.s);});
 let curFlavor=-1;
 const gArc=$("#gArc"),gNeedle=$("#gNeedle"),gVal=$("#gVal"),gPods=$("#gPods"),luName=$("#luName"),luDesc=$("#luDesc"),luNum=$("#luNum"),gauge=$("#gauge");
 const needle={a:-90};
@@ -961,7 +1565,7 @@ const SZ={lime:1.05,mango:1.15,garlic:1.0,parmesan:1.05,teriyaki:1.05,lemonpeppe
 ready.then(()=>{
   if(!renderer)return;
   jerky=inst("jerky");trophy=inst("trophy");
-  HERO.forEach((n,i)=>{const o=inst(n);if(!o)return;heroItems.push({o,n,i,a0:(i/HERO.length)*Math.PI*2+.3,yo:(((i*.618)%1)-.5),spin:new THREE.Vector3(.4+Math.random()*.6,.6+Math.random()*.8,.2+Math.random()*.4).multiplyScalar(Math.random()<.5?-1:1),sx:(Math.random()-.5),delay:i*.014});});
+  HERO.forEach((n,i)=>{const o=inst(n);if(!o)return;heroItems.push({o,n,i,a0:(i/HERO.length)*Math.PI*2+.3,yo:(((i*.618)%1)-.5),spin:new THREE.Vector3(.4+Math.random()*.6,.6+Math.random()*.8,.2+Math.random()*.4).multiplyScalar(Math.random()<.5?-1:1),sx:(Math.random()-.5),delay:i*.06});});
   TOP.forEach((f,fi)=>{luSets.push(f.m.map((n,k)=>({o:inst(n),n,k,cnt:f.m.length,spin:new THREE.Vector3(.5+Math.random()*.5,.7+Math.random()*.6,.3).multiplyScalar(k%2?-1:1)})));});
   /* turntable */
   table=new THREE.Group();
@@ -1006,7 +1610,7 @@ function finishBoot(){
   finished=true;clearInterval(msgTimer);bootMsg.innerHTML="<b>Craving detected</b> · Cure incoming";
   const tl=gsap.timeline({delay:reduce?0:.35,onComplete:()=>{boot.remove();curtain.remove();document.documentElement.style.overflow="";if(lenis)lenis.start();ST.refresh();
     /* hero intro: rise + 360 twist on z + grow */
-    gsap.to(S,{intro:1,duration:reduce?0:2.4,ease:"power3.out"});}});
+    gsap.to(S,{intro:1,duration:reduce?0:2.4,ease:"power3.out"});gsap.to(S,{erupt:1,duration:reduce?0:2.8,delay:reduce?0:.9,ease:"power2.out"});setHint($("#hero"));}});
   if(reduce){tl.set(boot,{autoAlpha:0});return;}
   tl.to(".boot-in",{scale:1.08,duration:.18,ease:"power2.out"})
     .to(".boot-in",{scale:.6,autoAlpha:0,duration:.35,ease:"power3.in"})
@@ -1042,7 +1646,7 @@ function frame(){
   tracks.forEach((tr,i)=>{const w=tr.scrollWidth/2||1000;const x=((tapeX*(i%2?-1:1))%w+w)%w;tr.style.transform=`translate(${-x}px,-50%)`;});
   /* hero DOM */
   const h=S.hero;
-  heroCopy.style.opacity=String(1-smooth(.6,.74,h));fxCtas.style.opacity=heroCopy.style.opacity;fxCtas.style.visibility=h>.74?"hidden":"visible";heroCopy.style.transform=`translateY(${-smooth(.6,.8,h)*80}px)`;
+  heroCopy.style.opacity=String(1-smooth(.6,.74,h));heroCopy.style.transform=`translateY(${-smooth(.6,.8,h)*80}px)`;
   cue.style.opacity=String(.8*(1-smooth(0,.06,h)));
   const tp=h<.999?1:0; tapesEl.style.visibility=tp?'visible':'hidden';
   herolime.style.opacity=String(smooth(.93,.98,h));
@@ -1053,24 +1657,25 @@ function frame(){
   if(renderer && jerky && stageOn){
     const mob=mobile;
     /* ---- HERO ---- */
+    const ch=Math.max(1,innerHeight-HH);
     const heroActive=h<.995 && S.bridge<.35;
     const I=S.intro;
-    const jx=mob?0:VW*.23, jy=mob?-VH*.2:-VH*.1, js=mob?VH*.8:VH*1.2;
+    const jx=mob?0:VW*.25, jy=mob?-VH*.34:-VH*.13, js=mob?VH*.7:VH*1.38;
     const bob=Math.sin(t*1.1)*VH*.012;
     if(heroActive){
       const exit=smooth(.78,.92,h);
-      place(jerky,jx,lerp(-VH*1.1,jy,I)+bob+exit*VH*.0,lerp(0,-.5,exit),js*lerp(.35,1,I)*(1-exit*.25));
+      place(jerky,jx,lerp(-VH*1.1,jy,I)+bob,lerp(0,-.5,exit),js*lerp(.35,1,I)*(1-exit*.25));
       jerky.rotation.set(0,Math.sin(t*.5)*.12,(1-I)*-Math.PI*2-.04);
       if(h>.965)jerky.visible=false;
-      const erupt=h, spread=smooth(.3,.6,h), fly=smooth(.62,.92,h);
+      const spread=smooth(0,.6,h), fly=smooth(.62,.92,h);
       HL.length=0;
       heroItems.forEach(it=>{
-        const e=easeOutBack(clamp01((erupt-it.delay-.01)/.2));
-        /* orbit around the jerky's vertical (Y) axis: items swing in front of and behind it */
-        const ang=it.a0+t*.45*(1-spread*.35)+h*3.2;
-        const R=(mob?VW*.3:js*.3)*(1+spread*(mob?.7:1.1));
-        const ox=jx+Math.cos(ang)*R, oz=Math.sin(ang)*R*.85, oy=jy+VH*.06+it.yo*js*(.62+spread*.3)+Math.sin(t*1.3+it.i)*VH*.012;
-        const sx=jx+it.sx*VW*.25, sy=-VH*.75;
+        /* erupts on load, orbits the jerky's vertical axis; scrolling widens the orbit until the lime takes over */
+        const e=easeOutBack(clamp01((S.erupt*1.6-it.delay)/.55));
+        const ang=it.a0+t*.42*(1-spread*.3)+h*3.4;
+        const R=(mob?VW*.3:js*.3)*(1+spread*(mob?.8:1.25));
+        const ox=jx+Math.cos(ang)*R, oz=Math.sin(ang)*R*.85, oy=jy+VH*.08+it.yo*js*(.55+spread*.3)+Math.sin(t*1.3+it.i)*VH*.012;
+        const sx=jx+it.sx*VW*.25, sy=-VH*.8;
         let x=lerp(sx,ox,e), y=lerp(sy,oy,e), z=lerp(0,oz,e);
         let sc=(mob?VH*.15:VH*.19)*(it.n==="parmesan"||it.n==="garlic"?.85:it.n==="lime"?(mob?1.5:2.1):(it.n==="cheeto"||it.n==="taki")?.9:1)*clamp01(e*1.2);
         if(it.n===HERO_FLY){
@@ -1087,32 +1692,31 @@ function frame(){
       for(const q of HL){place(q.it.o,q.x,q.y,q.z,q.sc);spinObj(q.it.o,q.it.spin,dt,t,1+fly*3);}
     } else heroItems.forEach(it=>it.o.visible=false);
 
-    /* ---- LINE-UP / TURNTABLE ---- */
-    const luIn=smooth(.25,.95,S.bridge), luOut=smooth(.0,.9,S.awIn);
-    const luActive=!heroActive && luIn>0 && S.aw<.02;
-    const tx=mob?0:VW*.2, ty=mob?-VH*.3:-VH*.27, ts=mob?VW*.36:VH*.4;
+    /* ---- LINE-UP / TURNTABLE (follows its section as it scrolls) ---- */
+    const lr=luEl.getBoundingClientRect(), ltop=lr.top-HH;
+    const luIn=smooth(0,.75,1-ltop/ch), offL=-ltop/ch*VH;
+    const luActive=!heroActive && lr.bottom>HH && lr.top<innerHeight && luIn>0;
+    const tx=mob?0:VW*.2, ty=mob?-VH*.19:-VH*.24, ts=mob?VW*.3:VH*.36;
     if(luActive){
       table.visible=true;
-      const tY=lerp(-VH*.9,ty,luIn)-luOut*VH*.9;
-      table.position.set(tx,tY,0);table.scale.setScalar(ts);table.rotation.set(.32,S.lu*Math.PI*4+t*.15,0);
-      /* jerky on the table */
-      const jS=(mob?VH*.42:VH*.6)*luIn;
-      place(jerky,tx,tY+ jS*.44 + Math.sin(t*1.1)*VH*.008,0,jS);
-      jerky.rotation.set(0,Math.sin(S.lu*Math.PI*8+t*.4)*.55,0);
-      const n=TOP.length, p=S.lu*n, idx=Math.min(n-1,Math.floor(p));
-      setFlavor(idx);
+      const tY=ty+offL-(1-luIn)*VH*.5;
+      table.position.set(tx,tY,0);table.scale.setScalar(ts);table.rotation.set(.32,LU.p*1.1+t*.15,0);
+      const jS=(mob?VH*.3:VH*.56)*Math.max(.001,luIn);
+      place(jerky,tx,tY+jS*.44+Math.sin(t*1.1)*VH*.008,0,jS);
+      jerky.rotation.set(0,Math.sin(LU.p*2.4+t*.4)*.55,0);
+      const n=TOP.length,p=LU.p;
       LL.length=0;
       luSets.forEach((set,fi)=>{
-        const u=p-fi; /* 0..1 within slot */
-        const inA=fi===0?1:smooth(-.05,.3,u), outA=fi===n-1?0:smooth(.72,1.02,u);
+        let u=p-fi;u=mod(u+n/2,n)-n/2; /* wraps so the carousel loops */
+        const inA=smooth(-.05,.3,u), outA=smooth(.72,1.02,u);
         const vis=(u>-.1&&u<1.05)?1:0;
         set.forEach(m=>{if(!m.o)return;
           const a=(m.k/m.cnt)*Math.PI*2+u*Math.PI*1.2+t*.25;
           const rad=ts*(mob?.95:1.0);
           let x=tx+Math.cos(a)*rad, y=tY+jS*.46+((((m.k*.618)%1)-.5)*jS*.85)+Math.sin(t*1.2+m.k)*VH*.015, z=Math.sin(a)*rad*.85+.3;
-          x+= (1-inA)*VW*.6; y+=(1-inA)*VH*.5; /* enter from upper right */
-          x-= outA*VW*.7; y+=outA*VH*.6;       /* exit to upper left */
-          const sc=(mob?VH*.165:VH*.3)*(SZ[m.n]||1)*vis*(fi===0?luIn:1)*(1-outA*.3)*Math.min(1,inA*1.4);
+          x+=(1-inA)*VW*.6; y+=(1-inA)*VH*.5;
+          x-=outA*VW*.7; y+=outA*VH*.6;
+          const sc=(mob?VH*.115:VH*.27)*(SZ[m.n]||1)*vis*luIn*(1-outA*.3)*Math.min(1,inA*1.4);
           if(sc<.002){m.o.visible=false;return;}
           LL.push({m,x,y,z,sc,r:sc*.47});
         });
@@ -1122,14 +1726,14 @@ function frame(){
     } else {table.visible=false;luSets.forEach(s=>s.forEach(m=>m.o&&(m.o.visible=false)));}
     if(!heroActive && !luActive) jerky.visible=false;
 
-    /* ---- TROPHY ---- */
-    const awOn=S.awIn>.35;
-    if(awOn && trophy){
-      const rise=smooth(.35,1,S.awIn), settle=smooth(0,.35,S.aw), leave=smooth(.85,1,S.aw)*0;
-      const tsz=(mob?VW*.62:VH*.98);
-      place(trophy,mob?0:VW*.02,lerp(-VH*1.1,mob?-VH*.04:-VH*.05,rise)+Math.sin(t*.9)*VH*.01,0,tsz*lerp(.5,1,rise));
-      trophy.rotation.set(.05,(1-rise)*Math.PI*2+Math.sin(t*.6)*.35+settle*0,0);
-      sparks.visible=true;sparks.material.opacity=rise;sparks.rotation.y=t*.05;sparks.position.y=Math.sin(t*.3)*.2;
+    /* ---- TROPHY: floats in the middle column, slight overlap only ---- */
+    const ar=awEl.getBoundingClientRect(), atop=ar.top-HH;
+    if(trophy && ar.bottom>HH && ar.top<innerHeight){
+      const rise=smooth(0,.8,1-atop/ch), offA=-atop/ch*VH;
+      const tsz=mob?Math.min(VW*.5,VH*.27):Math.min(VH*.54,VW*.3);
+      place(trophy,0,(mob?-VH*.13:-VH*.01)+offA-(1-rise)*VH*.5+Math.sin(t*.9)*VH*.012,0,tsz*lerp(.6,1,rise));
+      trophy.rotation.set(.05,(1-rise)*Math.PI*2+Math.sin(t*.6)*.4,0);
+      sparks.visible=true;sparks.material.opacity=rise;sparks.rotation.y=t*.05;sparks.position.y=offA+Math.sin(t*.3)*.2;
     } else {if(trophy)trophy.visible=false;if(sparks)sparks.visible=false;}
     renderer.render(scene,camera);
   }
