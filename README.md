@@ -4,7 +4,7 @@ Scroll-driven 3D website mockup for **Jerky Fixx**, Albuquerque's small batch ca
 
 ## Live site
 
-https://dyadmarketects.github.io/jerky-fixx-website/ (once GitHub Pages is enabled: Settings → Pages → Deploy from branch → main / root)
+https://jerkyfixx.com (GitHub Pages, custom domain via Cloudflare DNS)
 
 ## What's here
 
