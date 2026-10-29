@@ -100,7 +100,7 @@ strong{font-weight:600}
 
 /* Tables */
 .table-scroll{overflow-x:auto;margin:0 0 1.2rem;-webkit-overflow-scrolling:touch}
-table{border-collapse:collapse;width:100%;min-width:520px;font-size:.92rem}
+table{border-collapse:collapse;width:100%;min-width:0;font-size:.92rem}
 th,td{text-align:left;vertical-align:top;padding:10px 12px;border:1px solid var(--rule)}
 th{background:var(--plum);color:#fff;font-family:"Oswald",sans-serif;font-weight:500;letter-spacing:.04em}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:#f4eaf7;padding:1px 5px;border-radius:4px}

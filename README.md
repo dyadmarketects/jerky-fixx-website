@@ -55,10 +55,8 @@ All forms (checkout, contact, VIP, dealer alerts) post to a Google Apps Script w
 
 ## Before launch
 
-- [ ] **Font license:** `fonts/zuume.woff2` comes from a personal-use demo of Zuume Rough. It's subset to the clean glyphs, but it needs a commercial license or a replacement face.
-- [ ] **Lab video:** `vid/lab.mp4` is sample footage from another jerky brand. Replace it with Jerky Fixx's own process video.
-- [ ] **Reviews:** the five reviews are placeholder copy. Swap in real Google or Facebook reviews.
-- [ ] **Dealer Locator:** the dates and fields are samples. Sync them to the real softball schedule (the `EVENTS` and `SPOTS` arrays in `index.html`).
-- [ ] **Top sellers and heat levels:** confirm them with the client (the `TOP` and `MENU` arrays).
-- [ ] **Contact form:** it currently only validates on the page. Connect it to a form service or backend.
-- [ ] **Register / Login / Cart:** these are placeholder links.
+- [ ] Deploy the form backend (`backend/SETUP.md`) and paste the URL into `FORM_ENDPOINT`
+- [ ] Font license: `fonts/zuume.woff2` is a personal-use demo of Zuume Rough; buy a commercial license or swap the face
+- [ ] Have privacy.html and terms.html reviewed (they're templates), then remove the template note at the top
+- [ ] Confirm heat levels and flavor descriptions in the `FLAVORS` array
+- [ ] Replace `img/jerky-fixx-family-booth.webp` with a high resolution family photo and add more carousel photos
