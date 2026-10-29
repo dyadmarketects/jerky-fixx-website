@@ -18,7 +18,7 @@
  *
  * Fields (all strings, read from e.parameter):
  *   form     order | contact | vip | events
- *   name, email, phone, topic, message
+ *   name, email, phone, address, topic, message
  *   items    JSON string: [{name, size, qty, price}, ...]
  *   total    order total (number or "$40.00")
  *   page     page URL the form was on
@@ -47,13 +47,14 @@ var TAB_NAMES = {
 };
 
 /** Header row used when a tab is created. */
-var HEADERS = ['Timestamp', 'Name', 'Email', 'Phone', 'Topic', 'Message', 'Items', 'Total', 'Page'];
+var HEADERS = ['Timestamp', 'Name', 'Email', 'Phone', 'Address', 'Topic', 'Message', 'Items', 'Total', 'Page'];
 
 /** Max characters kept per field, and other limits. */
 var LIMITS = {
   name: 100,
   email: 254,
   phone: 40,
+  address: 300,
   topic: 150,
   message: 4000,
   page: 300,
@@ -104,6 +105,7 @@ function doPost(e) {
       name: clean_(p.name, LIMITS.name),
       email: clean_(p.email, LIMITS.email).toLowerCase(),
       phone: clean_(p.phone, LIMITS.phone),
+      address: cleanMultiline_(p.address, LIMITS.address),
       topic: clean_(p.topic, LIMITS.topic),
       message: cleanMultiline_(p.message, LIMITS.message),
       page: clean_(p.page, LIMITS.page),
@@ -314,6 +316,7 @@ function appendRow_(d) {
     d.name,
     d.email,
     d.phone,
+    d.address,
     d.topic,
     d.message,
     itemLines_(d.items).join('\n'),
@@ -355,6 +358,7 @@ function sendNotification_(d) {
     ['Name', esc_(d.name), d.name],
     ['Email', '<a href="mailto:' + esc_(d.email) + '">' + esc_(d.email) + '</a>', d.email],
     ['Phone', esc_(d.phone), d.phone],
+    ['Deliver to', esc_(d.address).replace(/\n/g, '<br>'), d.address],
     ['Topic', esc_(d.topic), d.topic],
     ['Message', esc_(d.message).replace(/\n/g, '<br>'), d.message],
     ['Items', lines.map(esc_).join('<br>'), lines.join('\n')],
@@ -397,7 +401,7 @@ function sendCustomerConfirmation_(d) {
   var lines = itemLines_(d.items);
   var totalText = d.total === null ? '' : '$' + formatMoney_(d.total);
 
-  var intro = 'Thanks, your order request is in. The Jerky Fixx crew will text or email you to confirm pickup and payment (Cash App, Venmo, Apple Pay or cash).';
+  var intro = 'Thanks, your order request is in. The Jerky Fixx crew will text or email you to confirm your order and payment (Cash App, Venmo, Apple Pay or cash). Once your package is dropped off, your dealer will send you a photo so you know it arrived.';
 
   var htmlBody =
     '<div style="font-family:Arial,Helvetica,sans-serif;color:#1f2937;max-width:560px;">' +
@@ -407,6 +411,7 @@ function sendCustomerConfirmation_(d) {
     '<div style="font-weight:bold;margin-bottom:6px;">Your order request</div>' +
     lines.map(function (l) { return '<div>' + esc_(l) + '</div>'; }).join('') +
     (totalText ? '<div style="margin-top:8px;font-weight:bold;">Total: ' + esc_(totalText) + '</div>' : '') +
+    (d.address ? '<div style="margin-top:8px;"><b>Deliver to:</b><br>' + esc_(d.address).replace(/\n/g, '<br>') + '</div>' : '') +
     '</div>' +
     '<p style="font-size:15px;">Got a change or a question? Just reply to this email.</p>' +
     '<p style="font-size:15px;">Stay snacky,<br>The Jerky Fixx crew</p>' +
@@ -415,6 +420,7 @@ function sendCustomerConfirmation_(d) {
   var plainBody = 'Hey ' + firstName + ', get your fixx!\n\n' + intro + '\n\n' +
     'Your order request:\n' + lines.join('\n') +
     (totalText ? '\nTotal: ' + totalText : '') +
+    (d.address ? '\nDeliver to: ' + d.address : '') +
     '\n\nGot a change or a question? Just reply to this email.\n\nStay snacky,\nThe Jerky Fixx crew';
 
   MailApp.sendEmail({

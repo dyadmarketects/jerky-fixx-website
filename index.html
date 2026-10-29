@@ -727,6 +727,10 @@ form.hud{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-te
 @media (max-width:820px){.hero-copy{justify-content:flex-start;padding-block:26px 0}.lineup .gauge{display:none}.lu-name{margin-top:6px}}
 @media (max-width:820px){.lu-ui{align-items:start}.lu-panel{padding-top:56px}}
 @media (max-width:820px){.lu-buy{flex-wrap:nowrap;gap:8px}.lu-buy .seg button{padding:8px 10px;font-size:11px}.lu-buy .pill{padding:10px 14px;font-size:12px;white-space:nowrap}.lu-buy .pill span{display:none}body.in-lu .fab{opacity:0;pointer-events:none}}
+.addr-row{display:grid;grid-template-columns:minmax(0,1fr) 70px 110px;gap:12px}
+.addr-fields{display:grid;gap:14px}.addr-fields[hidden]{display:none}
+.checkout .addr-row{grid-template-columns:minmax(0,1fr) 64px 96px;gap:10px}
+@media (max-width:560px){.addr-row,.checkout .addr-row{grid-template-columns:72px minmax(0,1fr)}.addr-row .field:first-child{grid-column:1/-1}}
 </style>
 
 </head>
@@ -1119,10 +1123,15 @@ form.hud{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-te
           <div class="field"><label for="c-size">Size</label><select id="c-size" name="size"><option value="Small">Small bag, $7</option><option value="Large">Large bag, $20</option></select></div>
           <div class="field"><label for="c-qty">Qty</label><input id="c-qty" name="qty" type="number" min="1" max="50" value="1"></div>
         </div>
+        <div class="addr-fields full" id="addrFields">
+    <div class="field full"><label for="c-street">Delivery address</label><input id="c-street" name="street" autocomplete="address-line1" placeholder="Street address" required></div>
+    <div class="field full"><label for="c-apt">Apt, suite or gate code (optional)</label><input id="c-apt" name="apt" autocomplete="address-line2"></div>
+    <div class="addr-row full"><div class="field"><label for="c-city">City</label><input id="c-city" name="city" autocomplete="address-level2" placeholder="Albuquerque" required></div><div class="field"><label for="c-state">State</label><input id="c-state" name="state" autocomplete="address-level1" value="NM" maxlength="2" required></div><div class="field"><label for="c-zip">ZIP</label><input id="c-zip" name="zip" autocomplete="postal-code" inputmode="numeric" maxlength="10" required></div></div>
+    </div>
         <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
         <div class="field full"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="message" placeholder="Pickup at Saturday's game? Event booking? Tell us."></textarea></div>
+        <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="message" placeholder="Drop-off notes, event booking or your question. Tell us."></textarea></div>
         <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-foot"><label class="robot"><input type="checkbox" name="consent" value="yes"><span class="box" aria-hidden="true"></span>I'm not a robot</label><button class="pill pill-lime" type="submit">Send it <span aria-hidden="true">↗</span></button></div>
         <p class="form-msg full" role="status"></p>
@@ -1140,11 +1149,14 @@ form.hud{border-radius:24px;padding:30px;background:#1e0626;display:grid;grid-te
   <div class="cart-sum"><span>Total</span><b id="cartTotal">$0</b></div>
   <form class="jf-form checkout" id="checkoutForm" data-form="order" novalidate>
     <h3>Checkout</h3>
-    <p class="small">No payment online. We'll text or email you to confirm pickup and payment (Cash App, Venmo, Apple Pay or cash).</p>
+    <p class="small">No payment online. We'll text you to confirm and take payment (Cash App, Venmo, Apple Pay or cash). Your dealer drops the order at your door and sends you a photo once it's delivered.</p>
     <div class="field"><label for="co-name">Name</label><input id="co-name" name="name" autocomplete="name" required></div>
     <div class="field"><label for="co-phone">Phone</label><input id="co-phone" name="phone" type="tel" autocomplete="tel" required></div>
     <div class="field"><label for="co-email">Email</label><input id="co-email" name="email" type="email" autocomplete="email" required></div>
-    <div class="field"><label for="co-msg">Notes (pickup spot, game, timing)</label><textarea id="co-msg" name="message" rows="2"></textarea></div>
+    <div class="field"><label for="co-street">Delivery address</label><input id="co-street" name="street" autocomplete="address-line1" placeholder="Street address" required></div>
+    <div class="field"><label for="co-apt">Apt, suite or gate code (optional)</label><input id="co-apt" name="apt" autocomplete="address-line2"></div>
+    <div class="addr-row"><div class="field"><label for="co-city">City</label><input id="co-city" name="city" autocomplete="address-level2" placeholder="Albuquerque" required></div><div class="field"><label for="co-state">State</label><input id="co-state" name="state" autocomplete="address-level1" value="NM" maxlength="2" required></div><div class="field"><label for="co-zip">ZIP</label><input id="co-zip" name="zip" autocomplete="postal-code" inputmode="numeric" maxlength="10" required></div></div>
+    <div class="field"><label for="co-msg">Drop-off notes (where to leave it, timing)</label><textarea id="co-msg" name="message" rows="2"></textarea></div>
     <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <label class="robot"><input type="checkbox" name="consent" value="yes"><span class="box" aria-hidden="true"></span>I'm not a robot</label>
     <button class="pill pill-lime wide" type="submit">Place order <span aria-hidden="true">↗</span></button>
@@ -1285,13 +1297,15 @@ rail.innerHTML=TOP.map((t,i)=>`<button type="button" role="tab" data-i="${i}" ar
 const loadedAt=Date.now();
 const flavorSelect=document.getElementById("c-flavor");
 flavorSelect.innerHTML=FLAVORS.map(f=>`<option value="${f.s}">${esc(f.n)}</option>`).join("");
-document.querySelectorAll('#contactForm input[name="kind"]').forEach(r=>r.addEventListener("change",()=>{document.getElementById("orderFields").hidden=document.querySelector('#contactForm input[name="kind"]:checked').value!=="order";}));
+document.querySelectorAll('#contactForm input[name="kind"]').forEach(r=>r.addEventListener("change",()=>{const off=document.querySelector('#contactForm input[name="kind"]:checked').value!=="order";document.getElementById("orderFields").hidden=off;document.getElementById("addrFields").hidden=off;}));
+const addrOf=fd=>`${String(fd.street||"").trim()}${String(fd.apt||"").trim()?", "+String(fd.apt).trim():""}\n${String(fd.city||"").trim()}, ${String(fd.state||"NM").trim().toUpperCase()} ${String(fd.zip||"").trim()}`;
 function itemsText(items){return items.map(x=>`${x.qty} × ${x.name} (${x.size}) $${x.price}`).join("\n");}
 async function sendForm(data){
   data.page=location.href;data.t=String(Date.now()-loadedAt);
   if(!FORM_ENDPOINT){
     const subj={order:"New order",contact:"Question",vip:"VIP Club signup",events:"Event alerts signup"}[data.form]||"Website message";
     let body=`Name: ${data.name||""}\nEmail: ${data.email||""}\nPhone: ${data.phone||""}\n`;
+    if(data.address)body+=`Deliver to:\n${data.address}\n`;
     if(data.items){body+=`\nItems:\n${itemsText(JSON.parse(data.items))}\nTotal: $${data.total}\n`;}
     if(data.message)body+=`\nMessage:\n${data.message}\n`;
     location.href=`mailto:${RECIPIENTS}?subject=${encodeURIComponent(subj+(data.name?": "+data.name:""))}&body=${encodeURIComponent(body)}`;
@@ -1310,6 +1324,7 @@ function bindForm(id,build,done){
     if(f.querySelector('[name="name"][required]')&&!String(fd.name||"").trim())return fail("Add your name so we know who to holler at.");
     if(!/^\S+@\S+\.\S+$/.test(fd.email||""))return fail("Add a valid email so we can get back to you.");
     if(f.querySelector('[name="phone"][required]')&&String(fd.phone||"").replace(/\D/g,"").length<7)return fail("Add a phone number so we can text you to confirm.");
+    if(f.querySelector('[name="street"]')&&!(f.id==="contactForm"&&fd.kind!=="order")){if(!String(fd.street||"").trim()||!String(fd.city||"").trim())return fail("Add your delivery address so the dealer knows where to drop your fixx.");if(!/^\d{5}(-\d{4})?$/.test(String(fd.zip||"").trim()))return fail("Add a 5 digit ZIP code for delivery.");}
     if(fd.consent!=="yes")return fail("Tick “I'm not a robot” first.");
     const data=build(fd);if(!data)return;
     const btn=f.querySelector('[type="submit"]');btn.disabled=true;msg.textContent="Sending…";
@@ -1318,8 +1333,8 @@ function bindForm(id,build,done){
     else fail("That didn't go through. Text 505-922-5683 or email jerkyfixx@gmail.com and we'll sort it out.");
   });
 }
-bindForm("checkoutForm",fd=>{if(!Cart.items.length)return null;const items=Cart.items.map(x=>({name:BYSLUG[x.s].n,size:x.size,qty:x.qty,price:PRICE[x.size]*x.qty}));return {form:"order",name:fd.name,email:fd.email,phone:fd.phone,message:fd.message||"",items:JSON.stringify(items),total:String(Cart.total()),consent:fd.consent,hp:""};},()=>{Cart.items=[];Cart.save();});
-bindForm("contactForm",fd=>{if(fd.kind==="order"){const f=BYSLUG[fd.flavor],q=Math.max(1,+fd.qty||1);return {form:"order",name:fd.name,email:fd.email,phone:fd.phone||"",message:fd.message||"",items:JSON.stringify([{name:f.n,size:fd.size,qty:q,price:PRICE[fd.size]*q}]),total:String(PRICE[fd.size]*q),consent:fd.consent,hp:""};}return {form:"contact",topic:"Question",name:fd.name,email:fd.email,phone:fd.phone||"",message:fd.message||"",consent:fd.consent,hp:""};},()=>{document.getElementById("orderFields").hidden=false;});
+bindForm("checkoutForm",fd=>{if(!Cart.items.length)return null;const items=Cart.items.map(x=>({name:BYSLUG[x.s].n,size:x.size,qty:x.qty,price:PRICE[x.size]*x.qty}));return {form:"order",name:fd.name,email:fd.email,phone:fd.phone,address:addrOf(fd),message:fd.message||"",items:JSON.stringify(items),total:String(Cart.total()),consent:fd.consent,hp:""};},()=>{Cart.items=[];Cart.save();});
+bindForm("contactForm",fd=>{if(fd.kind==="order"){const f=BYSLUG[fd.flavor],q=Math.max(1,+fd.qty||1);return {form:"order",name:fd.name,email:fd.email,phone:fd.phone||"",address:addrOf(fd),message:fd.message||"",items:JSON.stringify([{name:f.n,size:fd.size,qty:q,price:PRICE[fd.size]*q}]),total:String(PRICE[fd.size]*q),consent:fd.consent,hp:""};}return {form:"contact",topic:"Question",name:fd.name,email:fd.email,phone:fd.phone||"",message:fd.message||"",consent:fd.consent,hp:""};},()=>{document.getElementById("orderFields").hidden=false;document.getElementById("addrFields").hidden=false;});
 bindForm("vipForm",fd=>({form:"vip",name:fd.name||"",email:fd.email,message:fd.message||"",topic:"FIXX Fiends VIP Club waitlist",consent:fd.consent,hp:""}));
 bindForm("alertForm",fd=>({form:"events",email:fd.email,phone:fd.phone||"",topic:"Dealer alerts",consent:fd.consent,hp:""}));
 renderCart();

@@ -46,6 +46,8 @@ python3 -m http.server 8000
 
 All forms (checkout, contact, VIP, dealer alerts) post to a Google Apps Script web app that emails jerkyfixx@gmail.com and dyadmarketects@gmail.com and logs every submission in a shared Google Sheet. Setup: `backend/SETUP.md`, then paste the web app URL into `FORM_ENDPOINT` near the top of the main `<script>` in `index.html`. Until then, forms open a pre-filled email to both addresses.
 
+Order forms (cart checkout, and the contact form when "Place an order" is picked) require a delivery address: street, optional apt or gate code, city, state and ZIP. It lands in the **Address** column of the Sheet and in the "Deliver to" line of both emails, and the customer confirmation tells them the dealer will text a photo once the package is dropped off. If you already deployed the backend before this change, paste the new `backend/Code.gs` and deploy a new version (Deploy, Manage deployments, Edit, New version).
+
 ## Updating content (safe edits)
 
 - Flavors, descriptions, heat levels: `FLAVORS` array in `index.html`
