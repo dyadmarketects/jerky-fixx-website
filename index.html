@@ -1523,7 +1523,7 @@ const ICO={scroll:'<svg viewBox="0 0 24 24" class="mv-down"><rect x="7" y="2" wi
 let hintCur=null,hintT;
 function setHint(sec){if(!sec||sec===hintCur)return;hintCur=sec;hintEl.classList.add("off");clearTimeout(hintT);hintT=setTimeout(()=>{hintIco.innerHTML=ICO[sec.dataset.hint]||ICO.scroll;hintTxt.textContent=sec.dataset.hintText;hintEl.hidden=false;requestAnimationFrame(()=>hintEl.classList.remove("off"));hintT=setTimeout(()=>hintEl.classList.add("off"),mobile?4500:7000);},250);}
 document.querySelectorAll("[data-hint]").forEach(sec=>ST.create({trigger:sec,start:"top 55%",end:"bottom 55%",onEnter:()=>setHint(sec),onEnterBack:()=>setHint(sec)}));
-ST.create({trigger:".foot",start:"top 90%",onToggle:s=>document.querySelector(".social-tab").classList.toggle("gone",s.isActive)});
+{const stEl=document.querySelector(".social-tab"),stS={foot:false,ct:false},stU=()=>stEl.classList.toggle("gone",stS.foot||(stS.ct&&matchMedia("(max-width:820px)").matches));ST.create({trigger:".foot",start:"top 90%",onToggle:s=>{stS.foot=s.isActive;stU();}});ST.create({trigger:"#contactForm",start:"top bottom",end:"bottom top",onToggle:s=>{stS.ct=s.isActive;stU();}});}
 /* floating order pill after the hero */
 const fab=$("#fab");fab.setAttribute("href","#menu");fab.addEventListener("click",e=>{if(Cart.count()){e.preventDefault();openCart();}});ST.create({trigger:"#lineup",start:"top 60%",endTrigger:"#contact",end:"top 80%",onToggle:s=>fab.classList.toggle("on",s.isActive)});
 
