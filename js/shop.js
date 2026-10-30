@@ -1,5 +1,5 @@
-/* Jerky Fixx shared shop code: flavors, cart, forms and cookie consent.
-   Loaded by index.html and cart.html. */
+/* Jerky Fixx shared shop code: flavors, cart, forms, cookie consent and header bits.
+   Loaded by every page (home, cart, interior pages, blog, legal). Paths are root-absolute so it works in any folder. */
 
 /* ======== config ======== */
 /* Paste the Google Apps Script web app URL here (see backend/SETUP.md). Until then forms fall back to an email draft. */
@@ -35,7 +35,7 @@ const FLAVORS=[
  ["Honey Teriyaki",0,"Sweet, sticky and savory. The gateway flavor for the kids and the grandmas.",1],
  ["Pickle",1,"Tangy dill pickle jerky. Sour, salty and weirdly addictive."],
  ["Tajin Limon",2,"Chile lime Tajin style seasoning with a bright limon finish."]
-].map(([n,h,d,top],i)=>({n,h,d,top:!!top,i,s:slug(n),img:"img/flavors/"+slug(n)+".webp"}));
+].map(([n,h,d,top],i)=>({n,h,d,top:!!top,i,s:slug(n),img:"/img/flavors/"+slug(n)+".webp"}));
 const BYSLUG=Object.fromEntries(FLAVORS.map(f=>[f.s,f]));
 const PRICE={Small:7,Large:20};
 const TOPN=["X-Hot Green","Hot Cheetos","Garlic Parm","Takis","Honey Teriyaki","Mango Habanero","Hot Cheeto Pickle","Lemon Pepper"];
@@ -64,7 +64,7 @@ Cart.on(updateBadge);
 addEventListener("storage",e=>{if(e.key==="jf_cart"){Cart.items=store.get("jf_cart",[]);Cart.subs.forEach(f=>f());}});
 let toastT;
 function toast(msg,link){let t=document.getElementById("toast");if(!t){t=document.createElement("div");t.id="toast";t.className="toast";t.setAttribute("role","status");document.body.appendChild(t);}
-  t.innerHTML=esc(msg)+(link?' <a href="cart.html">View cart</a>':"");t.classList.add("on");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("on"),link?3600:2400);}
+  t.innerHTML=esc(msg)+(link?' <a href="/cart.html">View cart</a>':"");t.classList.add("on");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("on"),link?3600:2400);}
 
 /* ======== forms → Apps Script (emails both inboxes + Google Sheet) ======== */
 const loadedAt=Date.now();
@@ -88,9 +88,18 @@ async function sendForm(data){
 /* build(fd) returns the payload, or {error:"..."} to show a message, or null to stop quietly */
 function bindForm(id,build,done){
   const f=document.getElementById(id);if(!f)return;const msg=f.querySelector(".form-msg");
-  f.addEventListener("submit",async e=>{e.preventDefault();msg.classList.remove("err");
+  if(!msg.id)msg.id=id+"Msg";
+  const clearInvalid=()=>f.querySelectorAll('[aria-invalid="true"]').forEach(x=>{x.removeAttribute("aria-invalid");x.removeAttribute("aria-describedby");});
+  f.addEventListener("input",e=>{if(e.target.getAttribute&&e.target.getAttribute("aria-invalid")==="true"){e.target.removeAttribute("aria-invalid");e.target.removeAttribute("aria-describedby");}});
+  f.addEventListener("submit",async e=>{e.preventDefault();msg.classList.remove("err");clearInvalid();
     const fd=Object.fromEntries(new FormData(f).entries());
-    const fail=t=>{msg.classList.add("err");msg.textContent=t;};
+    /* show the message, flag the field it is about and move focus there so keyboard and screen reader users land on it */
+    const FIELD={name:/your name/i,email:/valid email/i,phone:/phone number/i,street:/delivery address/i,zip:/ZIP/,consent:/robot/i,message:/question/i};
+    const fail=t=>{msg.classList.add("err");msg.textContent=t;let k=Object.keys(FIELD).find(k=>FIELD[k].test(t));
+      if(k==="street"&&String(fd.street||"").trim()&&!String(fd.city||"").trim())k="city";
+      const el=k&&f.querySelector('[name="'+k+'"]');
+      if(el){el.setAttribute("aria-invalid","true");el.setAttribute("aria-describedby",msg.id);try{el.focus({preventScroll:false});}catch(_){}}
+      else{const c=f.querySelector("#c-flavor,#ca-flavor");if(c&&/flavor/i.test(t))c.focus();}};
     if(fd.hp)return;
     if(f.querySelector('[name="name"][required]')&&!String(fd.name||"").trim())return fail("Add your name so we know who to holler at.");
     if(!/^\S+@\S+\.\S+$/.test(fd.email||""))return fail("Add a valid email so we can get back to you.");
@@ -101,7 +110,7 @@ function bindForm(id,build,done){
     if(fd.consent!=="yes")return fail("Tick “I'm not a robot” first.");
     const btn=f.querySelector('[type="submit"]');btn.disabled=true;msg.textContent="Sending…";
     const r=await sendForm(data);btn.disabled=false;
-    if(r.ok){msg.textContent=r.fallback?"Your email app opened with everything filled in. Hit send and you're set.":(data.form==="order"?"Order sent! Check your email. The dealer will text you to confirm.":"Got it! Check your email, the dealer will reach out soon.");f.reset();done&&done(r);}
+    if(r.ok){clearInvalid();msg.textContent=r.fallback?"Your email app opened with everything filled in. Hit send and you're set.":(data.form==="order"?"Order sent! Check your email. The dealer will text you to confirm.":"Got it! Check your email, the dealer will reach out soon.");f.reset();done&&done(r);}
     else fail("That didn't go through. Text 505-922-5683 or email jerkyfixx@gmail.com and we'll sort it out.");
   });
 }
@@ -131,18 +140,31 @@ if(JFConsent.el){
 /* ======== header bits: mobile nav, copy buttons, order now ======== */
 (function(){
   const mnav=document.getElementById("mnav"),burger=document.getElementById("burger");
-  if(mnav&&burger){burger.addEventListener("click",()=>{mnav.hidden=false;burger.setAttribute("aria-expanded","true")});
-    document.getElementById("mclose").addEventListener("click",()=>{mnav.hidden=true;burger.setAttribute("aria-expanded","false")});
-    mnav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mnav.hidden=true}));}
+  if(mnav&&burger){const mclose=document.getElementById("mclose");
+    const close=back=>{if(mnav.hidden)return;mnav.hidden=true;burger.setAttribute("aria-expanded","false");if(back)burger.focus();};
+    burger.setAttribute("aria-controls","mnav");
+    burger.addEventListener("click",()=>{mnav.hidden=false;burger.setAttribute("aria-expanded","true");mclose.focus();});
+    mclose.addEventListener("click",()=>close(true));
+    mnav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>close(false)));
+    /* keep Tab inside the open menu, Escape closes it */
+    mnav.addEventListener("keydown",e=>{if(e.key==="Escape"){e.preventDefault();close(true);return;}
+      if(e.key!=="Tab")return;const f=[...mnav.querySelectorAll("a[href],button")].filter(x=>x.offsetParent!==null);if(!f.length)return;
+      const a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}});
+    addEventListener("resize",()=>{if(innerWidth>1180)close(false);});}
   document.querySelectorAll("button.copy").forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.copy;try{navigator.clipboard.writeText(v).then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1500)})}catch(_){}}));
-  const on=document.getElementById("orderNow");if(on)on.addEventListener("click",e=>{if(Cart.count()){e.preventDefault();location.href="cart.html";}});
+  const on=document.getElementById("orderNow");if(on)on.addEventListener("click",e=>{if(Cart.count()){e.preventDefault();location.href="/cart.html";}});
   updateBadge();
 })();
 
 /* ======== mobile pass: bottom tab bar highlight + bottom sheet dismiss ======== */
 (function(){
   const bar=document.getElementById("tabbar");
-  if(bar&&!document.body.classList.contains("cart-page")){
+  if(bar&&!document.body.classList.contains("cart-page")&&!bar.querySelector('a[href^="#"]')){
+    /* interior pages: highlight the tab whose page you are on */
+    const here=location.pathname.replace(/index\.html$/,"");
+    bar.querySelectorAll("a").forEach(a=>{const p=new URL(a.href,location.href).pathname;if(p!=="/"&&here.startsWith(p))a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
+  }
+  else if(bar&&!document.body.classList.contains("cart-page")){
     const pairs=[[null,"home"],["menu","flavors"],["dealer","dealer"],["contact","order"]].map(([id,t])=>[id&&document.getElementById(id),bar.querySelector('[data-tab="'+t+'"]')]).filter(p=>p[1]);
     let raf=0,cur=null;
     const upd=()=>{raf=0;let act=pairs[0][1];const line=innerHeight*.5;for(const [el,a] of pairs){if(el&&el.getBoundingClientRect().top<=line)act=a;}
