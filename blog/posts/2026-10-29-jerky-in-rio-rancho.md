@@ -16,7 +16,7 @@ Hi, Aaliyah here. We are based in Albuquerque, but Rio Rancho is part of our rou
 
 Our family sets up at pop ups, festivals and ball games around Albuquerque and Rio Rancho. We're out there all season, and softball games have become a real home away from home for us. If you've ever walked past a table with a bunch of jerky bags, a friendly crew and sample trays, there's a decent chance that was us.
 
-We can't promise a spot at every game, and schedules change. The best way to know where we're posting up next is the [dealer locator](/#dealer) on our home page. You can also sign up there for dealer alerts, which tell you about pop ups, games and festivals as they come. If you want to ask about a specific Rio Rancho stop, text us at 505-922-5683 or 505-364-0678 and we'll point you in the right direction.
+We can't promise a spot at every game, and schedules change. The best way to know where we're posting up next is the [dealer locator](/dealer-locator/) on our home page. You can also sign up there for dealer alerts, which tell you about pop ups, games and festivals as they come. If you want to ask about a specific Rio Rancho stop, text us at 505-922-5683 or 505-364-0678 and we'll point you in the right direction.
 
 ## Ball games and jerky go together
 
@@ -34,7 +34,7 @@ A small bag is $7 and a large bag is $20, so it's easy to split a few flavors fo
 
 Not everyone has time to catch us at a booth, and that's okay. You can order from home and have it come to you. Here's how it works:
 
-1. Pick your flavors from the [menu](/#menu) and add them to your [cart](/cart.html), or tell us what you want through the [contact form](/#contact).
+1. Pick your flavors from the [menu](/jerky/) and add them to your [cart](/cart.html), or tell us what you want through the [contact form](/contact/).
 2. Add your delivery address and any drop-off notes, like where to leave it and when.
 3. Our crew texts you to confirm and take payment. We accept Cash App, Venmo, Apple Pay and cash.
 4. The dealer drops your order at your door and sends you a photo once it's delivered.
@@ -64,7 +64,7 @@ It means a family cuts, seasons and dries the beef in small amounts, then bags i
 
 ## Planning a team order or party?
 
-Jerky is an easy team snack or party favor, and our regular ordering works great for that. Order a mix of small and large bags, put the details in the notes and we'll text you to sort it out. If you'd like to book us for an event, send a note through the [contact form](/#contact).
+Jerky is an easy team snack or party favor, and our regular ordering works great for that. Order a mix of small and large bags, put the details in the notes and we'll text you to sort it out. If you'd like to book us for an event, send a note through the [contact form](/contact/).
 
 ## Next stop
 

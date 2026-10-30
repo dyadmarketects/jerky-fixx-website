@@ -20,7 +20,7 @@ If you typed "beef jerky near me" into your phone and landed here, the fastest m
 
 ## Order online and get it at your door
 
-This is the easy one. Pick your flavors on the [full menu](/#menu), add them to your cart, and send the order in. You can also use the [contact form](/#contact) if you'd rather just tell us what you want.
+This is the easy one. Pick your flavors on the [full menu](/jerky/), add them to your cart, and send the order in. You can also use the [contact form](/contact/) if you'd rather just tell us what you want.
 
 Here is what happens next:
 
@@ -36,7 +36,7 @@ We love a booth. You'll find us at pop ups, festivals and plenty of ball games a
 
 The next big stop is **New Mexico Jerky Fest, Halloween Edition**. It's this Saturday, October 31, 2026, at Isleta Resort & Casino. Come find the Jerky Fixx booth, say hi and try a sample. We've been lucky at that festival, too. We won Most Exotic Flavor and Best Booth there, and we'd love to see you at the table.
 
-Not sure where we'll be after that? The [dealer locator](/#dealer) on the home page shows our next stop, and you can sign up there for dealer alerts so you hear about pop ups and games first.
+Not sure where we'll be after that? The [dealer locator](/dealer-locator/) on the home page shows our next stop, and you can sign up there for dealer alerts so you hear about pop ups and games first.
 
 ## Not sure what to grab? Start here
 
