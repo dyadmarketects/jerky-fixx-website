@@ -1,7 +1,7 @@
 # Blog topic backlog
 
 A weekly job picks the **first unused** topic (status `todo`), writes the post, runs `python3 tools/build_blog.py`, then changes that line's status to `done` and adds the post slug.
-Rules for every post: 700 to 1100 words, written as Aaliyah, warm and conversational, no em dashes, only facts from `blog/README.md` ("Facts you may use") and `FLAVORS` in `js/shop.js`. Never invent prices, reviews, addresses, quotes, event dates or awards. Link to `/#menu`, `/#dealer` or `/cart.html` and at least one other post.
+Rules for every post: 700 to 1100 words, written as Aaliyah, warm and conversational, no em dashes, only facts from `blog/README.md` ("Facts you may use") and `FLAVORS` in `js/shop.js`. Never invent prices, reviews, addresses, quotes, event dates or awards. Link to `/jerky/`, `/dealer-locator/`, `/contact/` or `/cart.html` and at least one other post.
 
 Format: `N. [status] Title | primary keyword | angle`
 

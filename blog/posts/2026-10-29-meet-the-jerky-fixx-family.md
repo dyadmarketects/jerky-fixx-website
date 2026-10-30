@@ -47,7 +47,7 @@ Some of our top sellers are:
 - **Garlic Parm**, **Honey Teriyaki** and **Lemon Pepper**, for easy crowd pleasers
 - **Mango Habanero**, sweet up front with a slow burn
 
-Want to see the whole list? The [full menu](/#menu) has every flavor with its heat level. For the chile story, read our post on [New Mexico jerky and green chile carne seca](/blog/new-mexico-jerky-green-chile-carne-seca/).
+Want to see the whole list? The [full menu](/jerky/) has every flavor with its heat level. For the chile story, read our post on [New Mexico jerky and green chile carne seca](/blog/new-mexico-jerky-green-chile-carne-seca/).
 
 ## The hardware
 
@@ -55,9 +55,9 @@ Our family got a nice surprise at New Mexico Jerky Fest, where we won **Most Exo
 
 ## Where to find us
 
-We show up at pop ups, festivals and ball games around Albuquerque and Rio Rancho. If you want to know what's next, the [dealer locator](/#dealer) on the home page has our next stop, and you can sign up for dealer alerts. Need the practical details? Read [where to buy jerky in Albuquerque](/blog/where-to-buy-jerky-in-albuquerque/) or our guide to [jerky in Rio Rancho](/blog/jerky-in-rio-rancho/).
+We show up at pop ups, festivals and ball games around Albuquerque and Rio Rancho. If you want to know what's next, the [dealer locator](/dealer-locator/) on the home page has our next stop, and you can sign up for dealer alerts. Need the practical details? Read [where to buy jerky in Albuquerque](/blog/where-to-buy-jerky-in-albuquerque/) or our guide to [jerky in Rio Rancho](/blog/jerky-in-rio-rancho/).
 
-We also have something new on the way. The FIXX Fiends VIP Club, a jerky subscription, is coming soon. You can get on the waitlist at the [VIP section](/#vip) of the home page.
+We also have something new on the way. The FIXX Fiends VIP Club, a jerky subscription, is coming soon. You can get on the waitlist at the [VIP section](/vip-club/) of the home page.
 
 ## Say hi
 

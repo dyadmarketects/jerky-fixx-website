@@ -243,7 +243,7 @@ def chrome():
     cart = read(os.path.join(ROOT, "cart.html"))
     index = read(os.path.join(ROOT, "index.html"))
     header = absu(grab(cart, '<header class="site-head"', "</header>"))
-    header = header.replace('<a href="/blog/">Blog</a>', '<a href="/blog/" aria-current="true">Blog</a>', 1)
+    header = header.replace('<a href="/blog/">Blog</a>', '<a href="/blog/" aria-current="page">Blog</a>', 1)
     mnav = absu(grab(cart, '<nav class="mnav"', "</nav>"))
     social = grab(cart, '<aside class="social-tab"', "</aside>")
     tabbar = absu(grab(cart, '<nav class="tabbar"', "</nav>")).replace(' aria-current="page"', "")
@@ -374,9 +374,12 @@ CTA_BAND = '''<aside class="bl-cta" aria-label="Order Jerky Fixx">
     <p class="eyebrow ui">Hungry yet?</p>
     <p class="bl-cta-h">Get your <em>fixx</em></p>
     <p class="bl-cta-p">25 small batch flavors. Small bag $7, large bag $20. We text to confirm and the dealer drops it at your door.</p>
-    <div class="lg-cta-btns"><a class="pill pill-lime" href="/#menu">Order now <span aria-hidden="true">↗</span></a><a class="pill pill-light" href="/#dealer">Find the dealer <span aria-hidden="true">↗</span></a></div>
+    <div class="lg-cta-btns"><a class="pill pill-lime" href="/jerky/">Order now <span aria-hidden="true">↗</span></a><a class="pill pill-light" href="/dealer-locator/">Find the dealer <span aria-hidden="true">↗</span></a></div>
   </div>
 </aside>'''
+
+
+MORE_LINKS = '''<nav class="bl-morelinks" aria-label="More from Jerky Fixx"><a href="/jerky/">All 25 jerky flavors</a><a href="/our-story/">Our family story</a><a href="/the-lab/">How we make carne seca</a><a href="/dealer-locator/">Where to find us</a><a href="/contact/">Order or ask a question</a></nav>'''
 
 
 def author_box():
@@ -444,6 +447,7 @@ def build_post(C, p, posts):
     </div>
   </article>
   {author_box()}
+  {MORE_LINKS}
   {rel_html}
 </div>
 </div>
@@ -530,13 +534,13 @@ def build_author(C, posts):
       <p>I'm studying web design, and my family's website is my real-world project. It also happens to be a project everyone around me is happy to taste test.</p>
       <h2 id="what-i-do">What I do at Jerky Fixx</h2>
       <ul>
-        <li>I manage and maintain <a href="/">jerkyfixx.com</a>, including the <a href="/#menu">menu</a>, the <a href="/cart.html">cart</a> and the order forms.</li>
-        <li>I keep the <a href="/#dealer">dealer locator</a> up to date, so you can see where we're posting up next.</li>
+        <li>I manage and maintain <a href="/">jerkyfixx.com</a>, including the <a href="/jerky/">jerky menu</a>, the <a href="/cart.html">cart</a> and the order forms.</li>
+        <li>I keep the <a href="/dealer-locator/">dealer locator</a> up to date, so you can see where we're posting up next.</li>
         <li>I write this blog, from <a href="/blog/where-to-buy-jerky-in-albuquerque/">where to buy jerky in Albuquerque</a> to flavor guides and event news.</li>
       </ul>
       <h2 id="my-family">My family and the jerky</h2>
       <p id="joseph-garduno">My dad, <strong>Joseph Garduno</strong>, and <span id="sabrina-penn-garduno">my mom, <strong>Sabrina Penn Garduno</strong></span>, founded Jerky Fixx, and they run it with the rest of the crew. We show up at pop ups, festivals and ball games around Albuquerque and Rio Rancho, and we won Most Exotic Flavor and Best Booth at New Mexico Jerky Fest.</p>
-      <p>Want to know more about them? <a href="/blog/meet-the-jerky-fixx-family/">Meet the Jerky Fixx family</a>.</p>
+      <p>Want to know more about them? <a href="/blog/meet-the-jerky-fixx-family/">Meet the Jerky Fixx family</a> or read <a href="/our-story/">our story</a>.</p>
       <h2 id="all-posts">All my posts</h2>
       <ul>
 {latest}

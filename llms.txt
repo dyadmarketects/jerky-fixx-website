@@ -11,7 +11,14 @@
 - Contact: 505-922-5683, 505-364-0678, jerkyfixx@gmail.com. Instagram @jerky_fixx, facebook.com/jerky.fixx, Threads @jerky_fixx.
 
 ## Pages
-- [Home and full flavor menu](https://jerkyfixx.com/)
+- [Home](https://jerkyfixx.com/): the immersive 3D home page with every section
+- [Jerky menu](https://jerkyfixx.com/jerky/): all 25 flavors with heat levels, descriptions and prices
+- [Our story](https://jerkyfixx.com/our-story/): the Garduno family and the Jerky Fest awards
+- [The lab](https://jerkyfixx.com/the-lab/): how the carne seca is made
+- [Dealer locator](https://jerkyfixx.com/dealer-locator/): events, pop ups, delivery area and dealer alerts
+- [FIXX Fiends VIP Club](https://jerkyfixx.com/vip-club/): jerky subscription waitlist (coming soon)
+- [Contact and orders](https://jerkyfixx.com/contact/): order form, phone, text and email
+- [FAQ](https://jerkyfixx.com/faq/): ordering, delivery, payment, allergens and flavors
 - [Order: cart and checkout](https://jerkyfixx.com/cart.html)
 - [Fixx Blog](https://jerkyfixx.com/blog/)
 - [Where to buy jerky in Albuquerque](https://jerkyfixx.com/blog/where-to-buy-jerky-in-albuquerque/)

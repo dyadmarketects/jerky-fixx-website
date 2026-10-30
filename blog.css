@@ -4,13 +4,6 @@
 .bl-hero .lg-hero-in{max-width:1180px}
 
 /* breadcrumb */
-.bl-crumbs{margin:0 0 18px}
-.bl-crumbs ol{display:flex;flex-wrap:wrap;gap:6px 8px;margin:0;padding:0;list-style:none;font:500 12px/1.2 var(--f-ui);letter-spacing:.16em;text-transform:uppercase}
-.bl-crumbs li{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.8);min-width:0}
-.bl-crumbs li+li::before{content:"/";color:var(--lime)}
-.bl-crumbs a{color:#fff;text-decoration:none;padding:4px 0}
-.bl-crumbs a:hover{color:var(--lime)}
-.bl-crumbs li[aria-current]{color:var(--lime);max-width:46ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 .bl-title{margin:0;font-family:var(--f-cure);font-weight:400;font-size:clamp(46px,9vw,112px);line-height:.9;text-transform:uppercase;text-shadow:0 6px 28px rgba(40,0,50,.35);text-wrap:balance;overflow-wrap:anywhere}
 .bl-t1{margin-right:.08em}
@@ -89,7 +82,7 @@
 .bl-card-t a{color:inherit;text-decoration:none}
 .bl-card-t a:hover{color:var(--lime)}
 .bl-card-x{margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,.8)}
-.bl-more{margin-top:auto;padding-top:6px;font:600 14px/1 var(--f-ui);letter-spacing:.16em;text-transform:uppercase;color:var(--lime);text-decoration:none}
+.bl-more{margin-top:auto;padding-top:6px;display:inline-flex;align-items:center;gap:6px;min-height:40px;font:600 14px/1 var(--f-ui);letter-spacing:.16em;text-transform:uppercase;color:var(--lime);text-decoration:none}
 .bl-more:hover{color:var(--pink)}
 .bl-card:focus-within{border-color:var(--lime)}
 
@@ -135,3 +128,7 @@ a:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:4
   .bl-card{transition:none}
   .bl-card:hover{transform:none}
 }
+/* more from Jerky Fixx: internal links under each post */
+.bl-morelinks{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0}
+.bl-morelinks a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font:600 13px var(--f-ui);letter-spacing:.12em;text-transform:uppercase}
+.bl-morelinks a:hover{border-color:var(--lime);color:var(--lime)}
