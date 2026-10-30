@@ -5,7 +5,7 @@ Rules for every post: 700 to 1100 words, written as Aaliyah, warm and conversati
 
 Format: `N. [status] Title | primary keyword | angle`
 
-1. [todo] The Best Jerky Flavors for Game Day | jerky albuquerque | Build a game day snack bag from our flavors, mild to hot, with heat levels 0 to 5.
+1. [done] The Best Jerky Flavors for Game Day | jerky albuquerque | Build a game day snack bag from our flavors, mild to hot, with heat levels 0 to 5. | best-jerky-flavors-for-game-day
 2. [todo] What Is Carne Seca? A Plain English Guide | carne seca albuquerque | Carne seca vs jerky, the New Mexico name, and how ours is made (thin cut, heavy seasoning, long slow dry).
 3. [todo] Hot Cheeto Jerky: Yes, It Is Real | hot cheeto jerky | The story of the Hot Cheetos and Hot Cheeto Pickle flavors and who they are for.
 4. [todo] Green Chile Jerky Flavors Ranked by Heat | green chile jerky | Go through Green, Green Chili Ranch, Honey Teriyaki Green, Lemon Pepper Green, Garlic Parm Green and the two X-Hot greens.
