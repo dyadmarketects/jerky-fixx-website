@@ -237,7 +237,6 @@
     </div>
   </div>
   <div class="wrap rr-copy"><p class="eyebrow ui">The legend of the Jerky Fixx roadrunner</p></div>
-  <p class="rr-line" id="rrLine">We can't fixx the fiending, <em>but we can cure the craving.</em></p>
 </section>
 
 <!-- FAMILY -->
@@ -253,7 +252,7 @@
         <p class="eyebrow ui">Family made jerky in Albuquerque</p>
         <h2 class="h2" id="fam-title">The Fixx<br><em>Family</em></h2>
         <span class="script-love">made with love, faith x family</span>
-        <p>Jerky Fixx is a family operation out of Albuquerque. Every batch gets cut, seasoned and dried by the same crew you'll find behind the table at pop ups, festivals and a whole lot of softball games.</p>
+        <p>Jerky Fixx is a family operation out of Albuquerque, run by Joseph Garduno and Sabrina Penn Garduno and their kids. Every batch gets cut, seasoned and dried by the same crew you'll find behind the table at pop ups, festivals and a whole lot of softball games.</p>
         <p>We started making carne seca for the people we love, and the people we love kept asking for more. Now there are 25 flavors and a lot of folks around the 505 who can't quit.</p>
         <div class="values">
           <div class="value"><b>Love</b><span>Hand cut, every batch</span></div>
@@ -514,7 +513,7 @@
   <div class="wrap foot-bottom">
     <span>© 2026 Jerky Fixx. All rights reserved.</span>
     <span class="allergen">Contains beef; some flavors contain dairy, soy, wheat or corn. X-Hot flavors are very hot. "Addiction" talk is about snack cravings only.</span>
-    <a class="dyad" href="https://dyadgrow.com" target="_blank" rel="noopener">Website by <img src="/img/dyad-logo-pink.webp" alt="" width="420" height="131" loading="lazy"> <b>DYAD Marketects</b></a>
+    <div class="foot-credits"><span class="site-mgr"><img src="/img/roadrunner-head.webp" alt="" width="34" height="34" loading="lazy">Website managed and maintained by <b>Aaliyah Garduno</b></span><a class="dyad" href="https://dyadgrow.com" target="_blank" rel="noopener">Website by <img src="/img/dyad-logo-pink.webp" alt="" width="420" height="131" loading="lazy"> <b>DYAD Marketects</b></a></div>
   </div>
 </footer>
 
@@ -697,7 +696,7 @@ ST.create({trigger:"#menu",start:"top bottom",end:"top 40%",onUpdate:s=>S.after=
 const luEl=$("#lineupStage"),awEl=$("#award");
 /* roadrunner: scrub the clip with scroll; composite in a canvas so the bird always sits in front of the logo it reveals */
 const RV=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.012, 0.012, 0.026, 0.041, 0.053, 0.068, 0.068, 0.085, 0.101, 0.118, 0.135, 0.135, 0.149, 0.164, 0.176, 0.191, 0.191, 0.205, 0.222, 0.239, 0.253, 0.253, 0.27, 0.285, 0.297, 0.312, 0.312, 0.326, 0.341, 0.357, 0.372, 0.372, 0.387, 0.403, 0.416, 0.43, 0.43, 0.443, 0.458, 0.474, 0.491, 0.491, 0.505, 0.522, 0.535, 0.549, 0.549, 0.564, 0.578, 0.593, 0.61, 0.61, 0.626, 0.643, 0.657, 0.674, 0.674, 0.687, 0.701, 0.716, 0.733, 0.733, 0.749, 0.764, 0.778, 0.793, 0.793, 0.807, 0.824, 0.841, 0.858, 0.858, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 0.868, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2];
-const rrVid=$("#rrVid"),rrLogo=$("#rrLogo"),rrLine=$("#rrLine"),rrCv=$("#rrCanvas"),rrCx=rrCv.getContext("2d"),rrOff=document.createElement("canvas"),rrOx=rrOff.getContext("2d");
+const rrVid=$("#rrVid"),rrLogo=$("#rrLogo"),rrLine=document.createElement("p"),rrCv=$("#rrCanvas"),rrCx=rrCv.getContext("2d"),rrOff=document.createElement("canvas"),rrOx=rrOff.getContext("2d");
 let rrDur=8.0,rrT=0,rrEdge=0,rrDirty=true;
 rrVid.addEventListener("loadedmetadata",()=>{rrDur=rrVid.duration||8});
 ["seeked","loadeddata"].forEach(e=>rrVid.addEventListener(e,()=>rrDirty=true));
@@ -718,7 +717,7 @@ function rrDraw(){
 }
 /* plays on a loop while the section is on screen; the logo reveal follows the bird every loop */
 let rrSeen=false;
-function rrPlay(){const pr=rrVid.play();if(pr&&pr.catch)pr.catch(()=>{});}
+function rrPlay(){if(rrVid.currentTime<.75)rrVid.currentTime=.8;const pr=rrVid.play();if(pr&&pr.catch)pr.catch(()=>{});}
 ST.create({trigger:"#legend",start:"top 75%",end:"bottom 25%",onToggle:s=>{if(s.isActive)rrPlay();else rrVid.pause();}});
 ST.create({trigger:"#legend",start:"top bottom+=150%",onEnter:()=>{if(rrVid.readyState===0)rrVid.load();}});
 (function rrLoop(){

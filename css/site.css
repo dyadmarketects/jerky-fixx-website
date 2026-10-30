@@ -1022,3 +1022,15 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 }
 @media (max-width:820px) and (prefers-reduced-motion:reduce){.tabbar,.toast{transition:none}}
 @media (min-width:1001px){.flav-detail .fd-close{display:none}}
+
+/* roadrunner: show the whole clip on desktop so the head pops up in view right away */
+@media (min-width:821px){.rr-stage{width:min(100%,calc((100vh - var(--headH,110px)) * 1.7778))}}
+/* fixx family: the header icon pattern, faint */
+.family::before{content:"";position:absolute;inset:0;background:url("../img/pattern.webp") center/1100px auto repeat;opacity:.07;pointer-events:none;z-index:0}
+.family>.wrap{position:relative;z-index:1}
+/* site manager credit */
+.site-mgr{display:inline-flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);text-decoration:none}
+.site-mgr img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:60% 30%;background:var(--magenta);border:2px solid var(--lime)}
+.site-mgr b{color:#fff;font-weight:600}
+.foot-credits{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+@media (max-width:900px){.foot-credits{align-items:flex-start}}
