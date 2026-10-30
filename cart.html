@@ -47,6 +47,11 @@
 <nav class="mnav" id="mnav" hidden aria-label="Mobile">
   <button class="x" id="mclose" aria-label="Close menu">✕</button>
   <a href="/">Home</a><a href="/#menu">Jerky</a><a href="/#family">Our Story</a><a href="/#lab">The Lab</a><a href="/#dealer">Dealer Locator</a><a href="/#vip">VIP Club</a><a href="/#contact">Contact</a>
+  <div class="mnav-extra">
+    <a class="pill pill-lime" href="/#menu">Order now <span aria-hidden="true">↗</span></a>
+    <a class="pill pill-light" href="cart.html">View cart<span class="mn-n" data-cart-n hidden></span></a>
+    <div class="mn-soc"><a href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/jerky.fixx/" target="_blank" rel="noopener">Facebook</a><a href="https://www.threads.com/@jerky_fixx" target="_blank" rel="noopener">Threads</a></div>
+  </div>
 </nav>
 
 <aside class="social-tab" aria-label="Follow Jerky Fixx">
@@ -96,6 +101,15 @@
   </div>
 </main>
 
+<nav class="tabbar" id="tabbar" aria-label="Quick navigation">
+  <a href="/" data-tab="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M5.5 10v9.5h13V10M10 19.5v-5.5h4v5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><span>Home</span></a>
+  <a href="/#menu" data-tab="flavors"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c.5 3.2 4.5 5 4.5 9.5A4.5 4.5 0 0 1 12 17a4.5 4.5 0 0 1-4.5-4.5c0-1.6.7-2.6 1.6-3.6.2 1.2.8 1.9 1.6 2.2C10.3 8.6 10.6 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 21h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Flavors</span></a>
+  <a href="/#dealer" data-tab="dealer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Dealer</span></a>
+  <a href="/#contact" data-tab="order"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 10V7a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Order</span></a>
+  <a href="cart.html" data-tab="cart" aria-current="page" aria-label="Cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 4h3l2.4 10.5h10.2L20.5 7H6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="9.5" cy="19" r="1.5" fill="currentColor"/><circle cx="17" cy="19" r="1.5" fill="currentColor"/></svg><span>Cart</span><b class="tb-badge" data-cart-n hidden>0</b></a>
+</nav>
+<div class="cp-bar" id="cpBar" hidden><div class="cp-bar-t"><span id="cpBarN">0 items</span><b id="cpBarTotal">$0</b></div><a class="pill pill-lime" id="cpBarGo" href="#checkoutForm">Place order <span aria-hidden="true">↓</span></a></div>
+
 <!-- COOKIES -->
 <div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="cc-title" hidden>
   <h2 id="cc-title">Cookies, but not the snack kind</h2>
@@ -133,6 +147,7 @@
   const list=document.getElementById("cpList"),tot=document.getElementById("cpTotal"),form=document.getElementById("checkoutForm");
   function draw(){
     tot.textContent="$"+Cart.total();
+    const bar=document.getElementById("cpBar");if(bar){bar.dataset.has=Cart.items.length?"1":"";document.getElementById("cpBarTotal").textContent="$"+Cart.total();const n=Cart.count();document.getElementById("cpBarN").textContent=n+(n===1?" bag":" bags");syncBar();}
     list.innerHTML=Cart.items.length?Cart.items.map((x,i)=>{const f=BYSLUG[x.s];return `<article class="cp-row">
       <img src="${f.img}" alt="${esc(f.n)} jerky" width="96" height="96">
       <div class="cp-info"><h3>${esc(f.n)}</h3><p>${esc(f.d)}</p>
@@ -142,6 +157,11 @@
       <b class="cp-price">$${PRICE[x.size]*x.qty}</b></article>`}).join(""):`<div class="cp-empty"><p>Your cart is empty. Time to get your fixx.</p><a class="pill pill-lime" href="/#menu">Browse all 25 flavors <span aria-hidden="true">↗</span></a></div>`;
     form.querySelector('[type="submit"]').disabled=!Cart.items.length;
   }
+  /* phones: sticky total strip that jumps to checkout, hidden while the form is on screen */
+  let formSeen=false;
+  function syncBar(){const bar=document.getElementById("cpBar");if(bar)bar.hidden=!bar.dataset.has||formSeen;}
+  if("IntersectionObserver" in window){new IntersectionObserver(en=>{formSeen=en[0].isIntersecting||en[0].boundingClientRect.bottom<=0;syncBar();},{rootMargin:"0px 0px -35% 0px"}).observe(form);}
+  document.getElementById("cpBarGo").addEventListener("click",e=>{e.preventDefault();form.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"start"});const f=document.getElementById("co-name");if(f)setTimeout(()=>f.focus({preventScroll:true}),600);});
   Cart.on(draw);draw();
   list.addEventListener("click",e=>{const q=e.target.closest("[data-q]"),r=e.target.closest("[data-rm]"),z=e.target.closest("[data-sz]");
     if(q){const i=+q.dataset.q;Cart.set(i,Cart.items[i].qty+(+q.dataset.d));}if(r)Cart.set(+r.dataset.rm,0);if(z)Cart.setSize(+z.dataset.i,z.dataset.sz);});

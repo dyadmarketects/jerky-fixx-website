@@ -918,3 +918,107 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 .dyad{gap:10px;color:rgba(255,255,255,.7)}
 .dyad img{height:24px}
 .dyad b{color:#fff;font-weight:600}
+
+/* ===== mobile pass ===== */
+/* new mobile-only parts stay out of sight on larger screens */
+@media (min-width:821px){.tabbar,.cp-bar,.mnav-extra{display:none}}
+@media (max-width:820px){
+  :root{--tbH:60px;--tb:calc(var(--tbH) + env(safe-area-inset-bottom,0px))}
+
+  /* bottom tab bar (thumb navigation) */
+  .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));height:var(--tb);padding:0 max(0px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(0px,env(safe-area-inset-left,0px));background:var(--ink);border-top:1px solid rgba(255,255,255,.12);box-shadow:0 -10px 30px rgba(13,4,16,.35);transition:transform .3s}
+  .tabbar a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:48px;color:rgba(255,255,255,.72);text-decoration:none;font:500 11px/1 var(--f-ui);letter-spacing:.12em;text-transform:uppercase;-webkit-tap-highlight-color:transparent}
+  .tabbar a svg{width:24px;height:24px}
+  .tabbar a[aria-current]{color:var(--lime)}
+  .tabbar a[aria-current]::before{content:"";position:absolute;top:0;left:30%;right:30%;height:3px;border-radius:0 0 3px 3px;background:var(--lime)}
+  .tabbar a:active{background:rgba(255,255,255,.08)}
+  .tabbar a:focus-visible{outline:2px solid var(--lime);outline-offset:-4px}
+  .tb-badge{position:absolute;top:6px;left:calc(50% + 6px);min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--magenta);color:#fff;font:600 11px/18px var(--f-ui);letter-spacing:0;text-align:center}
+  .tb-badge[hidden]{display:none}
+  /* tuck the bar away while the loader, the flavor sheet or the menu is open */
+  body:has(#boot) .tabbar,body:has(#flavDetail.open) .tabbar,body:has(#mnav:not([hidden])) .tabbar{transform:translateY(105%);pointer-events:none;visibility:hidden}
+  .fab{display:none!important}
+
+  /* keep content clear of the bar */
+  body:has(.tabbar) .foot{padding-bottom:calc(var(--tb) + 12px)}
+  .hint,body.in-lu .hint{bottom:calc(var(--tb) + 12px)}
+  .toast{bottom:calc(var(--tb) + 14px);white-space:normal;overflow:visible;text-align:center;width:max-content;max-width:calc(100vw - 32px);border-radius:20px;line-height:1.3;padding:11px 18px;border:1px solid rgba(255,255,255,.2)}
+  body:has(#flavDetail.open) .toast{bottom:auto;top:calc(var(--headH,64px) + 12px);z-index:95}
+  .consent{bottom:calc(var(--tb) + 10px)}
+  .social-tab{bottom:calc(var(--tb) + 12px)}
+
+  /* top sellers: lift the buttons and chips clear of the bar, and give the floating tip a rest while the controls are up */
+  .lu-rail{bottom:calc(150px + 14px + env(safe-area-inset-bottom,0px))}
+  .lu-buy{bottom:calc(206px + 14px + env(safe-area-inset-bottom,0px))}
+  .lu-all{bottom:calc(258px + 14px + env(safe-area-inset-bottom,0px))}
+  body.in-lu .hint{opacity:0!important;visibility:hidden}
+  /* tips can wrap instead of getting cut off */
+  .hint{white-space:normal;width:max-content;max-width:calc(100vw - 32px);border-radius:20px;line-height:1.25}
+  /* "over 20 flavors" badge sits beside the price pills instead of over the heading */
+  .menu-head{position:relative}
+  .over20-wrap{top:auto;bottom:0;right:var(--gutR);width:100px}
+
+  /* mobile menu */
+  .mnav{justify-content:flex-start;gap:0;overflow-y:auto;overscroll-behavior:contain;padding-top:calc(78px + env(safe-area-inset-top,0px));padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}
+  .mnav>a{display:flex;align-items:center;min-height:56px;font-size:clamp(38px,12vw,52px);-webkit-tap-highlight-color:transparent}
+  .mnav>a:active{opacity:.7}
+  .mnav .x{width:48px;height:48px;border-radius:50%;border-width:1.5px}
+  .mnav-extra{display:grid;gap:10px;margin-top:auto;padding-top:22px}
+  .mnav .mnav-extra a.pill{justify-content:center;min-height:52px;font-family:var(--f-ui);font-size:15px;line-height:1;color:var(--ink)}
+  .mnav .mnav-extra a.pill-lime{background:var(--lime)}
+  .mn-n[hidden]{display:none}
+  .mn-n::before{content:" ("}.mn-n::after{content:")"}
+  .mn-soc{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding-top:4px}
+  .mnav .mn-soc a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;font:500 13px var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+
+  /* flavor bottom sheet: everything on one screen */
+  body:has(#flavDetail.open) .hint{opacity:0!important;visibility:hidden}
+  .flav-detail{max-height:88svh;padding:16px var(--gutR) calc(16px + env(safe-area-inset-bottom,0px)) var(--gut);box-shadow:0 -20px 60px rgba(0,0,0,.5)}
+  .flav-detail.open{box-shadow:0 -20px 60px rgba(0,0,0,.5),0 0 0 100vmax rgba(13,4,16,.6)}
+  .flav-detail::before{content:"";display:block;width:44px;height:4px;border-radius:2px;background:rgba(255,255,255,.28);margin:0 auto 10px}
+  .flav-detail .fd-close{top:12px;right:12px;width:44px;height:44px;background:rgba(255,255,255,.08)}
+  .fd-head{grid-template-columns:104px minmax(0,1fr);gap:14px;margin-top:6px}
+  .flav-detail h3{font-size:30px}
+  .flav-detail p{font-size:14px;line-height:1.45;margin:10px 0 2px}
+  .flav-detail .fd-row:nth-of-type(n+3){justify-content:space-between;flex-wrap:nowrap}
+  .flav-detail .seg button{padding:12px 14px;min-height:44px}
+  .flav-detail .qty button{width:44px;height:44px}
+  .flav-detail #fdAdd{flex:1 1 100%;justify-content:center;min-height:54px;font-size:16px}
+  .flav-detail .fd-row:last-child{flex-direction:column;align-items:stretch;gap:8px}
+  .flav-detail .fd-row:last-child .pill-light{justify-content:center;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.28);min-height:46px}
+  .flav-detail .fd-row:last-child .pill-light:active{background:rgba(255,255,255,.1)}
+  .flav-grid .ficon{min-height:44px}
+
+  /* order form: one column, comfortable fields */
+  .ct-form .field input,.ct-form .field select,.ct-form .field textarea,.cp-add .field input,.cp-add .field select,.cp-check .field input,.cp-check .field select,.cp-check .field textarea{min-height:48px;padding:12px 14px;font-size:16px}
+  .ct-form .field textarea,.cp-check .field textarea{min-height:76px;height:76px}
+  .ct-form .field label,.cp-check .field label,.cp-add .field label{font-size:12px}
+  .ct-form .row2,.cp-check .row2{grid-template-columns:1fr}
+  .order-build .add-line,.cp-add .order-build .add-line{height:52px;font-size:15px}
+  .ol-ctl button{width:40px;height:40px;font-size:18px}
+  .ol{grid-template-columns:minmax(0,1fr) auto 46px}
+  .ci .qty button{width:40px;height:40px}
+  .robot{min-height:48px}
+  .form-foot .pill,.checkout .pill.wide,.ct-form [type="submit"]{min-height:54px;justify-content:center}
+
+  /* cart page */
+  .cartpage{padding-bottom:calc(var(--tb) + 96px)}
+  .cp-row{padding:12px}
+  .cp-ctl{gap:8px}
+  .cp-ctl .seg button{padding:11px 14px;min-height:44px}
+  .cp-row .qty button{width:44px;height:44px;font-size:22px}
+  .cp-row .qty output{min-width:30px}
+  .cp-ctl .rm{min-height:44px;padding:0 6px}
+  .cp-check{scroll-margin-top:84px}
+  .cp-bar{position:fixed;left:0;right:0;bottom:var(--tb);z-index:59;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));background:#14031a;border-top:1px solid var(--hair);box-shadow:0 -8px 24px rgba(0,0,0,.35)}
+  .cp-bar[hidden]{display:none}
+  .cp-bar-t{display:flex;flex-direction:column;line-height:1.1}
+  .cp-bar-t span{font:500 12px var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:var(--fog)}
+  .cp-bar-t b{font:400 34px/1 var(--f-cure);color:var(--lime)}
+  .cp-bar .pill{min-height:50px;padding:0 22px}
+  body:has(#mnav:not([hidden])) .cp-bar{display:none}
+  .cart-page .toast{bottom:calc(var(--tb) + 78px)}
+  .cart-page .consent{bottom:calc(var(--tb) + 10px)}
+}
+@media (max-width:820px) and (prefers-reduced-motion:reduce){.tabbar,.toast{transition:none}}
+@media (min-width:1001px){.flav-detail .fd-close{display:none}}

@@ -59,7 +59,7 @@ const Cart={items:store.get("jf_cart",[]).filter(x=>BYSLUG[x.s]&&PRICE[x.size]),
   total(){return this.items.reduce((a,x)=>a+PRICE[x.size]*x.qty,0)},
   count(){return this.items.reduce((a,x)=>a+x.qty,0)},
   lines(){return this.items.map(x=>({name:BYSLUG[x.s].n,size:x.size,qty:x.qty,price:PRICE[x.size]*x.qty}))}};
-function updateBadge(){const c=document.getElementById("cartCount");if(!c)return;const n=Cart.count();c.hidden=!n;c.textContent=n;}
+function updateBadge(){const n=Cart.count();document.querySelectorAll("[data-cart-n]").forEach(e=>{e.hidden=!n;e.textContent=n;});const c=document.getElementById("cartCount");if(!c)return;c.hidden=!n;c.textContent=n;}
 Cart.on(updateBadge);
 addEventListener("storage",e=>{if(e.key==="jf_cart"){Cart.items=store.get("jf_cart",[]);Cart.subs.forEach(f=>f());}});
 let toastT;
@@ -137,4 +137,19 @@ if(JFConsent.el){
   document.querySelectorAll("button.copy").forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.copy;try{navigator.clipboard.writeText(v).then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1500)})}catch(_){}}));
   const on=document.getElementById("orderNow");if(on)on.addEventListener("click",e=>{if(Cart.count()){e.preventDefault();location.href="cart.html";}});
   updateBadge();
+})();
+
+/* ======== mobile pass: bottom tab bar highlight + bottom sheet dismiss ======== */
+(function(){
+  const bar=document.getElementById("tabbar");
+  if(bar&&!document.body.classList.contains("cart-page")){
+    const pairs=[[null,"home"],["menu","flavors"],["dealer","dealer"],["contact","order"]].map(([id,t])=>[id&&document.getElementById(id),bar.querySelector('[data-tab="'+t+'"]')]).filter(p=>p[1]);
+    let raf=0,cur=null;
+    const upd=()=>{raf=0;let act=pairs[0][1];const line=innerHeight*.5;for(const [el,a] of pairs){if(el&&el.getBoundingClientRect().top<=line)act=a;}
+      if(act===cur)return;cur=act;bar.querySelectorAll("a").forEach(a=>{if(a===act)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");});};
+    addEventListener("scroll",()=>{if(!raf)raf=requestAnimationFrame(upd);},{passive:true});addEventListener("resize",upd);upd();
+  }
+  const fd=document.getElementById("flavDetail");
+  if(fd){document.addEventListener("click",e=>{if(innerWidth<=820&&fd.classList.contains("open")&&!fd.contains(e.target)&&!e.target.closest(".ficon"))fd.classList.remove("open");});
+    addEventListener("keydown",e=>{if(e.key==="Escape")fd.classList.remove("open");});}
 })();
