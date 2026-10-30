@@ -60,7 +60,7 @@ Order forms (cart checkout, and the contact form when "Place an order" is picked
 
 ## Before launch
 
-- [ ] Deploy the form backend (`backend/SETUP.md`) and paste the URL into `FORM_ENDPOINT`
+- [x] Deploy the form backend (`backend/SETUP.md`) and paste the URL into `FORM_ENDPOINT`
 - [ ] Font license: `fonts/zuume.woff2` is a personal-use demo of Zuume Rough; buy a commercial license or swap the face
 - [ ] Have privacy.html and terms.html reviewed (they're templates), then remove the template note at the top
 - [ ] Confirm heat levels and flavor descriptions in the `FLAVORS` array

@@ -3,7 +3,7 @@
 
 /* ======== config ======== */
 /* Paste the Google Apps Script web app URL here (see backend/SETUP.md). Until then forms fall back to an email draft. */
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyfya-gCc0M-n0NS9uyxu2yrDhKvfiqastBYMOBVLC4QVR02kXjqnRKjsl-rr6PtdGD/exec";
 const GA_ID = ""; /* optional Google Analytics 4 ID, only loads after cookie consent */
 const RECIPIENTS = "jerkyfixx@gmail.com,dyadmarketects@gmail.com";
 
