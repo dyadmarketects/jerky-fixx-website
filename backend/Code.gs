@@ -34,7 +34,7 @@
 // was created from the sheet itself (Extensions, Apps Script).
 var SHEET_ID = '1ZENvOZjKjI1UUyJvhf3lEsiyG8csuz4T6P-PujCsVfA';
 
-var NOTIFY_EMAILS = ['jerkyfixx@gmail.com', 'dyadmarketects@gmail.com'];
+var NOTIFY_EMAILS = ['jerkyfixx@gmail.com', 'dyadmarketects@gmail.com', 'jerkyfixx.web@gmail.com'];
 // Orders are also texted to these phones (T-Mobile email to text gateway, free).
 var SMS_TO = ['5059225683@tmomail.net', '5053135169@tmomail.net', '5053640678@tmomail.net'];
 
