@@ -1118,3 +1118,26 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 .hb-more{display:inline-flex;align-items:center;gap:6px;min-height:44px}
 @media (max-width:820px){.hint{font-size:12px}}
 .btn-pink{color:var(--ink)}
+
+/* ===== mobile home polish (Oct 30) ===== */
+@media (max-width:820px){
+  /* jerky tucks just in front of CRAVING: headline drops under the 3D layer, copy and buttons stay on top */
+  #hero .hero-copy{z-index:auto}
+  #hero .headline{z-index:2}
+  #hero .hero-sub,#hero .ctas{position:relative;z-index:7}
+  /* family photos: arrows on the sides, keep sliding on a loop */
+  .carousel{grid-template-columns:auto minmax(0,1fr) auto;gap:6px}
+  .carousel .arrow{display:grid;place-items:center;width:38px;height:38px;font-size:24px}
+  .car-pause{grid-column:1/-1}
+  /* lab: heading first, then the video, then the steps */
+  .lab-grid{gap:0}.lab-grid>div:last-child{display:contents}
+  .lab-grid .eyebrow,.lab-grid .h2{order:-1}
+  .lab-grid .h2{margin-bottom:24px}.lab-wrap{margin-bottom:28px}
+  /* side effects label centered over Follow the Fixx */
+  .social .eyebrow{display:block;width:100%;text-align:center}
+  /* trophy gets a big middle slot, medals clear the wave below */
+  .aw-ui>div:nth-child(2){height:48vh}
+  .aw-ui{padding-bottom:96px}
+  /* over 20 badge rides above the large bag price */
+  .over20-wrap{bottom:auto;top:40px;width:92px}
+}

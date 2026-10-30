@@ -855,7 +855,7 @@ ST.create({trigger:".foot",start:"top 96%",onToggle:s=>{hintBlock=s.isActive;if(
 const fab=$("#fab");fab.setAttribute("href","#menu");fab.addEventListener("click",e=>{if(Cart.count()){e.preventDefault();location.href="/cart.html";}});ST.create({trigger:"#lineup",start:"top 60%",endTrigger:"#contact",end:"top 80%",onToggle:s=>fab.classList.toggle("on",s.isActive)});
 
 /* hero DOM choreography */
-const heroEl=$("#hero"),heroTapes=$("#hero .tapes"),heroCopy=$("#heroCopy"),o20h=$("#o20h"),bridgeIn=$("#bridgeIn"),capEl=$("#hero .navcap");
+const heroEl=$("#hero"),heroTapes=$("#hero .tapes"),heroCopy=$("#heroCopy"),o20h=$("#o20h"),heroCtas=$("#hero .ctas"),bridgeIn=$("#bridgeIn"),capEl=$("#hero .navcap");
 const pv=new THREE.Vector3();
 /* line-up: arrows, tabs, swipe and autoplay (no scroll-jacking) */
 const LU={p:.5,t:0};let luHold=0,luVis=false,luSize="Small";
@@ -1028,7 +1028,12 @@ function frame(){
           if(fade<.01)sc=0;
           /* over 20 flavors badge rides the lime until you scroll */
           const ob=e*(1-smooth(.01,.08,P));
-          if(ob>.01){pv.set(x,y,z).project(camera);const d=sc/((10-z)/10)/VH*ch;const bw=d*.62;
+          const ctR=mob&&heroCtas?heroCtas.getBoundingClientRect():null;
+          if(ob>.01&&ctR&&ctR.width){/* phones: badge sits just above the buttons */
+            const hr=heroEl.getBoundingClientRect(),bw=Math.min(104,innerWidth*.27);
+            o20h.style.width=bw+"px";o20h.style.opacity=String(ob);
+            o20h.style.transform=`translate(${ctR.left-hr.left+6}px,${ctR.top-hr.top-bw*1.33-4}px) rotate(-8deg)`;}
+          else if(ob>.01){pv.set(x,y,z).project(camera);const d=sc/((10-z)/10)/VH*ch;const bw=d*.62;
             o20h.style.width=bw+"px";o20h.style.opacity=String(ob);
             o20h.style.transform=`translate(${(pv.x+1)/2*innerWidth-bw*.5}px,${(1-pv.y)/2*ch-bw*.62}px) rotate(-8deg)`;}
         } else { sc*=1-gone; }
@@ -1073,13 +1078,16 @@ function frame(){
     if(!heroActive && !luActive) jerky.visible=false;
 
     /* ---- TROPHY: floats in the middle column, slight overlap only ---- */
-    const ar=awEl.getBoundingClientRect(), atop=ar.top-HH;
+    const awSlot=awEl.querySelector(".aw-ui>div:nth-child(2)"),ar=awEl.getBoundingClientRect(), atop=ar.top-HH;
     if(trophy && ar.bottom>HH && ar.top<innerHeight){
       /* comes up from the bottom of the screen very large, then settles smaller in the center; scrolls away with its section (no fade) */
       const rise=smooth(.3,.98,1-atop/ch), ease=1-Math.pow(1-rise,3), offA=-Math.min(0,atop)/ch*VH;
-      const tsz=mob?Math.min(VW*.62,VH*.3):Math.min(VH*.62,VW*.26);
-      const baseY=mob?-VH*.12:-VH*.01;
-      place(trophy,0,lerp(-VH*.62,baseY,ease)+offA+Math.sin(t*.9)*VH*.01,0,tsz*lerp(2.7,1,ease));
+      /* phones: fill the empty middle slot between the title and the medals, never the words */
+      const slot=mob?awSlot.getBoundingClientRect():null;
+      const tsz=mob?Math.min(VW*.86,slot.height/ch*VH*.86):Math.min(VH*.62,VW*.26);
+      const slotY=mob?(.5-((slot.top+slot.bottom)/2-HH)/ch)*VH:0;
+      if(mob)place(trophy,0,lerp(-VH*.62,slotY,ease)+Math.sin(t*.9)*VH*.01,0,tsz*lerp(2,1,ease));
+      else place(trophy,0,lerp(-VH*.62,-VH*.01,ease)+offA+Math.sin(t*.9)*VH*.01,0,tsz*lerp(2.7,1,ease));
       trophy.rotation.set(.05,(1-ease)*Math.PI*2+Math.sin(t*.6)*.35,0);if(rise<=0)trophy.visible=false;
       sparks.visible=true;sparks.material.opacity=rise;sparks.rotation.y=t*.05;sparks.position.y=offA+Math.sin(t*.3)*.2;
     } else {if(trophy)trophy.visible=false;if(sparks)sparks.visible=false;}

@@ -88,8 +88,8 @@ const STEPS=[[0,"Slice","Cut to 1/8 inch"],[2,"Lay out","Strips on the racks"],[
  ["pointerdown","wheel","touchstart"].forEach(ev=>tr.addEventListener(ev,()=>hold=Date.now()+8000,{passive:true}));
  tr.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){e.preventDefault();go(1);}if(e.key==="ArrowLeft"){e.preventDefault();go(-1);}});
  /* hovering or focusing the photos pauses the slideshow; the pause button stops it for good */
- car.addEventListener("pointerenter",()=>inside=true);car.addEventListener("pointerleave",()=>inside=false);
- car.addEventListener("focusin",()=>inside=true);car.addEventListener("focusout",e=>{if(!car.contains(e.relatedTarget))inside=false;});
+ car.addEventListener("pointerenter",e=>{if(e.pointerType==="mouse")inside=true;});car.addEventListener("pointerleave",()=>inside=false);
+ car.addEventListener("focusin",()=>{if(matchMedia("(hover:hover)").matches)inside=true;});car.addEventListener("focusout",e=>{if(!car.contains(e.relatedTarget))inside=false;});
  const pb=$id("carPause");
  const syncPb=()=>{if(!pb)return;pb.setAttribute("aria-pressed",String(paused));pb.querySelector("span.lbl").textContent=paused?"Play slideshow":"Pause slideshow";pb.dataset.state=paused?"paused":"playing";};
  if(pb){pb.addEventListener("click",()=>{paused=!paused;syncPb();});syncPb();}
