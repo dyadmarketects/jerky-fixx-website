@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cookie Notice | Jerky Fixx</title>
 <meta name="description" content="What Jerky Fixx stores in your browser, the cookie categories we use, and how to change your preferences.">
 <link rel="canonical" href="https://jerkyfixx.com/cookies.html">
+<meta name="theme-color" content="#14031a">
 <link rel="icon" href="/img/favicon-192.png">
 <meta property="og:title" content="Cookie Notice | Jerky Fixx">
 <meta property="og:description" content="What Jerky Fixx stores in your browser, the cookie categories we use, and how to change your preferences.">
@@ -19,31 +20,81 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/css/site.css">
 <link rel="stylesheet" href="/legal.css">
 </head>
-<body>
+<body class="lg-page lg-nocount">
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="bar">
-    <a class="logo-link" href="/"><img src="/img/logo-long.webp" alt="Jerky Fixx" height="52"></a>
-    <a class="back-home" href="/">&larr; Back to home</a>
+<header class="site-head" id="top">
+  <div class="wrap navrow">
+    <a class="brand" href="/" aria-label="Jerky Fixx home"><img src="/img/logo-stack.webp" alt="Jerky Fixx" width="684" height="557"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/" >Home</a>
+      <a href="/#menu">Jerky</a>
+      <a href="/#family">Our Story</a>
+      <a href="/#lab">The Lab</a>
+      <a href="/#dealer">Dealer Locator</a>
+      <a href="/#vip">VIP Club</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="head-cta">
+      <a class="cart-btn" id="cartBtn" href="/cart.html" aria-label="View cart"><svg width="22" height="20" viewBox="0 0 20 18" aria-hidden="true"><path d="M0 1h3.2l2.6 10.2h10.6L19 4H5.2" fill="none" stroke="#0d0410" stroke-width="2"/><circle cx="7.5" cy="15.5" r="1.6" fill="#0d0410"/><circle cx="15" cy="15.5" r="1.6" fill="#0d0410"/></svg><span class="cart-count" id="cartCount" hidden>0</span></a>
+      <a class="pill pill-dark" id="orderNow" href="/#menu">Order now <span aria-hidden="true">↗</span></a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<main id="main">
-<div class="wrap">
-  <h1>Cookie Notice</h1>
-  <p class="meta">Effective date: October 29, 2026</p>
-  <p class="lead">Here is what your browser stores when you use jerkyfixx.com, grouped by category, and how to change your choice.</p>
+<nav class="mnav" id="mnav" hidden aria-label="Mobile">
+  <button class="x" id="mclose" aria-label="Close menu">✕</button>
+  <a href="/">Home</a><a href="/#menu">Jerky</a><a href="/#family">Our Story</a><a href="/#lab">The Lab</a><a href="/#dealer">Dealer Locator</a><a href="/#vip">VIP Club</a><a href="/#contact">Contact</a>
+</nav>
+<aside class="social-tab" aria-label="Follow Jerky Fixx">
+  <span class="st-lbl">Follow the fixx</span>
+  <a href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg></a>
+  <a href="https://www.facebook.com/jerky.fixx/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z" fill="currentColor"/></svg></a>
+  <a href="https://www.threads.com/@jerky_fixx" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.9 11.1c-.1 0-.2-.1-.3-.1-.2-3-1.8-4.7-4.6-4.7-1.6 0-3 .7-3.9 2l1.5 1c.7-1 1.7-1.2 2.4-1.2 1.6 0 2.5.8 2.8 2.3-.7-.1-1.5-.2-2.3-.1-2.3.1-3.8 1.5-3.7 3.4.1 1.9 1.8 3.1 3.9 3 1.6-.1 3.4-1 3.9-3.6.9.5 1.4 1.3 1.5 2.4.3 2.5-2.2 4.5-5.9 4.5-4.1 0-6.5-2.9-6.5-8s2.4-8 6.5-8c4 0 6.3 2.4 6.7 5.6l1.8-.4C19.8 4.7 16.8 2 12.1 2 6.8 2 3.6 5.7 3.6 12s3.2 10 8.5 10c4.9 0 8.3-2.8 7.8-6.6-.2-1.8-1.3-3.4-3-4.3zm-4.7 4.6c-1 .1-1.9-.4-2-1.2 0-.8.6-1.5 2-1.6.7 0 1.4 0 2 .2-.2 1.7-1 2.5-2 2.6z" fill="currentColor"/></svg></a>
+</aside>
 
-  <div class="callout">
+<main id="main">
+<section class="lg-hero">
+  <div class="lg-pattern" aria-hidden="true"></div>
+  <div class="lg-lightning" aria-hidden="true"></div>
+  <img class="deco lg-deco a" src="/img/icon-flame.webp" alt=""><img class="deco lg-deco b" src="/img/icon-bacon.webp" alt=""><img class="deco lg-deco c" src="/img/icon-cross.webp" alt="">
+  <div class="wrap lg-hero-in">
+    <p class="eyebrow ui">Crumbs, but not the snack kind</p>
+    <h1 class="lg-title"><span class="lg-t1">Cookie</span> <em class="lg-box">Notice</em></h1>
+    <p class="lg-meta">Effective date: October 29, 2026</p>
+  </div>
+  <div class="tape lg-tape" aria-hidden="true"><div class="half l"><div class="track"></div></div></div>
+</section>
+
+<div class="lg-body">
+<div class="wrap lg-grid">
+  <details class="lg-toc" id="toc">
+    <summary>On this page</summary>
+    <ol>
+      <li><a href="#1-strictly-necessary">1. Strictly necessary</a></li>
+      <li><a href="#2-analytics-optional">2. Analytics (optional)</a></li>
+      <li><a href="#3-third-party-content">3. Third-party content</a></li>
+      <li><a href="#how-to-manage-storage">How to manage storage</a></li>
+      <li><a href="#more-information">More information</a></li>
+    </ol>
+  </details>
+  <article class="lg-doc">
+  <div class="lg-intro">
+    <p class="lead">Here is what your browser stores when you use jerkyfixx.com, grouped by category, and how to change your choice.</p>
+  </div>
+  <div class="lg-pre">
+    <div class="callout">
     <p><strong>Your choices</strong></p>
     <p>Change your cookie preferences any time.</p>
-    <button type="button" class="btn" id="openCookiePrefs">Cookie preferences</button>
+    <button type="button" class="pill pill-lime" id="openCookiePrefs">Cookie preferences</button>
     <p class="status" id="cookieStatus" role="status" aria-live="polite"></p>
   </div>
-
-  <h2>1. Strictly necessary</h2>
-  <p>These make the site work and are always on. They are stored in your browser&rsquo;s localStorage on your device and are not used for tracking.</p>
+  </div>
+  <section class="lg-card" id="1-strictly-necessary" aria-labelledby="1-strictly-necessary-h">
+    <h2 id="1-strictly-necessary-h">1. Strictly necessary</h2>
+    <p>These make the site work and are always on. They are stored in your browser&rsquo;s localStorage on your device and are not used for tracking.</p>
   <div class="table-scroll">
     <table>
       <thead><tr><th scope="col">Name</th><th scope="col">What it does</th></tr></thead>
@@ -53,44 +104,104 @@
       </tbody>
     </table>
   </div>
-
-  <h2>2. Analytics (optional)</h2>
-  <p>No analytics run by default. We may add Google Analytics 4 later to see which pages people visit and improve the site. If we do, it is <strong>optional</strong> and will <strong>only load after you accept it</strong>. If you decline, it will not load.</p>
-
-  <h2>3. Third-party content</h2>
-  <p>To display the site, your browser loads files from outside services, which receive your IP address and basic browser details:</p>
+  </section>
+  <section class="lg-card" id="2-analytics-optional" aria-labelledby="2-analytics-optional-h">
+    <h2 id="2-analytics-optional-h">2. Analytics (optional)</h2>
+    <p>No analytics run by default. We may add Google Analytics 4 later to see which pages people visit and improve the site. If we do, it is <strong>optional</strong> and will <strong>only load after you accept it</strong>. If you decline, it will not load.</p>
+  </section>
+  <section class="lg-card" id="3-third-party-content" aria-labelledby="3-third-party-content-h">
+    <h2 id="3-third-party-content-h">3. Third-party content</h2>
+    <p>To display the site, your browser loads files from outside services, which receive your IP address and basic browser details:</p>
   <ul>
     <li>Google Fonts (typefaces)</li>
     <li>cdnjs and jsDelivr (scripts)</li>
     <li>Google Maps (embedded map)</li>
   </ul>
   <p>These providers may set their own cookies or similar technologies under their own policies. If you follow links to our Instagram, Facebook or Threads pages, those platforms apply their own rules too.</p>
-
-  <h2>How to manage storage</h2>
-  <ul>
+  </section>
+  <section class="lg-card" id="how-to-manage-storage" aria-labelledby="how-to-manage-storage-h">
+    <h2 id="how-to-manage-storage-h">How to manage storage</h2>
+    <ul>
     <li>Use the <strong>Cookie preferences</strong> button above.</li>
     <li>Clear this site&rsquo;s data in your browser settings. This also empties your cart.</li>
     <li>Use your browser&rsquo;s privacy or tracking-protection settings.</li>
   </ul>
-
-  <h2>More information</h2>
-  <p>See our <a href="/privacy.html">Privacy Policy</a> for how we handle information you send us. Questions? Email <a href="mailto:jerkyfixx@gmail.com">jerkyfixx@gmail.com</a>.</p>
+  </section>
+  <section class="lg-card" id="more-information" aria-labelledby="more-information-h">
+    <h2 id="more-information-h">More information</h2>
+    <p>See our <a href="/privacy.html">Privacy Policy</a> for how we handle information you send us. Questions? Email <a href="mailto:jerkyfixx@gmail.com">jerkyfixx@gmail.com</a>.</p>
+  </section>
+  </article>
 </div>
+</div>
+<section class="lg-cta" aria-labelledby="ctaTitle">
+  <div class="lg-pattern" aria-hidden="true"></div>
+  <div class="lg-lightning" aria-hidden="true"></div>
+  <img class="deco lg-deco c1" src="/img/icon-flame.webp" alt=""><img class="deco lg-deco c2" src="/img/icon-bacon.webp" alt="">
+  <div class="wrap lg-cta-in">
+    <p class="eyebrow ui">Still curious?</p>
+    <h2 class="lg-cta-h" id="ctaTitle">Got a question? <em>Hit up the dealer</em></h2>
+    <p class="lg-cta-p">Text, call or drop us a note. A real human from the family writes back, usually pretty fast.</p>
+    <div class="lg-cta-btns"><a class="pill pill-lime" href="/#contact">Contact the dealer <span aria-hidden="true">↗</span></a><a class="pill pill-light" href="/#menu">Order now <span aria-hidden="true">↗</span></a></div>
+  </div>
+</section>
 </main>
-<footer class="site-footer">
-  <div class="inner">
-    <nav aria-label="Legal">
-      <ul>
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="/terms.html">Terms</a></li>
-        <li><a href="/cookies.html">Cookies</a></li>
-        <li><a href="/accessibility.html">Accessibility</a></li>
-      </ul>
-    </nav>
-    <p>&copy; 2026 Jerky Fixx &middot; Albuquerque, New Mexico</p>
-    <p>Website by <a href="mailto:dyadmarketects@gmail.com">DYAD Marketects</a></p>
+
+<!-- COOKIES -->
+<div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="cc-title" hidden>
+  <h2 id="cc-title">Cookies, but not the snack kind</h2>
+  <p>We use essential browser storage to keep your cart working. With your OK we may also use analytics to see what flavors people look at. <a href="/cookies.html">Cookie policy</a></p>
+  <div class="cc-prefs" id="ccPrefs" hidden>
+    <label><input type="checkbox" checked disabled> Essential (cart, preferences)</label>
+    <label><input type="checkbox" id="ccAnalytics"> Analytics</label>
+  </div>
+  <div class="cc-btns"><button class="pill pill-light" type="button" id="ccReject">Essential only</button><button class="pill pill-light" type="button" id="ccCustom">Customize</button><button class="pill pill-lime" type="button" id="ccAccept">Accept all</button></div>
+</div>
+
+<footer class="foot">
+  <div class="tape"><div class="half l"><div class="track"></div></div></div>
+  <img class="deco d9" src="/img/icon-cross.webp" alt=""><img class="deco d10" src="/img/icon-flame.webp" alt="">
+  <div class="wrap foot-grid">
+    <div class="f-brand">
+      <img src="/img/logo-stack.webp" alt="Jerky Fixx" width="684" height="557" loading="lazy">
+      <p>Small batch beef jerky and carne seca made with love, faith and family in Albuquerque, New Mexico.</p>
+      <div class="f-social"><a href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/jerky.fixx/" target="_blank" rel="noopener">Facebook</a><a href="https://www.threads.com/@jerky_fixx" target="_blank" rel="noopener">Threads</a></div>
+    </div>
+    <nav class="f-col" aria-label="Footer"><h3>Explore</h3><a href="/#lineup">Top sellers</a><a href="/#menu">Full menu</a><a href="/#family">Our story</a><a href="/#lab">The lab</a><a href="/#dealer">Dealer locator</a><a href="/#vip">VIP Club</a><a href="/#faq">FAQ</a></nav>
+    <div class="f-col"><h3>Get your fixx</h3><a href="mailto:jerkyfixx@gmail.com">jerkyfixx@gmail.com</a><a href="tel:+15059225683">505-922-5683</a><a href="tel:+15053640678">505-364-0678</a><span>Albuquerque &amp; Rio Rancho, NM</span><span>Apple Pay · Cash App · Venmo · Cash</span></div>
+    <div class="f-col"><h3>Legal</h3><a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of use</a><a href="/cookies.html">Cookie policy</a><a href="/accessibility.html">Accessibility</a><button type="button" class="linkish" id="cookiePrefs">Cookie preferences</button></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Jerky Fixx. All rights reserved.</span>
+    <span class="allergen">Contains beef; some flavors contain dairy, soy, wheat or corn. X-Hot flavors are very hot. "Addiction" talk is about snack cravings only.</span>
+    <a class="dyad" href="https://dyadgrow.com" target="_blank" rel="noopener">Website by <img src="/img/dyad-logo-pink.webp" alt="" width="420" height="131" loading="lazy"> <b>DYAD Marketects</b></a>
   </div>
 </footer>
+
+<script src="/js/shop.js"></script>
+<script>
+(function(){
+  const tt=document.querySelectorAll(".track");tt.forEach(t=>{t.innerHTML=Array(10).fill("<span>WARNING! FLAVORS MAY CAUSE ADDICTION</span>").join("")});
+})();
+</script>
+<script>
+(function(){
+  var d=document.getElementById("toc");if(!d)return;
+  var mq=window.matchMedia("(min-width:960px)");
+  function sync(){d.open=mq.matches;}
+  sync();(mq.addEventListener?mq.addEventListener("change",sync):mq.addListener(sync));
+  var links=[].slice.call(d.querySelectorAll("a"));
+  d.querySelector("summary").addEventListener("click",function(e){if(mq.matches)e.preventDefault();});
+  links.forEach(function(a){a.addEventListener("click",function(){if(!mq.matches)d.open=false;});});
+  if(!("IntersectionObserver" in window))return;
+  var map={};links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a;});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){links.forEach(function(a){a.removeAttribute("aria-current");});
+      var a=map[e.target.id];if(a)a.setAttribute("aria-current","true");}
+  });},{rootMargin:"-20% 0px -70% 0px"});
+  document.querySelectorAll(".lg-card").forEach(function(s){io.observe(s);});
+})();
+</script>
 <script>
 (function(){
   var btn=document.getElementById("openCookiePrefs"),out=document.getElementById("cookieStatus");
