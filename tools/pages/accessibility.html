@@ -1,0 +1,102 @@
+<!--page
+{
+ "path": "/accessibility.html",
+ "title": "Accessibility Statement | Jerky Fixx",
+ "description": "Jerky Fixx works toward WCAG 2.2 AA on jerkyfixx.com. Read what we do, the known limits of our 3D pages, and how to reach us if anything gets in your way.",
+ "nav": null,
+ "crumb": "Accessibility",
+ "hero": {
+  "eyebrow": "Jerky for everybody",
+  "plain": "",
+  "box": "Accessibility",
+  "meta": "Last updated: October 29, 2026",
+  "icons": [
+   [
+    "a",
+    "icon-cross"
+   ],
+   [
+    "b",
+    "icon-bacon"
+   ],
+   [
+    "c",
+    "icon-flame"
+   ]
+  ]
+ },
+ "body_class": "lg-page",
+ "changefreq": "yearly",
+ "priority": 0.2,
+ "cta": true
+}
+-->
+<div class="lg-body">
+<div class="wrap lg-grid">
+  <details class="lg-toc" id="toc">
+    <summary>On this page</summary>
+    <ol>
+      <li><a href="#our-goal">Our goal</a></li>
+      <li><a href="#what-we-do">What we do</a></li>
+      <li><a href="#known-limitations">Known limitations</a></li>
+      <li><a href="#need-help-or-want-to-report-a-problem">Need help or want to report a problem?</a></li>
+    </ol>
+  </details>
+  <article class="lg-doc">
+  <div class="lg-intro">
+    <p class="lead">Everyone should be able to find a flavor and send an order request. We are committed to making jerkyfixx.com usable for as many people as possible, including people who use assistive technology.</p>
+  </div>
+  
+  <section class="lg-card" id="our-goal" aria-labelledby="our-goal-h">
+    <h2 id="our-goal-h">Our goal</h2>
+    <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA. That means working on things like readable color contrast, keyboard access, visible focus, clear headings and labels, and text alternatives for images.</p>
+  </section>
+  <section class="lg-card" id="what-we-do" aria-labelledby="what-we-do-h">
+    <h2 id="what-we-do-h">What we do</h2>
+    <ul>
+    <li>Pages use headings and landmarks so screen reader users can move around.</li>
+    <li>Links, buttons and form fields can be reached and used with a keyboard.</li>
+    <li>Keyboard focus is visible.</li>
+    <li>If your device is set to reduce motion, the site respects that setting.</li>
+    <li>Every part of the home page also has its own simple page, such as <a href="/jerky/">the jerky menu</a> and <a href="/contact/">contact and orders</a>, if the 3D home page is hard to use.</li>
+  </ul>
+  </section>
+  <section class="lg-card" id="known-limitations" aria-labelledby="known-limitations-h">
+    <h2 id="known-limitations-h">Known limitations</h2>
+    <ul>
+    <li><strong>3D animations.</strong> The home page uses 3D and animated visuals. They can be hard to follow for some people. If you turn on &ldquo;reduce motion&rdquo; in your device or browser settings, the site respects it.</li>
+    <li><strong>Slideshows and videos.</strong> The family photo slideshow pauses while you hover or focus it, and has a pause button. Short muted clips play only while they are on screen, and not on their own if you ask for reduced motion.</li>
+    <li><strong>Third-party content.</strong> Directions open in Google Maps, and our social pages are run by Instagram, Facebook and Threads. We cannot fully control their accessibility.</li>
+  </ul>
+  </section>
+  <section class="lg-card" id="need-help-or-want-to-report-a-problem" aria-labelledby="need-help-or-want-to-report-a-problem-h">
+    <h2 id="need-help-or-want-to-report-a-problem-h">Need help or want to report a problem?</h2>
+    <p>If something on the site is hard to use, tell us and we will fix it or help you another way. You can also reach us by phone or text.</p>
+  <ul>
+    <li>Email: <a href="mailto:jerkyfixx@gmail.com">jerkyfixx@gmail.com</a></li>
+    <li>Call or text: <a href="tel:+15059225683">505-922-5683</a> or <a href="tel:+15053640678">505-364-0678</a></li>
+  </ul>
+  <p>Please tell us the page, what you were trying to do, and the device or assistive technology you use if you can.</p>
+  </section>
+  </article>
+</div>
+</div>
+<!--scripts-->
+<script>
+(function(){
+  var d=document.getElementById("toc");if(!d)return;
+  var mq=window.matchMedia("(min-width:960px)");
+  function sync(){d.open=mq.matches;}
+  sync();(mq.addEventListener?mq.addEventListener("change",sync):mq.addListener(sync));
+  var links=[].slice.call(d.querySelectorAll("a"));
+  d.querySelector("summary").addEventListener("click",function(e){if(mq.matches)e.preventDefault();});
+  links.forEach(function(a){a.addEventListener("click",function(){if(!mq.matches)d.open=false;});});
+  if(!("IntersectionObserver" in window))return;
+  var map={};links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a;});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){links.forEach(function(a){a.removeAttribute("aria-current");});
+      var a=map[e.target.id];if(a)a.setAttribute("aria-current","true");}
+  });},{rootMargin:"-20% 0px -70% 0px"});
+  document.querySelectorAll(".lg-card").forEach(function(s){io.observe(s);});
+})();
+</script>

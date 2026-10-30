@@ -1,0 +1,129 @@
+<!--page
+{
+ "path": "/cookies.html",
+ "title": "Cookie Notice | Jerky Fixx",
+ "description": "What Jerky Fixx stores in your browser, the cookie categories we use on jerkyfixx.com, and how to change your cookie preferences at any time on any page.",
+ "nav": null,
+ "crumb": "Cookie policy",
+ "hero": {
+  "eyebrow": "Crumbs, but not the snack kind",
+  "plain": "Cookie",
+  "box": "Notice",
+  "meta": "Effective date: October 29, 2026",
+  "icons": [
+   [
+    "a",
+    "icon-flame"
+   ],
+   [
+    "b",
+    "icon-bacon"
+   ],
+   [
+    "c",
+    "icon-cross"
+   ]
+  ]
+ },
+ "body_class": "lg-page lg-nocount",
+ "changefreq": "yearly",
+ "priority": 0.2,
+ "cta": true
+}
+-->
+<div class="lg-body">
+<div class="wrap lg-grid">
+  <details class="lg-toc" id="toc">
+    <summary>On this page</summary>
+    <ol>
+      <li><a href="#1-strictly-necessary">1. Strictly necessary</a></li>
+      <li><a href="#2-analytics-optional">2. Analytics (optional)</a></li>
+      <li><a href="#3-third-party-content">3. Third-party content</a></li>
+      <li><a href="#how-to-manage-storage">How to manage storage</a></li>
+      <li><a href="#more-information">More information</a></li>
+    </ol>
+  </details>
+  <article class="lg-doc">
+  <div class="lg-intro">
+    <p class="lead">Here is what your browser stores when you use jerkyfixx.com, grouped by category, and how to change your choice.</p>
+  </div>
+  <div class="lg-pre">
+    <div class="callout">
+    <p><strong>Your choices</strong></p>
+    <p>Change your cookie preferences any time.</p>
+    <button type="button" class="pill pill-lime" id="openCookiePrefs">Cookie preferences</button>
+    <p class="status" id="cookieStatus" role="status" aria-live="polite"></p>
+  </div>
+  </div>
+  <section class="lg-card" id="1-strictly-necessary" aria-labelledby="1-strictly-necessary-h">
+    <h2 id="1-strictly-necessary-h">1. Strictly necessary</h2>
+    <p>These make the site work and are always on. They are stored in your browser&rsquo;s localStorage on your device and are not used for tracking.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th scope="col">Name</th><th scope="col">What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>jf_consent</code></td><td>Remembers your cookie choice so we do not keep asking.</td></tr>
+        <tr><td><code>jf_cart</code></td><td>Keeps the items in your cart until you send an order request.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </section>
+  <section class="lg-card" id="2-analytics-optional" aria-labelledby="2-analytics-optional-h">
+    <h2 id="2-analytics-optional-h">2. Analytics (optional)</h2>
+    <p>No analytics run by default. We may add Google Analytics 4 later to see which pages people visit and improve the site. If we do, it is <strong>optional</strong> and will <strong>only load after you accept it</strong>. If you decline, it will not load.</p>
+  </section>
+  <section class="lg-card" id="3-third-party-content" aria-labelledby="3-third-party-content-h">
+    <h2 id="3-third-party-content-h">3. Third-party content</h2>
+    <p>To display the site, your browser loads files from outside services, which receive your IP address and basic browser details:</p>
+  <ul>
+    <li>Google Fonts (typefaces)</li>
+    <li>cdnjs and jsDelivr (scripts)</li>
+    <li>Google Maps, only when you tap a directions link</li>
+  </ul>
+  <p>These providers may set their own cookies or similar technologies under their own policies. If you follow links to our Instagram, Facebook or Threads pages, those platforms apply their own rules too.</p>
+  </section>
+  <section class="lg-card" id="how-to-manage-storage" aria-labelledby="how-to-manage-storage-h">
+    <h2 id="how-to-manage-storage-h">How to manage storage</h2>
+    <ul>
+    <li>Use the <strong>Cookie preferences</strong> button above.</li>
+    <li>Clear this site&rsquo;s data in your browser settings. This also empties your cart.</li>
+    <li>Use your browser&rsquo;s privacy or tracking-protection settings.</li>
+  </ul>
+  </section>
+  <section class="lg-card" id="more-information" aria-labelledby="more-information-h">
+    <h2 id="more-information-h">More information</h2>
+    <p>See our <a href="/privacy.html">Privacy Policy</a> for how we handle information you send us. Questions? Email <a href="mailto:jerkyfixx@gmail.com">jerkyfixx@gmail.com</a>.</p>
+  </section>
+  </article>
+</div>
+</div>
+<!--scripts-->
+<script>
+(function(){
+  var d=document.getElementById("toc");if(!d)return;
+  var mq=window.matchMedia("(min-width:960px)");
+  function sync(){d.open=mq.matches;}
+  sync();(mq.addEventListener?mq.addEventListener("change",sync):mq.addListener(sync));
+  var links=[].slice.call(d.querySelectorAll("a"));
+  d.querySelector("summary").addEventListener("click",function(e){if(mq.matches)e.preventDefault();});
+  links.forEach(function(a){a.addEventListener("click",function(){if(!mq.matches)d.open=false;});});
+  if(!("IntersectionObserver" in window))return;
+  var map={};links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a;});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){links.forEach(function(a){a.removeAttribute("aria-current");});
+      var a=map[e.target.id];if(a)a.setAttribute("aria-current","true");}
+  });},{rootMargin:"-20% 0px -70% 0px"});
+  document.querySelectorAll(".lg-card").forEach(function(s){io.observe(s);});
+})();
+</script>
+<script>
+(function(){
+  var btn=document.getElementById("openCookiePrefs"),out=document.getElementById("cookieStatus");
+  if(!btn)return;
+  btn.addEventListener("click",function(){
+    if(window.JFConsent && JFConsent.open){ window.JFConsent && JFConsent.open(); return; }
+    try{ localStorage.removeItem("jf_consent"); }catch(e){}
+    if(out) out.textContent="Preferences reset. Reload the home page to choose again.";
+  });
+})();
+</script>
