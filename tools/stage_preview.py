@@ -20,7 +20,7 @@ for root, dirs, fs in os.walk(ST):
     dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith(".")]
     for f in fs:
         rel = os.path.relpath(os.path.join(root, f), ST).replace(os.sep, "/")
-        if os.path.splitext(f)[1].lower() in SKIP_EXT or f in ("CNAME",):
+        if os.path.splitext(f)[1].lower() in SKIP_EXT or f in ("CNAME", ".git", ".gitignore", ".nojekyll") or f.startswith("."):
             continue
         files.append(rel)
 
