@@ -172,6 +172,7 @@ if(JFConsent.el){
     addEventListener("scroll",()=>{if(!raf)raf=requestAnimationFrame(upd);},{passive:true});addEventListener("resize",upd);upd();
   }
   const fd=document.getElementById("flavDetail");
-  if(fd){document.addEventListener("click",e=>{if(innerWidth<=820&&fd.classList.contains("open")&&!fd.contains(e.target)&&!e.target.closest(".ficon"))fd.classList.remove("open");});
+  /* taps on size and qty re-render the sheet, so a tapped button can already be detached here: only close for taps that land outside it */
+  if(fd){document.addEventListener("click",e=>{if(!e.target.isConnected)return;if(innerWidth<=820&&fd.classList.contains("open")&&!fd.contains(e.target)&&!e.target.closest(".ficon"))fd.classList.remove("open");});
     addEventListener("keydown",e=>{if(e.key==="Escape")fd.classList.remove("open");});}
 })();
