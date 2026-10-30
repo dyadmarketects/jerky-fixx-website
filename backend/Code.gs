@@ -30,6 +30,10 @@
 // ===================== SETTINGS (edit these) =====================
 
 /** Both inboxes get every notification email. */
+// ID of the "Jerky Fixx Website Leads" Google Sheet (from its URL). Leave blank if this script
+// was created from the sheet itself (Extensions, Apps Script).
+var SHEET_ID = '1ZENvOZjKjI1UUyJvhf3lEsiyG8csuz4T6P-PujCsVfA';
+
 var NOTIFY_EMAILS = ['jerkyfixx@gmail.com', 'dyadmarketects@gmail.com'];
 
 /** Shown as the "from" name on emails. Address is the script owner's Gmail. */
@@ -284,7 +288,7 @@ function esc_(s) {
 
 /** Gets the tab for a form type, creating it (with header row) if needed. */
 function getSheet_(form) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
   var tabName = TAB_NAMES[form];
   var sheet = ss.getSheetByName(tabName);
   if (!sheet) sheet = ss.insertSheet(tabName);
