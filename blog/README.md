@@ -8,7 +8,7 @@ Static blog for https://jerkyfixx.com/blog/, built by a Python 3 standard librar
 2. Run `python3 tools/build_blog.py` from the repo root.
 3. Check the validation report at the end (it exits non-zero on any problem), then commit `blog/`, `blog.css`, `sitemap.xml` and anything else that changed.
 
-The script is idempotent. It regenerates `blog/index.html`, `blog/<slug>/index.html`, `blog/aaliyah-garduno/index.html`, `blog/feed.xml` and the blog entries in `sitemap.xml`. Existing non-blog sitemap entries are left alone. The header, footer, cookie banner and scripts are copied from `cart.html` at build time, so after changing the nav or footer in `cart.html`, re-run the build (and the legal page build).
+The script is idempotent. It regenerates `blog/index.html`, `blog/<slug>/index.html`, `blog/aaliyah-garduno/index.html`, `blog/feed.xml` and the blog entries in `sitemap.xml`. Existing non-blog sitemap entries are left alone. The header, footer, cookie banner and scripts are copied from `cart.html` at build time, so after changing the nav or footer in `cart.html`, re-run `python3 tools/build_pages.py` and this build.
 
 Never edit generated HTML by hand. Edit the `.md` and rebuild.
 
@@ -44,7 +44,7 @@ excerpt: One or two sentences for the blog index card and RSS.
 
 ## Markdown supported
 
-`##` and `###` headings (no `#`, the title is the h1), paragraphs, `-` lists, `1.` lists, `>` quotes, `**bold**`, `*italic*` and `[links](/path/)`. Use root-absolute internal links such as `/#menu`, `/#dealer`, `/cart.html` and `/blog/<slug>/`. Use plain `$7` style prices only as given below.
+`##` and `###` headings (no `#`, the title is the h1), paragraphs, `-` lists, `1.` lists, `>` quotes, `**bold**`, `*italic*` and `[links](/path/)`. Use root-absolute internal links to the dedicated pages: `/jerky/` (menu), `/our-story/`, `/the-lab/`, `/dealer-locator/`, `/vip-club/`, `/contact/`, `/faq/`, `/cart.html` and `/blog/<slug>/`. Use plain `$7` style prices only as given below.
 
 ## Writing rules
 
@@ -55,7 +55,7 @@ excerpt: One or two sentences for the blog index card and RSS.
 - Jerky Fixx is a family-run, small batch beef jerky and carne seca business in Albuquerque, New Mexico. Owners: Joseph Garduno and Sabrina Penn Garduno. Their daughter Aaliyah Garduno is studying web design and manages the website.
 - 25 flavors, heat 0 to 5 (see `FLAVORS` in `js/shop.js`). Top sellers: X-Hot Green, Hot Cheetos, Garlic Parm, Takis, Honey Teriyaki, Mango Habanero, Hot Cheeto Pickle, Lemon Pepper.
 - Small bag $7, large bag $20. Pay with Cash App, Venmo, Apple Pay or cash.
-- Order on the site (`/cart.html` or `/#contact`). The crew texts to confirm, the dealer drops the order at your door and sends a photo once delivered. Text or call 505-922-5683 or 505-364-0678, email jerkyfixx@gmail.com.
+- Order on the site (`/jerky/`, `/cart.html` or `/contact/`). The crew texts to confirm, the dealer drops the order at your door and sends a photo once delivered. Text or call 505-922-5683 or 505-364-0678, email jerkyfixx@gmail.com.
 - Found at pop ups, festivals and ball games around Albuquerque and Rio Rancho. Won Most Exotic Flavor and Best Booth at New Mexico Jerky Fest.
 - Next stop: New Mexico Jerky Fest, Halloween Edition, Saturday October 31, 2026 at Isleta Resort & Casino.
 - FIXX Fiends VIP Club (jerky subscription) is coming soon, waitlist at `/#vip`.
