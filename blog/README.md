@@ -75,3 +75,6 @@ python3 tools/build_blog.py
 ```
 
 Placeholder note: the author photo is `/img/roadrunner-head.webp` until a real photo is supplied. Change `AUTHOR_IMG` in `tools/build_blog.py`.
+
+
+Also keep /llms.txt (brand facts for AI answer engines) accurate if facts change; add new posts to its Pages list.
