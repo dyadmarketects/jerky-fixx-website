@@ -42,6 +42,7 @@
       <a href="#lab">The Lab</a>
       <a href="#dealer">Dealer Locator</a>
       <a href="#vip">VIP Club</a>
+      <a href="/blog/">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="head-cta">
@@ -53,7 +54,7 @@
 </header>
 <nav class="mnav" id="mnav" hidden aria-label="Mobile">
   <button class="x" id="mclose" aria-label="Close menu">✕</button>
-  <a href="#top">Home</a><a href="#menu">Jerky</a><a href="#family">Our Story</a><a href="#lab">The Lab</a><a href="#dealer">Dealer Locator</a><a href="#vip">VIP Club</a><a href="#contact">Contact</a>
+  <a href="#top">Home</a><a href="#menu">Jerky</a><a href="#family">Our Story</a><a href="#lab">The Lab</a><a href="#dealer">Dealer Locator</a><a href="#vip">VIP Club</a><a href="/blog/">Blog</a><a href="#contact">Contact</a>
   <div class="mnav-extra">
     <a class="pill pill-lime" href="#menu">Order now <span aria-hidden="true">↗</span></a>
     <a class="pill pill-light" href="cart.html">View cart<span class="mn-n" data-cart-n hidden></span></a>
@@ -506,7 +507,7 @@
       <p>Small batch beef jerky and carne seca made with love, faith and family in Albuquerque, New Mexico.</p>
       <div class="f-social"><a href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/jerky.fixx/" target="_blank" rel="noopener">Facebook</a><a href="https://www.threads.com/@jerky_fixx" target="_blank" rel="noopener">Threads</a></div>
     </div>
-    <nav class="f-col" aria-label="Footer"><h3>Explore</h3><a href="#lineup">Top sellers</a><a href="#menu">Full menu</a><a href="#family">Our story</a><a href="#lab">The lab</a><a href="#dealer">Dealer locator</a><a href="#vip">VIP Club</a><a href="#faq">FAQ</a></nav>
+    <nav class="f-col" aria-label="Footer"><h3>Explore</h3><a href="#lineup">Top sellers</a><a href="#menu">Full menu</a><a href="#family">Our story</a><a href="#lab">The lab</a><a href="#dealer">Dealer locator</a><a href="#vip">VIP Club</a><a href="/blog/">Blog</a><a href="#faq">FAQ</a></nav>
     <div class="f-col"><h3>Get your fixx</h3><a href="mailto:jerkyfixx@gmail.com">jerkyfixx@gmail.com</a><a href="tel:+15059225683">505-922-5683</a><a href="tel:+15053640678">505-364-0678</a><span>Albuquerque &amp; Rio Rancho, NM</span><span>Apple Pay · Cash App · Venmo · Cash</span></div>
     <div class="f-col"><h3>Legal</h3><a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of use</a><a href="/cookies.html">Cookie policy</a><a href="/accessibility.html">Accessibility</a><button type="button" class="linkish" id="cookiePrefs">Cookie preferences</button></div>
   </div>
@@ -593,7 +594,7 @@ const STEPS=[[0,"Slice","Cut to 1/8 inch"],[2,"Lay out","Strips on the racks"],[
 
 /* ======== structured data ======== */
 document.getElementById("ldjson").textContent=JSON.stringify({"@context":"https://schema.org","@graph":[
- {"@type":"Organization","@id":"https://jerkyfixx.com/#org","name":"Jerky Fixx","url":"https://jerkyfixx.com/","logo":{"@type":"ImageObject","url":"https://jerkyfixx.com/img/favicon-512.png","width":512,"height":512},"email":"jerkyfixx@gmail.com","telephone":"+1-505-922-5683","sameAs":["https://www.instagram.com/jerky_fixx/","https://www.facebook.com/jerky.fixx/","https://www.threads.com/@jerky_fixx"]},
+ {"@type":"Organization","@id":"https://jerkyfixx.com/#org","name":"Jerky Fixx","url":"https://jerkyfixx.com/","logo":{"@type":"ImageObject","url":"https://jerkyfixx.com/img/favicon-512.png","width":512,"height":512},"email":"jerkyfixx@gmail.com","telephone":"+1-505-922-5683","sameAs":["https://www.instagram.com/jerky_fixx/","https://www.facebook.com/jerky.fixx/","https://www.threads.com/@jerky_fixx"],"alternateName":["Jerky Fix","JerkyFixx"],"founder":[{"@type":"Person","name":"Joseph Garduno"},{"@type":"Person","name":"Sabrina Penn Garduno"}],"employee":[{"@type":"Person","name":"Aaliyah Garduno","jobTitle":"Website manager and blog author","url":"https://jerkyfixx.com/blog/aaliyah-garduno/"}]},
  {"@type":"WebSite","@id":"https://jerkyfixx.com/#site","name":"Jerky Fixx","url":"https://jerkyfixx.com/","publisher":{"@id":"https://jerkyfixx.com/#org"}},
  {"@type":"LocalBusiness","@id":"https://jerkyfixx.com/#biz","name":"Jerky Fixx","description":"Small batch beef jerky and carne seca in 25 flavors from Albuquerque, New Mexico.","url":"https://jerkyfixx.com/","image":"https://jerkyfixx.com/img/og-image.jpg","logo":"https://jerkyfixx.com/img/favicon-512.png","telephone":"+1-505-922-5683","email":"jerkyfixx@gmail.com","priceRange":"$","paymentAccepted":"Cash, Cash App, Venmo, Apple Pay","address":{"@type":"PostalAddress","addressLocality":"Albuquerque","addressRegion":"NM","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Albuquerque"},{"@type":"City","name":"Rio Rancho"},{"@type":"State","name":"New Mexico"}],"parentOrganization":{"@id":"https://jerkyfixx.com/#org"},
   "hasOfferCatalog":{"@type":"OfferCatalog","name":"Jerky flavors","itemListElement":FLAVORS.map(f=>({"@type":"Product","name":f.n+" Jerky","description":f.d,"image":"https://jerkyfixx.com/"+f.img,"brand":{"@type":"Brand","name":"Jerky Fixx"},"offers":[{"@type":"Offer","name":"Small bag","price":"7.00","priceCurrency":"USD","availability":"https://schema.org/InStock"},{"@type":"Offer","name":"Large bag","price":"20.00","priceCurrency":"USD","availability":"https://schema.org/InStock"}]}))}}

@@ -1034,3 +1034,8 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 .site-mgr b{color:#fff;font-weight:600}
 .foot-credits{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 @media (max-width:900px){.foot-credits{align-items:flex-start}}
+
+/* nav: keep every label on one line now that Blog is in the row */
+.nav a{white-space:nowrap}
+@media (min-width:1181px){.nav{gap:20px;letter-spacing:.08em}}
+@media (min-width:1181px) and (max-width:1360px){.nav{gap:16px;font-size:14px}}
