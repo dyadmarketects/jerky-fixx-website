@@ -1,0 +1,39 @@
+# Tells Bing (and Copilot, DuckDuckGo via Bing, Yandex, Seznam, Naver) about new and updated pages after each push to main,
+# via IndexNow. Compares sitemap.xml with the previous commit and submits only URLs that are new or have a new <lastmod>
+# (new blog posts, new pages). The key file /2497f5954b7846a481dd8f084af9ec47.txt in the site root proves ownership; it must stay.
+# Google reads the same sitemap on its own. This job never affects the site.
+name: IndexNow
+on:
+  push:
+    branches: ["main"]
+    paths: ["sitemap.xml", "**.html"]
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Wait for GitHub Pages to publish
+        run: sleep 120
+      - name: Submit new and updated sitemap URLs
+        run: |
+          git show HEAD~1:sitemap.xml > /tmp/old-sitemap.xml 2>/dev/null || true
+          python3 - <<'PY'
+          import json, re, urllib.request, os
+          def entries(x): return dict(re.findall(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]*)</lastmod>", x))
+          new = entries(open("sitemap.xml").read())
+          old = entries(open("/tmp/old-sitemap.xml").read()) if os.path.getsize("/tmp/old-sitemap.xml") else {}
+          urls = [u for u, lm in new.items() if old.get(u) != lm] if old else list(new)
+          if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch": urls = list(new)
+          if not urls: print("IndexNow: nothing new"); raise SystemExit
+          key = "2497f5954b7846a481dd8f084af9ec47"
+          body = json.dumps({"host": "jerkyfixx.com", "key": key, "keyLocation": f"https://jerkyfixx.com/{key}.txt", "urlList": urls[:1000]}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body, headers={"Content-Type": "application/json; charset=utf-8"})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r: print("IndexNow HTTP", r.status, "for", len(urls), "URL(s)")
+          except Exception as e: print("IndexNow request failed:", e)
+          print("\n".join(urls))
+          PY
