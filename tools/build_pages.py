@@ -289,7 +289,7 @@ def home_ld():
                             {"@type": "ContactPoint", "contactType": "orders", "telephone": "+1-505-364-0678", "areaServed": "US-NM", "availableLanguage": "en"}],
            "parentOrganization": {"@id": ORG_ID}, "hasOfferCatalog": {"@id": SITE + "/jerky/#catalog"},
            "sameAs": org["sameAs"]}
-    page = {"@type": "WebPage", "@id": SITE + "/#page", "url": SITE + "/", "name": "Jerky Fixx | Beef Jerky Albuquerque, New Mexico",
+    page = {"@type": "WebPage", "@id": SITE + "/#page", "url": SITE + "/", "name": "Jerky Fixx | Beef Jerky and Carne Seca in Albuquerque, NM",
             "isPartOf": {"@id": SITE + "/#site"}, "about": {"@id": SITE + "/#biz"}, "inLanguage": "en-US"}
     return jsonld({"@context": "https://schema.org", "@graph": [org, site, biz, page]})
 
