@@ -10,7 +10,10 @@ https://jerkyfixx.com (GitHub Pages, custom domain via Cloudflare DNS)
 
 | Path | Contents |
 | --- | --- |
-| `index.html` | The whole site: markup, styles and scripts in one file |
+| `index.html` | Home page markup and its page scripts (3D, menu, contact) |
+| `cart.html` | Cart and checkout page |
+| `css/site.css` | All site styles |
+| `js/shop.js` | Shared shop code: flavors, cart, forms, cookie consent, `FORM_ENDPOINT` |
 | `models/` | 13 web-optimized 3D models (`.glb`, meshopt compressed, about 9 MB total) |
 | `img/` | Logo, icons, backgrounds and photos (WebP) |
 | `fonts/` | Zuume Rough, Fibre and Macabro, subset to WOFF2 |
@@ -44,13 +47,13 @@ python3 -m http.server 8000
 
 ## Forms and orders
 
-All forms (checkout, contact, VIP, dealer alerts) post to a Google Apps Script web app that emails jerkyfixx@gmail.com and dyadmarketects@gmail.com and logs every submission in a shared Google Sheet. Setup: `backend/SETUP.md`, then paste the web app URL into `FORM_ENDPOINT` near the top of the main `<script>` in `index.html`. Until then, forms open a pre-filled email to both addresses.
+All forms (cart checkout, contact order or question, VIP, dealer alerts) post to a Google Apps Script web app that emails jerkyfixx@gmail.com and dyadmarketects@gmail.com and logs every submission in a shared Google Sheet. Setup: `backend/SETUP.md`, then paste the web app URL into `FORM_ENDPOINT` near the top of the main `<script>` in `index.html`. Until then, forms open a pre-filled email to both addresses.
 
 Order forms (cart checkout, and the contact form when "Place an order" is picked) require a delivery address: street, optional apt or gate code, city, state and ZIP. It lands in the **Address** column of the Sheet and in the "Deliver to" line of both emails, and the customer confirmation tells them the dealer will text a photo once the package is dropped off. If you already deployed the backend before this change, paste the new `backend/Code.gs` and deploy a new version (Deploy, Manage deployments, Edit, New version).
 
 ## Updating content (safe edits)
 
-- Flavors, descriptions, heat levels: `FLAVORS` array in `index.html`
+- Flavors, descriptions, heat levels: `FLAVORS` array in `js/shop.js`
 - Top sellers: `TOPN` (names) and `TOPM` (3D ingredients) arrays
 - Next event: the `#dealer` section markup and the `icsBtn` calendar code
 - FAQ: the `#faq` section

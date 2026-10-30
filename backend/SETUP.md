@@ -6,6 +6,8 @@ Phone tip: the Apps Script editor is cramped on a phone. If buttons look missing
 
 ## Set up
 
+If Google shows "Sorry, unable to open the file at this time" or an error while authorizing, it's Google's multi-account glitch. Open an Incognito window, sign in as **dyadmarketects@gmail.com** only, and do the steps there. `Code.gs` already points at the sheet by its ID (`SHEET_ID` at the top), so it also works as a standalone project made at script.google.com.
+
 1. Sign in to Google as **dyadmarketects@gmail.com**. This account will own the sheet and send the emails.
 2. Go to https://sheets.google.com and tap **Blank spreadsheet** (the + button).
 3. Tap the title at the top ("Untitled spreadsheet") and rename it exactly: **Jerky Fixx Website Leads**
@@ -23,7 +25,7 @@ Phone tip: the Apps Script editor is cramped on a phone. If buttons look missing
 12. Copy the **Web app URL**. It ends in `/exec`. Save it somewhere safe, like a note to yourself.
 13. Go back to the Google Sheet, tap **Share**, add **jerkyfixx@gmail.com** and set the role to **Editor**. Tap Send.
 14. Connect the website, either way:
-    - Paste the URL into `FORM_ENDPOINT` near the top of `index.html` (search for `FORM_ENDPOINT`), or
+    - Paste the URL into `FORM_ENDPOINT` near the top of `js/shop.js`, or
     - Just tell Claude the URL and ask it to wire it in.
 
 ## Test it
