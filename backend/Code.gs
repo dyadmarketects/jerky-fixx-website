@@ -35,6 +35,8 @@
 var SHEET_ID = '1ZENvOZjKjI1UUyJvhf3lEsiyG8csuz4T6P-PujCsVfA';
 
 var NOTIFY_EMAILS = ['jerkyfixx@gmail.com', 'dyadmarketects@gmail.com'];
+// Orders are also texted to these phones (T-Mobile email to text gateway, free).
+var SMS_TO = ['5059225683@tmomail.net', '5053135169@tmomail.net', '5053640678@tmomail.net'];
 
 /** Shown as the "from" name on emails. Address is the script owner's Gmail. */
 var SENDER_NAME = 'Jerky Fixx';
@@ -141,6 +143,7 @@ function doPost(e) {
     //         logged but does not make the visitor's submission fail. ----
     try {
       sendNotification_(data);
+      if (data.form === 'order') { try { textOrder_(data.name, data.phone, data.address, itemLines_(data.items).join(', '), data.total === null ? '' : '$' + formatMoney_(data.total)); } catch (err) { console.error(err); } }
     } catch (mailErr) {
       console.log('Notification email failed: ' + mailErr);
     }
@@ -471,4 +474,22 @@ function testOrder() {
     }
   });
   console.log(result.getContent());
+}
+
+
+// ===================== TEXTS =====================
+
+/** Sends a short order text to every phone in SMS_TO. */
+function textOrder_(name, phone, address, items, total) {
+  var body = 'JERKY FIXX ORDER ' + total + '\n' + name + ' ' + phone + '\n' + items + '\n' + String(address || '').replace(/\n/g, ', ');
+  SMS_TO.forEach(function (to) { MailApp.sendEmail({ to: to, subject: 'New order', body: body.slice(0, 600) }); });
+}
+
+/** Run once from the editor: texts every order already in the Orders tab. */
+function textExistingOrders() {
+  var sh = getSheet_('order'), v = sh.getDataRange().getValues();
+  for (var i = 1; i < v.length; i++) {
+    if (!v[i][1]) continue;
+    textOrder_(v[i][1], v[i][3], v[i][4], String(v[i][7]).replace(/\n/g, ', '), v[i][8]);
+  }
 }
