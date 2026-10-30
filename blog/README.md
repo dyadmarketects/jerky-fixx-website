@@ -8,7 +8,7 @@ Static blog for https://jerkyfixx.com/blog/, built by a Python 3 standard librar
 2. Run `python3 tools/build_blog.py` from the repo root.
 3. Check the validation report at the end (it exits non-zero on any problem), then commit `blog/`, `blog.css`, `sitemap.xml` and anything else that changed.
 
-The script is idempotent. It regenerates `blog/index.html`, `blog/<slug>/index.html`, `blog/aaliyah-garduno/index.html`, `blog/feed.xml` and the blog entries in `sitemap.xml`. Existing non-blog sitemap entries are left alone. The header, footer, cookie banner and scripts are copied from `cart.html` at build time, so after changing the nav or footer in `cart.html`, re-run `python3 tools/build_pages.py` and this build.
+The script is idempotent. It regenerates `blog/index.html`, `blog/<slug>/index.html`, `blog/aaliyah-penn/index.html`, `blog/feed.xml` and the blog entries in `sitemap.xml`. Existing non-blog sitemap entries are left alone. The header, footer, cookie banner and scripts are copied from `cart.html` at build time, so after changing the nav or footer in `cart.html`, re-run `python3 tools/build_pages.py` and this build.
 
 Never edit generated HTML by hand. Edit the `.md` and rebuild.
 
@@ -48,11 +48,11 @@ excerpt: One or two sentences for the blog index card and RSS.
 
 ## Writing rules
 
-700 to 1100 words, written as Aaliyah Garduno, conversational and warm, no em dashes. Do not keyword stuff, and do not invent facts.
+700 to 1100 words, written as Aaliyah Penn, conversational and warm, no em dashes. Do not keyword stuff, and do not invent facts.
 
 ### Facts you may use
 
-- Jerky Fixx is a family-run, small batch beef jerky and carne seca business in Albuquerque, New Mexico. Owners: Joseph Garduno and Sabrina Penn Garduno. Their daughter Aaliyah Garduno is studying web design and manages the website.
+- Jerky Fixx is a family-run, small batch beef jerky and carne seca business in Albuquerque, New Mexico. Owners: Joseph Garduno and Sabrina Penn Garduno. Their daughter Aaliyah Penn is studying web design and manages the website.
 - 25 flavors, heat 0 to 5 (see `FLAVORS` in `js/shop.js`). Top sellers: X-Hot Green, Hot Cheetos, Garlic Parm, Takis, Honey Teriyaki, Mango Habanero, Hot Cheeto Pickle, Lemon Pepper.
 - Small bag $7, large bag $20. Pay with Cash App, Venmo, Apple Pay or cash.
 - Order on the site (`/jerky/`, `/cart.html` or `/contact/`). The crew texts to confirm, the dealer drops the order at your door and sends a photo once delivered. Text or call 505-922-5683 or 505-364-0678, email jerkyfixx@gmail.com.

@@ -4,13 +4,13 @@ slug: meet-the-jerky-fixx-family
 date: 2026-10-29
 updated: 2026-10-29
 description: Meet the family behind Jerky Fixx: Joseph Garduno, Sabrina Penn Garduno and the crew making small batch beef jerky and carne seca in Albuquerque, New Mexico.
-keywords: jerky fixx, jerky fix, Joseph Garduno, Sabrina Penn Garduno, Aaliyah Garduno, family owned jerky albuquerque
+keywords: jerky fixx, jerky fix, Joseph Garduno, Sabrina Penn Garduno, Aaliyah Penn, family owned jerky albuquerque
 box: Family
 hero: /img/jerky-fixx-family-booth.webp
 hero_alt: The Jerky Fixx family and crew smiling behind their booth table of jerky bags, under pink, black and purple balloons
 excerpt: Joseph Garduno, Sabrina Penn Garduno and the crew. Meet the family behind Jerky Fixx, small batch jerky and carne seca from Albuquerque.
 ---
-Hi, I'm Aaliyah Garduno, and this is my favorite post to write. Jerky Fixx is my family's business, and I get to be the one who tells you who we are. Some people search for us as "Jerky Fix," and that's totally fine. You found us either way.
+Hi, I'm Aaliyah Penn, and this is my favorite post to write. Jerky Fixx is my family's business, and I get to be the one who tells you who we are. Some people search for us as "Jerky Fix," and that's totally fine. You found us either way.
 
 ## Made with love, faith and family
 
@@ -32,7 +32,7 @@ We also have what we call the dealer. That's the person who brings your order to
 
 ## And then there's me
 
-I'm Aaliyah Garduno, Joseph and Sabrina's daughter. I'm studying web design, and I manage and maintain this website. That means I update the flavors, post the next event, watch the order forms and write these blog posts. It's a real-life class project that my family happens to eat. You can read a bit more [about me on my author page](/blog/aaliyah-garduno/).
+I'm Aaliyah Penn, Joseph and Sabrina's daughter. I'm studying web design, and I manage and maintain this website. That means I update the flavors, post the next event, watch the order forms and write these blog posts. It's a real-life class project that my family happens to eat. You can read a bit more [about me on my author page](/blog/aaliyah-penn/).
 
 Having a family business and a web design major under one roof is a great combination. My parents bring the flavors, and I try to make it easy for you to find them.
 

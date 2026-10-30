@@ -274,7 +274,7 @@ def home_ld():
            "sameAs": ["https://www.instagram.com/jerky_fixx/", "https://www.facebook.com/jerky.fixx/", "https://www.threads.com/@jerky_fixx"],
            "alternateName": ["Jerky Fix", "JerkyFixx"],
            "founder": [{"@type": "Person", "name": "Joseph Garduno"}, {"@type": "Person", "name": "Sabrina Penn Garduno"}],
-           "employee": [{"@type": "Person", "name": "Aaliyah Garduno", "jobTitle": "Website manager and blog author", "url": SITE + "/blog/aaliyah-garduno/"}],
+           "employee": [{"@type": "Person", "name": "Aaliyah Penn", "jobTitle": "Website manager and blog author", "url": SITE + "/blog/aaliyah-penn/"}],
            "award": ["Most Exotic Flavor, New Mexico Jerky Fest", "Best Booth, New Mexico Jerky Fest"]}
     site = {"@type": "WebSite", "@id": SITE + "/#site", "name": "Jerky Fixx", "alternateName": ["JerkyFixx", "jerkyfixx.com", "Jerky Fix"],
             "url": SITE + "/", "publisher": {"@id": ORG_ID}, "inLanguage": "en-US"}
