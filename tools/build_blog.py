@@ -786,6 +786,35 @@ def validate(pages, posts):
 
 
 # --------------------------------------------------------------------------- main
+def build_home_latest(posts, n=3):
+    """Refresh the 'Fresh from the Fixx Blog' section on the home page (between LATEST-BLOG markers)."""
+    p = os.path.join(ROOT, "index.html")
+    src = read(p)
+    a, z = "<!-- LATEST-BLOG:START -->", "<!-- LATEST-BLOG:END -->"
+    if a not in src or z not in src:
+        return
+    cards = []
+    for q in posts[:n]:
+        cards.append(f'''<article class="hb-card">
+      <a class="hb-img" href="{q["url"]}" tabindex="-1" aria-hidden="true"><img src="{q["hero"]}" alt="" {img_dims(q["hero"])}loading="lazy"></a>
+      <div class="hb-b"><p class="hb-meta">{esc(pretty_date(q["date"]))} · {q["minutes"]} min read</p>
+      <h3><a href="{q["url"]}">{esc(q["title"])}</a></h3><p>{esc(q["excerpt"])}</p><a class="hb-more" href="{q["url"]}">Read the post <span aria-hidden="true">↗</span></a></div>
+    </article>''')
+    sec = f'''{a}
+<section class="home-blog" id="blog" aria-labelledby="hb-title" data-hint="tap" data-hint-text="Fresh reads from the Fixx Blog">
+  <div class="wrap">
+    <div class="hb-head"><div><p class="eyebrow ui">Jerky news, flavors and where to find us</p><h2 class="h2" id="hb-title">Fresh from the <em>Fixx Blog</em></h2></div><a class="pill pill-lime" href="/blog/">All posts <span aria-hidden="true">↗</span></a></div>
+    <div class="hb-grid">
+    {chr(10).join(cards)}
+    </div>
+  </div>
+</section>
+{z}'''
+    i, j = src.index(a), src.index(z) + len(z)
+    new = src[:i] + sec + src[j:]
+    if new != src:
+        write(p, new)
+
 def main():
     posts = load_posts()
     C = chrome()
@@ -800,6 +829,7 @@ def main():
     written.append((f, "author"))
     write(os.path.join(BLOG, "feed.xml"), build_feed(posts))
     build_sitemap(posts)
+    build_home_latest(posts)
     # remove generated pages of posts that no longer exist
     keep = {p["slug"] for p in posts} | {"aaliyah-garduno", "posts"}
     for d in sorted(os.listdir(BLOG)):

@@ -1039,3 +1039,18 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 .nav a{white-space:nowrap}
 @media (min-width:1181px){.nav{gap:20px;letter-spacing:.08em}}
 @media (min-width:1181px) and (max-width:1360px){.nav{gap:16px;font-size:14px}}
+/* home: latest blog posts above the footer */
+.home-blog{position:relative;z-index:4;background:radial-gradient(ellipse at 15% 0%,#3b0b47 0%,var(--plum) 60%);padding-block:90px 100px;overflow:hidden}
+.home-blog .h2{font-size:clamp(52px,6vw,100px)}
+.hb-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.hb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.hb-card{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:#1e0626;border:1px solid var(--hair);transition:transform .25s,border-color .25s}
+.hb-card:hover{transform:translateY(-4px);border-color:var(--lime)}
+.hb-img img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
+.hb-b{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.hb-meta{margin:0;font:500 12px var(--f-ui);letter-spacing:.16em;text-transform:uppercase;color:var(--pink)}
+.hb-b h3{margin:0;font-family:var(--f-cure);font-weight:400;font-size:30px;line-height:1;text-transform:uppercase}
+.hb-b h3 a{color:#fff;text-decoration:none}
+.hb-b p{margin:0;color:var(--fog);font-size:15px;line-height:1.5}
+.hb-more{margin-top:auto;padding-top:6px;color:var(--lime);font:600 13px var(--f-ui);letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+@media (max-width:900px){.hb-grid{grid-template-columns:1fr}.home-blog{padding-block:70px 80px}}
