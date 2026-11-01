@@ -57,7 +57,7 @@ excerpt: One or two sentences for the blog index card and RSS.
 - Small bag $7, large bag $20. Pay with Cash App, Venmo, Apple Pay or cash.
 - Order on the site (`/jerky/`, `/cart.html` or `/contact/`). The crew texts to confirm, the dealer drops the order at your door and sends a photo once delivered. Text or call 505-922-5683 or 505-364-0678, email jerkyfixx@gmail.com.
 - Found at pop ups, festivals and ball games around Albuquerque and Rio Rancho. Won Most Exotic Flavor and Best Booth at New Mexico Jerky Fest.
-- Next stop: New Mexico Jerky Fest, Halloween Edition, Saturday October 31, 2026 at Isleta Resort & Casino.
+- Past event: New Mexico Jerky Fest, Halloween Edition, Oct 31, 2026 at Isleta Resort and Casino. No upcoming events are announced yet; say "Stay tuned for upcoming events" and point to socials and event alerts. Never invent event dates.
 - FIXX Fiends VIP Club (jerky subscription) is coming soon, waitlist at `/#vip`.
 - Socials: instagram.com/jerky_fixx, facebook.com/jerky.fixx, threads.com/@jerky_fixx.
 

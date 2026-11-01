@@ -61,7 +61,7 @@ A good trick for a first order is to pick one mild bag, one medium chile bag lik
 
 You can order from the [full menu](/jerky/), where every flavor has its heat level and description. A small bag is $7 and a large bag is $20. Send your order from the [cart page](/cart.html) or the [contact form](/contact/), and we'll text you to confirm. You can pay with Cash App, Venmo, Apple Pay or cash, and the dealer drops it at your door and sends a photo once it's delivered.
 
-Prefer to taste first? Come see us at **New Mexico Jerky Fest, Halloween Edition** on Saturday, October 31, 2026, at Isleta Resort & Casino. Samples are the best way to decide.
+Prefer to taste first? Catch us at a pop up or festival. Our last one was **New Mexico Jerky Fest, Halloween Edition**, at Isleta Resort and Casino on October 31, 2026. Stay tuned for upcoming events, and sign up for event alerts on the [dealer locator](/dealer-locator/) so you don't miss the next chance to sample.
 
 ## Keep exploring
 

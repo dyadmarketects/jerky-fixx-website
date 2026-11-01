@@ -87,7 +87,7 @@ Small bags are $7 and large bags are $20. For a bigger group, a couple of large 
 
 If you're hosting, the easiest move is to order ahead. Pick your flavors, add them to your [cart](/cart.html) and send the order in. Someone from the crew texts to confirm, you pay with Cash App, Venmo, Apple Pay or cash, and our dealer drops the order at your door and sends a photo once it's delivered. You can also text or call 505-922-5683 or 505-364-0678 with questions.
 
-If you'd rather grab it in person, we show up at pop ups, festivals and ball games around Albuquerque and Rio Rancho. Check the [dealer locator](/#dealer) to see where we're posting up next. Our next stop is New Mexico Jerky Fest, Halloween Edition, on Saturday, October 31, 2026 at Isleta Resort & Casino, and we'd love to see you there.
+If you'd rather grab it in person, we show up at pop ups, festivals and ball games around Albuquerque and Rio Rancho. Check the [dealer locator](/#dealer) to see where we're posting up next. Our last stop was Jerky Fest at Isleta Resort and Casino on Oct 31, 2026. Stay tuned for upcoming events, and follow us on [Instagram](https://www.instagram.com/jerky_fixx/) to hear first.
 
 For more ways to find us, my post on [where to buy jerky in Albuquerque](/blog/where-to-buy-jerky-in-albuquerque/) lays it all out.
 

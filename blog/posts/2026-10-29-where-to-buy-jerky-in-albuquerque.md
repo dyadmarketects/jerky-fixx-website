@@ -34,9 +34,11 @@ Prices are simple too. A small bag is $7 and a large bag is $20. If you're not s
 
 We love a booth. You'll find us at pop ups, festivals and plenty of ball games around Albuquerque and Rio Rancho, usually with samples out so you can taste before you commit. That matters, because some of our flavors sound a little wild until you try them.
 
-The next big stop is **New Mexico Jerky Fest, Halloween Edition**. It's this Saturday, October 31, 2026, at Isleta Resort & Casino. Come find the Jerky Fixx booth, say hi and try a sample. We've been lucky at that festival, too. We won Most Exotic Flavor and Best Booth there, and we'd love to see you at the table.
+Our last big stop was **New Mexico Jerky Fest, Halloween Edition**, at Isleta Resort and Casino on October 31, 2026. We've been lucky at that festival, too. We won Most Exotic Flavor and Best Booth there.
 
-Not sure where we'll be after that? The [dealer locator](/dealer-locator/) on the home page shows our next stop, and you can sign up there for dealer alerts so you hear about pop ups and games first.
+Stay tuned for upcoming events! Follow us on [Instagram](https://www.instagram.com/jerky_fixx/) and we'll let you know where we're posting up next.
+
+Not sure where we'll be next? The [dealer locator](/dealer-locator/) on the home page shows our next stop, and you can sign up there for dealer alerts so you hear about pop ups and games first.
 
 ## Not sure what to grab? Start here
 

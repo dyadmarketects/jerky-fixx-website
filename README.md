@@ -62,7 +62,7 @@ How the pieces fit:
 5. **The legend:** looping roadrunner clip that reveals the logo behind it
 6. **The Fixx Family:** big family photo plus an auto-scrolling, swipeable photo carousel
 7. **In the Lab:** Jerky Fixx batch video
-8. **Dealer locator:** Google Map + Jerky Fest (Oct 31, 2026, Isleta Resort & Casino) + dealer alert signup
+8. **Dealer locator:** Google Map + past event (Jerky Fest, Oct 31, 2026, Isleta Resort & Casino) + "Stay tuned for upcoming events" + dealer alert signup
 9. **FIXX Fiends VIP Club:** coming soon waitlist
 10. **Follow the fixx:** Hot Cheeto promo video + social links + review link
 11. **FAQ** and **Contact** (order or question form)

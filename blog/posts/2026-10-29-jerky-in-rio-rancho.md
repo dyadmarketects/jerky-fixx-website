@@ -66,9 +66,11 @@ It means a family cuts, seasons and dries the beef in small amounts, then bags i
 
 Jerky is an easy team snack or party favor, and our regular ordering works great for that. Order a mix of small and large bags, put the details in the notes and we'll text you to sort it out. If you'd like to book us for an event, send a note through the [contact form](/contact/).
 
-## Next stop
+## Upcoming events
 
-This Saturday, October 31, 2026, we'll be at **New Mexico Jerky Fest, Halloween Edition** at Isleta Resort & Casino in Albuquerque. It's not far from Rio Rancho if you're up for a drive, and it's a good chance to try samples and see the booth that took home Best Booth. We also won Most Exotic Flavor there, so you can taste what the judges liked.
+Our most recent stop was **New Mexico Jerky Fest, Halloween Edition** at Isleta Resort and Casino on October 31, 2026. That's the festival where we took home Best Booth and Most Exotic Flavor.
+
+Stay tuned for upcoming events! Follow us on [Instagram](https://www.instagram.com/jerky_fixx/) or sign up for event alerts on the [dealer locator](/dealer-locator/), and you'll hear where we're headed next.
 
 If you're new here, start with our guide to [where to buy jerky in Albuquerque](/blog/where-to-buy-jerky-in-albuquerque/), and if you want to know the people behind the table, [meet the Jerky Fixx family](/blog/meet-the-jerky-fixx-family/).
 
