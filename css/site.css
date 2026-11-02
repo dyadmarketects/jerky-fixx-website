@@ -1197,3 +1197,11 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 @media (min-width:821px){.hero-copy{top:calc(var(--cap) + var(--u)*2 + 14px)}}
 /* both hero buttons get the same hard drop shadow */
 #hero .ctas .btn{box-shadow:6px 6px 0 var(--bp-ink)}
+
+/* phones: the follow strip is always fully visible (no pop out) */
+@media (max-width:820px){
+  .social-tab{grid-template-columns:32px;grid-template-rows:auto;justify-items:center;padding:8px 4px;transform:none;cursor:default}
+  .social-tab .st-lbl{grid-column:1;grid-row:auto;writing-mode:vertical-rl;transform:rotate(180deg);margin:0 0 4px}
+  .social-tab a{grid-column:1}
+  .social-tab.gone{transform:translateX(110%)}
+}
