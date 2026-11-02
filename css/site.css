@@ -1195,3 +1195,5 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 #hero .btn-lime{background:var(--bp-purple);color:#fff;box-shadow:6px 6px 0 var(--bp-ink)}
 #hero .btn-lime:hover{background:var(--bp-pink);color:var(--bp-ink)}
 @media (min-width:821px){.hero-copy{top:calc(var(--cap) + var(--u)*2 + 14px)}}
+/* both hero buttons get the same hard drop shadow */
+#hero .ctas .btn{box-shadow:6px 6px 0 var(--bp-ink)}
