@@ -958,8 +958,7 @@ function finishBoot(){
   finished=true;clearInterval(msgTimer);bootMsg.innerHTML="<b>Craving detected</b> · Cure incoming";
   const tl=gsap.timeline({delay:reduce?0:.35,onComplete:()=>{boot.remove();curtain.remove();document.documentElement.style.overflow="";scrollTo(0,0);if(lenis){lenis.scrollTo(0,{immediate:true});lenis.start();}ST.refresh();hintCur=null;
     /* hero intro: rise + 360 twist on z + grow */
-    /* hold a beat so first time visitors catch the whole entrance */
-    gsap.to(S,{intro:1,duration:reduce?0:2.4,delay:reduce?0:1.2,ease:"power3.out"});gsap.to(S,{erupt:1,duration:reduce?0:2.8,delay:reduce?0:1.9,ease:"power2.out"});booted=true;setHint($("#hero"));
+    gsap.to(S,{intro:1,duration:reduce?0:2.4,ease:"power3.out"});gsap.to(S,{erupt:1,duration:reduce?0:2.8,delay:reduce?0:.9,ease:"power2.out"});booted=true;setHint($("#hero"));
     const tgt=startHash&&document.querySelector(startHash);if(tgt){requestAnimationFrame(()=>{if(lenis)lenis.scrollTo(tgt,{offset:-60,immediate:true});else tgt.scrollIntoView();ST.update();history.replaceState(null,"",startHash);});}}});
   if(reduce){tl.set(boot,{autoAlpha:0});return;}
   tl.to(".boot-in",{scale:1.08,duration:.18,ease:"power2.out"})

@@ -134,7 +134,10 @@ if(JFConsent.el){
   document.getElementById("ccReject").addEventListener("click",()=>JFConsent.save(false));
   document.getElementById("ccCustom").addEventListener("click",()=>{document.getElementById("ccPrefs").hidden=false;document.getElementById("ccAccept").textContent="Save choices";});
   const cp=document.getElementById("cookiePrefs");if(cp)cp.addEventListener("click",()=>JFConsent.open());
-  if(JFConsent.get())JFConsent.apply();else setTimeout(()=>{JFConsent.el.hidden=false;},2600);
+  if(JFConsent.get())JFConsent.apply();else{/* home page: wait until the loader is gone and the hero entrance has played, then show the cookie card */
+    const show=()=>{JFConsent.el.hidden=false;};
+    if(document.getElementById("boot")){const w=setInterval(()=>{if(!document.getElementById("boot")){clearInterval(w);setTimeout(show,6000);}},250);}
+    else setTimeout(show,2600);}
 }
 
 /* ======== header bits: mobile nav, copy buttons, order now ======== */
