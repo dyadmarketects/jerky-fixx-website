@@ -113,6 +113,24 @@ def inline(s):
     return s
 
 
+def post_og(p):
+    """1200x630 share image cut from the post's hero, so every post previews with its own picture."""
+    out = "img/blog-og/%s.jpg" % p["slug"]
+    try:
+        from PIL import Image
+        src = os.path.join(ROOT, p["hero"].lstrip("/"))
+        dst = os.path.join(ROOT, out)
+        if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+            im = Image.open(src).convert("RGB"); W, H = im.size; r = 1200 / 630
+            if W / H > r: nw = int(H * r); im = im.crop(((W - nw) // 2, 0, (W - nw) // 2 + nw, H))
+            else: nh = int(W / r); t = int((H - nh) * .3); im = im.crop((0, t, W, t + nh))
+            im.resize((1200, 630), Image.LANCZOS).save(dst, quality=84, optimize=True, progressive=True)
+        return SITE + "/" + out
+    except Exception:
+        return OG_IMAGE
+
+
 def md_blocks(text):
     """Restricted Markdown -> list of (kind, html). Supports ## / ### headings, paragraphs,
     - lists, 1. lists, > quotes, **bold**, *italic*, [links](url)."""
@@ -121,7 +139,7 @@ def md_blocks(text):
     used = set()
 
     def starts_block(l):
-        return bool(re.match(r"(#{1,6}\s|[-*]\s+|\d+\.\s+|>\s?)", l))
+        return bool(re.match(r"(#{1,6}\s|[-*]\s+|\d+\.\s+|>\s?|!\[|@video\()", l))
 
     while i < n:
         line = lines[i]
@@ -164,6 +182,20 @@ def md_blocks(text):
                 buf.append(lines[i].lstrip(">").strip())
                 i += 1
             out.append(("blockquote", "<blockquote><p>%s</p></blockquote>" % inline(" ".join(buf))))
+            continue
+        m = re.match(r'!\[([^\]]*)\]\((\S+?)\)\s*(?:\|\s*(.*))?$', line.strip())
+        if m:
+            alt, src, cap = m.group(1), m.group(2), (m.group(3) or "").strip()
+            out.append(("figure", '<figure class="bl-fig bl-inline"><img src="%s" alt="%s" %sloading="lazy" decoding="async">%s</figure>'
+                        % (esc(src), esc(alt), img_dims(src), ('<figcaption>%s</figcaption>' % inline(cap)) if cap else "")))
+            i += 1
+            continue
+        m = re.match(r'@video\((\S+?),\s*(\S+?)\)\s*(.*)$', line.strip())
+        if m:
+            src, poster, cap = m.group(1), m.group(2), m.group(3).strip()
+            out.append(("figure", '<figure class="bl-fig bl-vid"><video controls playsinline preload="none" poster="%s" width="720" height="1280"><source src="%s" type="video/mp4"></video>%s</figure>'
+                        % (esc(poster), esc(src), ('<figcaption>%s</figcaption>' % inline(cap)) if cap else "")))
+            i += 1
             continue
         buf = []
         while i < n and lines[i].strip() and not starts_block(lines[i]):
@@ -268,7 +300,7 @@ def jsonld(obj):
     return '<script type="application/ld+json">\n%s\n</script>' % s.replace("</", "<\\/")
 
 
-def head_html(C, *, title, desc, canon, og_type, jl, extra_meta="", og_alt="", ):
+def head_html(C, *, title, desc, canon, og_type, jl, extra_meta="", og_alt="", og_image=None):
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -287,14 +319,14 @@ def head_html(C, *, title, desc, canon, og_type, jl, extra_meta="", og_alt="", )
 <meta property="og:url" content="{canon}">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
-<meta property="og:image" content="{OG_IMAGE}">
+<meta property="og:image" content="{og_image or OG_IMAGE}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{esc(og_alt or 'Jerky Fixx: Cure the Craving. Small batch beef jerky and carne seca from Albuquerque, New Mexico.')}">
 {extra_meta}<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(desc)}">
-<meta name="twitter:image" content="{OG_IMAGE}">
+<meta name="twitter:image" content="{og_image or OG_IMAGE}">
 {C["fonts"]}
 <link rel="stylesheet" href="/css/site.css">
 <link rel="stylesheet" href="/legal.css">
@@ -459,7 +491,7 @@ def build_post(C, p, posts):
                "author": {"@type": "Person", "@id": AUTHOR_URL + "#person", "name": AUTHOR_NAME, "url": AUTHOR_URL},
                "publisher": {"@type": "Organization", "@id": ORG_ID, "name": "Jerky Fixx",
                              "logo": {"@type": "ImageObject", "url": SITE + "/img/favicon-512.png"}},
-               "image": [SITE + hero, OG_IMAGE], "mainEntityOfPage": {"@type": "WebPage", "@id": p["abs"]},
+               "image": [SITE + hero, post_og(p)], "mainEntityOfPage": {"@type": "WebPage", "@id": p["abs"]},
                "keywords": ", ".join(p["kw"]), "wordCount": p["words"],
                "isPartOf": {"@id": SITE + "/blog/#blog"}}
     if mentions:
@@ -475,7 +507,7 @@ def build_post(C, p, posts):
              f'<meta property="article:section" content="Jerky">\n'
              + "".join('<meta property="article:tag" content="%s">\n' % esc(k) for k in p["kw"]))
     head = head_html(C, title=p["seo_title"], desc=p["description"], canon=p["abs"], og_type="article",
-                     jl=jl, extra_meta=extra, og_alt=p["hero_alt"])
+                     jl=jl, extra_meta=extra, og_alt=p["hero_alt"], og_image=post_og(p))
     return page_shell(C, head, main)
 
 
