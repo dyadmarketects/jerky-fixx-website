@@ -82,10 +82,13 @@ const STEPS=[[0,"Slice","Cut to 1/8 inch"],[2,"Lay out","Strips on the racks"],[
  vid.addEventListener("timeupdate",()=>{const t=vid.currentTime;let k=0;STEPS.forEach((x,i)=>{if(t>=x[0])k=i});els.forEach((e,i)=>{e.classList.toggle("on",i===k);if(i===k)e.setAttribute("aria-current","step");else e.removeAttribute("aria-current");});if(temp)temp.textContent=t<13?"RAW":"150°F";});
  els.forEach(b=>b.addEventListener("click",()=>{vid.currentTime=+b.dataset.t;vid.play().catch(()=>{});}));})();
 /* ======== family carousel: autoscroll (pausable, off with reduced motion), arrows, swipe, keys ======== */
-(function(){const tr=$id("carTrack");if(!tr)return;const car=$id("carousel");const step=()=>tr.querySelector("figure").getBoundingClientRect().width+16;let hold=0,paused=REDUCE,inside=false;
- const go=d=>{hold=Date.now()+8000;const max=tr.scrollWidth-tr.clientWidth-4;if(d>0&&tr.scrollLeft>=max)tr.scrollLeft=0;else if(d<0&&tr.scrollLeft<=0)tr.scrollLeft=max;else tr.scrollBy({left:d*step()})};
+(function(){const tr=$id("carTrack");if(!tr)return;
+ /* load every photo as soon as the strip is close, so swiping never waits on a lazy image */
+ const warm=()=>tr.querySelectorAll("img").forEach(im=>{im.loading="eager";if(im.decode)im.decode().catch(()=>{});});
+ if("IntersectionObserver" in window){const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){warm();io.disconnect();}},{rootMargin:"1200px 0px"});io.observe(tr);}else warm();const car=$id("carousel");const step=()=>tr.querySelector("figure").getBoundingClientRect().width+16;let hold=0,paused=REDUCE,inside=false;
+ const go=d=>{hold=Date.now()+5000;const max=tr.scrollWidth-tr.clientWidth-4;if(d>0&&tr.scrollLeft>=max)tr.scrollLeft=0;else if(d<0&&tr.scrollLeft<=0)tr.scrollLeft=max;else tr.scrollBy({left:d*step()})};
  car.querySelector(".car-prev").addEventListener("click",()=>go(-1));car.querySelector(".car-next").addEventListener("click",()=>go(1));
- ["pointerdown","wheel","touchstart"].forEach(ev=>tr.addEventListener(ev,()=>hold=Date.now()+8000,{passive:true}));
+ ["pointerdown","wheel","touchstart"].forEach(ev=>tr.addEventListener(ev,()=>hold=Date.now()+5000,{passive:true}));
  tr.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){e.preventDefault();go(1);}if(e.key==="ArrowLeft"){e.preventDefault();go(-1);}});
  /* hovering or focusing the photos pauses the slideshow; the pause button stops it for good */
  car.addEventListener("pointerenter",e=>{if(e.pointerType==="mouse")inside=true;});car.addEventListener("pointerleave",()=>inside=false);
@@ -93,6 +96,6 @@ const STEPS=[[0,"Slice","Cut to 1/8 inch"],[2,"Lay out","Strips on the racks"],[
  const pb=$id("carPause");
  const syncPb=()=>{if(!pb)return;pb.setAttribute("aria-pressed",String(paused));pb.querySelector("span.lbl").textContent=paused?"Play slideshow":"Pause slideshow";pb.dataset.state=paused?"paused":"playing";};
  if(pb){pb.addEventListener("click",()=>{paused=!paused;syncPb();});syncPb();}
- setInterval(()=>{if(paused||inside||Date.now()<hold||document.hidden)return;const r=tr.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const max=tr.scrollWidth-tr.clientWidth-4;if(tr.scrollLeft>=max)tr.scrollTo({left:0});else tr.scrollBy({left:step()});},3200);})();
+ setInterval(()=>{if(paused||inside||Date.now()<hold||document.hidden)return;const r=tr.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const max=tr.scrollWidth-tr.clientWidth-4;if(tr.scrollLeft>=max)tr.scrollTo({left:0});else tr.scrollBy({left:step()});},1900);})();
 /* ======== over 20 flavors badge wobbles once it is on screen (the home page stamps it in with GSAP instead) ======== */
 (function(){const o=$id("over20");if(!o||window.gsap||REDUCE)return;o.classList.add("live");})();
