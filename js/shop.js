@@ -176,3 +176,9 @@ if(JFConsent.el){
   if(fd){document.addEventListener("click",e=>{if(!e.target.isConnected)return;if(innerWidth<=820&&fd.classList.contains("open")&&!fd.contains(e.target)&&!e.target.closest(".ficon"))fd.classList.remove("open");});
     addEventListener("keydown",e=>{if(e.key==="Escape")fd.classList.remove("open");});}
 })();
+
+/* phones: the follow tab is a slim handle until tapped */
+(function(){var t=document.querySelector(".social-tab");if(!t)return;var mq=matchMedia("(max-width:820px)"),timer;
+ t.addEventListener("click",function(e){if(!mq.matches)return;if(!t.classList.contains("open")){e.preventDefault();t.classList.add("open");}
+  clearTimeout(timer);timer=setTimeout(function(){t.classList.remove("open");},5000);});
+ document.addEventListener("click",function(e){if(!t.contains(e.target))t.classList.remove("open");});})();
