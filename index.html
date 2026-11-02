@@ -959,7 +959,7 @@ function finishBoot(){
   const tl=gsap.timeline({delay:reduce?0:.35,onComplete:()=>{boot.remove();curtain.remove();document.documentElement.style.overflow="";scrollTo(0,0);if(lenis){lenis.scrollTo(0,{immediate:true});lenis.start();}ST.refresh();hintCur=null;
     /* hero intro: rise + 360 twist on z + grow */
     /* hold a beat so first time visitors catch the whole entrance */
-    gsap.to(S,{intro:1,duration:reduce?0:2.4,delay:reduce?0:2.5,ease:"power3.out"});gsap.to(S,{erupt:1,duration:reduce?0:2.8,delay:reduce?0:3.4,ease:"power2.out"});booted=true;setHint($("#hero"));
+    gsap.to(S,{intro:1,duration:reduce?0:2.4,delay:reduce?0:1.2,ease:"power3.out"});gsap.to(S,{erupt:1,duration:reduce?0:2.8,delay:reduce?0:1.9,ease:"power2.out"});booted=true;setHint($("#hero"));
     const tgt=startHash&&document.querySelector(startHash);if(tgt){requestAnimationFrame(()=>{if(lenis)lenis.scrollTo(tgt,{offset:-60,immediate:true});else tgt.scrollIntoView();ST.update();history.replaceState(null,"",startHash);});}}});
   if(reduce){tl.set(boot,{autoAlpha:0});return;}
   tl.to(".boot-in",{scale:1.08,duration:.18,ease:"power2.out"})
@@ -1035,11 +1035,10 @@ function frame(){
           if(fade<.01)sc=0;
           /* over 20 flavors badge rides the lime until you scroll */
           const ob=e*(1-smooth(.01,.08,P));
-          const ctR=mob&&heroCtas?heroCtas.getBoundingClientRect():null;
-          if(ob>.01&&ctR&&ctR.width){/* phones: badge sits just above the buttons */
-            const hr=heroEl.getBoundingClientRect(),bw=Math.min(104,innerWidth*.27);
+          if(ob>.01&&mob&&ctaOff.ok){/* phones: badge sits just above the buttons (offsets cached, no layout reads per frame) */
+            const bw=Math.min(104,innerWidth*.27);
             o20h.style.width=bw+"px";o20h.style.opacity=String(ob);
-            o20h.style.transform=`translate(${ctR.left-hr.left+6}px,${ctR.top-hr.top-bw*1.33-4}px) rotate(-8deg)`;}
+            o20h.style.transform=`translate(${ctaOff.x+6}px,${ctaOff.y-bw*1.33-4}px) rotate(-8deg)`;}
           else if(ob>.01){pv.set(x,y,z).project(camera);const d=sc/((10-z)/10)/VH*ch;const bw=d*.62;
             o20h.style.width=bw+"px";o20h.style.opacity=String(ob);
             o20h.style.transform=`translate(${(pv.x+1)/2*innerWidth-bw*.5}px,${(1-pv.y)/2*ch-bw*.62}px) rotate(-8deg)`;}
@@ -1085,12 +1084,12 @@ function frame(){
     if(!heroActive && !luActive) jerky.visible=false;
 
     /* ---- TROPHY: floats in the middle column, slight overlap only ---- */
-    const awSlot=awEl.querySelector(".aw-ui>div:nth-child(2)"),ar=awEl.getBoundingClientRect(), atop=ar.top-HH;
+    const ar=awEl.getBoundingClientRect(), atop=ar.top-HH;
     if(trophy && ar.bottom>HH && ar.top<innerHeight){
       /* comes up from the bottom of the screen very large, then settles smaller in the center; scrolls away with its section (no fade) */
       const rise=smooth(.3,.98,1-atop/ch), ease=1-Math.pow(1-rise,3), offA=-Math.min(0,atop)/ch*VH;
       /* phones: fill the empty middle slot between the title and the medals, never the words */
-      const slot=mob?awSlot.getBoundingClientRect():null;
+      const slot=mob?{top:ar.top+slotOff.t,bottom:ar.top+slotOff.t+slotOff.h,height:slotOff.h}:null;
       const tsz=mob?Math.min(VW*.86,slot.height/ch*VH*.86):Math.min(VH*.62,VW*.26);
       const slotY=mob?(.5-((slot.top+slot.bottom)/2-HH)/ch)*VH:0;
       if(mob)place(trophy,0,lerp(-VH*.62,slotY,ease)+Math.sin(t*.9)*VH*.01,0,tsz*lerp(2,1,ease));
@@ -1103,6 +1102,13 @@ function frame(){
   requestAnimationFrame(frame);
 }
 requestAnimationFrame(frame);
+/* layout offsets measured once (and on resize) instead of every animation frame */
+const ctaOff={x:0,y:0,ok:false},slotOff={t:0,h:0};
+function measureOffsets(){
+  if(heroCtas){const c=heroCtas.getBoundingClientRect(),h=heroEl.getBoundingClientRect();ctaOff.x=c.left-h.left;ctaOff.y=c.top-h.top;ctaOff.ok=c.width>0;}
+  const sl=awEl&&awEl.querySelector(".aw-ui>div:nth-child(2)");if(sl){const a=awEl.getBoundingClientRect(),r=sl.getBoundingClientRect();slotOff.t=r.top-a.top;slotOff.h=r.height;}
+}
+measureOffsets();addEventListener("resize",measureOffsets);addEventListener("load",measureOffsets);if(document.fonts)document.fonts.ready.then(measureOffsets);
 window.__S=S;
 /* ?tour : hands-free walkthrough for screen recordings. Scrolls at a natural pace, lingers on each section and
    waits for the full roadrunner clip. Does nothing unless the URL has ?tour. */

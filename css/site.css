@@ -1173,3 +1173,13 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 }
 /* interior page heroes sit on magenta too: deep purple highlight box */
 .lg-box{background:var(--bp-deep)!important;color:var(--bp-blush)!important}
+
+/* VIP club on deep Jerky Fixx purple */
+.vip{background:var(--bp-deep);color:var(--bp-blush)}
+.vip .wave path{fill:var(--bp-deep)}
+.vip .h2{color:var(--bp-blush)}.vip .h2 em{color:var(--bp-light)}
+.vip .eyebrow{color:var(--bp-light)!important}
+.vip .lede{color:#f1d9f3}
+.vip .perks li{background:rgba(253,239,253,.1);color:var(--bp-blush)}
+.vip .sec-more a{color:var(--bp-blush)!important}
+.vip .soon{color:var(--bp-light)}
