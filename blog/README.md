@@ -38,7 +38,7 @@ excerpt: One or two sentences for the blog index card and RSS.
 | updated | no | `YYYY-MM-DD`, used for `dateModified` and sitemap `lastmod`. Defaults to date. Bump it when you revise a post. |
 | keywords | yes | Comma separated. First one is the primary keyword. |
 | box | no | Text at the end of the title shown in the lime box. Defaults to the last word. |
-| hero | no | Root-absolute image path that exists in the repo. Defaults to the family booth photo. |
+| hero | yes | Root-absolute image path that exists in the repo. Every post needs its own hero that no other post uses, relevant to the topic (check `grep -h '^hero:' blog/posts/*.md`). Make one if needed: crop or recolor a real Jerky Fixx photo, or compose a branded graphic from /img assets with Pillow, saved as /img/blog/<slug>.webp. Never use stock photos of other brands. The builder auto-creates the 1200x630 share image. |
 | hero_alt | yes | Descriptive alt text for the hero image. |
 | excerpt | yes | Short summary for cards and RSS. |
 
@@ -78,3 +78,9 @@ Placeholder note: the author photo is `/img/roadrunner-head.webp` until a real p
 
 
 Also keep /llms.txt (brand facts for AI answer engines) accurate if facts change; add new posts to its Pages list.
+
+
+## Media in posts
+
+- Inline photo: `![alt text](/img/blog/file.webp) | optional caption`
+- Vertical video: `@video(/vid/blog/file.mp4, /vid/blog/poster.jpg) caption`
