@@ -35,7 +35,7 @@ const FLAVORS=[
  ["Honey Teriyaki",0,"Sweet, sticky and savory. The gateway flavor for the kids and the grandmas.",1],
  ["Pickle",1,"Tangy dill pickle jerky. Sour, salty and weirdly addictive."],
  ["Tajin Limon",2,"Chile lime Tajin style seasoning with a bright limon finish."]
-].map(([n,h,d,top],i)=>({n,h,d,top:!!top,i,s:slug(n),img:"/img/flavors/"+slug(n)+".webp"}));
+].map(([n,h,d,top,ph],i)=>({n,h,d,top:!!top,i,s:slug(n),img:ph||"/img/flavors/"+slug(n)+".webp"}));
 const BYSLUG=Object.fromEntries(FLAVORS.map(f=>[f.s,f]));
 const PRICE={Small:7,Large:20};
 const TOPN=["X-Hot Green","Hot Cheetos","Garlic Parm","Takis","Honey Teriyaki","Mango Habanero","Hot Cheeto Pickle","Lemon Pepper"];

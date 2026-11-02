@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /staging/
+Disallow: /studio/
+Disallow: /studio-requests/
+Disallow: /uploads/
 
 Sitemap: https://jerkyfixx.com/sitemap.xml

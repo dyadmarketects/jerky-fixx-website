@@ -1,0 +1,184 @@
+{
+  "_note": "Flavors, heat (0 to 5), descriptions and bag prices for the whole site. Edited in Fixx Studio. Leave photo blank to use /img/flavors/<flavor-slug>.webp.",
+  "prices": {
+    "Small": 7,
+    "Large": 20
+  },
+  "flavors": [
+    {
+      "name": "X-Hot Green",
+      "heat": 5,
+      "description": "Our hottest green chile jerky. Green chile heat stacked on more green chile for the fiends who like it loud.",
+      "top_seller": true,
+      "photo": ""
+    },
+    {
+      "name": "Green",
+      "heat": 3,
+      "description": "Classic New Mexico green chile carne seca. Earthy, bright and just the right burn.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Red",
+      "heat": 3,
+      "description": "Red chile beef jerky with deep, smoky New Mexico red chile flavor.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "X-Mas",
+      "heat": 3,
+      "description": "Can't choose? Red and green chile together, Christmas style, the way New Mexico does it.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Lemon Pepper Green",
+      "heat": 3,
+      "description": "Zesty lemon pepper meets green chile heat. Bright, peppery and hard to put down.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Garlic Parm Green",
+      "heat": 3,
+      "description": "Savory garlic and parmesan with a green chile kick.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Green Chili Ranch",
+      "heat": 2,
+      "description": "Cool ranch seasoning with a mellow green chile warmth.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Honey Teriyaki Green",
+      "heat": 2,
+      "description": "Sweet honey teriyaki with a little green chile bite on the finish.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Mango Habanero",
+      "heat": 4,
+      "description": "Sweet mango up front, slow habanero burn on the way out.",
+      "top_seller": true,
+      "photo": ""
+    },
+    {
+      "name": "Asian Zing",
+      "heat": 2,
+      "description": "Savory, tangy and a little sweet with an Asian inspired zing.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Takis",
+      "heat": 4,
+      "description": "Rolled chile lime crunch flavor on thin cut carne seca. Sour, spicy and gone way too fast.",
+      "top_seller": true,
+      "photo": ""
+    },
+    {
+      "name": "Hot Cheetos",
+      "heat": 4,
+      "description": "Red hot cheeto dust packed into every strip. Your fingers will be red and you won't care.",
+      "top_seller": true,
+      "photo": ""
+    },
+    {
+      "name": "Hot Mamma",
+      "heat": 4,
+      "description": "A hot one for the heat chasers. Bold red chile spice with a serious kick.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Hot Mamma Cheeto",
+      "heat": 5,
+      "description": "Hot Mamma heat plus hot cheeto dust. Double trouble for spice fiends.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Hot Cheeto Pickle",
+      "heat": 3,
+      "description": "Dill pickle tang meets hot cheeto heat. It sounds wild. It sells out anyway.",
+      "top_seller": true,
+      "photo": ""
+    },
+    {
+      "name": "Salt",
+      "heat": 0,
+      "description": "Simple, beefy and clean. Just meat and salt for the purists.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Salt x Pepper",
+      "heat": 1,
+      "description": "The classic pair. Salt and cracked black pepper on thin cut beef.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "X-Hot Green Chili Lime Salt",
+      "heat": 5,
+      "description": "X-Hot green chile with lime and a hit of salt. Tangy, salty, very hot.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Lemon Pepper",
+      "heat": 1,
+      "description": "Bright lemon and cracked black pepper. A classic that never gets old.",
+      "top_seller": true,
+      "photo": ""
+    },
+    {
+      "name": "Garlic",
+      "heat": 0,
+      "description": "Garlic lovers only. Big savory garlic flavor with zero heat.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Garlic Parm",
+      "heat": 0,
+      "description": "Roasted garlic and nutty parmesan. Mellow on the heat, loud on the flavor.",
+      "top_seller": true,
+      "photo": ""
+    },
+    {
+      "name": "Teriyaki",
+      "heat": 0,
+      "description": "Savory teriyaki glaze on tender, thin cut beef.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Honey Teriyaki",
+      "heat": 0,
+      "description": "Sweet, sticky and savory. The gateway flavor for the kids and the grandmas.",
+      "top_seller": true,
+      "photo": ""
+    },
+    {
+      "name": "Pickle",
+      "heat": 1,
+      "description": "Tangy dill pickle jerky. Sour, salty and weirdly addictive.",
+      "top_seller": false,
+      "photo": ""
+    },
+    {
+      "name": "Tajin Limon",
+      "heat": 2,
+      "description": "Chile lime Tajin style seasoning with a bright limon finish.",
+      "top_seller": false,
+      "photo": ""
+    }
+  ]
+}

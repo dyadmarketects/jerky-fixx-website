@@ -55,6 +55,14 @@ PAGES = [
     ("accessibility.html", "accessibility.html"),
     ("404.html", "404.html"),
 ]
+# Any other tools/pages/*.html (new pages made in Fixx Studio) builds to the "path" in its <!--page {json} --> header.
+_known = {src for src, _ in PAGES}
+for _f in sorted(os.listdir(os.path.join(ROOT, "tools", "pages"))):
+    if _f.endswith(".html") and _f not in _known:
+        _m = re.search(r"<!--page\s*(\{.*?\})\s*-->", open(os.path.join(ROOT, "tools", "pages", _f), encoding="utf-8").read(), re.S)
+        if _m:
+            _path = json.loads(_m.group(1)).get("path", "/" + _f[:-5] + "/").strip("/")
+            PAGES.append((_f, _path + "/index.html"))
 
 
 def read(p):
@@ -90,15 +98,16 @@ def jsonld(obj):
 
 # --------------------------------------------------------------------------- data from the site itself
 def flavors():
-    """FLAVORS from js/shop.js: [(name, heat, description, top_seller)]"""
-    src = read(os.path.join(ROOT, "js", "shop.js"))
-    block = src[src.index("const FLAVORS=["):src.index("].map(")]
-    out = []
-    for m in re.finditer(r'\[\s*"([^"]+)",\s*(\d),\s*"([^"]+)"(?:,\s*(1))?\]', block):
-        out.append((m.group(1), int(m.group(2)), m.group(3), bool(m.group(4))))
-    if len(out) < 20:
-        raise SystemExit("could not read FLAVORS from js/shop.js")
+    """Flavors from data/flavors.json (edited in Fixx Studio): [(name, heat, description, top_seller)]"""
+    out = [(f["name"], int(f["heat"]), f["description"], bool(f.get("top_seller"))) for f in FLAVOR_DATA["flavors"]]
+    if not out:
+        raise SystemExit("data/flavors.json has no flavors")
     return out
+
+
+FLAVOR_DATA = json.load(open(os.path.join(ROOT, "data", "flavors.json"), encoding="utf-8"))
+PRICES = FLAVOR_DATA["prices"]
+PHOTOS = {f["name"]: f.get("photo") or "" for f in FLAVOR_DATA["flavors"]}
 
 
 def fslug(n):
@@ -258,11 +267,11 @@ def catalog(fl):
     return {"@type": "OfferCatalog", "@id": SITE + "/jerky/#catalog", "name": "Jerky Fixx jerky and carne seca flavors",
             "url": SITE + "/jerky/", "numberOfItems": len(fl),
             "itemListElement": [{"@type": "Product", "@id": SITE + "/jerky/#" + fslug(n), "name": n + " Jerky",
-                                 "description": d, "image": SITE + "/img/flavors/" + fslug(n) + ".webp",
+                                 "description": d, "image": SITE + (PHOTOS.get(n) or "/img/flavors/" + fslug(n) + ".webp"),
                                  "brand": {"@type": "Brand", "name": "Jerky Fixx"}, "category": "Beef jerky",
-                                 "offers": [{"@type": "Offer", "name": "Small bag", "price": "7.00", "priceCurrency": "USD",
+                                 "offers": [{"@type": "Offer", "name": "Small bag", "price": "%.2f" % PRICES["Small"], "priceCurrency": "USD",
                                              "url": SITE + "/jerky/", "seller": {"@id": ORG_ID}},
-                                            {"@type": "Offer", "name": "Large bag", "price": "20.00", "priceCurrency": "USD",
+                                            {"@type": "Offer", "name": "Large bag", "price": "%.2f" % PRICES["Large"], "priceCurrency": "USD",
                                              "url": SITE + "/jerky/", "seller": {"@id": ORG_ID}}]}
                                 for n, h, d, top in fl]}
 

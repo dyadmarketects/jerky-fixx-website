@@ -1,0 +1,128 @@
+# Fixx Studio: turns Aaliyah's plain English requests into site changes on a studio/* branch,
+# rebuilds the site, posts a preview link and asks Vince to review. Nothing reaches main without a merge.
+#
+# Secrets (Settings > Secrets and variables > Actions), use ONE of these, both belong to Aaliyah:
+#   CLAUDE_CODE_OAUTH_TOKEN  from her Claude Pro/Max plan (`claude setup-token`)
+#   ANTHROPIC_API_KEY        from her own Claude Console account (pay as you go credits)
+# Variables (optional): STUDIO_REVIEWER (default dyadmarketects), CF_PAGES_PROJECT (default jerky-fixx)
+name: Fixx Studio
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: studio-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  studio:
+    if: >-
+      (github.event_name == 'pull_request' && startsWith(github.head_ref, 'studio/')) ||
+      (github.event_name == 'issue_comment' && github.event.issue.pull_request && github.event.comment.user.type != 'Bot' && contains(github.event.comment.body, '@claude'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PR: ${{ github.event.pull_request.number || github.event.issue.number }}
+      REVIEWER: ${{ vars.STUDIO_REVIEWER || 'dyadmarketects' }}
+      CF_PROJECT: ${{ vars.CF_PAGES_PROJECT || 'jerky-fixx' }}
+    steps:
+      - name: Find the branch
+        id: pr
+        run: |
+          gh pr view "$PR" -R "$GITHUB_REPOSITORY" --json headRefName,author,isCrossRepository -q '.headRefName + " " + .author.login + " " + (.isCrossRepository|tostring)' > pr.txt
+          read REF AUTHOR CROSS < pr.txt
+          if [ "$CROSS" = "true" ]; then echo "Forks are not allowed"; exit 1; fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"; echo "author=$AUTHOR" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.pr.outputs.ref }}
+          fetch-depth: 2
+
+      - name: What should Claude do?
+        id: ask
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+          COMMENTER: ${{ github.event.comment.user.login }}
+        run: |
+          RUN=no
+          if [ "${{ github.event_name }}" = "issue_comment" ]; then
+            PERM=$(gh api "repos/$GITHUB_REPOSITORY/collaborators/$COMMENTER/permission" -q .permission || echo none)
+            case "$PERM" in admin|maintain|write) RUN=yes ;; *) echo "No write access for $COMMENTER"; exit 0 ;; esac
+            printf '%s\n' "Follow STUDIO.md. $COMMENTER left this note on pull request #$PR. Make the change on this branch:" "" "$COMMENT" > .studio-prompt.txt
+          else
+            MSG=$(git log -1 --pretty=%s)
+            REQ=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- studio-requests/ | head -1 || true)
+            if [ -n "$REQ" ] && [[ "$MSG" == studio\ request:* ]]; then
+              RUN=yes
+              printf '%s\n' "Follow STUDIO.md. Do the request in $REQ on this branch." > .studio-prompt.txt
+            fi
+          fi
+          echo "run=$RUN" >> "$GITHUB_OUTPUT"
+          if [ "$RUN" = yes ]; then
+            gh pr comment "$PR" -R "$GITHUB_REPOSITORY" --body "🔥 On it. Claude is working on this now. A preview link shows up here when it's ready." || true
+            { echo 'prompt<<EOF_PROMPT'; cat .studio-prompt.txt; echo 'EOF_PROMPT'; } >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Tools for photos and video
+        run: |
+          pip install --quiet pillow
+          [ "${{ steps.ask.outputs.run }}" = yes ] || exit 0
+          command -v ffmpeg >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null)
+
+      - name: Claude makes the change
+        if: steps.ask.outputs.run == 'yes'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: ${{ steps.ask.outputs.prompt }}
+          claude_args: >-
+            --max-turns 60
+            --allowedTools "Read,Edit,Write,Glob,Grep,Bash(python3:*),Bash(ffmpeg:*),Bash(ffprobe:*),Bash(mkdir:*),Bash(mv:*),Bash(cp:*),Bash(rm uploads/*),Bash(rm -r uploads/*),Bash(ls:*),Bash(git status:*),Bash(git diff:*)"
+
+      - name: Rebuild the site
+        run: |
+          python3 tools/optimize_media.py
+          python3 tools/sync_flavors.py
+          python3 tools/build_pages.py
+          python3 tools/build_blog.py
+
+      - name: Save to the branch
+        run: |
+          git config user.name "Fixx Studio"
+          git config user.email "studio@jerkyfixx.com"
+          git add -A
+          git reset -q studio-summary.md .studio-prompt.txt pr.txt 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -q -m "Fixx Studio: ${{ steps.ask.outputs.run == 'yes' && 'changes from Claude' || 'rebuild' }}"
+            git push -q origin "HEAD:${{ steps.pr.outputs.ref }}"
+          fi
+
+      - name: Preview link and review request
+        if: steps.ask.outputs.run == 'yes' || github.event.action == 'opened'
+        run: |
+          ALIAS=$(echo "${{ steps.pr.outputs.ref }}" | tr 'A-Z' 'a-z' | sed 's/[^a-z0-9]/-/g' | cut -c1-28 | sed 's/-*$//')
+          URL="https://$ALIAS.$CF_PROJECT.pages.dev"
+          {
+            echo "## ✨ Ready for review"
+            echo
+            if [ -f studio-summary.md ]; then cat studio-summary.md; echo; fi
+            echo "**Preview:** $URL (give it a minute to build)"
+            echo
+            echo "Approve, pick and choose, or edit in [Fixx Studio](https://jerkyfixx.com/studio/#review/$PR). Want tweaks? Reply here with \`@claude\` and what to change."
+          } > comment.md
+          gh pr comment "$PR" -R "$GITHUB_REPOSITORY" --body-file comment.md
+          if [ "${{ steps.pr.outputs.author }}" != "$REVIEWER" ]; then
+            gh pr edit "$PR" -R "$GITHUB_REPOSITORY" --add-reviewer "$REVIEWER" || true
+          fi
