@@ -1141,3 +1141,8 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
   /* over 20 badge rides above the large bag price */
   .over20-wrap{bottom:auto;top:40px;width:92px}
 }
+/* mobile hero: buttons (and the over 20 badge that rides above them) sit low, just over the warning tape */
+@media (max-width:820px){
+  #hero .ctas{position:absolute;left:16px;right:16px;bottom:104px;width:auto;margin:0;display:flex;justify-content:center;gap:10px;z-index:7}
+  #hero .ctas .btn{flex:1 1 0;max-width:220px}
+}
