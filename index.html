@@ -1004,7 +1004,9 @@ function frame(){
     const heroActive=P<.999;
     const I=S.intro;
     const offH=-(hr.top-HH)/ch*VH;
-    const jx=mob?0:VW*.23, jy=mob?-VH*.18:-VH*.075, js=mob?VH*.66:VH*1.06;
+    /* desktop: bigger jerky whose top (with the bob) stays a few px inside the hero, so it always overlaps the white strip but never escapes it */
+    const js=mob?VH*.66:VH*1.2, jTop=VH*.5-(6/ch)*VH-VH*.01;
+    const jx=mob?0:VW*.23, jy=mob?-VH*.18:jTop-js*.5;
     const bob=Math.sin(t*1.1)*VH*.01;
     o20h.style.opacity="0";
     if(heroActive){
@@ -1038,9 +1040,11 @@ function frame(){
             const bw=Math.min(104,innerWidth*.27);
             o20h.style.width=bw+"px";o20h.style.opacity=String(ob);
             o20h.style.transform=`translate(${ctaOff.x+6}px,${ctaOff.y-bw*1.33-4}px) rotate(-8deg)`;}
-          else if(ob>.01){pv.set(x,y,z).project(camera);const d=sc/((10-z)/10)/VH*ch;const bw=d*.62;
+          else if(ob>.01){pv.set(x,y,z).project(camera);const d=sc/((10-z)/10)/VH*ch;const bw=Math.min(d*.62,ctaOff.tape*.36);
+            /* keep the whole badge in frame and above the warning tape */
+            const by=Math.max(capEl.offsetHeight+8,Math.min((1-pv.y)/2*ch-bw*.62,ctaOff.tape-bw*1.36-10));
             o20h.style.width=bw+"px";o20h.style.opacity=String(ob);
-            o20h.style.transform=`translate(${(pv.x+1)/2*innerWidth-bw*.5}px,${(1-pv.y)/2*ch-bw*.62}px) rotate(-8deg)`;}
+            o20h.style.transform=`translate(${(pv.x+1)/2*innerWidth-bw*.5}px,${by}px) rotate(-8deg)`;}
         } else { sc*=1-gone; }
         HL.push({it,x,y,z,sc,r:sc*.47,free:it.fly&&take>0});
       });
@@ -1102,9 +1106,10 @@ function frame(){
 }
 requestAnimationFrame(frame);
 /* layout offsets measured once (and on resize) instead of every animation frame */
-const ctaOff={x:0,y:0,ok:false},slotOff={t:0,h:0};
+const ctaOff={x:0,y:0,ok:false,tape:9999},slotOff={t:0,h:0};
 function measureOffsets(){
   if(heroCtas){const c=heroCtas.getBoundingClientRect(),h=heroEl.getBoundingClientRect();ctaOff.x=c.left-h.left;ctaOff.y=c.top-h.top;ctaOff.ok=c.width>0;}
+  {const h=heroEl.getBoundingClientRect(),tp=heroEl.querySelector(".tape.t2")||heroTapes;if(tp){ctaOff.tape=tp.getBoundingClientRect().top-h.top;}}
   const sl=awEl&&awEl.querySelector(".aw-ui>div:nth-child(2)");if(sl){const a=awEl.getBoundingClientRect(),r=sl.getBoundingClientRect();slotOff.t=r.top-a.top;slotOff.h=r.height;}
 }
 measureOffsets();addEventListener("resize",measureOffsets);addEventListener("load",measureOffsets);if(document.fonts)document.fonts.ready.then(measureOffsets);

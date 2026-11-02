@@ -1188,3 +1188,10 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 @keyframes ccGlow{0%,100%{box-shadow:0 18px 50px rgba(40,0,55,.45),0 0 0 0 rgba(225,92,242,.55)}50%{box-shadow:0 18px 50px rgba(40,0,55,.45),0 0 0 12px rgba(225,92,242,0)}}
 .consent:not([hidden]){animation:ccIn .75s cubic-bezier(.2,.9,.3,1.2) both,ccGlow 1.6s ease-out .75s 2}
 @media (prefers-reduced-motion:reduce){.consent:not([hidden]){animation:none}}
+
+/* desktop/laptop: thinner white strip so it clears CURE; jerky overlaps it */
+@media (min-width:821px){.hero{--cap:clamp(24px,4.6vh,50px)}}
+/* Top Sellers in bright Jerky Fixx purple */
+#hero .btn-lime{background:var(--bp-purple);color:#fff;box-shadow:6px 6px 0 var(--bp-ink)}
+#hero .btn-lime:hover{background:var(--bp-pink);color:var(--bp-ink)}
+@media (min-width:821px){.hero-copy{top:calc(var(--cap) + var(--u)*2 + 14px)}}
