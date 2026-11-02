@@ -1183,3 +1183,8 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 .vip .perks li{background:rgba(253,239,253,.1);color:var(--bp-blush)}
 .vip .sec-more a{color:var(--bp-blush)!important}
 .vip .soon{color:var(--bp-light)}
+/* cookie card: pops up from below with a little bounce and a tape-style tilt */
+@keyframes ccIn{0%{opacity:0;transform:translateY(120%) rotate(-6deg) scale(.9)}60%{opacity:1;transform:translateY(-10px) rotate(1.5deg) scale(1.02)}80%{transform:translateY(3px) rotate(-.5deg)}100%{opacity:1;transform:none}}
+@keyframes ccGlow{0%,100%{box-shadow:0 18px 50px rgba(40,0,55,.45),0 0 0 0 rgba(225,92,242,.55)}50%{box-shadow:0 18px 50px rgba(40,0,55,.45),0 0 0 12px rgba(225,92,242,0)}}
+.consent:not([hidden]){animation:ccIn .75s cubic-bezier(.2,.9,.3,1.2) both,ccGlow 1.6s ease-out .75s 2}
+@media (prefers-reduced-motion:reduce){.consent:not([hidden]){animation:none}}
