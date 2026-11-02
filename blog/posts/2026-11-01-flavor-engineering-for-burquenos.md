@@ -1,5 +1,5 @@
 ---
-title: Hot Mamma Cheeto and Jerky Flavors Made for Burque
+title: Hot Mamma Cheeto and Flavors Made for Burque
 slug: flavor-engineering-for-burquenos
 date: 2026-11-01
 updated: 2026-11-01
