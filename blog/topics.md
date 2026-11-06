@@ -7,7 +7,7 @@ Format: `N. [status] Title | primary keyword | angle`
 
 1. [done] The Best Jerky Flavors for Game Day | jerky albuquerque | Build a game day snack bag from our flavors, mild to hot, with heat levels 0 to 5. | best-jerky-flavors-for-game-day
 2. [done] What Is Carne Seca? A Plain English Guide | carne seca albuquerque | Carne seca vs jerky, the New Mexico name, and how ours is made (thin cut, heavy seasoning, long slow dry). | what-is-carne-seca
-3. [todo] Hot Cheeto Jerky: Yes, It Is Real | hot cheeto jerky | The story of the Hot Cheetos and Hot Cheeto Pickle flavors and who they are for.
+3. [done] Hot Cheeto Jerky: Yes, It Is Real | hot cheeto jerky | The story of the Hot Cheetos and Hot Cheeto Pickle flavors and who they are for. | hot-cheeto-jerky
 4. [todo] Green Chile Jerky Flavors Ranked by Heat | green chile jerky | Go through Green, Green Chili Ranch, Honey Teriyaki Green, Lemon Pepper Green, Garlic Parm Green and the two X-Hot greens.
 5. [todo] Beef Jerky Near Me: How to Get Jerky Fixx | beef jerky near me | Pop ups, festivals, ball games and door drop off, and how to text the crew.
 6. [todo] Jerky Fix or Jerky Fixx? You Found Us | jerky fix | Light, friendly post on the common spelling, who we are and where to find us.
