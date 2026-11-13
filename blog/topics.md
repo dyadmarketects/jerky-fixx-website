@@ -9,9 +9,9 @@ Format: `N. [status] Title | primary keyword | angle`
 2. [done] What Is Carne Seca? A Plain English Guide | carne seca albuquerque | Carne seca vs jerky, the New Mexico name, and how ours is made (thin cut, heavy seasoning, long slow dry). | what-is-carne-seca
 3. [done] Hot Cheeto Jerky: Yes, It Is Real | hot cheeto jerky | The story of the Hot Cheetos and Hot Cheeto Pickle flavors and who they are for. | hot-cheeto-jerky
 4. [done] Green Chile Jerky Flavors Ranked by Heat | green chile jerky | Go through Green, Green Chili Ranch, Honey Teriyaki Green, Lemon Pepper Green, Garlic Parm Green and the two X-Hot greens. | green-chile-jerky-ranked-by-heat
-5. [todo] Beef Jerky Near Me: How to Get Jerky Fixx | beef jerky near me | Pop ups, festivals, ball games and door drop off, and how to text the crew.
-6. [todo] Jerky Fix or Jerky Fixx? You Found Us | jerky fix | Light, friendly post on the common spelling, who we are and where to find us.
-7. [todo] Spicy Jerky for Heat Chasers | spicy jerky albuquerque | X-Hot Green, Hot Mamma Cheeto, X-Hot Green Chili Lime Salt, Mango Habanero. Tips for building up to the hot ones.
+5. [skip] Beef Jerky Near Me: How to Get Jerky Fixx | beef jerky near me | Pop ups, festivals, ball games and door drop off, and how to text the crew. | already covered by where-to-buy-jerky-in-albuquerque
+6. [skip] Jerky Fix or Jerky Fixx? You Found Us | jerky fix | Light, friendly post on the common spelling, who we are and where to find us. | already covered by meet-the-jerky-fixx-family
+7. [done] Spicy Jerky for Heat Chasers | spicy jerky albuquerque | X-Hot Green, Hot Mamma Cheeto, X-Hot Green Chili Lime Salt, Mango Habanero. Tips for building up to the hot ones. | spicy-jerky-for-heat-chasers
 8. [todo] Mild Jerky for Kids, Grandmas and Picky Eaters | mild beef jerky | Salt, Garlic, Garlic Parm, Teriyaki and Honey Teriyaki (all 0 heat) and the 1s.
 9. [todo] A Jerky Gift Guide for New Mexico Lovers | new mexico gifts jerky | Mixed flavor bags for coworkers, hosts and homesick cousins, with drop-off notes.
 10. [todo] Jerky Fest Recap: Halloween Edition | new mexico jerky fest | Recap of the Oct 31, 2026 festival at Isleta Resort & Casino. Only write after the event, with facts supplied by the family.
