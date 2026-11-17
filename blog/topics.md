@@ -12,7 +12,7 @@ Format: `N. [status] Title | primary keyword | angle`
 5. [skip] Beef Jerky Near Me: How to Get Jerky Fixx | beef jerky near me | Pop ups, festivals, ball games and door drop off, and how to text the crew. | already covered by where-to-buy-jerky-in-albuquerque
 6. [skip] Jerky Fix or Jerky Fixx? You Found Us | jerky fix | Light, friendly post on the common spelling, who we are and where to find us. | already covered by meet-the-jerky-fixx-family
 7. [done] Spicy Jerky for Heat Chasers | spicy jerky albuquerque | X-Hot Green, Hot Mamma Cheeto, X-Hot Green Chili Lime Salt, Mango Habanero. Tips for building up to the hot ones. | spicy-jerky-for-heat-chasers
-8. [todo] Mild Jerky for Kids, Grandmas and Picky Eaters | mild beef jerky | Salt, Garlic, Garlic Parm, Teriyaki and Honey Teriyaki (all 0 heat) and the 1s.
+8. [done] Mild Jerky for Kids, Grandmas and Picky Eaters | mild beef jerky | Salt, Garlic, Garlic Parm, Teriyaki and Honey Teriyaki (all 0 heat) and the 1s. | mild-beef-jerky
 9. [todo] A Jerky Gift Guide for New Mexico Lovers | new mexico gifts jerky | Mixed flavor bags for coworkers, hosts and homesick cousins, with drop-off notes.
 10. [todo] Jerky Fest Recap: Halloween Edition | new mexico jerky fest | Recap of the Oct 31, 2026 festival at Isleta Resort & Casino. Only write after the event, with facts supplied by the family.
 11. [todo] How We Make Small Batch Carne Seca | small batch jerky | Thin cut beef, heavy seasoning, long slow dry. See "The Lab" on the home page. No made up temperatures or times.
