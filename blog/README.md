@@ -86,6 +86,9 @@ Also keep /llms.txt (brand facts for AI answer engines) accurate if facts change
 - Vary the format from post to post: real Jerky Fixx photos (`/img/family/`, booth and event shots), lifestyle scenes, close up product shots, illustrated graphics. Never reuse the layout of the previous two heroes (check the last two files in `img/blog/`).
 - The only logo on any hero or merch is `/img/logo-stack.webp` (the site header logo). Do not use `logo-lockup.webp`.
 - AI generated lifestyle images are fine as illustrations, but never caption or describe them as real customers, reviews or events.
+- Make heroes with Canva (`generate-image`, 16:9). Aim for engaging, creative, scroll-stopping scenes tied to the topic: people enjoying jerky in a relevant setting, playful product moments, bold illustrated concepts. Mix photo style, illustration and graphic design across posts.
+- When the scene includes merch or packaging, first import the real logo with `upload-asset-from-url` from `https://jerkyfixx.com/img/logo-stack.webp` and pass it in `imageReferences`. Zoom in and check the logo; fix stray marks or warped lettering before publishing (regenerate, or clean up with Pillow/OpenCV).
+- Download the full size Canva image (needs canva.com allowed in the session's network settings), crop to 1200x675, save as `/img/blog/<slug>.webp` and commit it with the post. If the full size image can't be downloaded, fall back to a composed graphic from real Jerky Fixx photos in `/img/` (never a flavor circle grid) and say so in the run report.
 
 ## Media in posts
 

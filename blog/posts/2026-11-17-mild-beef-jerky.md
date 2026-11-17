@@ -6,8 +6,8 @@ updated: 2026-11-17
 description: Mild beef jerky with big flavor and zero to low heat. Meet our 0 and 1 flavors, from Honey Teriyaki to Lemon Pepper, small batch from Albuquerque.
 keywords: mild beef jerky, mild jerky, jerky for kids, jerky albuquerque, jerky fixx
 box: Picky Eaters
-hero: /img/blog/mild-beef-jerky.webp
-hero_alt: Eight mild Jerky Fixx carne seca flavors in circles on a golden patterned background, five labeled heat 0 and three labeled heat 1
+hero: /img/blog/mild-beef-jerky-grandma.webp
+hero_alt: Smiling grandma in glasses taking a bite of beef jerky on her living room couch, wearing a black Jerky Fixx roadrunner t-shirt
 excerpt: Not everybody wants a 5. Here are our eight mild flavors, heat 0 and 1, and how to pick one for the kids, the grandmas and the pickiest person you know.
 ---
 Hi, it's Aaliyah. Last week I wrote a whole post for the [heat chasers](/blog/spicy-jerky-for-heat-chasers/), the people who walk up to our booth and ask for the hottest thing we make. This week is for everybody else. The kids. The grandmas. The friend who says "is this spicy?" before every single bite. The uncle who swears green chile is too much for him even though he lives in New Mexico.
