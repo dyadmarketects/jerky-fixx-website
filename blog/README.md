@@ -80,6 +80,13 @@ Placeholder note: the author photo is `/img/roadrunner-head.webp` until a real p
 Also keep /llms.txt (brand facts for AI answer engines) accurate if facts change; add new posts to its Pages list.
 
 
+## Hero image rules
+
+- The hero must show the post's actual subject (a grandma post shows a grandma, a road trip post shows a road trip, a gift post shows gifts). No generic flavor grids.
+- Vary the format from post to post: real Jerky Fixx photos (`/img/family/`, booth and event shots), lifestyle scenes, close up product shots, illustrated graphics. Never reuse the layout of the previous two heroes (check the last two files in `img/blog/`).
+- The only logo on any hero or merch is `/img/logo-stack.webp` (the site header logo). Do not use `logo-lockup.webp`.
+- AI generated lifestyle images are fine as illustrations, but never caption or describe them as real customers, reviews or events.
+
 ## Media in posts
 
 - Inline photo: `![alt text](/img/blog/file.webp) | optional caption`
