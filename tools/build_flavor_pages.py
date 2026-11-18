@@ -97,6 +97,22 @@ document.querySelectorAll(".flv-buy button").forEach(function(b){b.addEventListe
     return "<!--page\n" + json.dumps(meta, ensure_ascii=False) + "\n-->\n" + body + "<!--scripts-->\n" + script + "\n"
 
 
+def favs_into_chrome(names):
+    """Writes the Fixx Favs links (top seller pages) into the nav dropdown, phone menu and footer in cart.html.
+    build_pages.py then copies that chrome to every page."""
+    p = os.path.join(ROOT, "cart.html")
+    src = open(p, encoding="utf-8").read()
+    links = "".join('<a href="/jerky/%s/">%s</a>' % (slug(n), esc(n)) for n in names)
+    blocks = {"NAV": '<p class="dd-h">Fixx Favs</p>' + links + '<a class="dd-all" href="/green-chile-jerky/">Green chile jerky</a><a class="dd-all" href="/jerky/">All %d flavors</a>' % len(FL["flavors"]),
+              "MNAV": links + '<a href="/jerky/">All %d flavors</a>' % len(FL["flavors"]),
+              "FOOT": links}
+    new = src
+    for k, v in blocks.items():
+        new = re.sub(r"<!-- FAVS:%s -->.*?<!-- /FAVS:%s -->" % (k, k), "<!-- FAVS:%s -->%s<!-- /FAVS:%s -->" % (k, v, k), new, flags=re.S)
+    if new != src:
+        open(p, "w", encoding="utf-8").write(new)
+
+
 def main():
     keep = set()
     for name, c in COPY.items():
@@ -113,6 +129,7 @@ def main():
         if fn.startswith("flavor-") and fn.endswith(".html") and fn not in keep:
             os.remove(os.path.join(PAGES_DIR, fn))
             print("removed", fn)
+    favs_into_chrome([n for n in COPY if n in BY])
     print("flavor pages: %d" % len(keep))
 
 

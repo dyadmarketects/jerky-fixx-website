@@ -179,3 +179,8 @@ if(JFConsent.el){
   if(fd){document.addEventListener("click",e=>{if(!e.target.isConnected)return;if(innerWidth<=820&&fd.classList.contains("open")&&!fd.contains(e.target)&&!e.target.closest(".ficon"))fd.classList.remove("open");});
     addEventListener("keydown",e=>{if(e.key==="Escape")fd.classList.remove("open");});}
 })();
+/* Jerky dropdown: tap/keyboard toggle (hover already opens it on desktop) */
+(function(){document.querySelectorAll(".nav-dd").forEach(function(dd){var b=dd.querySelector(".dd-tg");if(!b)return;
+ b.addEventListener("click",function(e){e.stopPropagation();var o=dd.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false");});
+ document.addEventListener("click",function(e){if(!dd.contains(e.target)){dd.classList.remove("open");b.setAttribute("aria-expanded","false");}});
+ dd.addEventListener("keydown",function(e){if(e.key==="Escape"){dd.classList.remove("open");b.setAttribute("aria-expanded","false");b.focus();}});});})();
