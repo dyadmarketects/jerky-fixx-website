@@ -151,7 +151,8 @@ def flavors_by_heat(fl):
         lis = "\n".join(
             '        <li><img src="/img/flavors/%s.webp" alt="" width="360" height="360" loading="lazy"><div><h4>%s%s</h4>'
             '<p class="pg-heatline">%d<span aria-hidden="true">/5</span><span class="sr-only"> out of 5</span></p><p>%s</p></div></li>'
-            % (fslug(n), esc(n), ' <span class="pg-top">Top seller</span>' if top else "", h, esc(d)) for n, h, d, top in items)
+            % (fslug(n), ('<a href="%s">%s</a>' % (flavor_url(n)[len(SITE):], esc(n))) if flavor_url(n) != SITE + "/jerky/" else esc(n),
+               ' <span class="pg-top">Top seller</span>' if top else "", h, esc(d)) for n, h, d, top in items)
         out.append('  <section class="pg-heatgrp" aria-labelledby="heat-%s">\n    <h3 id="heat-%s">%s <small>%s, %d flavors</small></h3>\n'
                    '    <ul class="pg-flavors">\n%s\n    </ul>\n  </section>' % (fslug(name), fslug(name), name, rng, len(items), lis))
     out.append("</div>")
@@ -179,7 +180,9 @@ def hero(meta):
     h = meta["hero"]
     pre = '<span class="lg-t1">%s</span> ' % h["plain"] if h.get("plain") else ""
     icons = "".join('<img class="deco lg-deco %s" src="/img/%s.webp" alt="">' % (c, i) for c, i in h.get("icons", []))
-    crumbs = '<nav class="bl-crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">%s</li></ol></nav>' % esc(meta["crumb"])
+    par = meta.get("parent")
+    mid = '<li><a href="%s">%s</a></li>' % (par[0], esc(par[1])) if par else ""
+    crumbs = '<nav class="bl-crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li>%s<li aria-current="page">%s</li></ol></nav>' % (mid, esc(meta["crumb"]))
     return f'''<section class="lg-hero">
   <div class="lg-pattern" aria-hidden="true"></div>
   <div class="lg-lightning" aria-hidden="true"></div>
@@ -247,8 +250,9 @@ def page_ld(meta, main, fl):
          "@id": url + "#page", "url": url, "name": meta["title"], "description": meta["description"], "inLanguage": "en-US",
          "isPartOf": {"@id": SITE + "/#site"}, "about": {"@id": ORG_ID}, "breadcrumb": {"@id": url + "#crumbs"}},
         {"@type": "BreadcrumbList", "@id": url + "#crumbs", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
-            {"@type": "ListItem", "position": 2, "name": meta["crumb"], "item": url}]},
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"}] + (
+            [{"@type": "ListItem", "position": 2, "name": meta["parent"][1], "item": SITE + meta["parent"][0]}] if meta.get("parent") else []) + [
+            {"@type": "ListItem", "position": 3 if meta.get("parent") else 2, "name": meta["crumb"], "item": url}]},
     ]
     if meta.get("faqpage"):
         qa = []
@@ -258,7 +262,24 @@ def page_ld(meta, main, fl):
         graph[0]["mainEntity"] = qa
     if meta.get("products"):
         graph.append(catalog(fl))
+    if meta.get("product"):
+        pr = meta["product"]
+        graph.append({"@type": "Product", "@id": url + "#product", "name": pr["name"] + " Jerky", "description": pr["description"],
+                      "image": SITE + pr["image"], "brand": {"@type": "Brand", "name": "Jerky Fixx"}, "category": "Beef jerky",
+                      "mainEntityOfPage": {"@id": url + "#page"},
+                      "additionalProperty": [{"@type": "PropertyValue", "name": "Heat level (0 to 5)", "value": pr["heat"]}],
+                      "offers": [offer("Small bag", PRICES["Small"], url), offer("Large bag", PRICES["Large"], url)]})
     return jsonld({"@context": "https://schema.org", "@graph": graph}) + "\n"
+
+
+def offer(name, price, url):
+    return {"@type": "Offer", "name": name, "price": "%.2f" % price, "priceCurrency": "USD", "url": url,
+            "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition",
+            "areaServed": ["Albuquerque, NM", "Rio Rancho, NM"], "seller": {"@id": ORG_ID}}
+
+
+def flavor_url(n):
+    return SITE + "/jerky/" + fslug(n) + "/" if os.path.exists(os.path.join(ROOT, "tools", "pages", "flavor-" + fslug(n) + ".html")) else SITE + "/jerky/"
 
 
 def catalog(fl):
@@ -269,38 +290,33 @@ def catalog(fl):
             "itemListElement": [{"@type": "Product", "@id": SITE + "/jerky/#" + fslug(n), "name": n + " Jerky",
                                  "description": d, "image": SITE + (PHOTOS.get(n) or "/img/flavors/" + fslug(n) + ".webp"),
                                  "brand": {"@type": "Brand", "name": "Jerky Fixx"}, "category": "Beef jerky",
-                                 "offers": [{"@type": "Offer", "name": "Small bag", "price": "%.2f" % PRICES["Small"], "priceCurrency": "USD",
-                                             "url": SITE + "/jerky/", "seller": {"@id": ORG_ID}},
-                                            {"@type": "Offer", "name": "Large bag", "price": "%.2f" % PRICES["Large"], "priceCurrency": "USD",
-                                             "url": SITE + "/jerky/", "seller": {"@id": ORG_ID}}]}
+                                 "url": flavor_url(n),
+                                 "offers": [offer("Small bag", PRICES["Small"], flavor_url(n)), offer("Large bag", PRICES["Large"], flavor_url(n))]}
                                 for n, h, d, top in fl]}
 
 
 def home_ld():
-    org = {"@type": "Organization", "@id": ORG_ID, "name": "Jerky Fixx", "url": SITE + "/",
+    """One business entity (LocalBusiness with the organization @id) so Google sees a single Jerky Fixx."""
+    biz = {"@type": "LocalBusiness", "@id": ORG_ID, "name": "Jerky Fixx", "alternateName": ["Jerky Fix", "JerkyFixx"],
+           "description": "Family made small batch beef jerky and carne seca in 25 flavors from Albuquerque, New Mexico. Door drop off in Albuquerque and Rio Rancho.",
+           "url": SITE + "/", "image": OG_IMAGE,
            "logo": {"@type": "ImageObject", "url": SITE + "/img/favicon-512.png", "width": 512, "height": 512},
-           "email": "jerkyfixx@gmail.com", "telephone": "+1-505-922-5683",
-           "sameAs": ["https://www.instagram.com/jerky_fixx/", "https://www.facebook.com/jerky.fixx/", "https://www.threads.com/@jerky_fixx"],
-           "alternateName": ["Jerky Fix", "JerkyFixx"],
-           "founder": [{"@type": "Person", "name": "Joseph Garduno"}, {"@type": "Person", "name": "Sabrina Penn Garduno"}],
-           "employee": [{"@type": "Person", "name": "Aaliyah Penn", "jobTitle": "Website manager and blog author", "url": SITE + "/blog/aaliyah-penn/"}],
-           "award": ["Most Exotic Flavor, New Mexico Jerky Fest", "Best Booth, New Mexico Jerky Fest"]}
-    site = {"@type": "WebSite", "@id": SITE + "/#site", "name": "Jerky Fixx", "alternateName": ["JerkyFixx", "jerkyfixx.com", "Jerky Fix"],
-            "url": SITE + "/", "publisher": {"@id": ORG_ID}, "inLanguage": "en-US"}
-    biz = {"@type": "LocalBusiness", "@id": SITE + "/#biz", "name": "Jerky Fixx",
-           "description": "Small batch beef jerky and carne seca in 25 flavors from Albuquerque, New Mexico.",
-           "url": SITE + "/", "image": OG_IMAGE, "logo": SITE + "/img/favicon-512.png",
            "telephone": "+1-505-922-5683", "email": "jerkyfixx@gmail.com", "priceRange": "$7 to $20",
            "paymentAccepted": "Cash, Cash App, Venmo, Apple Pay", "currenciesAccepted": "USD",
            "address": {"@type": "PostalAddress", "addressLocality": "Albuquerque", "addressRegion": "NM", "addressCountry": "US"},
            "areaServed": [{"@type": "City", "name": "Albuquerque"}, {"@type": "City", "name": "Rio Rancho"}, {"@type": "State", "name": "New Mexico"}],
            "contactPoint": [{"@type": "ContactPoint", "contactType": "orders", "telephone": "+1-505-922-5683", "email": "jerkyfixx@gmail.com", "areaServed": "US-NM", "availableLanguage": "en"},
                             {"@type": "ContactPoint", "contactType": "orders", "telephone": "+1-505-364-0678", "areaServed": "US-NM", "availableLanguage": "en"}],
-           "parentOrganization": {"@id": ORG_ID}, "hasOfferCatalog": {"@id": SITE + "/jerky/#catalog"},
-           "sameAs": org["sameAs"]}
+           "sameAs": ["https://www.instagram.com/jerky_fixx/", "https://www.facebook.com/jerky.fixx/", "https://www.threads.com/@jerky_fixx"],
+           "founder": [{"@type": "Person", "name": "Joseph Garduno", "jobTitle": "Co-owner"}, {"@type": "Person", "name": "Sabrina Penn Garduno", "jobTitle": "Co-owner"}],
+           "employee": [{"@type": "Person", "name": "Aaliyah Penn", "jobTitle": "Website manager and blog author", "url": SITE + "/blog/aaliyah-penn/"}],
+           "award": ["Most Exotic Flavor, New Mexico Jerky Fest", "Best Booth, New Mexico Jerky Fest"],
+           "hasOfferCatalog": {"@id": SITE + "/jerky/#catalog"}}
+    site = {"@type": "WebSite", "@id": SITE + "/#site", "name": "Jerky Fixx", "alternateName": ["JerkyFixx", "jerkyfixx.com", "Jerky Fix"],
+            "url": SITE + "/", "publisher": {"@id": ORG_ID}, "inLanguage": "en-US"}
     page = {"@type": "WebPage", "@id": SITE + "/#page", "url": SITE + "/", "name": "Jerky Fixx | Beef Jerky and Carne Seca in Albuquerque, NM",
-            "isPartOf": {"@id": SITE + "/#site"}, "about": {"@id": SITE + "/#biz"}, "inLanguage": "en-US"}
-    return jsonld({"@context": "https://schema.org", "@graph": [org, site, biz, page]})
+            "isPartOf": {"@id": SITE + "/#site"}, "about": {"@id": ORG_ID}, "inLanguage": "en-US"}
+    return jsonld({"@context": "https://schema.org", "@graph": [biz, site, page]})
 
 
 # --------------------------------------------------------------------------- build

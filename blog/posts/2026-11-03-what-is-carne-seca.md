@@ -20,6 +20,10 @@ Carne seca is Spanish for "dried meat." At Jerky Fixx, that means dried, seasone
 
 So is carne seca the same as jerky? Pretty much, yes. Both are dried, seasoned beef. Carne seca is the traditional New Mexico name for it, and it's a name people here feel at home with. You'll see us use both words all over this site, and that isn't an accident. Some people are looking for jerky in Albuquerque, some are looking for carne seca, and we want everybody to end up in the same happy place.
 
+## Carne seca in English
+
+If you searched "carne seca en inglés," the answer is simple: carne seca means "dried meat" in English, and in New Mexico it almost always means dried, seasoned beef. En español: la carne seca es carne de res seca y sazonada, y la nuestra se hace en pequeños lotes aquí en Albuquerque.
+
 ## Then why use two names?
 
 Mostly because of where you are. "Jerky" is the word you'll hear just about everywhere. "Carne seca" is the name with roots here in New Mexico, so it carries a lot of home feeling with it.
@@ -61,7 +65,7 @@ One thing worth knowing before you order: everything contains beef, and some fla
 
 ## Where to find carne seca in Albuquerque
 
-Every flavor of [carne seca in Albuquerque](/jerky/) we make is on our menu, and if you want the New Mexico classic, our [green chile jerky](/green-chile-jerky/) lineup runs from mellow to X-Hot.
+Every flavor of [carne seca in Albuquerque](/jerky/) we make is on our menu, and if you want the New Mexico classic, our [green chile jerky](/green-chile-jerky/) lineup runs from mellow to X-Hot. Not sure where to start? Try [Lemon Pepper](/jerky/lemon-pepper/) for no fuss flavor or [X-Hot Green](/jerky/x-hot-green/) if you want the burn.
 
 The easiest way to try it is right from your phone. Browse [all 25 flavors on the menu](/#menu), add what you want to your [cart](/cart.html) and send your order. A small bag is $7 and a large bag is $20. The crew texts you to confirm, the dealer drops it at your door and you get a photo once it's delivered. You can pay with Cash App, Venmo, Apple Pay or cash.
 

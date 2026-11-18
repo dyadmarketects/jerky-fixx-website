@@ -96,3 +96,5 @@ Want to try before you buy? We set up at pop ups, festivals and ball games aroun
 If you're putting together snacks for a crowd, my [game day flavor guide](/blog/best-jerky-flavors-for-game-day/) has ideas for mixing mild and hot bags.
 
 So where do you land on the ladder? Text us at 505-922-5683 and tell us your number. We love hearing which green you picked.
+
+**Shop the top seller:** [X-Hot Green](/jerky/x-hot-green/), or see every option on the [green chile jerky](/green-chile-jerky/) page.

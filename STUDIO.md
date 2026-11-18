@@ -11,6 +11,7 @@ You are working on a request from **Aaliyah Penn**, who runs the Jerky Fixx webs
 | What | Edit this | Then run |
 |---|---|---|
 | Flavors, heat (0 to 5), descriptions, bag prices, catalog photo paths | `data/flavors.json` | `python3 tools/sync_flavors.py` |
+| Top seller flavor pages at /jerky/<slug>/ (copy, photo, pairings) | `data/flavor-pages.json` | `python3 tools/build_flavor_pages.py` then `python3 tools/build_pages.py` |
 | Catalog photo for a flavor | replace `img/flavors/<flavor-slug>.webp` (600x600 webp) | nothing |
 | Interior pages (jerky, our story, the lab, dealer locator, VIP, contact, FAQ, legal) | `tools/pages/<name>.html` | `python3 tools/build_pages.py` |
 | A new page | new `tools/pages/<slug>.html`, copy the header format of `tools/pages/our-story.html`, set `"path": "/<slug>/"` | `python3 tools/build_pages.py` |
@@ -20,7 +21,7 @@ You are working on a request from **Aaliyah Penn**, who runs the Jerky Fixx webs
 | Styles | `css/site.css` (append new rules at the end) | nothing |
 | Photos dropped in `img/uploads/` or `img/flavors/` as jpg/png | leave them | `python3 tools/optimize_media.py` (turns them into webp) |
 
-Always finish by running, in order: `python3 tools/sync_flavors.py`, `python3 tools/build_pages.py`, `python3 tools/build_blog.py`. They must print "All checks passed."
+Always finish by running, in order: `python3 tools/sync_flavors.py`, `python3 tools/build_flavor_pages.py`, `python3 tools/build_pages.py`, `python3 tools/build_blog.py`. They must print "All checks passed."
 
 ## Media she uploads
 - Photos: convert to `.webp`, max 2000px on the long side, quality about 82, with Pillow. Put site photos in `img/uploads/`, flavor photos in `img/flavors/<flavor-slug>.webp` (600x600, centered crop).

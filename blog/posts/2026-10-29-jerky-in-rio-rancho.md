@@ -1,8 +1,8 @@
 ---
-title: Jerky in Rio Rancho: Pop Ups and Door Drop Off
+title: Jerky in Rio Rancho, NM: Delivery and Pop Ups
 slug: jerky-in-rio-rancho
 date: 2026-10-29
-updated: 2026-10-29
+updated: 2026-11-18
 description: Looking for jerky in Rio Rancho? Catch Jerky Fixx at pop ups and ball games, or order small batch carne seca and have the dealer drop it at your door.
 keywords: jerky rio rancho, rio rancho jerky, beef jerky rio rancho, jerky near me, jerky fixx
 box: Door Drop Off
@@ -30,6 +30,10 @@ Honestly, jerky might be the perfect ball game snack. It's easy to carry, it doe
 
 A small bag is $7 and a large bag is $20, so it's easy to split a few flavors for the whole team or the whole family.
 
+## Rio Rancho delivery, the short version
+
+Rio Rancho is part of our regular door drop off area, the same as Albuquerque. You order online or by text, we confirm by text, and the dealer brings it to your door with a photo when it's delivered. No shipping, no warehouse, no waiting on a box. If you're not sure your street is in range, text 505-922-5683 and we'll tell you straight. Want the full list of ways to get it? Our [where to buy jerky in Albuquerque](/blog/where-to-buy-jerky-in-albuquerque/) guide covers them all.
+
 ## No game today? Door drop off
 
 Browse every flavor of [jerky made in New Mexico](/jerky/) first, from [green chile jerky](/green-chile-jerky/) to Hot Cheetos.
@@ -49,14 +53,14 @@ If you aren't sure your address is in range, just text and ask. We would rather 
 
 I don't have a neighborhood by neighborhood breakdown, and I won't pretend to. What I can tell you is what our top sellers are overall, because those travel well across the metro:
 
-- X-Hot Green
-- Hot Cheetos
-- Garlic Parm
-- Takis
-- Honey Teriyaki
-- Mango Habanero
-- Hot Cheeto Pickle
-- Lemon Pepper
+- [X-Hot Green](/jerky/x-hot-green/)
+- [Hot Cheetos](/jerky/hot-cheetos/)
+- [Garlic Parm](/jerky/garlic-parm/)
+- [Takis](/jerky/takis/)
+- [Honey Teriyaki](/jerky/honey-teriyaki/)
+- [Mango Habanero](/jerky/mango-habanero/)
+- [Hot Cheeto Pickle](/jerky/hot-cheeto-pickle/)
+- [Lemon Pepper](/jerky/lemon-pepper/)
 
 If you like chile, start with our green chile lineup. Our **Green** is classic New Mexico green chile carne seca, and **X-Hot Green** is the one to try if you really like heat. If you want to dig into the chile side of things, check out our post on [New Mexico jerky and green chile carne seca](/blog/new-mexico-jerky-green-chile-carne-seca/).
 
@@ -70,7 +74,7 @@ Jerky is an easy team snack or party favor, and our regular ordering works great
 
 ## Upcoming events
 
-Our most recent stop was **New Mexico Jerky Fest, Halloween Edition** at Isleta Resort and Casino on October 31, 2026. That's the festival where we took home Best Booth and Most Exotic Flavor.
+Our most recent stop was **New Mexico Jerky Fest, Halloween Edition** at Isleta Resort and Casino on October 31, 2026. Jerky Fest is also where we've won Best Booth and Most Exotic Flavor.
 
 Stay tuned for upcoming events! Follow us on [Instagram](https://www.instagram.com/jerky_fixx/) or sign up for event alerts on the [dealer locator](/dealer-locator/), and you'll hear where we're headed next.
 

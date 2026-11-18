@@ -94,3 +94,5 @@ For more ways to find us, my post on [where to buy jerky in Albuquerque](/blog/w
 ## See you at the game
 
 Whether your crew is all about Honey Teriyaki or daring each other to try X-Hot Green, there's a Jerky Fixx flavor for every seat in the house. Thanks for supporting my family's small business, and good luck to your team. Unless they're playing mine.
+
+**Shop:** [Honey Teriyaki](/jerky/honey-teriyaki/), [Hot Cheetos](/jerky/hot-cheetos/).

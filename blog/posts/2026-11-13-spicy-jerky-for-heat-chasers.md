@@ -79,3 +79,5 @@ You can see every flavor and its heat number on the [menu](/#menu). A small bag 
 Want to taste before you buy? We set up at pop ups, festivals and ball games around Albuquerque and Rio Rancho, and the spicy flavors are always a big part of the conversation at our table. Stay tuned for upcoming events, and check the [dealer locator](/#dealer) to sign up for event alerts so you know where we'll be next. You can also follow along on [Instagram](https://www.instagram.com/jerky_fixx/) and [Facebook](https://www.facebook.com/jerky.fixx/).
 
 So, heat chasers, which one is your go to? Text us at 505-922-5683 or 505-364-0678 and tell us your favorite 5. I promise my family wants to know.
+
+**Shop:** [X-Hot Green](/jerky/x-hot-green/), [Mango Habanero](/jerky/mango-habanero/).

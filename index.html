@@ -31,73 +31,22 @@
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": "Organization",
+   "@type": "LocalBusiness",
    "@id": "https://jerkyfixx.com/#org",
    "name": "Jerky Fixx",
+   "alternateName": [
+    "Jerky Fix",
+    "JerkyFixx"
+   ],
+   "description": "Family made small batch beef jerky and carne seca in 25 flavors from Albuquerque, New Mexico. Door drop off in Albuquerque and Rio Rancho.",
    "url": "https://jerkyfixx.com/",
+   "image": "https://jerkyfixx.com/img/og-image.jpg",
    "logo": {
     "@type": "ImageObject",
     "url": "https://jerkyfixx.com/img/favicon-512.png",
     "width": 512,
     "height": 512
    },
-   "email": "jerkyfixx@gmail.com",
-   "telephone": "+1-505-922-5683",
-   "sameAs": [
-    "https://www.instagram.com/jerky_fixx/",
-    "https://www.facebook.com/jerky.fixx/",
-    "https://www.threads.com/@jerky_fixx"
-   ],
-   "alternateName": [
-    "Jerky Fix",
-    "JerkyFixx"
-   ],
-   "founder": [
-    {
-     "@type": "Person",
-     "name": "Joseph Garduno"
-    },
-    {
-     "@type": "Person",
-     "name": "Sabrina Penn Garduno"
-    }
-   ],
-   "employee": [
-    {
-     "@type": "Person",
-     "name": "Aaliyah Penn",
-     "jobTitle": "Website manager and blog author",
-     "url": "https://jerkyfixx.com/blog/aaliyah-penn/"
-    }
-   ],
-   "award": [
-    "Most Exotic Flavor, New Mexico Jerky Fest",
-    "Best Booth, New Mexico Jerky Fest"
-   ]
-  },
-  {
-   "@type": "WebSite",
-   "@id": "https://jerkyfixx.com/#site",
-   "name": "Jerky Fixx",
-   "alternateName": [
-    "JerkyFixx",
-    "jerkyfixx.com",
-    "Jerky Fix"
-   ],
-   "url": "https://jerkyfixx.com/",
-   "publisher": {
-    "@id": "https://jerkyfixx.com/#org"
-   },
-   "inLanguage": "en-US"
-  },
-  {
-   "@type": "LocalBusiness",
-   "@id": "https://jerkyfixx.com/#biz",
-   "name": "Jerky Fixx",
-   "description": "Small batch beef jerky and carne seca in 25 flavors from Albuquerque, New Mexico.",
-   "url": "https://jerkyfixx.com/",
-   "image": "https://jerkyfixx.com/img/og-image.jpg",
-   "logo": "https://jerkyfixx.com/img/favicon-512.png",
    "telephone": "+1-505-922-5683",
    "email": "jerkyfixx@gmail.com",
    "priceRange": "$7 to $20",
@@ -140,17 +89,53 @@
      "availableLanguage": "en"
     }
    ],
-   "parentOrganization": {
-    "@id": "https://jerkyfixx.com/#org"
-   },
-   "hasOfferCatalog": {
-    "@id": "https://jerkyfixx.com/jerky/#catalog"
-   },
    "sameAs": [
     "https://www.instagram.com/jerky_fixx/",
     "https://www.facebook.com/jerky.fixx/",
     "https://www.threads.com/@jerky_fixx"
-   ]
+   ],
+   "founder": [
+    {
+     "@type": "Person",
+     "name": "Joseph Garduno",
+     "jobTitle": "Co-owner"
+    },
+    {
+     "@type": "Person",
+     "name": "Sabrina Penn Garduno",
+     "jobTitle": "Co-owner"
+    }
+   ],
+   "employee": [
+    {
+     "@type": "Person",
+     "name": "Aaliyah Penn",
+     "jobTitle": "Website manager and blog author",
+     "url": "https://jerkyfixx.com/blog/aaliyah-penn/"
+    }
+   ],
+   "award": [
+    "Most Exotic Flavor, New Mexico Jerky Fest",
+    "Best Booth, New Mexico Jerky Fest"
+   ],
+   "hasOfferCatalog": {
+    "@id": "https://jerkyfixx.com/jerky/#catalog"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://jerkyfixx.com/#site",
+   "name": "Jerky Fixx",
+   "alternateName": [
+    "JerkyFixx",
+    "jerkyfixx.com",
+    "Jerky Fix"
+   ],
+   "url": "https://jerkyfixx.com/",
+   "publisher": {
+    "@id": "https://jerkyfixx.com/#org"
+   },
+   "inLanguage": "en-US"
   },
   {
    "@type": "WebPage",
@@ -161,7 +146,7 @@
     "@id": "https://jerkyfixx.com/#site"
    },
    "about": {
-    "@id": "https://jerkyfixx.com/#biz"
+    "@id": "https://jerkyfixx.com/#org"
    },
    "inLanguage": "en-US"
   }
@@ -171,6 +156,9 @@
 <!-- JSONLD:END -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.min.js" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/css/site.css">
 
@@ -453,7 +441,7 @@
   <div class="wrap lab-grid">
     <div class="lab-wrap">
       <div class="screen">
-        <video id="labVid" poster="/vid/lab-poster.jpg" muted loop playsinline preload="metadata"><source src="/vid/lab.webm" type="video/webm"><source src="/vid/lab.mp4" type="video/mp4"></video>
+        <video id="labVid" poster="/vid/lab-poster.jpg" muted loop playsinline preload="none"><source src="/vid/lab.webm" type="video/webm"><source src="/vid/lab.mp4" type="video/mp4"></video>
         <div class="rec">Lab cam 01</div>
         <div class="temp" id="labTemp">RAW</div>
       </div>
@@ -561,7 +549,7 @@
   <div class="wave" aria-hidden="true"><svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path d="M0 50 C240 10 480 10 720 50 S1200 90 1440 50 S1920 10 2160 50 S2640 90 2880 50 V90 H0Z" fill="#d81fc9"/></svg></div>
   <svg class="bolt b6" viewBox="0 0 40 90" aria-hidden="true"><path d="M24 0 L4 50 H18 L10 90 L36 34 H22 L30 0Z"/></svg>
   <div class="wrap so-grid">
-    <div class="phone"><video id="promoVid" poster="/vid/hot-cheeto-poster.jpg" playsinline loop muted preload="metadata"><source src="/vid/hot-cheeto-promo.mp4" type="video/mp4"></video><button class="sound" id="promoSound" type="button" aria-label="Turn sound on">🔇</button></div>
+    <div class="phone"><video id="promoVid" poster="/vid/hot-cheeto-poster.jpg" playsinline loop muted preload="none"><source src="/vid/hot-cheeto-promo.mp4" type="video/mp4"></video><button class="sound" id="promoSound" type="button" aria-label="Turn sound on">🔇</button></div>
     <div>
       <p class="eyebrow ui">Side effects</p>
       <h2 class="h2" id="so-title">Follow<br>the <em>fixx</em></h2>
@@ -644,6 +632,22 @@
     </div>
   </div>
 </section>
+<section class="glance" aria-labelledby="glanceHome">
+  <div class="wrap">
+    <p class="eyebrow ui">Jerky Fixx at a glance</p>
+    <h2 class="glance-h" id="glanceHome">The <em>quick facts</em></h2>
+    <dl class="glance-list">
+      <div><dt>Made by</dt><dd>The Garduno family (Joseph Garduno and Sabrina Penn Garduno) in Albuquerque, New Mexico</dd></div>
+      <div><dt>What we make</dt><dd>Small batch beef jerky and carne seca in 25 flavors, from green chile to Hot Cheeto flavored</dd></div>
+      <div><dt>Ingredients</dt><dd>Thin cut beef and seasonings. Every flavor contains beef; some contain dairy, soy, wheat or corn</dd></div>
+      <div><dt>Prices</dt><dd>Small bag $7, large bag $20</dd></div>
+      <div><dt>How to order</dt><dd>Add flavors to your cart or use the order form. We text to confirm and take Cash App, Venmo, Apple Pay or cash. No payment online</dd></div>
+      <div><dt>Delivery</dt><dd>Door drop off in Albuquerque and Rio Rancho, with a photo when it's delivered</dd></div>
+      <div><dt>Find us live</dt><dd>Pop ups, festivals and ball games. See the dealer locator</dd></div>
+      <div><dt>Awards</dt><dd>Most Exotic Flavor and Best Booth at New Mexico Jerky Fest</dd></div>
+    </dl>
+  </div>
+</section>
 <!-- LATEST-BLOG:START -->
 <section class="home-blog" id="blog" aria-labelledby="hb-title" data-hint="tap" data-hint-text="Fresh reads from the Fixx Blog">
   <div class="wrap">
@@ -687,7 +691,7 @@
   <div class="wrap foot-grid">
     <div class="f-brand">
       <img src="/img/logo-stack.webp" alt="Jerky Fixx" width="684" height="557" loading="lazy">
-      <p>Small batch beef jerky and carne seca made with love, faith and family in Albuquerque, New Mexico.</p>
+      <p>Small batch beef jerky and carne seca made with love, faith and family in Albuquerque, New Mexico. Jerky Fixx, with two X's (not Jerky Fix).</p>
       <div class="f-social"><a href="https://www.instagram.com/jerky_fixx/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/jerky.fixx/" target="_blank" rel="noopener">Facebook</a><a href="https://www.threads.com/@jerky_fixx" target="_blank" rel="noopener">Threads</a></div>
     </div>
     <nav class="f-col" aria-label="Footer"><h3>Explore</h3><a href="/jerky/">Full jerky menu</a><a href="/green-chile-jerky/">Green chile jerky</a><a href="/our-story/">Our story</a><a href="/the-lab/">The lab</a><a href="/dealer-locator/">Dealer locator</a><a href="/vip-club/">VIP Club</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a><a href="/contact/">Contact and orders</a></nav>

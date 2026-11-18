@@ -231,3 +231,14 @@
 .gc-card b{display:block;font:400 26px/1 var(--f-cure);text-transform:uppercase;color:#FDEFFD}
 .gc-heat{display:inline-block;margin:6px 0 4px;font:600 11px var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:#F088F2}
 .gc-card p{margin:0;font-size:14px;line-height:1.5;color:#e9d7ee}
+/* flavor pages */
+.flv-buy{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 10px}
+.flv-buy button{cursor:pointer;border:0;font:inherit}
+.pg-flv .pg-fig figcaption{position:absolute;left:12px;right:12px;bottom:8px;font-size:11px;line-height:1.3;color:#5b4a60;text-align:center}
+.flv-pairs{list-style:none;margin:16px 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.flv-pairs a{display:grid;gap:4px;height:100%;padding:16px 18px;border-radius:18px;background:rgba(253,239,253,.06);border:1px solid rgba(240,136,242,.22);color:#FDEFFD;text-decoration:none;transition:border-color .2s,transform .2s}
+.flv-pairs a:hover{border-color:#E15CF2;transform:translateY(-2px)}
+.flv-pairs b{font:400 26px/1 var(--f-cure);text-transform:uppercase}
+.flv-pairs span{font-size:14px;color:#e9d7ee}
+.flv-reads{margin:10px 0 0;padding-left:1.2em}.flv-reads li{margin:6px 0}
+.pg-heatgrp h4 a{color:inherit;text-decoration:underline;text-decoration-color:rgba(225,92,242,.6);text-underline-offset:3px}
