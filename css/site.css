@@ -1205,3 +1205,11 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
   .social-tab a{grid-column:1}
   .social-tab.gone{transform:translateX(110%)}
 }
+
+/* "at a glance" facts (home, jerky menu) */
+.glance{position:relative;z-index:2;padding:clamp(48px,7vw,90px) 0;background:var(--bp-ink,#0D0D0D);color:var(--bp-blush,#FDEFFD)}
+.glance-h{margin:0 0 22px;font:400 clamp(40px,6vw,72px)/.9 var(--f-cure);text-transform:uppercase}.glance-h em{font-style:normal;color:var(--bp-light,#F088F2)}
+.glance-list{margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.glance-list div{padding:16px 18px;border-radius:16px;background:rgba(253,239,253,.06);border:1px solid rgba(240,136,242,.2)}
+.glance-list dt{font:600 12px var(--f-ui);letter-spacing:.18em;text-transform:uppercase;color:var(--bp-light,#F088F2);margin-bottom:6px}
+.glance-list dd{margin:0;font-size:15px;line-height:1.5;color:#efe0f2}

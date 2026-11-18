@@ -1,0 +1,55 @@
+<!--page
+{"path": "/jerky/hot-cheeto-pickle/", "nav": "/jerky/", "crumb": "Hot Cheeto Pickle", "parent": ["/jerky/", "Jerky menu"], "title": "Hot Cheeto Pickle Jerky from Albuquerque | Jerky Fixx", "description": "Hot Cheeto Pickle jerky: dill pickle tang meets hot cheeto heat on small batch carne seca made in Albuquerque, NM. Heat 3 of 5. Bags $7 and $20.", "hero": {"eyebrow": "Heat 3 of 5 <b>/</b> Small $7 <b>/</b> Large $20", "plain": "Hot Cheeto Pickle", "box": "Jerky", "meta": "Dill pickle tang meets hot cheeto heat. It sounds wild. It sells out anyway.", "icons": [["a", "icon-flame"], ["b", "icon-cross"], ["c", "icon-bacon"]]}, "body_class": "lg-page pg-page pg-flavor", "changefreq": "monthly", "priority": 0.7, "cta": true, "og_image": "/img/flavor-bags/hot-cheeto-pickle.webp", "og_image_alt": "A bag of Jerky Fixx Hot Cheeto Pickle jerky", "product": {"name": "Hot Cheeto Pickle", "description": "Dill pickle tang meets hot cheeto heat. It sounds wild. It sells out anyway.", "image": "/img/flavor-bags/hot-cheeto-pickle.webp", "heat": 3}}
+-->
+<div class="lg-body pg-body">
+<div class="wrap">
+  <section class="pg-block pg-split pg-flv" aria-labelledby="about">
+    <div>
+      <p class="eyebrow ui">Medium <b>/</b> made in Albuquerque, NM</p>
+      <h2 class="pg-h2" id="about">About <em>Hot Cheeto Pickle</em></h2>
+      <p class="pg-p">It sounds wild. It sells out anyway. Hot Cheeto Pickle puts dill pickle tang and red hot cheeto heat on the same strip of thin cut carne seca, and somehow it just works.</p>
+      <p class="pg-p">Every batch is seasoned and dried by our family in Albuquerque. The pickle keeps it bright and sour, the cheeto dust brings the heat, and the beef holds it all together. It&#x27;s the flavor people dare their friends to try, then buy for themselves.</p>
+      <ul class="pg-facts">
+        <li><b>Heat</b> 3 of 5</li>
+        <li><b>Small bag</b> $7</li>
+        <li><b>Large bag</b> $20</li>
+        <li><b>Delivery</b> Albuquerque and Rio Rancho</li>
+      </ul>
+      <div class="flv-buy" data-flavor="hot-cheeto-pickle">
+        <button class="pill pill-lime" type="button" data-size="Small">Add small bag, $7</button>
+        <button class="pill pill-light" type="button" data-size="Large">Add large bag, $20</button>
+      </div>
+      <p class="pg-p pg-small">No payment online. We text you to confirm and take Cash App, Venmo, Apple Pay or cash, then drop it at your door.</p>
+    </div>
+    <figure class="pg-fig"><img src="/img/flavor-bags/hot-cheeto-pickle.webp" alt="A bag of Jerky Fixx Hot Cheeto Pickle jerky with the roadrunner sticker" width="600" height="800"><figcaption>Representative photo. Every hand cut batch looks a little different.</figcaption></figure>
+  </section>
+  <section class="pg-block" aria-labelledby="who">
+    <p class="eyebrow ui">Is it for you?</p>
+    <h2 class="pg-h2" id="who">Who it's <em>for</em></h2>
+    <p class="pg-p">Pickle people, Hot Cheeto fans and anyone who likes a little weird.</p>
+  </section>
+  <section class="pg-block" aria-labelledby="pairs">
+    <p class="eyebrow ui">Build a mixed bag</p>
+    <h2 class="pg-h2" id="pairs">Try it <em>with</em></h2>
+    <ul class="flv-pairs">
+      <li><a href="/jerky/hot-cheetos/"><b>Hot Cheetos</b><span>Heat 4 of 5. Red hot cheeto dust packed into every strip. Your fingers will be red and you won&#x27;t care.</span></a></li>
+      <li><a href="/jerky/takis/"><b>Takis</b><span>Heat 4 of 5. Rolled chile lime crunch flavor on thin cut carne seca. Sour, spicy and gone way too fast.</span></a></li>
+      <li><a href="/jerky/lemon-pepper/"><b>Lemon Pepper</b><span>Heat 1 of 5. Bright lemon and cracked black pepper. A classic that never gets old.</span></a></li>
+    </ul>
+    <p class="pg-p">See all 25 flavors on the <a href="/jerky/">jerky menu</a>.</p>
+  </section>
+  <section class="pg-block" aria-labelledby="reads">
+    <p class="eyebrow ui">Keep reading</p>
+    <h2 class="pg-h2" id="reads">More about <em>this flavor</em></h2>
+    <ul class="flv-reads">
+      <li><a href="/blog/hot-cheeto-jerky/">Hot Cheeto jerky and our snack flavors</a></li>
+      <li><a href="/jerky/">The full jerky menu</a></li>
+    </ul>
+  </section>
+</div>
+</div>
+<!--scripts-->
+<script>
+document.querySelectorAll(".flv-buy button").forEach(function(b){b.addEventListener("click",function(){
+  var s=b.parentNode.getAttribute("data-flavor");if(typeof Cart!=="undefined"){Cart.add(s,b.getAttribute("data-size"),1);}else{location.href="/jerky/";}});});
+</script>

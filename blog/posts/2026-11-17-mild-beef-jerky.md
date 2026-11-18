@@ -79,3 +79,5 @@ You can see every flavor and its heat number on our [menu](/#menu). Add what you
 Not sure yet? We set up at pop ups, festivals and ball games around Albuquerque and Rio Rancho, and we love helping people find their flavor at the table. Ask about the mild ones and we'll point you to the zeros. Stay tuned for upcoming events, and check the [dealer locator](/#dealer) to sign up for event alerts. You can also follow us on [Instagram](https://www.instagram.com/jerky_fixx/) and [Facebook](https://www.facebook.com/jerky.fixx/) to see where we'll be next.
 
 Have a picky eater at home who found their favorite? Text us at 505-922-5683 or 505-364-0678 and tell us which flavor won them over. It always makes my family's day.
+
+**Shop the mild side:** [Honey Teriyaki](/jerky/honey-teriyaki/), [Garlic Parm](/jerky/garlic-parm/) and [Lemon Pepper](/jerky/lemon-pepper/).

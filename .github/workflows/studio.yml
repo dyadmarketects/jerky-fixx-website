@@ -95,6 +95,7 @@ jobs:
         run: |
           python3 tools/optimize_media.py
           python3 tools/sync_flavors.py
+          python3 tools/build_flavor_pages.py
           python3 tools/build_pages.py
           python3 tools/build_blog.py
 

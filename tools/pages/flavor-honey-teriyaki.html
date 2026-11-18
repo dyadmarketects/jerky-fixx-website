@@ -1,0 +1,55 @@
+<!--page
+{"path": "/jerky/honey-teriyaki/", "nav": "/jerky/", "crumb": "Honey Teriyaki", "parent": ["/jerky/", "Jerky menu"], "title": "Honey Teriyaki Jerky from Albuquerque | Jerky Fixx", "description": "Honey Teriyaki jerky from Jerky Fixx in Albuquerque: sweet, sticky and savory small batch beef jerky with no heat. The gateway flavor. Bags $7 and $20.", "hero": {"eyebrow": "Heat 0 of 5 <b>/</b> Small $7 <b>/</b> Large $20", "plain": "Honey Teriyaki", "box": "Jerky", "meta": "Sweet, sticky and savory. The gateway flavor for the kids and the grandmas.", "icons": [["a", "icon-flame"], ["b", "icon-cross"], ["c", "icon-bacon"]]}, "body_class": "lg-page pg-page pg-flavor", "changefreq": "monthly", "priority": 0.7, "cta": true, "og_image": "/img/flavor-bags/honey-teriyaki.webp", "og_image_alt": "A bag of Jerky Fixx Honey Teriyaki jerky", "product": {"name": "Honey Teriyaki", "description": "Sweet, sticky and savory. The gateway flavor for the kids and the grandmas.", "image": "/img/flavor-bags/honey-teriyaki.webp", "heat": 0}}
+-->
+<div class="lg-body pg-body">
+<div class="wrap">
+  <section class="pg-block pg-split pg-flv" aria-labelledby="about">
+    <div>
+      <p class="eyebrow ui">No heat <b>/</b> made in Albuquerque, NM</p>
+      <h2 class="pg-h2" id="about">About <em>Honey Teriyaki</em></h2>
+      <p class="pg-p">Sweet, sticky and savory. Honey Teriyaki is the gateway flavor, the one we hand to kids and grandmas, and the one heat chasers secretly grab between hot bags.</p>
+      <p class="pg-p">Every batch is seasoned and dried by our family in Albuquerque. Want a little kick? Try Honey Teriyaki Green, which adds a green chile bite on the finish.</p>
+      <ul class="pg-facts">
+        <li><b>Heat</b> 0 of 5</li>
+        <li><b>Small bag</b> $7</li>
+        <li><b>Large bag</b> $20</li>
+        <li><b>Delivery</b> Albuquerque and Rio Rancho</li>
+      </ul>
+      <div class="flv-buy" data-flavor="honey-teriyaki">
+        <button class="pill pill-lime" type="button" data-size="Small">Add small bag, $7</button>
+        <button class="pill pill-light" type="button" data-size="Large">Add large bag, $20</button>
+      </div>
+      <p class="pg-p pg-small">No payment online. We text you to confirm and take Cash App, Venmo, Apple Pay or cash, then drop it at your door.</p>
+    </div>
+    <figure class="pg-fig"><img src="/img/flavor-bags/honey-teriyaki.webp" alt="A bag of Jerky Fixx Honey Teriyaki jerky with the roadrunner sticker" width="600" height="800"><figcaption>Representative photo. Every hand cut batch looks a little different.</figcaption></figure>
+  </section>
+  <section class="pg-block" aria-labelledby="who">
+    <p class="eyebrow ui">Is it for you?</p>
+    <h2 class="pg-h2" id="who">Who it's <em>for</em></h2>
+    <p class="pg-p">Kids, grandmas and anyone who likes sweet and savory with zero heat.</p>
+  </section>
+  <section class="pg-block" aria-labelledby="pairs">
+    <p class="eyebrow ui">Build a mixed bag</p>
+    <h2 class="pg-h2" id="pairs">Try it <em>with</em></h2>
+    <ul class="flv-pairs">
+      <li><a href="/jerky/"><b>Honey Teriyaki Green</b><span>Heat 2 of 5. Sweet honey teriyaki with a little green chile bite on the finish.</span></a></li>
+      <li><a href="/jerky/garlic-parm/"><b>Garlic Parm</b><span>Heat 0 of 5. Roasted garlic and nutty parmesan. Mellow on the heat, loud on the flavor.</span></a></li>
+      <li><a href="/jerky/lemon-pepper/"><b>Lemon Pepper</b><span>Heat 1 of 5. Bright lemon and cracked black pepper. A classic that never gets old.</span></a></li>
+    </ul>
+    <p class="pg-p">See all 25 flavors on the <a href="/jerky/">jerky menu</a>.</p>
+  </section>
+  <section class="pg-block" aria-labelledby="reads">
+    <p class="eyebrow ui">Keep reading</p>
+    <h2 class="pg-h2" id="reads">More about <em>this flavor</em></h2>
+    <ul class="flv-reads">
+      <li><a href="/blog/mild-beef-jerky/">Our mild beef jerky picks</a></li>
+      <li><a href="/blog/meet-the-jerky-fixx-family/">Meet the Jerky Fixx family</a></li>
+    </ul>
+  </section>
+</div>
+</div>
+<!--scripts-->
+<script>
+document.querySelectorAll(".flv-buy button").forEach(function(b){b.addEventListener("click",function(){
+  var s=b.parentNode.getAttribute("data-flavor");if(typeof Cart!=="undefined"){Cart.add(s,b.getAttribute("data-size"),1);}else{location.href="/jerky/";}});});
+</script>

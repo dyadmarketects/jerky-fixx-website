@@ -1,0 +1,55 @@
+<!--page
+{"path": "/jerky/x-hot-green/", "nav": "/jerky/", "crumb": "X-Hot Green", "parent": ["/jerky/", "Jerky menu"], "title": "X-Hot Green Jerky from Albuquerque | Jerky Fixx", "description": "X-Hot Green jerky is our hottest green chile carne seca, made in small batches in Albuquerque, NM. Heat 5 of 5. Small bag $7, large bag $20, door drop off.", "hero": {"eyebrow": "Heat 5 of 5 <b>/</b> Small $7 <b>/</b> Large $20", "plain": "X-Hot Green", "box": "Jerky", "meta": "Our hottest green chile jerky. Green chile heat stacked on more green chile for the fiends who like it loud.", "icons": [["a", "icon-flame"], ["b", "icon-cross"], ["c", "icon-bacon"]]}, "body_class": "lg-page pg-page pg-flavor", "changefreq": "monthly", "priority": 0.7, "cta": true, "og_image": "/img/flavor-bags/x-hot-green.webp", "og_image_alt": "A bag of Jerky Fixx X-Hot Green jerky", "product": {"name": "X-Hot Green", "description": "Our hottest green chile jerky. Green chile heat stacked on more green chile for the fiends who like it loud.", "image": "/img/flavor-bags/x-hot-green.webp", "heat": 5}}
+-->
+<div class="lg-body pg-body">
+<div class="wrap">
+  <section class="pg-block pg-split pg-flv" aria-labelledby="about">
+    <div>
+      <p class="eyebrow ui">X-hot <b>/</b> made in Albuquerque, NM</p>
+      <h2 class="pg-h2" id="about">About <em>X-Hot Green</em></h2>
+      <p class="pg-p">This is the one the fiends ask for by name. X-Hot Green takes our classic New Mexico green chile carne seca and stacks even more green chile on top, so the heat builds with every strip and sticks around.</p>
+      <p class="pg-p">It&#x27;s thin cut beef, seasoned heavy and dried slow by our family in Albuquerque. Expect that earthy, roasted green chile flavor first, then a burn that doesn&#x27;t quit. If you grew up putting green on everything, this is your bag.</p>
+      <ul class="pg-facts">
+        <li><b>Heat</b> 5 of 5</li>
+        <li><b>Small bag</b> $7</li>
+        <li><b>Large bag</b> $20</li>
+        <li><b>Delivery</b> Albuquerque and Rio Rancho</li>
+      </ul>
+      <div class="flv-buy" data-flavor="x-hot-green">
+        <button class="pill pill-lime" type="button" data-size="Small">Add small bag, $7</button>
+        <button class="pill pill-light" type="button" data-size="Large">Add large bag, $20</button>
+      </div>
+      <p class="pg-p pg-small">No payment online. We text you to confirm and take Cash App, Venmo, Apple Pay or cash, then drop it at your door.</p>
+    </div>
+    <figure class="pg-fig"><img src="/img/flavor-bags/x-hot-green.webp" alt="A bag of Jerky Fixx X-Hot Green jerky with the roadrunner sticker" width="600" height="800"><figcaption>Representative photo. Every hand cut batch looks a little different.</figcaption></figure>
+  </section>
+  <section class="pg-block" aria-labelledby="who">
+    <p class="eyebrow ui">Is it for you?</p>
+    <h2 class="pg-h2" id="who">Who it's <em>for</em></h2>
+    <p class="pg-p">Green chile lovers and heat chasers. If you&#x27;re new to our heat scale, start with Green (3) and work your way up.</p>
+  </section>
+  <section class="pg-block" aria-labelledby="pairs">
+    <p class="eyebrow ui">Build a mixed bag</p>
+    <h2 class="pg-h2" id="pairs">Try it <em>with</em></h2>
+    <ul class="flv-pairs">
+      <li><a href="/jerky/"><b>Green</b><span>Heat 3 of 5. Classic New Mexico green chile carne seca. Earthy, bright and just the right burn.</span></a></li>
+      <li><a href="/jerky/"><b>X-Hot Green Chili Lime Salt</b><span>Heat 5 of 5. X-Hot green chile with lime and a hit of salt. Tangy, salty, very hot.</span></a></li>
+      <li><a href="/jerky/honey-teriyaki/"><b>Honey Teriyaki</b><span>Heat 0 of 5. Sweet, sticky and savory. The gateway flavor for the kids and the grandmas.</span></a></li>
+    </ul>
+    <p class="pg-p">See all 25 flavors on the <a href="/jerky/">jerky menu</a>.</p>
+  </section>
+  <section class="pg-block" aria-labelledby="reads">
+    <p class="eyebrow ui">Keep reading</p>
+    <h2 class="pg-h2" id="reads">More about <em>this flavor</em></h2>
+    <ul class="flv-reads">
+      <li><a href="/green-chile-jerky/">All 8 green chile flavors</a></li>
+      <li><a href="/blog/green-chile-jerky-ranked-by-heat/">Green chile jerky ranked by heat</a></li>
+    </ul>
+  </section>
+</div>
+</div>
+<!--scripts-->
+<script>
+document.querySelectorAll(".flv-buy button").forEach(function(b){b.addEventListener("click",function(){
+  var s=b.parentNode.getAttribute("data-flavor");if(typeof Cart!=="undefined"){Cart.add(s,b.getAttribute("data-size"),1);}else{location.href="/jerky/";}});});
+</script>

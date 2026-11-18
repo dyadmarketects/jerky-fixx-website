@@ -77,3 +77,5 @@ You can also text or call 505-922-5683 or 505-364-0678, or email jerkyfixx@gmail
 If you'd rather taste it in person, we set up at pop ups, festivals and ball games around Albuquerque and Rio Rancho. Our last stop was New Mexico Jerky Fest, Halloween Edition, on October 31, 2026 at Isleta Resort and Casino. Stay tuned for upcoming events. Check the [dealer locator](/#dealer) and sign up for alerts, or follow us on [Instagram](https://www.instagram.com/jerky_fixx/) so you hear about the next one.
 
 So yes, Hot Cheeto jerky is real, and Jerky Fixx makes it in small batches right here in New Mexico. The only real question left is whether you're a straight Hot Cheetos person or a pickle person. Either way, we've got a bag for you.
+
+**Shop these flavors:** [Hot Cheetos](/jerky/hot-cheetos/), [Hot Cheeto Pickle](/jerky/hot-cheeto-pickle/) and [Takis](/jerky/takis/).
