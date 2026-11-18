@@ -6,8 +6,8 @@ updated: 2026-11-13
 description: Looking for spicy jerky in Albuquerque? Meet our heat 4 and 5 flavors, from Mango Habanero to Hot Mamma Cheeto, plus tips for working up to the hot ones.
 keywords: spicy jerky albuquerque, spicy jerky, hot beef jerky, jerky albuquerque, jerky fixx
 box: Heat Chasers
-hero: /img/blog/spicy-jerky-for-heat-chasers.webp
-hero_alt: Seven spicy Jerky Fixx carne seca flavors in circles on a red patterned background, four labeled heat 4 and three labeled heat 5
+hero: /img/blog/spicy-jerky-for-heat-chasers-friends.webp
+hero_alt: Friends laughing at an outdoor table under red chile ristras at sunset while one takes a bite of spicy jerky, wearing a black Jerky Fixx t-shirt
 excerpt: Our seven hottest flavors, from sweet and spicy Mango Habanero to the double trouble of Hot Mamma Cheeto, with tips for climbing up to a 5.
 ---
 Hi, it's Aaliyah. Every time we set up the booth, there's at least one person who walks straight past the Honey Teriyaki, looks my mom or dad in the eye and asks, "What's your hottest one?" I love those people. They're our heat chasers, and this post is for them.
