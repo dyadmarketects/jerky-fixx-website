@@ -6,8 +6,8 @@ updated: 2026-10-29
 description: What makes New Mexico jerky different? Green and red chile, carne seca tradition and playful flavors like Hot Cheeto Pickle. Meet the Jerky Fixx lineup.
 keywords: jerky new mexico, jerky nm, green chile jerky, carne seca, new mexico jerky, red chile jerky
 box: Carne Seca
-hero: /img/jerky-fixx-carne-seca-pile.webp
-hero_alt: A pile of thin cut Jerky Fixx carne seca strips in front of lime and garlic artwork
+hero: /img/blog/new-mexico-jerky-green-chile-carne-seca.webp
+hero_alt: Fresh Jerky Fixx carne seca with chile seeds cooling on a wire rack, with the Jerky Fixx roadrunner logo
 excerpt: Green chile, red chile and a little Christmas style. Here is what makes New Mexico jerky its own thing, and which Jerky Fixx flavors to try first.
 ---
 Hi again, it's Aaliyah. People who aren't from here sometimes ask me what makes New Mexico jerky different from the stuff you can grab anywhere. I grew up with the answer, but I had to stop and think about how to explain it. The short version is chile. The longer version is chile, tradition and a family that likes to have fun with flavor.

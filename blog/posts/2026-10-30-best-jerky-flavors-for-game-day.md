@@ -6,8 +6,8 @@ updated: 2026-10-30
 description: Build the perfect game day snack bag from Jerky Fixx flavors, mild to X-Hot, with heat levels 0 to 5. Small batch jerky from Albuquerque, $7 and $20 bags.
 keywords: game day jerky, jerky albuquerque, best jerky flavors, jerky for game day, jerky fixx
 box: Game Day
-hero: /img/jerkypile.webp
-hero_alt: A pile of dark, thin cut Jerky Fixx beef jerky surrounded by lime slices, garlic, pickles and hot cheeto dust on a bright purple and green background
+hero: /img/blog/best-jerky-flavors-for-game-day.webp
+hero_alt: Bags of Jerky Fixx red chile and X-Mas jerky lined up and labeled, with roadrunner logo stickers and the order phone numbers
 excerpt: Mild, medium or straight up X-Hot. Here is how to build a game day jerky bag from our flavors so everybody on the couch or in the bleachers finds a favorite.
 ---
 Hi, it's Aaliyah again. If you have ever seen our booth at a ball game, you already know game day and jerky go together. People walk up between innings with their kids, their friends and their whole crew, and the first question is almost always the same: "Which one should we get?" With 25 flavors on the table, I get it. So I put this guide together for anyone building a game day snack bag, whether you're watching from the bleachers or from your living room.
