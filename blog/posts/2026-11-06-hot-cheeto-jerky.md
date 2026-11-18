@@ -6,8 +6,8 @@ updated: 2026-11-06
 description: Hot Cheeto jerky is real, and it's one of our top sellers. Meet Hot Cheetos and Hot Cheeto Pickle carne seca, their heat levels and who each bag is for.
 keywords: hot cheeto jerky, hot cheetos jerky, hot cheeto pickle jerky, jerky albuquerque, jerky fixx
 box: Yes, It Is Real
-hero: /img/blog/hot-cheeto-jerky-bag.webp
-hero_alt: Red dusted fingers pulling a strip of hot cheeto style jerky from a black Jerky Fixx bag, with dill pickle slices on a red and lime green background
+hero: /img/blog/hot-cheeto-jerky-video.webp
+hero_alt: Fresh Hot Cheeto Jerky promo poster from our video, piled red dusted jerky strips with flames, next to the Jerky Fixx roadrunner logo and a close up of the jerky
 excerpt: Yes, Hot Cheeto jerky is a real thing, and it's one of our best sellers. Here's what Hot Cheetos and Hot Cheeto Pickle taste like and who should grab which bag.
 ---
 Hi, it's Aaliyah. If you've ever scrolled our menu, seen the words Hot Cheeto jerky and thought, "Wait, is that real?" this post is for you.
@@ -22,6 +22,8 @@ We make two flavors built around that red Hot Cheeto dust:
 - **Hot Cheeto Pickle** sits at a 3.
 
 There's also a third member of the family, **Hot Mamma Cheeto**, which is a 5. My mom gets the credit for that one, and I already told the whole story in [Hot Mamma Cheeto and flavors made for Burque](/blog/flavor-engineering-for-burquenos/). So this post is about the other two, the two that make people look twice at the menu.
+
+@video(/vid/blog/hot-cheeto-jerky.mp4, /vid/blog/hot-cheeto-jerky.jpg) Fresh Hot Cheeto jerky, up close.
 
 ## Why Hot Cheetos on jerky even makes sense
 

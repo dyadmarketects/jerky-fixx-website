@@ -6,8 +6,8 @@ updated: 2026-10-29
 description: Looking for jerky in Rio Rancho? Catch Jerky Fixx at pop ups and ball games, or order small batch carne seca and have the dealer drop it at your door.
 keywords: jerky rio rancho, rio rancho jerky, beef jerky rio rancho, jerky near me, jerky fixx
 box: Door Drop Off
-hero: /img/jerky-fixx-booth-jerky-fest.webp
-hero_alt: A Jerky Fixx team member holding a Jerky Fest trophy at the purple and pink balloon booth with a roadrunner banner
+hero: /img/blog/jerky-in-rio-rancho.webp
+hero_alt: A hand pulling a strip of red seasoned jerky out of a black Jerky Fixx bag, with dill pickle slices on a red and lime green background
 excerpt: Rio Rancho is part of our home turf. Here is how to find Jerky Fixx at pop ups and ball games, or get it dropped at your door.
 ---
 Hi, Aaliyah here. We are based in Albuquerque, but Rio Rancho is part of our route, and I love that. If you're searching for jerky in Rio Rancho, here's how to get your hands on ours.
