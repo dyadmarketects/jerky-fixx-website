@@ -1214,19 +1214,21 @@ body.hero-on #stage{filter:drop-shadow(0 28px 22px rgba(40,0,55,.42)) drop-shado
 .glance-list dt{font:600 12px var(--f-ui);letter-spacing:.18em;text-transform:uppercase;color:var(--bp-light,#F088F2);margin-bottom:6px}
 .glance-list dd{margin:0;font-size:15px;line-height:1.5;color:#efe0f2}
 
-/* Jerky dropdown (Fixx Favs) */
-.nav-dd{position:relative;display:flex;align-items:center;gap:2px}
-.dd-tg{background:none;border:0;padding:4px 2px;cursor:pointer;color:inherit;font-size:14px;line-height:1}
-.dd-menu{position:absolute;left:50%;top:100%;transform:translate(-50%,8px);min-width:230px;display:grid;padding:12px;border-radius:16px;background:#fff;box-shadow:0 18px 40px rgba(40,0,55,.22);
-  opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:80;text-transform:none;letter-spacing:.02em}
-.nav-dd:hover .dd-menu,.nav-dd:focus-within .dd-menu,.nav-dd.open .dd-menu{opacity:1;visibility:visible;transform:translate(-50%,2px)}
-.dd-menu::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
-.dd-menu a{padding:8px 10px;border-radius:10px;font:600 15px var(--f-body);color:var(--ink,#0d0410);white-space:nowrap}
-.dd-menu a::after{display:none}
-.dd-menu a:hover,.dd-menu a:focus-visible{background:#fbe8fc;color:#9F22F2}
-.dd-h{margin:0 10px 6px;font:600 11px var(--f-ui);letter-spacing:.2em;text-transform:uppercase;color:#E15CF2}
-.dd-all{border-top:1px solid #f1dff3;margin-top:4px}
-.dd-all~.dd-all{border-top:0;margin-top:0}
+/* Jerky dropdown (Fixx Favs): hidden until hover or tap, compact list like a retail nav */
+.nav-dd{position:relative;display:flex;align-items:center;gap:6px}
+.dd-tg{display:grid;place-items:center;width:20px;height:20px;margin-left:-2px;background:none;border:0;padding:0;cursor:pointer;color:inherit;transition:transform .2s}
+.nav-dd:hover .dd-tg,.nav-dd.open .dd-tg{transform:rotate(180deg);color:#E15CF2}
+.dd-menu{position:absolute;left:-14px;top:calc(100% + 10px);width:230px;display:flex;flex-direction:column;padding:0;background:#fff;border-radius:8px;border-top:3px solid #E15CF2;
+  box-shadow:0 14px 34px rgba(40,0,55,.2),0 2px 6px rgba(40,0,55,.08);overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .16s,transform .16s,visibility .16s;z-index:80;text-transform:none;letter-spacing:0}
+.nav-dd:hover .dd-menu,.nav-dd:focus-within .dd-menu,.nav-dd.open .dd-menu{opacity:1;visibility:visible;transform:none}
+.dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.nav .dd-menu a{display:block;padding:11px 16px;border-bottom:1px solid #eee4ef;font:500 14px/1.2 var(--f-body);color:#1d0b22;text-decoration:none;white-space:nowrap;transition:background .15s,color .15s,padding .15s}
+.nav .dd-menu a::after{display:none}
+.nav .dd-menu a:hover,.nav .dd-menu a:focus-visible{background:#fdeffd;color:#9F22F2;padding-left:20px;box-shadow:inset 3px 0 0 #E15CF2}
+.dd-h{margin:0;padding:10px 16px 8px;border-bottom:1px solid #eee4ef;font:600 11px var(--f-ui);letter-spacing:.2em;text-transform:uppercase;color:#E15CF2}
+.dd-h::before{content:"\2022  ";color:#E15CF2}
+.nav .dd-menu a.dd-all{border-bottom:0;font-weight:600;color:#9F22F2}
 /* phone menu: Fixx Favs list */
 .mn-dd{color:#fff}
 .mn-dd summary{list-style:none;cursor:pointer;font:600 14px var(--f-ui);letter-spacing:.2em;text-transform:uppercase;color:var(--bp-light,#F088F2);padding:4px 0 10px}

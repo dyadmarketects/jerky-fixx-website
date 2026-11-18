@@ -103,7 +103,7 @@ def favs_into_chrome(names):
     p = os.path.join(ROOT, "cart.html")
     src = open(p, encoding="utf-8").read()
     links = "".join('<a href="/jerky/%s/">%s</a>' % (slug(n), esc(n)) for n in names)
-    blocks = {"NAV": '<p class="dd-h">Fixx Favs</p>' + links + '<a class="dd-all" href="/green-chile-jerky/">Green chile jerky</a><a class="dd-all" href="/jerky/">All %d flavors</a>' % len(FL["flavors"]),
+    blocks = {"NAV": '<p class="dd-h">Fixx Favs</p>' + links + '<a class="dd-all" href="/jerky/">All %d flavors <span aria-hidden="true">→</span></a>' % len(FL["flavors"]),
               "MNAV": links + '<a href="/jerky/">All %d flavors</a>' % len(FL["flavors"]),
               "FOOT": links}
     new = src
