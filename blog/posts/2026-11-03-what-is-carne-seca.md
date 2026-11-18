@@ -61,6 +61,8 @@ One thing worth knowing before you order: everything contains beef, and some fla
 
 ## Where to find carne seca in Albuquerque
 
+Every flavor of [carne seca in Albuquerque](/jerky/) we make is on our menu, and if you want the New Mexico classic, our [green chile jerky](/green-chile-jerky/) lineup runs from mellow to X-Hot.
+
 The easiest way to try it is right from your phone. Browse [all 25 flavors on the menu](/#menu), add what you want to your [cart](/cart.html) and send your order. A small bag is $7 and a large bag is $20. The crew texts you to confirm, the dealer drops it at your door and you get a photo once it's delivered. You can pay with Cash App, Venmo, Apple Pay or cash.
 
 If you'd rather try it in person, we set up at pop ups, festivals and ball games around Albuquerque and Rio Rancho. Our last stop was New Mexico Jerky Fest, Halloween Edition, on October 31, 2026 at Isleta Resort and Casino. Stay tuned for upcoming events. You can follow us on [Instagram](https://www.instagram.com/jerky_fixx/) or check the [dealer locator](/#dealer) and sign up for alerts so you hear about the next one. For more on your options, read [where to buy jerky in Albuquerque](/blog/where-to-buy-jerky-in-albuquerque/).

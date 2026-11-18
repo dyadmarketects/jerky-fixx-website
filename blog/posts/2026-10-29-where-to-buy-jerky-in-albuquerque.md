@@ -1,10 +1,10 @@
 ---
-title: Where to Buy Jerky in Albuquerque
+title: Where to Buy Jerky in Albuquerque (ABQ)
 slug: where-to-buy-jerky-in-albuquerque
 date: 2026-10-29
-updated: 2026-10-29
-description: Wondering where to buy jerky in Albuquerque? Find Jerky Fixx at pop ups, festivals and ball games, or order small batch carne seca for door drop off.
-keywords: jerky albuquerque, where to buy jerky in albuquerque, carne seca albuquerque, beef jerky near me, jerky fixx
+updated: 2026-11-18
+description: Craving jerky in ABQ? Here are 4 easy ways to get Jerky Fixx beef jerky and carne seca in Albuquerque, from pop ups to door drop off. Bags start at $7.
+keywords: jerky albuquerque, jerky abq, beef jerky albuquerque, where to buy jerky in albuquerque, carne seca albuquerque, beef jerky near me, jerky fixx
 box: Albuquerque
 hero: /img/jerky-fixx-jerky-fest-trophies.webp
 hero_alt: Two New Mexico Jerky Fest trophies won by Jerky Fixx, Most Exotic Flavor and Best Booth
@@ -56,6 +56,8 @@ Twenty-five flavors can feel like a lot. If you want a shortcut, these are our t
 Our heat scale runs from 0 to 5, so there's a spot for everybody, from the "no spice please" crowd to the heat chasers. If you're ordering for a group, mix a couple of mellow bags with one or two hot ones and let people dig in.
 
 ## A word about carne seca
+
+New to it? Our guide to [what carne seca is](/blog/what-is-carne-seca/) covers the basics, and the [full jerky menu](/jerky/) has every flavor of beef jerky and carne seca we make in Albuquerque. Green chile fans, start on our [green chile jerky](/green-chile-jerky/) page.
 
 If you grew up in New Mexico, you probably call it carne seca. If you didn't, you can think of it as the dried, seasoned beef you already love, with a local name. We make ours small batch, with thin cut beef, a heavy hand with the seasoning and a long, slow dry. If you're searching for carne seca in Albuquerque, this is what we do all day. Our [green chile carne seca post](/blog/new-mexico-jerky-green-chile-carne-seca/) goes deeper on what makes it special here.
 

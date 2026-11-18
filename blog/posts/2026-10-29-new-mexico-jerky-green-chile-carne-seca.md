@@ -20,6 +20,8 @@ A lot of what you see on store shelves leans on one or two safe flavors. New Mex
 
 ## Green chile jerky, the New Mexico classic
 
+All eight of our green chile flavors live on one page: [green chile jerky from Albuquerque](/green-chile-jerky/).
+
 If you ask me what jerky nm lovers should try first, it's green chile. Our **Green** is classic New Mexico green chile carne seca. It's earthy and bright, with just the right burn. It sits around a 3 on our 0 to 5 heat scale, so it has a real kick without being scary.
 
 Green chile shows up all over our menu, because we can't stop ourselves:

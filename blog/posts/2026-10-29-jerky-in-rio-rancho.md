@@ -32,6 +32,8 @@ A small bag is $7 and a large bag is $20, so it's easy to split a few flavors fo
 
 ## No game today? Door drop off
 
+Browse every flavor of [jerky made in New Mexico](/jerky/) first, from [green chile jerky](/green-chile-jerky/) to Hot Cheetos.
+
 Not everyone has time to catch us at a booth, and that's okay. You can order from home and have it come to you. Here's how it works:
 
 1. Pick your flavors from the [menu](/jerky/) and add them to your [cart](/cart.html), or tell us what you want through the [contact form](/contact/).

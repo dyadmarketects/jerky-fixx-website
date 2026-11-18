@@ -87,6 +87,8 @@ Since there's no green 4, you can borrow a stepping stone from the rest of the m
 
 ## Order your green chile jerky
 
+See the whole lineup side by side on our [green chile jerky](/green-chile-jerky/) page, or browse every flavor of [beef jerky in Albuquerque](/jerky/).
+
 You can find every flavor and its heat level on the [menu](/#menu). A small bag is $7 and a large bag is $20, so a small bag at a few different heat levels is an easy way to build your own taste test. Add what you want to your [cart](/cart.html) and send the order. The crew texts you to confirm, our dealer drops it at your door, and you get a photo once it's delivered. We take Cash App, Venmo, Apple Pay or cash.
 
 Want to try before you buy? We set up at pop ups, festivals and ball games around Albuquerque and Rio Rancho. Stay tuned for upcoming events, and check the [dealer locator](/#dealer) for event alerts so you know where we'll be next. You can also follow along on [Instagram](https://www.instagram.com/jerky_fixx/).

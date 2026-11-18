@@ -14,6 +14,7 @@
 ## Pages
 - [Home](https://jerkyfixx.com/): the immersive 3D home page with every section
 - [Jerky menu](https://jerkyfixx.com/jerky/): all 25 flavors with heat levels, descriptions and prices
+- [Green chile jerky](https://jerkyfixx.com/green-chile-jerky/): all 8 New Mexico green chile flavors, mild to X-Hot, made in Albuquerque (ABQ), NM
 - [Our story](https://jerkyfixx.com/our-story/): the Garduno family and the Jerky Fest awards
 - [The lab](https://jerkyfixx.com/the-lab/): how the carne seca is made
 - [Dealer locator](https://jerkyfixx.com/dealer-locator/): events, pop ups, delivery area and dealer alerts

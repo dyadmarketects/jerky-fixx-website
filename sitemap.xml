@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://jerkyfixx.com/</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+  <url><loc>https://jerkyfixx.com/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
     <image:image><image:loc>https://jerkyfixx.com/img/og-image.jpg</image:loc></image:image>
     <image:image><image:loc>https://jerkyfixx.com/img/jerky-fixx-family-booth.webp</image:loc></image:image>
   </url>
-  <url><loc>https://jerkyfixx.com/jerky/</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://jerkyfixx.com/our-story/</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://jerkyfixx.com/the-lab/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://jerkyfixx.com/dealer-locator/</loc><lastmod>2026-11-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jerkyfixx.com/vip-club/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://jerkyfixx.com/contact/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://jerkyfixx.com/faq/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://jerkyfixx.com/privacy.html</loc><lastmod>2026-10-29</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://jerkyfixx.com/terms.html</loc><lastmod>2026-10-29</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://jerkyfixx.com/cookies.html</loc><lastmod>2026-10-29</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://jerkyfixx.com/accessibility.html</loc><lastmod>2026-10-29</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://jerkyfixx.com/blog/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://jerkyfixx.com/blog/aaliyah-penn/</loc><lastmod>2026-11-17</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://jerkyfixx.com/jerky/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jerkyfixx.com/our-story/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jerkyfixx.com/the-lab/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://jerkyfixx.com/dealer-locator/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jerkyfixx.com/vip-club/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://jerkyfixx.com/contact/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jerkyfixx.com/faq/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jerkyfixx.com/privacy.html</loc><lastmod>2026-11-18</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://jerkyfixx.com/terms.html</loc><lastmod>2026-11-18</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://jerkyfixx.com/cookies.html</loc><lastmod>2026-11-18</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://jerkyfixx.com/accessibility.html</loc><lastmod>2026-11-18</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://jerkyfixx.com/green-chile-jerky/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jerkyfixx.com/blog/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jerkyfixx.com/blog/aaliyah-penn/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://jerkyfixx.com/blog/mild-beef-jerky/</loc><lastmod>2026-11-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://jerkyfixx.com/blog/spicy-jerky-for-heat-chasers/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://jerkyfixx.com/blog/green-chile-jerky-ranked-by-heat/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -25,7 +26,7 @@
   <url><loc>https://jerkyfixx.com/blog/jerky-fest-2026-recap/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://jerkyfixx.com/blog/flavor-engineering-for-burquenos/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://jerkyfixx.com/blog/best-jerky-flavors-for-game-day/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://jerkyfixx.com/blog/where-to-buy-jerky-in-albuquerque/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://jerkyfixx.com/blog/where-to-buy-jerky-in-albuquerque/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://jerkyfixx.com/blog/new-mexico-jerky-green-chile-carne-seca/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://jerkyfixx.com/blog/meet-the-jerky-fixx-family/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://jerkyfixx.com/blog/jerky-in-rio-rancho/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
