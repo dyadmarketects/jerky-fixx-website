@@ -4,5 +4,6 @@ Disallow: /staging/
 Disallow: /studio/
 Disallow: /studio-requests/
 Disallow: /uploads/
+Disallow: /seo/
 
 Sitemap: https://jerkyfixx.com/sitemap.xml
