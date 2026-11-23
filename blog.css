@@ -136,3 +136,4 @@ a:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:4
 .bl-inline{margin:26px 0}.bl-inline img{aspect-ratio:auto;max-height:none}
 .bl-fig figcaption{padding:10px 14px;font-size:14px;line-height:1.45;color:#cdbfd2;background:var(--ink)}
 .bl-vid{max-width:380px;margin:26px auto}.bl-vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000}
+.bl-inline img{height:auto!important;aspect-ratio:auto!important;object-fit:contain!important;max-height:80vh;margin:0 auto}
